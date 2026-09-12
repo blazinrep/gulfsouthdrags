@@ -499,3 +499,11 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
 .pin.is-closed text { fill: #9aa6b1; }
 .alert-closed { border-left-color: #6b7580; background: #edeae5; }
 .k-closed { background: #464f58; }
+
+/* --- likely-closed ------------------------------------------------------ */
+.flag-likely { background: #9a6216; }
+.pin.is-likely circle { fill: #8a6a2e; stroke: #4a3a19; }
+.alert-likely-closed { border-left-color: #9a6216; background: #f7f0e2; }
+.k-likely { background: #8a6a2e; }
+
+.formerly { color: var(--ink-soft); font-size: 0.85em; }

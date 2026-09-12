@@ -138,8 +138,8 @@
       }
     },
     {
-      "slug": "jackson-dragway",
-      "name": "Jackson Dragway",
+      "slug": "byram-dragway",
+      "name": "Byram Dragway",
       "city": "Byram",
       "state": "MS",
       "lat": 32.24,
@@ -147,23 +147,42 @@
       "miles": 85,
       "length": "1/4 mile",
       "surface": "Asphalt",
-      "sanction": "Unconfirmed",
-      "race_days": "Unconfirmed",
-      "address": "7557 Siwell Rd, Byram, MS 39272",
-      "phone": "601-372-5506",
-      "website": "http://jxndragway.com",
-      "facebook": "",
-      "status": "unconfirmed",
-      "verified": "2026-09-11",
-      "notes": "The closest quarter-mile to the Jackson metro. Details on this page come from directory listings rather than direct confirmation.",
-      "caveat": "Schedule and sanctioning not yet verified.",
-      "answer": "Jackson Dragway is a quarter-mile asphalt drag strip in Byram, Mississippi, just south of Jackson. Its current schedule and sanctioning are unconfirmed.",
-      "faq": [],
+      "sanction": "Independent",
+      "race_days": "Tuesday Night Midnight Madness — test and tune plus grudge racing. Check the track’s Facebook page for other events.",
+      "address": "7557 S Siwell Rd, Byram, MS 39272",
+      "phone": "",
+      "website": "",
+      "facebook": "https://www.facebook.com/",
+      "status": "open",
+      "verified": "2026-09-12",
+      "notes": "A quarter-mile asphalt track on Siwell Road in Byram, immediately south of Jackson, and the closest strip to the Jackson metro.\n\nIt was formerly known as Jackson Dragway and now operates as Byram Dragway. The change is why the track is easy to write off as dead: directory listings under the old name still carry a phone number that is disconnected, Google Maps reviews under the old name stop around 2024, and no current schedule appears under either name outside Facebook. The track itself is running weekly.\n\nThe regular programme is Tuesday Night Midnight Madness, billed as test and tune with grudge racing. Gate prices as advertised in September 2026 are $25 for racers and $15 for spectators. The track describes itself as the little track with all the action.\n\nSchedule and event announcements go out through the Facebook page rather than a website, so check there before travelling.",
+      "caveat": "This track was previously called Jackson Dragway. Old listings under that name carry a disconnected phone number and stale hours — use the Facebook page for current information.",
+      "answer": "Byram Dragway, formerly Jackson Dragway, is a quarter-mile asphalt drag strip at 7557 S Siwell Rd in Byram, Mississippi, just south of Jackson. It runs Tuesday Night Midnight Madness — test and tune and grudge racing — at $25 for racers and $15 for spectators.",
+      "faq": [
+        [
+          "Is Jackson Dragway still open?",
+          "Yes, but it is now called Byram Dragway. Same location, 7557 S Siwell Rd in Byram, Mississippi. It was confirmed operating on 12 September 2026, running Tuesday Night Midnight Madness. Listings under the old Jackson Dragway name carry a disconnected phone number, which makes the track look closed when it is not."
+        ],
+        [
+          "What is Tuesday Night Midnight Madness at Byram Dragway?",
+          "A weekly Tuesday night programme of test and tune plus grudge racing. Advertised gate prices in September 2026 are $25 for racers and $15 for spectators."
+        ],
+        [
+          "Where is Byram Dragway?",
+          "7557 S Siwell Rd, Byram, MS 39272, just south of Jackson and about 85 miles from Hattiesburg."
+        ]
+      ],
       "camping": {
         "status": "unconfirmed",
         "detail": "Unconfirmed.",
         "nearby": []
-      }
+      },
+      "former_names": [
+        "Jackson Dragway"
+      ],
+      "former_slugs": [
+        "jackson-dragway"
+      ]
     },
     {
       "slug": "atmore-dragstrip",
@@ -377,7 +396,7 @@
   "faq": [
     [
       "How many drag strips are there near the Mississippi Gulf Coast?",
-      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Eight are confirmed operating, one is permanently closed, and one has unconfirmed status."
+      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Nine are confirmed operating and one is permanently closed."
     ],
     [
       "What is the closest drag strip to Hattiesburg, Mississippi?",

@@ -178,6 +178,7 @@ def build_map(tracks):
     for i, t in enumerate(tracks, 1):
         x, y = px(t["lon"], t["lat"])
         cls = {"unconfirmed": "pin is-unconfirmed",
+               "likely-closed": "pin is-likely",
                "closed": "pin is-closed"}.get(t["status"], "pin")
         parts.append(
             f'<g class="{cls}"><a href="/tracks/{t["slug"]}/">'
@@ -270,6 +271,8 @@ def track_schema(t):
         obj["telephone"] = t["phone"].split("/")[0].strip()
     if same:
         obj["sameAs"] = same
+    if t.get("former_names"):
+        obj["alternateName"] = t["former_names"]
     return obj
 
 
@@ -282,11 +285,15 @@ def build_index(data):
         flag = ""
         if t["status"] == "closed":
             flag = '<span class="flag flag-closed">Closed</span>'
+        elif t["status"] == "likely-closed":
+            flag = '<span class="flag flag-likely">Likely closed</span>'
         elif t["status"] == "unconfirmed":
             flag = '<span class="flag flag-unconfirmed">Unconfirmed</span>'
         elif t["slug"] == "swamp-bottom-dragstrip":
             flag = '<span class="flag flag-new">New</span>'
         meta = f'{e(t["length"])} &middot; {e(t["city"])}, {e(t["state"])}'
+        if t.get("former_names"):
+            meta += f' &middot; formerly {e(t["former_names"][0])}'
         if t["sanction"] and t["sanction"] != "Unconfirmed":
             meta += f' &middot; {e(t["sanction"].split("—")[0].strip())}'
         rows.append(
@@ -329,7 +336,18 @@ def build_index(data):
 
     open_n = sum(1 for t in tracks if t["status"] == "open")
     closed_n = sum(1 for t in tracks if t["status"] == "closed")
-    unc_n = len(tracks) - open_n - closed_n
+    likely_n = sum(1 for t in tracks if t["status"] == "likely-closed")
+    unc_n = len(tracks) - open_n - closed_n - likely_n
+    tally_bits = [f'<li><b>{len(tracks)}</b> tracks</li>',
+                  f'<li><b>{open_n}</b> confirmed open</li>']
+    if closed_n:
+        tally_bits.append(f'<li><b>{closed_n}</b> closed</li>')
+    if likely_n:
+        tally_bits.append(f'<li><b>{likely_n}</b> doubtful</li>')
+    if unc_n:
+        tally_bits.append(f'<li><b>{unc_n}</b> still chasing</li>')
+    tally_bits.append(f'<li><b>{len(data["series"])}</b> series</li>')
+    tally = "".join(tally_bits)
 
     return head(
         f'Drag strips in Mississippi, Louisiana and Alabama \u2014 {s["name"]}',
@@ -340,7 +358,7 @@ def build_index(data):
 {TRACK_SVG}
 <h1>Every drag strip within reach of the Pine Belt.</h1>
 <p class="lede"><strong>Race days, addresses and phone numbers for every strip from the Pine Belt to the Gulf Coast.</strong> We check them every week and stamp the date on every page &mdash; so you are not towing two hours on the strength of a Facebook post from March.</p>
-<ul class="tally"><li><b>{len(tracks)}</b> tracks</li><li><b>{open_n}</b> confirmed open</li><li><b>{unc_n}</b> still chasing</li><li><b>{closed_n}</b> closed</li><li><b>{len(data["series"])}</b> series</li></ul>
+<ul class="tally">{tally}</ul>
 </section>
 
 <section class="mapband wrap bleed">
@@ -348,6 +366,7 @@ def build_index(data):
 <div class="map-key">
 <span><i class="k-open"></i> Confirmed operating</span>
 <span><i class="k-unc"></i> Status unconfirmed</span>
+<span><i class="k-likely"></i> May no longer operate</span>
 <span><i class="k-closed"></i> Permanently closed</span>
 <span class="map-anchor">Distances measured from {e(s['anchor'])}</span>
 </div>
@@ -405,8 +424,9 @@ def build_track(t, events):
 
     alert = ""
     if t.get("caveat"):
-        heading = ("Permanently closed" if t["status"] == "closed"
-                   else "Check before you go")
+        heading = {"closed": "Permanently closed",
+                   "likely-closed": "May no longer be operating"}.get(
+                       t["status"], "Check before you go")
         alert = (f'<div class="alert alert-{t["status"]}"><strong>{heading}</strong>'
                  f'<p>{e(t["caveat"])}</p></div>')
 
@@ -452,6 +472,7 @@ def build_track(t, events):
          (f'{t["name"]} was confirmed operating as of {nice_date(t["verified"])}.'
           if t["status"] == "open" else
           f'No. {t["name"]} is permanently closed.' if t["status"] == "closed" else
+          f'Unclear. {t.get("caveat") or ""}' if t["status"] == "likely-closed" else
           f'Unconfirmed. {t.get("caveat") or "We have not been able to verify this track is operating."}')),
         (f'What days does {t["name"]} race?', t["race_days"]),
         (f'Where is {t["name"]}?',
@@ -474,6 +495,9 @@ def build_track(t, events):
         f'{t["name"]} is a {t["length"]} {t["surface"].lower()} drag strip in '
         f'{t["city"]}, {STATE_NAME.get(t["state"], t["state"])}.')
 
+    former = ""
+    if t.get("former_names"):
+        former = ' <span class="formerly">formerly ' + e(", ".join(t["former_names"])) + '</span>'
     bc = crumbs([("Tracks", "/"), (t["name"], f'/tracks/{t["slug"]}/')])
 
     return head(
@@ -485,7 +509,7 @@ def build_track(t, events):
 <a class="back" href="/">&larr; All tracks</a>
 <div class="track-head">
 <h1>{e(t['name'])}</h1>
-<p class="track-where">{e(t['city'])}, {e(STATE_NAME.get(t['state'], t['state']))}</p>
+<p class="track-where">{e(t['city'])}, {e(STATE_NAME.get(t['state'], t['state']))}{former}</p>
 </div>
 <p class="answer">{e(answer)}</p>
 {alert}
@@ -674,6 +698,15 @@ def main():
     sm.append("</urlset>")
     write(os.path.join(OUT, "sitemap.xml"), "\n".join(sm))
 
+    # 301s for renamed tracks, so old links and indexed URLs keep working
+    red = []
+    for t in data["tracks"]:
+        for old in t.get("former_slugs", []):
+            red.append(f'/tracks/{old}/  /tracks/{t["slug"]}/  301')
+            red.append(f'/tracks/{old}  /tracks/{t["slug"]}/  301')
+    if red:
+        write(os.path.join(OUT, "_redirects"), "\n".join(red) + "\n")
+
     bots = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User",
             "Claude-SearchBot", "PerplexityBot", "Perplexity-User", "Google-Extended",
             "Applebot", "Applebot-Extended", "Bingbot", "CCBot", "meta-externalagent"]
@@ -690,9 +723,11 @@ def main():
     for t in data["tracks"]:
         status = {"open": "confirmed operating",
                   "closed": "PERMANENTLY CLOSED",
+                  "likely-closed": "LIKELY CLOSED - phone disconnected, no activity ~2 years",
                   "unconfirmed": "status unconfirmed"}[t["status"]]
         surf = "" if t["surface"].lower().startswith("unconf") else f' {t["surface"].lower()}'
-        ll.append(f'- [{t["name"]}]({base}/tracks/{t["slug"]}/): {t["length"]}{surf}, '
+        alt = f' (formerly {", ".join(t["former_names"])})' if t.get("former_names") else ""
+        ll.append(f'- [{t["name"]}{alt}]({base}/tracks/{t["slug"]}/): {t["length"]}{surf}, '
                   f'{t["city"]}, {STATE_NAME.get(t["state"], t["state"])}. '
                   f'{status.capitalize()}, last checked {t["verified"]}. '
                   f'Race days: {t["race_days"]}')
