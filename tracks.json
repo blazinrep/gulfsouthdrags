@@ -267,6 +267,58 @@
       }
     },
     {
+      "slug": "no-problem-raceway",
+      "name": "No Problem Raceway Park",
+      "former_names": [
+        "No Problem Raceway"
+      ],
+      "city": "Belle Rose",
+      "state": "LA",
+      "lat": 30.05,
+      "lon": -91.04,
+      "miles": 136,
+      "length": "1/4 mile",
+      "surface": "Asphalt",
+      "sanction": "NHRA",
+      "race_days": "TNT Test ’n Tune on selected Fridays, Bracket Masters on selected Saturdays, plus road course events, Super Saturdays and special races. A monthly calendar is published on Facebook.",
+      "address": "6470 LA-996, Belle Rose, LA 70341",
+      "phone": "225-445-3498 / 985-369-3692",
+      "website": "https://racenpr.com",
+      "facebook": "https://www.facebook.com/",
+      "status": "open",
+      "verified": "2026-09-12",
+      "answer": "No Problem Raceway Park is an NHRA-sanctioned quarter-mile drag strip at 6470 LA-996 in Belle Rose, Louisiana. The site also carries a 1.8-mile asphalt road course and over 200 acres used for concerts, car shows and festivals.",
+      "caveat": "",
+      "notes": "A multi-discipline motorsports facility in Belle Rose, in the Louisiana river parishes between Baton Rouge and Houma. Confirmed active on 12 September 2026. The track is running its 25th anniversary season, having opened in 2001.\n\nThe drag strip is a quarter-mile sanctioned by NHRA. Alongside it sits a 1.8-mile asphalt road course and more than 200 acres used for concerts, car shows and festivals. That mix is unusual in this region — most tracks listed here do one thing.\n\nThe regular programme runs TNT Test ’n Tune on selected Friday nights and Bracket Masters on selected Saturdays, with road course events, Super Saturdays run with Flip Flop Promotions, and private pro test sessions bookable by phone. The track publishes a calendar of events each month on its Facebook page.\n\nIt also hosts the Pure Speed Drag Racing Experience, a ride-and-drive programme for people who want to run a race car without owning one, booked separately from the racing calendar.\n\nTwo phone numbers are in use: 225-445-3498 and 985-369-3692. The number printed on the track's own website has an extra digit and cannot be dialled as written.",
+      "faq": [
+        [
+          "Is No Problem Raceway an NHRA track?",
+          "Yes. The quarter-mile drag strip at No Problem Raceway Park is sanctioned by NHRA. The site also carries a 1.8-mile asphalt road course."
+        ],
+        [
+          "What days does No Problem Raceway race?",
+          "TNT Test ’n Tune runs on selected Friday nights and Bracket Masters on selected Saturdays, alongside road course events, Super Saturdays and special races. A calendar of events is published each month on the track's Facebook page."
+        ],
+        [
+          "What else is at No Problem Raceway Park besides the drag strip?",
+          "A 1.8-mile asphalt road course and over 200 acres used for concerts, car shows and festivals. It also hosts the Pure Speed Drag Racing Experience, a ride-and-drive programme."
+        ],
+        [
+          "What is the phone number for No Problem Raceway Park?",
+          "Two numbers are in use: 225-445-3498 and 985-369-3692. The number printed on the track's own website has an extra digit and cannot be dialled as written."
+        ],
+        [
+          "Where is No Problem Raceway Park?",
+          "6470 LA-996, Belle Rose, LA 70341, in the Louisiana river parishes between Baton Rouge and Houma, about 136 miles from Hattiesburg."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed. Worth asking given the size of the site and the festival use.",
+        "nearby": []
+      }
+    },
+    {
       "slug": "twin-city-raceway",
       "name": "Twin City Raceway",
       "city": "Monroe",
@@ -529,6 +581,32 @@
   ],
   "events": [
     {
+      "slug": "npr-road-course-sept-13-2026",
+      "name": "Road Course Event — No Problem Raceway",
+      "track_slug": "no-problem-raceway",
+      "track_name": "No Problem Raceway Park",
+      "city": "Belle Rose",
+      "state": "LA",
+      "dates": "Sunday 13 September 2026",
+      "start_iso": "2026-09-13",
+      "schedule": [
+        [
+          "Sunday 13 September",
+          "Road course event. Gates open 8:00 AM."
+        ]
+      ],
+      "prices": [
+        [
+          "Entry and gate",
+          "Contact the track — 225-445-3498"
+        ]
+      ],
+      "summary": "No Problem Raceway Park runs a road course event on Sunday 13 September 2026, with gates opening at 8:00 AM.",
+      "detail": "No Problem Raceway carries a 1.8-mile asphalt road course alongside its quarter-mile drag strip — one of the few facilities in this region that runs both.\n\nGates open at 8:00 AM. Confirm format and entry with the track before travelling.",
+      "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
+      "verified": "2026-09-12"
+    },
+    {
       "slug": "cap-city-50k-bracket-race-2026",
       "name": "Cap City $50K Bracket Race",
       "track_slug": "montgomery-international-dragway",
@@ -581,6 +659,32 @@
       "verified": "2026-09-12"
     },
     {
+      "slug": "npr-super-saturday-sept-19-2026",
+      "name": "Super Saturday — No Problem Raceway",
+      "track_slug": "no-problem-raceway",
+      "track_name": "No Problem Raceway Park",
+      "city": "Belle Rose",
+      "state": "LA",
+      "dates": "Saturday 19 September 2026",
+      "start_iso": "2026-09-19",
+      "schedule": [
+        [
+          "Saturday 19 September",
+          "Super Saturday, presented by Flip Flop Promotions"
+        ]
+      ],
+      "prices": [
+        [
+          "Entry and gate",
+          "Contact the track — 225-445-3498"
+        ]
+      ],
+      "summary": "Super Saturday runs at No Problem Raceway Park on 19 September 2026, presented by Flip Flop Promotions.",
+      "detail": "One of the named events on No Problem Raceway's September calendar, run with Flip Flop Promotions.\n\nA TNT Test ’n Tune runs the Friday before, on 25 September, and King of the Bayou follows on 26 September.",
+      "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
+      "verified": "2026-09-12"
+    },
+    {
       "slug": "ihra-bracket-finals-montgomery-2026",
       "name": "IHRA Bracket Finals",
       "track_slug": "montgomery-international-dragway",
@@ -604,6 +708,32 @@
       "summary": "The IHRA Bracket Finals run at Montgomery International Dragway from 24 to 27 September 2026.",
       "detail": "The season-ending bracket event for IHRA competitors, run over four days.\n\nIt follows the Cap City $50K Bracket Race the week before at the same track.\n\nDates are published as subject to change.",
       "source": "From Montgomery International Dragway's 2026 season schedule, revised 22 June 2026.",
+      "verified": "2026-09-12"
+    },
+    {
+      "slug": "king-of-the-bayou-2026",
+      "name": "King of the Bayou Bracket Race",
+      "track_slug": "no-problem-raceway",
+      "track_name": "No Problem Raceway Park",
+      "city": "Belle Rose",
+      "state": "LA",
+      "dates": "Saturday 26 September 2026",
+      "start_iso": "2026-09-26",
+      "schedule": [
+        [
+          "Saturday 26 September",
+          "King of the Bayou bracket race. Gates open 4:30 PM."
+        ]
+      ],
+      "prices": [
+        [
+          "Entry and gate",
+          "Contact the track — 225-445-3498"
+        ]
+      ],
+      "summary": "King of the Bayou runs at No Problem Raceway Park on Saturday 26 September 2026 — a 75th Anniversary Wally race with a King of the Track Wally and a Jr Dragster Wally on the line. Gates open 4:30 PM.",
+      "detail": "The headline race on No Problem Raceway's September calendar, run as part of NHRA's 75th anniversary. Both a King of the Track Wally and a Jr Dragster Wally are awarded, so junior racers compete for the same trophy as everyone else — the track's calendar bills it as “everyone Jr too”.\n\nA Wally is NHRA's winner's trophy, named for founder Wally Parks, and a bracket race that puts one up is a meaningfully bigger deal than a regular Saturday night.\n\nGates open at 4:30 PM. Confirm entry fees and class structure with the track before travelling.",
+      "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
       "verified": "2026-09-12"
     },
     {
@@ -726,7 +856,7 @@
   "faq": [
     [
       "How many drag strips are there near the Mississippi Gulf Coast?",
-      "This directory tracks twelve drag strips across Mississippi, Louisiana and Alabama. Nine are confirmed operating, two are permanently closed, and one has an uncertain future."
+      "This directory tracks thirteen drag strips across Mississippi, Louisiana and Alabama. Ten are confirmed operating, two are permanently closed, and one has an uncertain future."
     ],
     [
       "What is the closest drag strip to Hattiesburg, Mississippi?",
