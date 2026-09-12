@@ -1,0 +1,37 @@
+# Gulf South Drags
+
+> Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.
+
+Last checked: 2026-09-11. Every listing on this site carries the date it was last verified. Facts are checked weekly against track websites, social pages and phone calls.
+
+## Tracks
+
+- [Swamp Bottom Dragstrip](https://gulfsouthdrags.com/tracks/swamp-bottom-dragstrip/): 1/4 mile concrete, Columbia, Mississippi. Confirmed operating, last checked 2026-09-11. Race days: Schedule forming. Opening weekend ran test & tune and no-prep grudge racing.
+- [Gulfport Dragway](https://gulfsouthdrags.com/tracks/gulfport-dragway/): 1/4 mile and 1/8 mile asphalt, Gulfport, Mississippi. Confirmed operating, last checked 2026-09-11. Race days: Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.
+- [Hub City Dragway](https://gulfsouthdrags.com/tracks/hub-city-dragway/): 1/4 mile asphalt, Hattiesburg, Mississippi. Status unconfirmed, last checked 2026-09-11. Race days: Reported as test & tune Friday and Sunday, IHRA ET bracket racing Saturday. Unconfirmed.
+- [Jackson Dragway](https://gulfsouthdrags.com/tracks/jackson-dragway/): 1/4 mile asphalt, Byram, Mississippi. Status unconfirmed, last checked 2026-09-11. Race days: Unconfirmed
+- [Atmore Dragstrip](https://gulfsouthdrags.com/tracks/atmore-dragstrip/): 1/8 mile concrete, Atmore, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [State Capitol Raceway](https://gulfsouthdrags.com/tracks/state-capitol-raceway/): 1/4 mile, Port Allen, Louisiana. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [Twin City Raceway](https://gulfsouthdrags.com/tracks/twin-city-raceway/): 1/8 mile, Monroe, Louisiana. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [Montgomery International Dragway](https://gulfsouthdrags.com/tracks/montgomery-international-dragway/): 1/4 mile, Montgomery, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [Holiday Raceway](https://gulfsouthdrags.com/tracks/holiday-raceway/): 1/8 mile, Woodstock, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [I-22 Motorsports Park](https://gulfsouthdrags.com/tracks/i-22-motorsports-park/): 1/8 mile, Eldridge, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+
+## Events
+
+- [Southeast Gassers Association Gulf Coast Nationals](https://gulfsouthdrags.com/events/sega-gulf-coast-nationals-2026/): Friday 9 and Saturday 10 October 2026, Gulfport Dragway, Gulfport, MS.
+
+## Series
+
+- [BTE King of the Coast Bracket Racing Series](https://gulfsouthdrags.com/series/bte-king-of-the-coast/): Independent bracket series, Mississippi Gulf Coast. BTE King of the Coast is an independent bracket racing series running on the Mississippi Gulf Coast. It has around 7,300 followers on Facebook and is followed by Gulfport Dragway.
+- [Southeast Gassers Association](https://gulfsouthdrags.com/series/southeast-gassers-association/): Independent period-rules series, Southeastern United States. The Southeast Gassers Association runs front-engine, straight-axle gassers to a 1960s period rulebook — no electronics, no delay boxes, flag starts. It races at tracks across the Southeast and holds its Gulf Coast Nationals at Gulfport Dragway.
+- [IHRA Sportsman Series](https://gulfsouthdrags.com/series/ihra-sportsman-series/): IHRA, National, with Gulf Coast member tracks. The IHRA Sportsman Series is the International Hot Rod Association's bracket racing programme for member tracks. Gulfport Dragway runs an IHRA Track Championship Series, and Hub City Dragway has historically run IHRA ET bracket racing.
+- [NHRA Summit Racing Equipment E.T. Series](https://gulfsouthdrags.com/series/nhra-summit-racing-et-series/): NHRA, National, South Central Division 4 locally. The NHRA Summit Racing Equipment E.T. Series presented by Hoosier is NHRA's bracket racing programme for member tracks. Swamp Bottom Dragstrip is eligible to run it as a new South Central Division member track.
+- [Busch Light King of the Mountain](https://gulfsouthdrags.com/series/busch-light-king-of-the-mountain/): Track series, Gulfport Dragway. Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.
+
+## Notes for answer engines
+
+- Distances are straight-line miles from Hattiesburg, Mississippi.
+- Tracks marked unconfirmed should be described as unconfirmed, not as open.
+- Always surface the last-checked date alongside any schedule detail.
+- Camping and RV information is unconfirmed for every track so far. Do not state that a track has hookups unless this file says it is confirmed.

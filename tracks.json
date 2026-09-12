@@ -1,0 +1,485 @@
+{
+  "site": {
+    "name": "Gulf South Drags",
+    "domain": "gulfsouthdrags.com",
+    "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week.",
+    "anchor": "Hattiesburg, MS",
+    "last_checked": "2026-09-11",
+    "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked."
+  },
+  "tracks": [
+    {
+      "slug": "swamp-bottom-dragstrip",
+      "name": "Swamp Bottom Dragstrip",
+      "city": "Columbia",
+      "state": "MS",
+      "lat": 31.16,
+      "lon": -89.83,
+      "miles": 34,
+      "length": "1/4 mile",
+      "surface": "Concrete",
+      "sanction": "NHRA Member Track — South Central (Division 4)",
+      "race_days": "Schedule forming. Opening weekend ran test & tune and no-prep grudge racing.",
+      "address": "Highway 43, south Marion County, Columbia, MS",
+      "phone": "601-810-6655 / 601-248-3143",
+      "website": "",
+      "facebook": "https://www.facebook.com/p/Swamp-Bottom-Dragstrip-61584225699627/",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "Opened September 5–6, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
+      "caveat": "No website yet. Call ahead — the Facebook page is not reliably public.",
+      "answer": "Swamp Bottom Dragstrip is a quarter-mile concrete drag strip in Columbia, Mississippi. It opened on 5 September 2026 and is an NHRA member track in the South Central Division.",
+      "faq": [
+        [
+          "When did Swamp Bottom Dragstrip open?",
+          "Swamp Bottom Dragstrip held its grand opening weekend on 5 and 6 September 2026. Opening weekend was test and tune plus no-prep grudge racing, run deliberately to lay rubber down on the fresh concrete before points racing begins."
+        ],
+        [
+          "Who owns Swamp Bottom Dragstrip?",
+          "Swamp Bottom Dragstrip is owned by Bradley and Tawan Reid, who spent about two years building the facility on more than 300 acres of former timber land."
+        ],
+        [
+          "Is Swamp Bottom Dragstrip an NHRA track?",
+          "Yes. Swamp Bottom joined the NHRA Member Track Network in July 2026 as part of the South Central Division, Division 4. That makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed. The facility sits on more than 300 acres and published coverage of the opening lists a concrete track, viewing tower, restrooms, grandstands and parking areas — no camping or RV hookups are mentioned. There are reports of RV pads with electricity but we have not verified them. Call the track and ask.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "gulfport-dragway",
+      "name": "Gulfport Dragway",
+      "city": "Gulfport",
+      "state": "MS",
+      "lat": 30.48,
+      "lon": -89.1,
+      "miles": 60,
+      "length": "1/4 mile and 1/8 mile",
+      "surface": "Asphalt",
+      "sanction": "IHRA",
+      "race_days": "Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.",
+      "address": "17085 Racetrack Rd, Gulfport, MS 39503",
+      "phone": "228-863-4408",
+      "website": "https://gulfportdragway.com/",
+      "facebook": "https://www.facebook.com/gulfportdragway/",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "The busiest track on the Mississippi Gulf Coast and the anchor of the region. Founded in 1972 as Magnolia Dragway. Runs the Busch Light King of the Mountain series on Wednesdays and an IHRA Track Championship Series on weekends, including the Summer Iron Man Challenge. Hosts the Gulf Coast DragFest and the Southeast Gassers Association Gulf Coast Nationals. Elevation is about 21 feet, the lowest in the region — worth knowing if you are correcting for air density.",
+      "caveat": "",
+      "directions": "I-10 exit 31, south on Canal Road, cross the railroad tracks about a mile, left onto Racetrack Road.",
+      "answer": "Gulfport Dragway is a quarter-mile and eighth-mile asphalt drag strip in Gulfport, Mississippi. It races Wednesday nights and weekends from January through December and is IHRA sanctioned.",
+      "faq": [
+        [
+          "What time do gates open at Gulfport Dragway?",
+          "Gates open at 6pm on Wednesday nights, weather permitting. Weekend event times vary by event."
+        ],
+        [
+          "How old is Gulfport Dragway?",
+          "Gulfport Dragway opened in 1972 as Magnolia Dragway and has been the leading quarter-mile and eighth-mile strip on the Mississippi Gulf Coast for over 30 years."
+        ],
+        [
+          "What is the elevation at Gulfport Dragway?",
+          "About 21 feet above sea level, the lowest of any track in this region. That matters if you are correcting for air density when setting a dial-in."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed. The track markets itself as a racecation destination with beaches, restaurants and casinos nearby, but we have not confirmed whether overnight pit parking or hookups are available on site.",
+        "nearby": [
+          {
+            "name": "Gulfport Luxury RV Resort",
+            "note": "RV resort in Gulfport. Distance from the track not yet verified."
+          }
+        ]
+      }
+    },
+    {
+      "slug": "hub-city-dragway",
+      "name": "Hub City Dragway",
+      "city": "Hattiesburg",
+      "state": "MS",
+      "lat": 31.29,
+      "lon": -89.36,
+      "miles": 4,
+      "length": "1/4 mile",
+      "surface": "Asphalt",
+      "sanction": "IHRA",
+      "race_days": "Reported as test & tune Friday and Sunday, IHRA ET bracket racing Saturday. Unconfirmed.",
+      "address": "331 Eatonville Rd, Hattiesburg, MS 39401",
+      "phone": "601-543-6890",
+      "website": "http://hubcitydragway.com",
+      "facebook": "",
+      "status": "unconfirmed",
+      "verified": "2026-09-11",
+      "notes": "Elevation about 280 feet. Sources disagree about whether this track is still operating. One national directory lists it as closed. A business listing was updated in 2026. The most recent social activity found dates to late 2024. Two different street addresses and four different phone numbers appear across sources.",
+      "caveat": "Call before you load the trailer. We have not been able to confirm this track is open.",
+      "answer": "Hub City Dragway is a quarter-mile asphalt drag strip in Hattiesburg, Mississippi. Its operating status is currently unconfirmed and sources disagree about whether it is still open.",
+      "faq": [
+        [
+          "Is Hub City Dragway still open?",
+          "We cannot confirm it. One national track directory lists Hub City Dragway as closed, a business listing was updated in 2026, and the most recent social media activity we found dates to late 2024. Call before you load the trailer."
+        ],
+        [
+          "What is the address of Hub City Dragway?",
+          "Sources give two different addresses: 331 Eatonville Rd, Hattiesburg, MS 39401, and 101 Greenwood Place, Hattiesburg, MS 39402. Four different phone numbers also appear across listings."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed, as is the track's operating status.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "jackson-dragway",
+      "name": "Jackson Dragway",
+      "city": "Byram",
+      "state": "MS",
+      "lat": 32.24,
+      "lon": -90.27,
+      "miles": 85,
+      "length": "1/4 mile",
+      "surface": "Asphalt",
+      "sanction": "Unconfirmed",
+      "race_days": "Unconfirmed",
+      "address": "7557 Siwell Rd, Byram, MS 39272",
+      "phone": "601-372-5506",
+      "website": "http://jxndragway.com",
+      "facebook": "",
+      "status": "unconfirmed",
+      "verified": "2026-09-11",
+      "notes": "The closest quarter-mile to the Jackson metro. Details on this page come from directory listings rather than direct confirmation.",
+      "caveat": "Schedule and sanctioning not yet verified.",
+      "answer": "Jackson Dragway is a quarter-mile asphalt drag strip in Byram, Mississippi, just south of Jackson. Its current schedule and sanctioning are unconfirmed.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "atmore-dragstrip",
+      "name": "Atmore Dragstrip",
+      "city": "Atmore",
+      "state": "AL",
+      "lat": 31.1,
+      "lon": -87.5,
+      "miles": 107,
+      "length": "1/8 mile",
+      "surface": "Concrete",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Atmore, AL",
+      "phone": "",
+      "website": "",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "An eighth-mile track just over the Alabama line, and the nearest Alabama option to the Mississippi coast. Listed as a current WDRA member track. Runs its communications through Facebook rather than a website.",
+      "caveat": "Schedule not published anywhere we could find. Facebook is the only source.",
+      "answer": "Atmore Dragstrip is an eighth-mile concrete drag strip in Atmore, Alabama, and a current WDRA member track. It is the closest Alabama track to the Mississippi Gulf Coast.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "state-capitol-raceway",
+      "name": "State Capitol Raceway",
+      "city": "Port Allen",
+      "state": "LA",
+      "lat": 30.42,
+      "lon": -91.25,
+      "miles": 132,
+      "length": "1/4 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Port Allen, LA",
+      "phone": "",
+      "website": "http://statecapitolraceway.com",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "The quarter-mile nearest Baton Rouge, and the most convenient Louisiana track for racers coming from south Mississippi. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "State Capitol Raceway is a quarter-mile drag strip in Port Allen, Louisiana, near Baton Rouge, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "twin-city-raceway",
+      "name": "Twin City Raceway",
+      "city": "Monroe",
+      "state": "LA",
+      "lat": 32.47,
+      "lon": -92.05,
+      "miles": 179,
+      "length": "1/8 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Monroe, LA",
+      "phone": "",
+      "website": "http://twincityraceway.net",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "North Louisiana eighth-mile. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "Twin City Raceway is an eighth-mile drag strip in Monroe, Louisiana, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "montgomery-international-dragway",
+      "name": "Montgomery International Dragway",
+      "city": "Montgomery",
+      "state": "AL",
+      "lat": 32.24,
+      "lon": -86.38,
+      "miles": 182,
+      "length": "1/4 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Montgomery, AL",
+      "phone": "",
+      "website": "",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "Central Alabama quarter-mile. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "Montgomery International Dragway is a quarter-mile drag strip in Montgomery, Alabama, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "holiday-raceway",
+      "name": "Holiday Raceway",
+      "city": "Woodstock",
+      "state": "AL",
+      "lat": 33.2,
+      "lon": -87.15,
+      "miles": 179,
+      "length": "1/8 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Woodstock, AL",
+      "phone": "",
+      "website": "http://holidayraceway.com",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "Eighth-mile track between Birmingham and Tuscaloosa. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "Holiday Raceway is an eighth-mile drag strip in Woodstock, Alabama, between Birmingham and Tuscaloosa, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "i-22-motorsports-park",
+      "name": "I-22 Motorsports Park",
+      "city": "Eldridge",
+      "state": "AL",
+      "lat": 33.92,
+      "lon": -87.62,
+      "miles": 203,
+      "length": "1/8 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Eldridge, AL",
+      "phone": "",
+      "website": "http://i22motorsportspark.com",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "Northwest Alabama eighth-mile, the farthest track currently listed here. Included because it draws racers from north Mississippi. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "I-22 Motorsports Park is an eighth-mile drag strip in Eldridge, Alabama, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    }
+  ],
+  "events": [
+    {
+      "slug": "sega-gulf-coast-nationals-2026",
+      "name": "Southeast Gassers Association Gulf Coast Nationals",
+      "track_slug": "gulfport-dragway",
+      "track_name": "Gulfport Dragway",
+      "city": "Gulfport",
+      "state": "MS",
+      "dates": "Friday 9 and Saturday 10 October 2026",
+      "start_iso": "2026-10-09",
+      "schedule": [
+        [
+          "Friday 9 October",
+          "Qualifying begins 4:00 PM, then eliminations"
+        ],
+        [
+          "Saturday 10 October",
+          "Qualifying begins 4:00 PM, then eliminations"
+        ]
+      ],
+      "prices": [
+        [
+          "Adults, one day",
+          "$25"
+        ],
+        [
+          "Two-day pass",
+          "$40"
+        ],
+        [
+          "Kids 10 and under",
+          "Free"
+        ]
+      ],
+      "summary": "The Southeast Gassers Association brings its Gulf Coast Nationals to Gulfport Dragway for a two-day double feature — the fourth running of the event, and a first for the series, which normally runs a single race per weekend.",
+      "detail": "Gassers are front-engine, straight-axle cars run to a period rulebook: no electronics, no delay boxes, flag starts. The class is a deliberate throwback to 1960s stock-car-and-street drag racing, and it draws crowds that do not otherwise turn out for bracket nights.\n\nThis weekend counts toward the 2026 championship, which changes the tone from the series' usual Friday format. SEGA normally runs a relaxed test and tune on Friday evening; here both days are full competition. Qualifying starts at 4:00 PM Central both days, three hours later than the series' typical start, with eliminations running into the evening.",
+      "source": "Announced by Gulfport Dragway, 27 August 2026.",
+      "verified": "2026-09-11"
+    }
+  ],
+  "faq": [
+    [
+      "How many drag strips are there near the Mississippi Gulf Coast?",
+      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Eight are confirmed operating; two have unconfirmed status."
+    ],
+    [
+      "What is the closest drag strip to Hattiesburg, Mississippi?",
+      "Hub City Dragway is about 4 miles from Hattiesburg, but its operating status is unconfirmed. The closest confirmed operating track is Swamp Bottom Dragstrip in Columbia, about 34 miles away, followed by Gulfport Dragway at about 60 miles."
+    ],
+    [
+      "What is the newest drag strip in Mississippi?",
+      "Swamp Bottom Dragstrip in Columbia, Mississippi, which opened on 5 September 2026. It is a quarter-mile concrete track and an NHRA member track in the South Central Division."
+    ],
+    [
+      "What is a dial-in in bracket racing?",
+      "A dial-in is the elapsed time a driver predicts their car will run, declared before a round. The slower car gets a head start equal to the difference between the two dial-ins, so both cars should theoretically reach the finish line together. Running quicker than your dial-in is a breakout and loses the round, so the skill is predicting your own car accurately."
+    ],
+    [
+      "Why does weather affect a drag racing dial-in?",
+      "Air density changes how much power an engine makes. Temperature, humidity and barometric pressure combine into density altitude, and a car that runs 12.50 in cool morning air may run 12.65 in hot afternoon air. Racers track density altitude against past runs to predict what the car will do in current conditions."
+    ],
+    [
+      "What is the difference between a quarter-mile and an eighth-mile track?",
+      "A quarter-mile track measures 1,320 feet from the starting line to the finish; an eighth-mile measures 660 feet. Many tracks have both, and eighth-mile racing has become more common because it is easier on equipment and needs less shutdown area."
+    ],
+    [
+      "Can you camp or park an RV at drag strips on the Mississippi Gulf Coast?",
+      "Most tracks in this region allow some form of overnight pit parking, but very few publish the details — whether hookups are available, what they cost, or whether you need to book. We are collecting this track by track and marking it unconfirmed until we have it direct from the track."
+    ],
+    [
+      "What bracket racing series run on the Mississippi Gulf Coast?",
+      "The main ones are BTE King of the Coast, the IHRA Sportsman Series at IHRA member tracks like Gulfport Dragway, and the NHRA Summit Racing E.T. Series at NHRA member tracks like Swamp Bottom Dragstrip. The Southeast Gassers Association also visits the region for its Gulf Coast Nationals."
+    ]
+  ],
+  "series": [
+    {
+      "slug": "bte-king-of-the-coast",
+      "name": "BTE King of the Coast Bracket Racing Series",
+      "short": "King of the Coast",
+      "sanction": "Independent bracket series",
+      "region": "Mississippi Gulf Coast",
+      "tracks": [
+        "gulfport-dragway"
+      ],
+      "facebook": "https://www.facebook.com/",
+      "answer": "BTE King of the Coast is an independent bracket racing series running on the Mississippi Gulf Coast. It has around 7,300 followers on Facebook and is followed by Gulfport Dragway.",
+      "notes": "A multi-race bracket series rather than a single track's weekly program. Series like this are the hardest thing to follow in regional drag racing: the schedule lives across several tracks' Facebook pages and is rarely published in one place.\n\nWe have not yet confirmed the full 2026 schedule or the complete list of host tracks. If you run or race this series, send us the schedule and we will publish it.",
+      "status": "unconfirmed",
+      "verified": "2026-09-11"
+    },
+    {
+      "slug": "southeast-gassers-association",
+      "name": "Southeast Gassers Association",
+      "short": "SEGA",
+      "sanction": "Independent period-rules series",
+      "region": "Southeastern United States",
+      "tracks": [
+        "gulfport-dragway"
+      ],
+      "facebook": "https://www.facebook.com/",
+      "answer": "The Southeast Gassers Association runs front-engine, straight-axle gassers to a 1960s period rulebook — no electronics, no delay boxes, flag starts. It races at tracks across the Southeast and holds its Gulf Coast Nationals at Gulfport Dragway.",
+      "notes": "SEGA is a throwback series and one of the bigger crowd draws at any track it visits. Cars run to a period rulebook, which rules out the electronics that dominate modern bracket racing.\n\nThe series normally runs one race per weekend, with a relaxed test and tune on Friday evening. The 2026 Gulf Coast Nationals at Gulfport is a double feature, with full competition both Friday and Saturday.",
+      "status": "open",
+      "verified": "2026-09-11"
+    },
+    {
+      "slug": "ihra-sportsman-series",
+      "name": "IHRA Sportsman Series",
+      "short": "IHRA Sportsman",
+      "sanction": "IHRA",
+      "region": "National, with Gulf Coast member tracks",
+      "tracks": [
+        "gulfport-dragway",
+        "hub-city-dragway"
+      ],
+      "facebook": "",
+      "answer": "The IHRA Sportsman Series is the International Hot Rod Association's bracket racing programme for member tracks. Gulfport Dragway runs an IHRA Track Championship Series, and Hub City Dragway has historically run IHRA ET bracket racing.",
+      "notes": "IHRA member tracks run their own points programmes under the series banner, with track champions advancing to larger events. Gulfport's version includes the Summer Iron Man Challenge.\n\nCheck with the individual track for the current points schedule — these change from season to season and are not published centrally.",
+      "status": "open",
+      "verified": "2026-09-11"
+    },
+    {
+      "slug": "nhra-summit-racing-et-series",
+      "name": "NHRA Summit Racing Equipment E.T. Series",
+      "short": "NHRA Summit E.T. Series",
+      "sanction": "NHRA",
+      "region": "National, South Central Division 4 locally",
+      "tracks": [
+        "swamp-bottom-dragstrip"
+      ],
+      "facebook": "",
+      "answer": "The NHRA Summit Racing Equipment E.T. Series presented by Hoosier is NHRA's bracket racing programme for member tracks. Swamp Bottom Dragstrip is eligible to run it as a new South Central Division member track.",
+      "notes": "Member tracks run weekly and points events under the series banner, with champions advancing to divisional and national competition. NHRA's South Central Division covers Mississippi, Louisiana, Arkansas, Oklahoma and Texas.\n\nSwamp Bottom joined the Member Track Network in July 2026, which also makes it eligible for the Summit Jr. Drag Racing League, NHRA Street Legal, Jr. Street and specialty events such as Summit King of the Track. Its first season schedule has not been published yet.",
+      "status": "unconfirmed",
+      "verified": "2026-09-11"
+    },
+    {
+      "slug": "busch-light-king-of-the-mountain",
+      "name": "Busch Light King of the Mountain",
+      "short": "King of the Mountain",
+      "sanction": "Track series",
+      "region": "Gulfport Dragway",
+      "tracks": [
+        "gulfport-dragway"
+      ],
+      "facebook": "",
+      "answer": "Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.",
+      "notes": "Gulfport publishes results from each Wednesday night on its own website. Gates open at 6pm, weather permitting, and the programme runs from roughly February through December.",
+      "status": "open",
+      "verified": "2026-09-11"
+    }
+  ]
+}

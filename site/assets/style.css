@@ -1,0 +1,382 @@
+/* Gulf South Drags
+   Palette is the track itself: daylight concrete, staging-bulb amber,
+   win-light green, red-light red. */
+
+:root {
+  --concrete: #e4e0d7;
+  --slab: #f2efe9;
+  --ink: #141f1c;
+  --ink-soft: #4a5551;
+  --stripe: #c2bcae;
+  --amber: #e9a000;
+  --green: #1b6e3a;
+  --red: #a82a18;
+
+  --measure: 64ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--concrete);
+  color: var(--ink);
+  font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  font-synthesis-weight: none;
+}
+
+h1, h2, h3 {
+  font-family: "Archivo Black", "Archivo", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+a { color: var(--ink); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--red); }
+a:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap { width: min(100% - 2.5rem, 1080px); margin-inline: auto; }
+.prose { max-width: var(--measure); }
+
+/* --- masthead ---------------------------------------------------------- */
+
+.masthead {
+  border-bottom: 3px solid var(--ink);
+  padding: 1rem 0 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.wordmark {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.15rem;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+.wordmark:hover { color: var(--ink); }
+.wordmark .bulb {
+  display: inline-block;
+  width: 0.52em; height: 0.52em;
+  border-radius: 50%;
+  background: var(--amber);
+  margin-right: 0.45em;
+  vertical-align: 0.04em;
+}
+
+.stamp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-soft);
+}
+
+/* --- hero -------------------------------------------------------------- */
+
+.hero { padding: 3.5rem 0 1.5rem; }
+.hero h1 {
+  font-size: clamp(2.1rem, 6.5vw, 4rem);
+  max-width: 18ch;
+}
+.hero p {
+  max-width: 52ch;
+  margin: 1.4rem 0 0;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+}
+
+/* --- map --------------------------------------------------------------- */
+
+.map-frame {
+  margin: 2.5rem 0 0;
+  background: var(--slab);
+  border: 2px solid var(--ink);
+  padding: 0.5rem;
+}
+.map-frame svg { display: block; width: 100%; height: auto; }
+
+.state-shape { fill: #ded9cf; stroke: var(--stripe); stroke-width: 2; }
+.state-label {
+  font-family: "Archivo", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  fill: #a9a293;
+  letter-spacing: 0.16em;
+}
+.gulf-label {
+  font-family: "Archivo", sans-serif;
+  font-size: 17px;
+  font-style: italic;
+  fill: #9aa7a4;
+}
+.pin circle { fill: var(--ink); }
+.pin.is-unconfirmed circle { fill: #8d867a; }
+.pin text {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 15px;
+  fill: var(--slab);
+  text-anchor: middle;
+}
+.pin a:focus-visible circle { stroke: var(--red); stroke-width: 4; }
+.pin-name {
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--ink);
+}
+
+.map-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin: 0.9rem 0.25rem 0.25rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.map-key span { display: flex; align-items: center; gap: 0.45rem; }
+.map-key i {
+  width: 0.72rem; height: 0.72rem; border-radius: 50%;
+  display: inline-block;
+}
+.k-open { background: var(--ink); }
+.k-unc { background: #8d867a; }
+
+/* --- track list -------------------------------------------------------- */
+
+.list { margin-top: 3.5rem; }
+.list h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 3px solid var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  gap: 0 1.1rem;
+  align-items: baseline;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--stripe);
+  text-decoration: none;
+}
+.row:hover { background: var(--slab); }
+.row:hover .row-name { color: var(--red); }
+
+.row-num {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  padding-top: 0.15rem;
+}
+.row-name {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.22rem;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.row-meta {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  margin-top: 0.25rem;
+  display: block;
+}
+.row-dist {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+  text-align: right;
+}
+
+.flag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 0.12rem 0.42rem;
+  margin-left: 0.5rem;
+  vertical-align: 0.12em;
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}
+.flag-unconfirmed { color: var(--red); }
+.flag-new { color: var(--green); }
+
+/* --- track page -------------------------------------------------------- */
+
+.back {
+  display: inline-block;
+  margin: 2.25rem 0 0;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+}
+
+.track-head { padding: 1.5rem 0 0; }
+.track-head h1 { font-size: clamp(2rem, 5.5vw, 3.1rem); max-width: 16ch; }
+.track-where {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  margin: 0.85rem 0 0;
+}
+
+.alert {
+  margin: 2rem 0 0;
+  padding: 1rem 1.15rem;
+  border-left: 5px solid var(--red);
+  background: var(--slab);
+  max-width: var(--measure);
+}
+.alert strong { display: block; margin-bottom: 0.2rem; }
+.alert p { margin: 0; font-size: 0.95rem; }
+
+.facts {
+  margin: 2.5rem 0 0;
+  border-top: 3px solid var(--ink);
+}
+.facts div {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--stripe);
+}
+.facts dt {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.01em;
+}
+.facts dd { margin: 0; }
+
+.section { margin: 3rem 0 0; }
+.section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.9rem;
+}
+.section p { margin: 0 0 1rem; }
+
+.pricing {
+  border-top: 2px solid var(--ink);
+  max-width: 34rem;
+  margin-top: 0.5rem;
+}
+.pricing div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--stripe);
+}
+.pricing dd {
+  margin: 0;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.pricing dt { font-weight: 600; }
+
+/* --- events ------------------------------------------------------------ */
+
+.event-card {
+  display: block;
+  margin-top: 1.25rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--slab);
+  border-left: 5px solid var(--amber);
+  text-decoration: none;
+}
+.event-card:hover { border-left-color: var(--red); }
+.event-card:hover .event-name { color: var(--red); }
+.event-when {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+.event-name {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  display: block;
+  margin: 0.3rem 0 0.35rem;
+}
+.event-where { font-size: 0.92rem; color: var(--ink-soft); }
+
+/* --- correction + footer ----------------------------------------------- */
+
+.correction {
+  margin-top: 4rem;
+  padding: 1.5rem 0 0;
+  border-top: 3px solid var(--ink);
+  max-width: var(--measure);
+}
+.correction h2 { font-size: 1.15rem; margin-bottom: 0.6rem; }
+.correction p { margin: 0; color: var(--ink-soft); }
+
+footer {
+  margin-top: 3.5rem;
+  padding: 1.5rem 0 3rem;
+  border-top: 1px solid var(--stripe);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+footer p { margin: 0 0 0.4rem; max-width: var(--measure); }
+
+/* --- responsive -------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .row { grid-template-columns: 2rem 1fr; }
+  .row-dist { grid-column: 2; text-align: left; margin-top: 0.3rem; }
+  .facts div { grid-template-columns: 1fr; gap: 0.15rem; }
+  .state-label { font-size: 26px; }
+  .pin-name { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* --- answer-first lede + FAQ ------------------------------------------- */
+
+.lede {
+  max-width: 56ch;
+  margin: 1.4rem 0 0;
+  font-size: 1.08rem;
+  color: var(--ink-soft);
+}
+
+.answer {
+  max-width: var(--measure);
+  margin: 1.6rem 0 0;
+  font-size: 1.14rem;
+  line-height: 1.45;
+  padding-left: 1.1rem;
+  border-left: 4px solid var(--amber);
+}
+
+.faq h3 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 1.02rem;
+  letter-spacing: 0;
+  margin: 1.6rem 0 0.35rem;
+}
+.faq h3:first-of-type { margin-top: 0.4rem; }
+.faq p { margin: 0; color: var(--ink-soft); }
+
+.series-note {
+  max-width: var(--measure);
+  margin: 0.9rem 0 0.25rem;
+  font-size: 0.92rem;
+  color: var(--ink-soft);
+}
