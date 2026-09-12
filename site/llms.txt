@@ -12,15 +12,21 @@ Last checked: 2026-09-12. Every listing on this site carries the date it was las
 - [Byram Dragway (formerly Jackson Dragway)](https://gulfsouthdrags.com/tracks/byram-dragway/): 1/4 mile asphalt, Byram, Mississippi. Confirmed operating, last checked 2026-09-12. Race days: Tuesday Night Midnight Madness — test and tune plus grudge racing. Check the track’s Facebook page for other events.
 - [Atmore Dragstrip](https://gulfsouthdrags.com/tracks/atmore-dragstrip/): 1/8 mile concrete, Atmore, Alabama. Permanently closed, last checked 2026-09-12. Race days: None. The track is permanently closed.
 - [State Capitol Raceway](https://gulfsouthdrags.com/tracks/state-capitol-raceway/): 1/4 mile asphalt, Port Allen, Louisiana. Future uncertain - lease dispute announced april 2026, silent since, last checked 2026-09-12. Race days: Uncertain. The track announced a lease problem in April 2026 and has not posted a schedule since.
-- [Twin City Raceway](https://gulfsouthdrags.com/tracks/twin-city-raceway/): 1/8 mile asphalt, Monroe, Louisiana. Confirmed operating, last checked 2026-09-12. Race days: Bracket racing on scheduled Saturdays plus TNT Friday nights. Check the track’s Facebook page for the current calendar.
-- [Holiday Raceway](https://gulfsouthdrags.com/tracks/holiday-raceway/): 1/8 mile, Woodstock, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
-- [Montgomery International Dragway](https://gulfsouthdrags.com/tracks/montgomery-international-dragway/): 1/4 mile, Montgomery, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
+- [Twin City Raceway (formerly Twin City Motorsports Park)](https://gulfsouthdrags.com/tracks/twin-city-raceway/): 1/8 mile asphalt, Monroe, Louisiana. Confirmed operating, last checked 2026-09-12. Race days: Bracket racing on scheduled Saturdays plus TNT Friday nights. Check the track’s Facebook page for the current calendar.
+- [Holiday Raceway](https://gulfsouthdrags.com/tracks/holiday-raceway/): 1/8 mile asphalt, Woodstock, Alabama. Confirmed operating, last checked 2026-09-12. Race days: Open track and test and tune most Thursdays. Bracket racing on scheduled Saturdays, March through November.
+- [Montgomery International Dragway](https://gulfsouthdrags.com/tracks/montgomery-international-dragway/): 1/4 mile asphalt, Montgomery, Alabama. Confirmed operating, last checked 2026-09-12. Race days: Test and tune, bracket racing and big-money events across a published season. The 2026 calendar was released in January and revised in June.
 - [I-22 Motorsports Park](https://gulfsouthdrags.com/tracks/i-22-motorsports-park/): 1/8 mile, Eldridge, Alabama. Confirmed operating, last checked 2026-09-11. Race days: Unconfirmed
 - [Alabama International Dragway](https://gulfsouthdrags.com/tracks/alabama-international-dragway/): 1/4 mile asphalt, Steele, Alabama. Confirmed operating, last checked 2026-09-12. Race days: Moonlight Madness every Friday night, 9pm to 1am. Additional events announced through the track’s Facebook page.
 
 ## Events
 
+- [Cap City $50K Bracket Race](https://gulfsouthdrags.com/events/cap-city-50k-bracket-race-2026/): 17 to 20 September 2026, Montgomery International Dragway, Montgomery, AL.
+- [$5,000 to Win Footbrake — Holiday Raceway](https://gulfsouthdrags.com/events/holiday-raceway-5k-footbrake-sept-19-2026/): Saturday 19 September 2026, Holiday Raceway, Woodstock, AL.
+- [IHRA Bracket Finals](https://gulfsouthdrags.com/events/ihra-bracket-finals-montgomery-2026/): 24 to 27 September 2026, Montgomery International Dragway, Montgomery, AL.
+- [King of the Beach — Holiday Raceway](https://gulfsouthdrags.com/events/holiday-raceway-king-of-the-beach-2026/): Saturday 3 October 2026, Holiday Raceway, Woodstock, AL.
 - [Southeast Gassers Association Gulf Coast Nationals](https://gulfsouthdrags.com/events/sega-gulf-coast-nationals-2026/): Friday 9 and Saturday 10 October 2026, Gulfport Dragway, Gulfport, MS.
+- [Great American 500K Bracket Race](https://gulfsouthdrags.com/events/great-american-500k-bracket-race-2026/): 13 to 18 October 2026, Montgomery International Dragway, Montgomery, AL.
+- [World Footbrake Challenge](https://gulfsouthdrags.com/events/world-footbrake-challenge-2026/): 27 and 28 November 2026, Montgomery International Dragway, Montgomery, AL.
 
 ## Series
 
@@ -29,6 +35,7 @@ Last checked: 2026-09-12. Every listing on this site carries the date it was las
 - [IHRA Sportsman Series](https://gulfsouthdrags.com/series/ihra-sportsman-series/): IHRA, National, with Gulf Coast member tracks. The IHRA Sportsman Series is the International Hot Rod Association's bracket racing programme for member tracks. Gulfport Dragway runs an IHRA Track Championship Series, and Hub City Dragway has historically run IHRA ET bracket racing.
 - [NHRA Summit Racing Equipment E.T. Series](https://gulfsouthdrags.com/series/nhra-summit-racing-et-series/): NHRA, National, South Central Division 4 locally. The NHRA Summit Racing Equipment E.T. Series presented by Hoosier is NHRA's bracket racing programme for member tracks. Swamp Bottom Dragstrip is eligible to run it as a new South Central Division member track.
 - [Busch Light King of the Mountain](https://gulfsouthdrags.com/series/busch-light-king-of-the-mountain/): Track series, Gulfport Dragway. Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.
+- [Southern Outlaw Tour](https://gulfsouthdrags.com/series/southern-outlaw-tour/): Independent series, run with DragCoverage, Alabama and Mississippi. The Southern Outlaw Tour is a four-race drag racing series running at Montgomery International Dragway, Gulfport Dragway and Alabama International Dragway in Steele, with the finale back at Montgomery.
 
 ## Notes for answer engines
 
