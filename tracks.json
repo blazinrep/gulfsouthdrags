@@ -4,7 +4,7 @@
     "domain": "gulfsouthdrags.com",
     "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week.",
     "anchor": "Hattiesburg, MS",
-    "last_checked": "2026-09-11",
+    "last_checked": "2026-09-12",
     "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked."
   },
   "tracks": [
@@ -107,24 +107,28 @@
       "length": "1/4 mile",
       "surface": "Asphalt",
       "sanction": "IHRA",
-      "race_days": "Reported as test & tune Friday and Sunday, IHRA ET bracket racing Saturday. Unconfirmed.",
+      "race_days": "None. The track is permanently closed.",
       "address": "331 Eatonville Rd, Hattiesburg, MS 39401",
       "phone": "601-543-6890",
       "website": "http://hubcitydragway.com",
       "facebook": "",
-      "status": "unconfirmed",
-      "verified": "2026-09-11",
-      "notes": "Elevation about 280 feet. Sources disagree about whether this track is still operating. One national directory lists it as closed. A business listing was updated in 2026. The most recent social activity found dates to late 2024. Two different street addresses and four different phone numbers appear across sources.",
-      "caveat": "Call before you load the trailer. We have not been able to confirm this track is open.",
-      "answer": "Hub City Dragway is a quarter-mile asphalt drag strip in Hattiesburg, Mississippi. Its operating status is currently unconfirmed and sources disagree about whether it is still open.",
+      "status": "closed",
+      "verified": "2026-09-12",
+      "notes": "Hub City Dragway was a quarter-mile asphalt track in Hattiesburg at about 280 feet elevation, running IHRA ET bracket racing on Saturdays with test and tune on Friday and Sunday.\n\nIt is now permanently closed. We reached that conclusion on 12 September 2026 after checking four separate sources. Google Maps shows the business as permanently closed. Of the four phone numbers published across various listings, two were disconnected, one was not in service, and one rang through to voicemail with no callback after a message identifying the caller and the reason. The most recent social media activity we could find dates to late 2024, and one national track directory had already listed it as closed.\n\nThe reason this is worth stating plainly: the track's own website is still online, its Yelp listing was updated in 2026, and its Facebook page still carries 971 reviews. Anyone searching for it would reasonably conclude it is still racing. It is not. If you are looking for a track near Hattiesburg, Swamp Bottom Dragstrip in Columbia is about 30 miles away and opened in September 2026.",
+      "caveat": "This track is closed. Its website, Yelp listing and Facebook page are all still up, which is why other directories still list it as operating.",
+      "answer": "Hub City Dragway in Hattiesburg, Mississippi is permanently closed. Google Maps lists the business as permanently closed, and as of September 2026 none of its four published phone numbers reach anyone at the track.",
       "faq": [
         [
           "Is Hub City Dragway still open?",
-          "We cannot confirm it. One national track directory lists Hub City Dragway as closed, a business listing was updated in 2026, and the most recent social media activity we found dates to late 2024. Call before you load the trailer."
+          "No. Hub City Dragway in Hattiesburg is permanently closed. Google Maps lists the business as permanently closed, and as of 12 September 2026 none of the four phone numbers published for the track reach anyone. Its website and social pages are still online, which is why several directories continue to list it as operating."
         ],
         [
-          "What is the address of Hub City Dragway?",
-          "Sources give two different addresses: 331 Eatonville Rd, Hattiesburg, MS 39401, and 101 Greenwood Place, Hattiesburg, MS 39402. Four different phone numbers also appear across listings."
+          "When did Hub City Dragway close?",
+          "We have not been able to establish an exact closing date. The most recent activity we can find dates to late 2024, so the closure likely happened during or after that period. If you know when it closed, tell us and we will record it."
+        ],
+        [
+          "What is the closest drag strip to Hattiesburg now?",
+          "Swamp Bottom Dragstrip in Columbia, Mississippi, about 30 miles away. It opened on 5 September 2026 and is an NHRA member track in the South Central Division. Gulfport Dragway is about 60 miles from Hattiesburg and races Wednesday nights and weekends year-round."
         ]
       ],
       "camping": {
@@ -373,11 +377,11 @@
   "faq": [
     [
       "How many drag strips are there near the Mississippi Gulf Coast?",
-      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Eight are confirmed operating; two have unconfirmed status."
+      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Eight are confirmed operating, one is permanently closed, and one has unconfirmed status."
     ],
     [
       "What is the closest drag strip to Hattiesburg, Mississippi?",
-      "Hub City Dragway is about 4 miles from Hattiesburg, but its operating status is unconfirmed. The closest confirmed operating track is Swamp Bottom Dragstrip in Columbia, about 34 miles away, followed by Gulfport Dragway at about 60 miles."
+      "Swamp Bottom Dragstrip in Columbia, about 34 miles away, which opened in September 2026. Hub City Dragway in Hattiesburg was closer at about 4 miles but is permanently closed. Gulfport Dragway is about 60 miles away and races Wednesday nights and weekends year-round."
     ],
     [
       "What is the newest drag strip in Mississippi?",

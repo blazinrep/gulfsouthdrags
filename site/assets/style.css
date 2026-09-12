@@ -490,3 +490,12 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
   letter-spacing: -0.01em;
 }
 .startline { mix-blend-mode: screen; }
+
+/* --- closed tracks ------------------------------------------------------ */
+.flag-closed { background: #6b7580; }
+.row.is-closed .row-name { color: var(--ink-soft); text-decoration: line-through; text-decoration-thickness: 2px; }
+.row.is-closed:hover .row-name { color: var(--ink-soft); }
+.pin.is-closed circle { fill: #464f58; stroke: #2a3138; }
+.pin.is-closed text { fill: #9aa6b1; }
+.alert-closed { border-left-color: #6b7580; background: #edeae5; }
+.k-closed { background: #464f58; }
