@@ -9,6 +9,47 @@
   },
   "tracks": [
     {
+      "slug": "hub-city-dragway",
+      "name": "Hub City Dragway",
+      "city": "Hattiesburg",
+      "state": "MS",
+      "lat": 31.29,
+      "lon": -89.36,
+      "miles": 4,
+      "length": "1/4 mile",
+      "surface": "Asphalt",
+      "sanction": "IHRA",
+      "race_days": "None. The track is permanently closed.",
+      "address": "331 Eatonville Rd, Hattiesburg, MS 39401",
+      "phone": "601-543-6890",
+      "website": "http://hubcitydragway.com",
+      "facebook": "",
+      "status": "closed",
+      "verified": "2026-09-12",
+      "notes": "Hub City Dragway was a quarter-mile asphalt track in Hattiesburg at about 280 feet elevation, running IHRA ET bracket racing on Saturdays with test and tune on Friday and Sunday.\n\nIt is now permanently closed. We reached that conclusion on 12 September 2026 after checking four separate sources. Google Maps shows the business as permanently closed. Of the four phone numbers published across various listings, two were disconnected, one was not in service, and one rang through to voicemail with no callback after a message identifying the caller and the reason. The most recent social media activity we could find dates to late 2024, and one national track directory had already listed it as closed.\n\nThe reason this is worth stating plainly: the track's own website is still online, its Yelp listing was updated in 2026, and its Facebook page still carries 971 reviews. Anyone searching for it would reasonably conclude it is still racing. It is not. If you are looking for a track near Hattiesburg, Swamp Bottom Dragstrip in Columbia is about 30 miles away and opened in September 2026.",
+      "caveat": "This track is closed. Its website, Yelp listing and Facebook page are all still up, which is why other directories still list it as operating.",
+      "answer": "Hub City Dragway in Hattiesburg, Mississippi is permanently closed. Google Maps lists the business as permanently closed, and as of September 2026 none of its four published phone numbers reach anyone at the track.",
+      "faq": [
+        [
+          "Is Hub City Dragway still open?",
+          "No. Hub City Dragway in Hattiesburg is permanently closed. Google Maps lists the business as permanently closed, and as of 12 September 2026 none of the four phone numbers published for the track reach anyone. Its website and social pages are still online, which is why several directories continue to list it as operating."
+        ],
+        [
+          "When did Hub City Dragway close?",
+          "We have not been able to establish an exact closing date. The most recent activity we can find dates to late 2024, so the closure likely happened during or after that period. If you know when it closed, tell us and we will record it."
+        ],
+        [
+          "What is the closest drag strip to Hattiesburg now?",
+          "Swamp Bottom Dragstrip in Columbia, Mississippi, about 30 miles away. It opened on 5 September 2026 and is an NHRA member track in the South Central Division. Gulfport Dragway is about 60 miles from Hattiesburg and races Wednesday nights and weekends year-round."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed, as is the track's operating status.",
+        "nearby": []
+      }
+    },
+    {
       "slug": "swamp-bottom-dragstrip",
       "name": "Swamp Bottom Dragstrip",
       "city": "Columbia",
@@ -97,47 +138,6 @@
       }
     },
     {
-      "slug": "hub-city-dragway",
-      "name": "Hub City Dragway",
-      "city": "Hattiesburg",
-      "state": "MS",
-      "lat": 31.29,
-      "lon": -89.36,
-      "miles": 4,
-      "length": "1/4 mile",
-      "surface": "Asphalt",
-      "sanction": "IHRA",
-      "race_days": "None. The track is permanently closed.",
-      "address": "331 Eatonville Rd, Hattiesburg, MS 39401",
-      "phone": "601-543-6890",
-      "website": "http://hubcitydragway.com",
-      "facebook": "",
-      "status": "closed",
-      "verified": "2026-09-12",
-      "notes": "Hub City Dragway was a quarter-mile asphalt track in Hattiesburg at about 280 feet elevation, running IHRA ET bracket racing on Saturdays with test and tune on Friday and Sunday.\n\nIt is now permanently closed. We reached that conclusion on 12 September 2026 after checking four separate sources. Google Maps shows the business as permanently closed. Of the four phone numbers published across various listings, two were disconnected, one was not in service, and one rang through to voicemail with no callback after a message identifying the caller and the reason. The most recent social media activity we could find dates to late 2024, and one national track directory had already listed it as closed.\n\nThe reason this is worth stating plainly: the track's own website is still online, its Yelp listing was updated in 2026, and its Facebook page still carries 971 reviews. Anyone searching for it would reasonably conclude it is still racing. It is not. If you are looking for a track near Hattiesburg, Swamp Bottom Dragstrip in Columbia is about 30 miles away and opened in September 2026.",
-      "caveat": "This track is closed. Its website, Yelp listing and Facebook page are all still up, which is why other directories still list it as operating.",
-      "answer": "Hub City Dragway in Hattiesburg, Mississippi is permanently closed. Google Maps lists the business as permanently closed, and as of September 2026 none of its four published phone numbers reach anyone at the track.",
-      "faq": [
-        [
-          "Is Hub City Dragway still open?",
-          "No. Hub City Dragway in Hattiesburg is permanently closed. Google Maps lists the business as permanently closed, and as of 12 September 2026 none of the four phone numbers published for the track reach anyone. Its website and social pages are still online, which is why several directories continue to list it as operating."
-        ],
-        [
-          "When did Hub City Dragway close?",
-          "We have not been able to establish an exact closing date. The most recent activity we can find dates to late 2024, so the closure likely happened during or after that period. If you know when it closed, tell us and we will record it."
-        ],
-        [
-          "What is the closest drag strip to Hattiesburg now?",
-          "Swamp Bottom Dragstrip in Columbia, Mississippi, about 30 miles away. It opened on 5 September 2026 and is an NHRA member track in the South Central Division. Gulfport Dragway is about 60 miles from Hattiesburg and races Wednesday nights and weekends year-round."
-        ]
-      ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed, as is the track's operating status.",
-        "nearby": []
-      }
-    },
-    {
       "slug": "byram-dragway",
       "name": "Byram Dragway",
       "city": "Byram",
@@ -194,18 +194,27 @@
       "miles": 107,
       "length": "1/8 mile",
       "surface": "Concrete",
-      "sanction": "WDRA member track",
-      "race_days": "Unconfirmed",
-      "address": "Atmore, AL",
-      "phone": "",
-      "website": "",
+      "sanction": "Formerly a WDRA member track",
+      "race_days": "None. The track is permanently closed.",
+      "address": "1301 Racetrack Rd, Atmore, AL 36502",
+      "phone": "251-744-9112",
+      "website": "http://atmoredragstrip.org",
       "facebook": "",
-      "status": "open",
-      "verified": "2026-09-11",
-      "notes": "An eighth-mile track just over the Alabama line, and the nearest Alabama option to the Mississippi coast. Listed as a current WDRA member track. Runs its communications through Facebook rather than a website.",
-      "caveat": "Schedule not published anywhere we could find. Facebook is the only source.",
-      "answer": "Atmore Dragstrip is an eighth-mile concrete drag strip in Atmore, Alabama, and a current WDRA member track. It is the closest Alabama track to the Mississippi Gulf Coast.",
-      "faq": [],
+      "status": "closed",
+      "verified": "2026-09-12",
+      "notes": "An eighth-mile concrete track at 1301 Racetrack Rd in Atmore, just off I-65 near the Alabama and Florida line, and for years the nearest Alabama option to the Mississippi Gulf Coast.\n\nIt is permanently closed. Google lists the business as permanently closed as of 12 September 2026. The listing still carries a 4.5 star rating from 355 reviews and photographs of a packed house, which gives some idea of what the place was when it was running.\n\nIt was still listed as a current member track by a national sanctioning body when we compiled this directory, which is worth knowing if you are relying on those lists to plan a weekend. Member track lists record who joined, not who is still racing.\n\nIf you are looking for an eighth-mile in that part of Alabama, tell us and we will go find one.",
+      "caveat": "This track is closed. It still appears on at least one sanctioning body's member track list, which is how it ended up on this site in the first place.",
+      "answer": "Atmore Dragstrip in Atmore, Alabama is permanently closed. Google lists the business as permanently closed, though it still shows a 4.5 rating from 355 reviews from when it was operating.",
+      "faq": [
+        [
+          "Is Atmore Dragstrip still open?",
+          "No. Atmore Dragstrip in Atmore, Alabama is permanently closed. Google lists the business as permanently closed as of September 2026. It still appears on at least one sanctioning body's member track list, which does not reflect current operating status."
+        ],
+        [
+          "Where was Atmore Dragstrip?",
+          "1301 Racetrack Rd, Atmore, AL 36502, just off Interstate 65 near the Alabama and Florida line."
+        ]
+      ],
       "camping": {
         "status": "unconfirmed",
         "detail": "Unconfirmed.",
@@ -269,34 +278,6 @@
       }
     },
     {
-      "slug": "montgomery-international-dragway",
-      "name": "Montgomery International Dragway",
-      "city": "Montgomery",
-      "state": "AL",
-      "lat": 32.24,
-      "lon": -86.38,
-      "miles": 182,
-      "length": "1/4 mile",
-      "surface": "Unconfirmed",
-      "sanction": "WDRA member track",
-      "race_days": "Unconfirmed",
-      "address": "Montgomery, AL",
-      "phone": "",
-      "website": "",
-      "facebook": "",
-      "status": "open",
-      "verified": "2026-09-11",
-      "notes": "Central Alabama quarter-mile. Listed as a current WDRA member track.",
-      "caveat": "",
-      "answer": "Montgomery International Dragway is a quarter-mile drag strip in Montgomery, Alabama, and a current WDRA member track.",
-      "faq": [],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      }
-    },
-    {
       "slug": "holiday-raceway",
       "name": "Holiday Raceway",
       "city": "Woodstock",
@@ -317,6 +298,34 @@
       "notes": "Eighth-mile track between Birmingham and Tuscaloosa. Listed as a current WDRA member track.",
       "caveat": "",
       "answer": "Holiday Raceway is an eighth-mile drag strip in Woodstock, Alabama, between Birmingham and Tuscaloosa, and a current WDRA member track.",
+      "faq": [],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "montgomery-international-dragway",
+      "name": "Montgomery International Dragway",
+      "city": "Montgomery",
+      "state": "AL",
+      "lat": 32.24,
+      "lon": -86.38,
+      "miles": 182,
+      "length": "1/4 mile",
+      "surface": "Unconfirmed",
+      "sanction": "WDRA member track",
+      "race_days": "Unconfirmed",
+      "address": "Montgomery, AL",
+      "phone": "",
+      "website": "",
+      "facebook": "",
+      "status": "open",
+      "verified": "2026-09-11",
+      "notes": "Central Alabama quarter-mile. Listed as a current WDRA member track.",
+      "caveat": "",
+      "answer": "Montgomery International Dragway is a quarter-mile drag strip in Montgomery, Alabama, and a current WDRA member track.",
       "faq": [],
       "camping": {
         "status": "unconfirmed",
@@ -349,6 +358,43 @@
       "camping": {
         "status": "unconfirmed",
         "detail": "Unconfirmed.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "alabama-international-dragway",
+      "name": "Alabama International Dragway",
+      "city": "Steele",
+      "state": "AL",
+      "lat": 33.94,
+      "lon": -86.2,
+      "miles": 245,
+      "length": "1/4 mile",
+      "surface": "Asphalt",
+      "sanction": "Independent",
+      "race_days": "Moonlight Madness every Friday night, 9pm to 1am. Additional events announced through the track’s Facebook page.",
+      "address": "1245 Crump Road, Steele, AL 35987",
+      "phone": "256-538-RACE (256-538-7223)",
+      "website": "http://alabamainternationaldragway.com",
+      "facebook": "https://www.facebook.com/",
+      "status": "open",
+      "verified": "2026-09-12",
+      "answer": "Alabama International Dragway is a quarter-mile drag strip at 1245 Crump Road in Steele, Alabama, just off I-59 at exit 174. It runs Moonlight Madness every Friday night from 9pm to 1am.",
+      "caveat": "",
+      "notes": "A quarter-mile track in Steele, in northeast Alabama off Interstate 59 at exit 174. It opened in 1994.\n\nBy social following it is the largest track in this directory, with around 49,000 followers and an 88 percent recommendation rate across more than 1,700 reviews. It posts regularly and was confirmed active on 12 September 2026.\n\nThe signature programme is Moonlight Madness, run every Friday night from 9pm to 1am. That late slot is unusual and worth planning around if you are travelling.\n\nThis is the farthest track currently listed here, roughly 245 miles from Hattiesburg. It is included because it draws from a wide area and because racers from north Mississippi make the trip.",
+      "faq": [
+        [
+          "What is Moonlight Madness at Alabama International Dragway?",
+          "A weekly Friday night programme running from 9pm to 1am at the track in Steele, Alabama. Check the track’s Facebook page for the current format and gate prices."
+        ],
+        [
+          "Where is Alabama International Dragway?",
+          "1245 Crump Road, Steele, AL 35987, just off Interstate 59 at exit 174."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed. Worth asking, given the late Friday finish.",
         "nearby": []
       }
     }
@@ -396,7 +442,7 @@
   "faq": [
     [
       "How many drag strips are there near the Mississippi Gulf Coast?",
-      "This directory tracks ten drag strips across Mississippi, Louisiana and Alabama within about 200 miles of Hattiesburg. Nine are confirmed operating and one is permanently closed."
+      "This directory tracks eleven drag strips across Mississippi, Louisiana and Alabama. Nine are confirmed operating and two are permanently closed."
     ],
     [
       "What is the closest drag strip to Hattiesburg, Mississippi?",
