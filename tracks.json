@@ -405,19 +405,32 @@
       "lon": -87.62,
       "miles": 203,
       "length": "1/8 mile",
-      "surface": "Unconfirmed",
-      "sanction": "WDRA member track",
-      "race_days": "Unconfirmed",
-      "address": "Eldridge, AL",
-      "phone": "",
-      "website": "http://i22motorsportspark.com",
-      "facebook": "",
+      "surface": "Asphalt",
+      "sanction": "Independent",
+      "race_days": "Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Announcements go out through Facebook.",
+      "address": "3928 Byler Rd, Eldridge, AL 35554",
+      "phone": "205-495-40__ (confirm)",
+      "website": "http://i-22motorsports.com",
+      "facebook": "https://www.facebook.com/",
       "status": "open",
-      "verified": "2026-09-11",
-      "notes": "Northwest Alabama eighth-mile, the farthest track currently listed here. Included because it draws racers from north Mississippi. Listed as a current WDRA member track.",
+      "verified": "2026-09-12",
+      "notes": "An eighth-mile track in Eldridge, northwest Alabama. Confirmed active on 12 September 2026, with a 98 percent recommendation rate on its social page.\n\nThe track runs Super Pro, Footbrake and Jr Dragster, and puts up serious money for a track its size. Its Labor Day Weekend Bracket Bash in September 2026 paid $7,500 to win in Super Pro on the Saturday, $5,000 on the Sunday and $2,000 on the Friday, with entries of $175, $100 and $50 respectively and buybacks available. Footbrake paid $2,500, $1,500 and $1,000 across the same three days on entries of $80, $75 and $50. Payouts are posted as based on car counts — 75 cars for the Saturday Super Pro purse, 50 for the Sunday.\n\nWeekend passes were offered at $250 single and $380 double for Super Pro, and $140 single and $250 double for Footbrake. Friday gates opened at 3pm with open time runs from 5pm to 7pm and racing to follow.\n\nThe track also runs invitational shootouts. Schedule announcements go out through Facebook rather than a website, so check there before travelling.",
       "caveat": "",
-      "answer": "I-22 Motorsports Park is an eighth-mile drag strip in Eldridge, Alabama, and a current WDRA member track.",
-      "faq": [],
+      "answer": "I-22 Motorsports Park is an eighth-mile drag strip at 3928 Byler Rd in Eldridge, Alabama. It runs bracket racing in Super Pro, Footbrake and Jr Dragster, with multi-day bracket bashes paying up to $7,500 to win.",
+      "faq": [
+        [
+          "What does I-22 Motorsports Park pay to win?",
+          "For its Labor Day Weekend Bracket Bash in September 2026, Super Pro paid $7,500 to win on Saturday, $5,000 on Sunday and $2,000 on Friday. Footbrake paid $2,500, $1,500 and $1,000 across the same three days. Purses are posted as based on car counts."
+        ],
+        [
+          "How much is entry at I-22 Motorsports Park?",
+          "For the 2026 Labor Day Bracket Bash, Super Pro entry was $175 Saturday, $100 Sunday and $50 Friday, with buybacks at $100, $60 and $40. Footbrake entry was $80, $75 and $50 with buybacks at $50, $40 and $30. Weekend passes were $250 single and $380 double for Super Pro."
+        ],
+        [
+          "Where is I-22 Motorsports Park?",
+          "3928 Byler Rd, Eldridge, AL 35554, in northwest Alabama."
+        ]
+      ],
       "camping": {
         "status": "unconfirmed",
         "detail": "Unconfirmed.",
@@ -458,6 +471,54 @@
       "camping": {
         "status": "unconfirmed",
         "detail": "Unconfirmed. Worth asking, given the late Friday finish.",
+        "nearby": []
+      }
+    },
+    {
+      "slug": "baileyton-goodtime-dragstrip",
+      "name": "Baileyton Goodtime Dragstrip",
+      "former_names": [
+        "Baileyton Drag Strip"
+      ],
+      "city": "Baileyton",
+      "state": "AL",
+      "lat": 34.27,
+      "lon": -86.61,
+      "miles": 268,
+      "length": "1/8 mile",
+      "surface": "Asphalt",
+      "sanction": "Independent",
+      "race_days": "Saturday bracket racing. Gates 4pm, time runs 6pm. Announcements go out through the track’s Facebook page.",
+      "address": "1582 Summit Rd, Baileyton, AL 35019",
+      "phone": "256-717-7587",
+      "website": "http://speedwaysonline.com",
+      "facebook": "https://www.facebook.com/",
+      "status": "open",
+      "verified": "2026-09-12",
+      "answer": "Baileyton Goodtime Dragstrip is an eighth-mile track at 1582 Summit Rd in Baileyton, Alabama. It runs Saturday bracket racing with Footbrake paying $5,000 to win, Pro $1,000 and Jr Dragster $300 — guaranteed regardless of car count.",
+      "caveat": "",
+      "notes": "An eighth-mile track in Baileyton, north Alabama, known locally as the Goodtime. Confirmed active on 12 September 2026, with a 96 percent recommendation rate across 381 reviews.\n\nThe thing that sets Baileyton apart is that it guarantees its purses regardless of car count. Most tracks post payouts as based on a minimum number of entries, so a thin turnout means a smaller cheque. Baileyton pays what it advertises either way, in both classes.\n\nAs advertised for the September 2026 Saturday programme, Footbrake paid $5,000 to win with $500 to the runner-up, $100 to the semis and $50 to the quarter-finals, on a $100 single or $160 double entry with a $50 buyback. Pro paid $1,000 to win with $300 runner-up on a $60 entry and $40 buyback. Jr Dragster paid $300 to win with $50 runner-up on a $40 entry and $20 buyback.\n\nGates open at 4pm with time runs from 6pm. Spectators $10, children 12 and under free.\n\nThe track is listed on the WDRA member track list as Baileyton Drag Strip. Schedule announcements go out through Facebook.",
+      "faq": [
+        [
+          "Does Baileyton Goodtime Dragstrip guarantee its purses?",
+          "Yes. The track advertises its payouts as guaranteed no matter the car count, in both Footbrake and Pro. That is unusual — most tracks post purses as based on a minimum number of entries, so a small turnout reduces the payout."
+        ],
+        [
+          "What does Baileyton pay to win?",
+          "As advertised in September 2026, Footbrake paid $5,000 to win with $500 runner-up, $100 to semis and $50 to quarter-finals. Pro paid $1,000 to win with $300 runner-up. Jr Dragster paid $300 to win with $50 runner-up."
+        ],
+        [
+          "What time do gates open at Baileyton Goodtime Dragstrip?",
+          "Gates open at 4pm with time runs from 6pm. Spectators are $10 and children 12 and under are free."
+        ],
+        [
+          "Where is Baileyton Goodtime Dragstrip?",
+          "1582 Summit Rd, Baileyton, AL 35019, in north Alabama."
+        ]
+      ],
+      "camping": {
+        "status": "unconfirmed",
+        "detail": "Unconfirmed.",
         "nearby": []
       }
     }
@@ -661,7 +722,7 @@
   "faq": [
     [
       "How many drag strips are there near the Mississippi Gulf Coast?",
-      "This directory tracks eleven drag strips across Mississippi, Louisiana and Alabama. Nine are confirmed operating and two are permanently closed."
+      "This directory tracks twelve drag strips across Mississippi, Louisiana and Alabama. Nine are confirmed operating, two are permanently closed, and one has an uncertain future."
     ],
     [
       "What is the closest drag strip to Hattiesburg, Mississippi?",
