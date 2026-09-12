@@ -179,6 +179,7 @@ def build_map(tracks):
         x, y = px(t["lon"], t["lat"])
         cls = {"unconfirmed": "pin is-unconfirmed",
                "likely-closed": "pin is-likely",
+               "at-risk": "pin is-likely",
                "closed": "pin is-closed"}.get(t["status"], "pin")
         parts.append(
             f'<g class="{cls}"><a href="/tracks/{t["slug"]}/">'
@@ -287,6 +288,8 @@ def build_index(data):
             flag = '<span class="flag flag-closed">Closed</span>'
         elif t["status"] == "likely-closed":
             flag = '<span class="flag flag-likely">Likely closed</span>'
+        elif t["status"] == "at-risk":
+            flag = '<span class="flag flag-likely">Future uncertain</span>'
         elif t["status"] == "unconfirmed":
             flag = '<span class="flag flag-unconfirmed">Unconfirmed</span>'
         elif t["slug"] == "swamp-bottom-dragstrip":
@@ -336,14 +339,14 @@ def build_index(data):
 
     open_n = sum(1 for t in tracks if t["status"] == "open")
     closed_n = sum(1 for t in tracks if t["status"] == "closed")
-    likely_n = sum(1 for t in tracks if t["status"] == "likely-closed")
+    likely_n = sum(1 for t in tracks if t["status"] in ("likely-closed", "at-risk"))
     unc_n = len(tracks) - open_n - closed_n - likely_n
     tally_bits = [f'<li><b>{len(tracks)}</b> tracks</li>',
                   f'<li><b>{open_n}</b> confirmed open</li>']
     if closed_n:
         tally_bits.append(f'<li><b>{closed_n}</b> closed</li>')
     if likely_n:
-        tally_bits.append(f'<li><b>{likely_n}</b> doubtful</li>')
+        tally_bits.append(f'<li><b>{likely_n}</b> uncertain</li>')
     if unc_n:
         tally_bits.append(f'<li><b>{unc_n}</b> still chasing</li>')
     tally_bits.append(f'<li><b>{len(data["series"])}</b> series</li>')
@@ -366,7 +369,7 @@ def build_index(data):
 <div class="map-key">
 <span><i class="k-open"></i> Confirmed operating</span>
 <span><i class="k-unc"></i> Status unconfirmed</span>
-<span><i class="k-likely"></i> May no longer operate</span>
+<span><i class="k-likely"></i> Uncertain or at risk</span>
 <span><i class="k-closed"></i> Permanently closed</span>
 <span class="map-anchor">Distances measured from {e(s['anchor'])}</span>
 </div>
@@ -425,7 +428,8 @@ def build_track(t, events):
     alert = ""
     if t.get("caveat"):
         heading = {"closed": "Permanently closed",
-                   "likely-closed": "May no longer be operating"}.get(
+                   "likely-closed": "May no longer be operating",
+                   "at-risk": "Future uncertain"}.get(
                        t["status"], "Check before you go")
         alert = (f'<div class="alert alert-{t["status"]}"><strong>{heading}</strong>'
                  f'<p>{e(t["caveat"])}</p></div>')
@@ -472,7 +476,7 @@ def build_track(t, events):
          (f'{t["name"]} was confirmed operating as of {nice_date(t["verified"])}.'
           if t["status"] == "open" else
           f'No. {t["name"]} is permanently closed.' if t["status"] == "closed" else
-          f'Unclear. {t.get("caveat") or ""}' if t["status"] == "likely-closed" else
+          f'Unclear. {t.get("caveat") or ""}' if t["status"] in ("likely-closed", "at-risk") else
           f'Unconfirmed. {t.get("caveat") or "We have not been able to verify this track is operating."}')),
         (f'What days does {t["name"]} race?', t["race_days"]),
         (f'Where is {t["name"]}?',
@@ -724,6 +728,7 @@ def main():
         status = {"open": "confirmed operating",
                   "closed": "PERMANENTLY CLOSED",
                   "likely-closed": "LIKELY CLOSED - phone disconnected, no activity ~2 years",
+                  "at-risk": "FUTURE UNCERTAIN - lease dispute announced April 2026, silent since",
                   "unconfirmed": "status unconfirmed"}[t["status"]]
         surf = "" if t["surface"].lower().startswith("unconf") else f' {t["surface"].lower()}'
         alt = f' (formerly {", ".join(t["former_names"])})' if t.get("former_names") else ""

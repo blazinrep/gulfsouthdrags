@@ -507,3 +507,4 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
 .k-likely { background: #8a6a2e; }
 
 .formerly { color: var(--ink-soft); font-size: 0.85em; }
+.alert-at-risk { border-left-color: #9a6216; background: #f7f0e2; }
