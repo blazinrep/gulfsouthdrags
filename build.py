@@ -86,6 +86,17 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "%3Ccircle cx='13' cy='40' r='4.5' fill='%23f26b1d'/%3E"
            "%3Ccircle cx='13' cy='55' r='4.5' fill='%2322b14c'/%3E%3C/svg%3E")
 
+GA_MEASUREMENT_ID = "G-0HMR00W28S"
+
+GA_SNIPPET = f"""<script async src="https://www.googletagmanager.com/gtag/js?id={GA_MEASUREMENT_ID}"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){{dataLayer.push(arguments);}}
+gtag('js', new Date());
+gtag('config', '{GA_MEASUREMENT_ID}');
+</script>"""
+
+
 def _treeline_path(seed, y_base, y_min, y_max, step, jag, width=1200):
     """Jagged conifer-cluster skyline, closed down to y_base. Deterministic per seed."""
     rnd = random.Random(seed)
@@ -310,6 +321,7 @@ def head(title, desc, path, schemas, modified):
 <html lang="en">
 <head>
 <meta charset="utf-8">
+{GA_SNIPPET}
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
