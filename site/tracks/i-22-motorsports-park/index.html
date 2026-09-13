@@ -21,7 +21,887 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<style>/* Gulf South Drags
+   Palette taken from the track itself: guardrail blue, banner orange,
+   sunset gold, asphalt, staging-tree green. Dark masthead and hero so it
+   hits hard; light paper below so the data stays readable. */
+
+:root {
+  --asphalt: #14181c;
+  --asphalt-2: #1e252c;
+  --slate: #313b45;
+  --blue: #1668c4;
+  --blue-deep: #0b4a91;
+  --blue-glow: #4a9de8;
+  --orange: #f26b1d;
+  --orange-hot: #ff7f2e;
+  --gold: #ffb020;
+  --green: #22b14c;
+  --paper: #faf8f5;
+  --paper-2: #f0ece5;
+  --ink: #12171b;
+  --ink-soft: #5a656e;
+  --rule: #d8d2c8;
+
+  --measure: 64ch;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Barlow", system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.55;
+  font-synthesis-weight: none;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: "Barlow Condensed", "Barlow", system-ui, sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  line-height: 0.92;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+a { color: var(--blue-deep); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--orange); }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+.wrap { width: min(100% - 2.5rem, 1080px); margin-inline: auto; }
+.prose { max-width: var(--measure); }
+
+/* full-bleed dark band behind a width-constrained section */
+.bleed { position: relative; }
+.bleed::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--asphalt);
+  z-index: -1;
+}
+
+/* --- masthead ---------------------------------------------------------- */
+
+.masthead {
+  position: relative;
+  padding: 1.1rem 0 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.masthead::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: var(--asphalt);
+  z-index: -2;
+}
+
+.wordmark {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: -0.035em;
+  color: var(--paper);
+  text-decoration: none;
+}
+.wordmark:hover { color: var(--gold); }
+.wordmark .bulb {
+  display: inline-block;
+  width: 0.55em; height: 0.55em;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(255, 176, 32, 0.22);
+  margin-right: 0.5em;
+  vertical-align: 0.03em;
+}
+
+.stamp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  color: #8ea0ae;
+}
+
+/* --- hero -------------------------------------------------------------- */
+
+.hero { padding: 3rem 0 3rem; color: var(--paper); }
+.hero h1 {
+  font-size: clamp(2.2rem, 7vw, 4.4rem);
+  max-width: 17ch;
+  color: #fff;
+  text-wrap: balance;
+}
+.hero .lede {
+  max-width: 54ch;
+  margin: 1.5rem 0 0;
+  font-size: 1.06rem;
+  color: #b9c6d1;
+}
+.hero .lede strong { color: var(--gold); font-weight: 600; }
+
+/* --- map --------------------------------------------------------------- */
+
+.map-frame {
+  margin: 2.5rem 0 0;
+  background: var(--asphalt-2);
+  border: 1px solid #2c353e;
+  border-radius: 4px;
+  padding: 0.6rem;
+}
+.map-frame svg { display: block; width: 100%; height: auto; }
+
+.state-shape { fill: #27303a; stroke: #3d4954; stroke-width: 2; }
+.state-label {
+  font-family: "Barlow", sans-serif;
+  font-size: 20px; font-weight: 700;
+  fill: #55646f; letter-spacing: 0.18em;
+}
+.gulf-label {
+  font-family: "Barlow", sans-serif;
+  font-size: 17px; font-style: italic; fill: #3f5768;
+}
+.pin circle { fill: var(--orange); stroke: #7a2f06; stroke-width: 1; }
+.pin.is-unconfirmed circle { fill: #5b6874; stroke: #3d4954; }
+.pin text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 15px; fill: #fff; text-anchor: middle;
+}
+.pin a:focus-visible circle { stroke: var(--gold); stroke-width: 4; }
+.pin a:hover circle { fill: var(--gold); }
+
+.map-key {
+  display: flex; flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
+  margin: 0.9rem 0.25rem 0;
+  font-size: 0.82rem;
+  color: #8ea0ae;
+}
+.map-key span { display: flex; align-items: center; gap: 0.45rem; }
+.map-key i { width: 0.72rem; height: 0.72rem; border-radius: 50%; display: inline-block; }
+.k-open { background: var(--orange); }
+.k-unc { background: #5b6874; }
+
+/* --- track list -------------------------------------------------------- */
+
+.list { margin-top: 3.25rem; }
+.list h2 {
+  font-size: 1.6rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 4px solid var(--blue);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 3rem 1fr auto;
+  gap: 0 1rem;
+  align-items: baseline;
+  padding: 1.15rem 0.6rem;
+  margin-inline: -0.6rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+}
+.row:hover { background: var(--paper-2); }
+.row:hover .row-name { color: var(--blue); }
+
+.row-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--blue);
+  width: 1.85rem; height: 1.85rem;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  align-self: start;
+}
+.row-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  display: block;
+}
+.row-meta { font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.28rem; display: block; }
+.row-dist {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem; color: var(--ink-soft);
+  white-space: nowrap; text-align: right;
+}
+
+.flag {
+  display: inline-block;
+  font-size: 0.64rem; font-weight: 700;
+  letter-spacing: 0.03em; text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+  margin-left: 0.55rem;
+  vertical-align: 0.16em;
+  border-radius: 3px;
+  color: #fff;
+  font-family: "Barlow", sans-serif;
+}
+.flag-unconfirmed { background: #b23b1a; }
+.flag-new { background: var(--green); }
+
+/* --- track / series / event pages -------------------------------------- */
+
+.back {
+  display: inline-block;
+  margin: 1.6rem 0 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue-deep);
+  text-decoration: none;
+}
+.back:hover { color: var(--orange); }
+
+.track-head { padding: 1.4rem 0 0; }
+.track-head h1 { font-size: clamp(2.1rem, 6vw, 3.4rem); max-width: 16ch; text-wrap: balance; }
+.track-where { font-size: 1.05rem; color: var(--ink-soft); margin: 0.8rem 0 0; }
+
+.answer {
+  max-width: var(--measure);
+  margin: 1.7rem 0 0;
+  font-size: 1.16rem;
+  line-height: 1.45;
+  padding: 0.9rem 1.2rem;
+  background: var(--paper-2);
+  border-left: 5px solid var(--orange);
+  border-radius: 0 4px 4px 0;
+}
+
+.alert {
+  margin: 1.6rem 0 0;
+  padding: 1rem 1.2rem;
+  border-left: 5px solid #b23b1a;
+  background: #fdf0ea;
+  border-radius: 0 4px 4px 0;
+  max-width: var(--measure);
+}
+.alert strong { display: block; margin-bottom: 0.2rem; }
+.alert p { margin: 0; font-size: 0.95rem; }
+
+.facts { margin: 2.4rem 0 0; border-top: 4px solid var(--blue); }
+.facts div {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 0 1.5rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.facts dt {
+  font-size: 0.76rem; font-weight: 700;
+  color: var(--ink-soft); letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.facts dd { margin: 0; }
+
+.section { margin: 2.9rem 0 0; }
+.section h2 { font-size: 1.35rem; margin-bottom: 0.85rem; }
+.section p { margin: 0 0 1rem; }
+.section ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.section li { margin-bottom: 0.4rem; }
+
+.pricing { border-top: 4px solid var(--blue); max-width: 34rem; margin-top: 0.5rem; }
+.pricing div {
+  display: flex; justify-content: space-between; gap: 1rem;
+  padding: 0.65rem 0; border-bottom: 1px solid var(--rule);
+}
+.pricing dt { font-weight: 600; }
+.pricing dd { margin: 0; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+
+/* --- event + series cards ---------------------------------------------- */
+
+.event-card {
+  display: block;
+  margin-top: 1rem;
+  padding: 1.25rem 1.4rem;
+  background: var(--paper-2);
+  border-left: 5px solid var(--orange);
+  border-radius: 0 4px 4px 0;
+  text-decoration: none;
+  color: var(--ink);
+}
+.event-card:hover { background: #e8e2d8; border-left-color: var(--blue); }
+.event-card:hover .event-name { color: var(--blue); }
+.event-when {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.76rem; color: var(--ink-soft);
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.event-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.22rem; letter-spacing: -0.025em;
+  display: block; margin: 0.3rem 0 0.3rem;
+}
+.event-where { font-size: 0.92rem; color: var(--ink-soft); }
+
+.series-note { max-width: var(--measure); margin: 0.9rem 0 0.25rem; font-size: 0.92rem; color: var(--ink-soft); }
+
+/* --- FAQ --------------------------------------------------------------- */
+
+.faq h3 {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700; font-size: 1.03rem;
+  letter-spacing: 0; margin: 1.6rem 0 0.35rem;
+  color: var(--blue-deep);
+}
+.faq h3:first-of-type { margin-top: 0.4rem; }
+.faq p { margin: 0; color: var(--ink-soft); }
+
+/* --- correction + footer ----------------------------------------------- */
+
+.correction {
+  margin-top: 3.5rem;
+  padding: 1.6rem 1.5rem;
+  background: var(--paper-2);
+  border-top: 4px solid var(--gold);
+  border-radius: 0 0 4px 4px;
+  max-width: var(--measure);
+}
+.correction h2 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.correction p { margin: 0; color: var(--ink-soft); }
+
+footer {
+  position: relative;
+  margin-top: 4rem;
+  padding: 2rem 0 3rem;
+  font-size: 0.82rem;
+  color: #8ea0ae;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 100vw; transform: translateX(-50%);
+  background: var(--asphalt);
+  z-index: -2;
+}
+footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
+
+/* --- responsive -------------------------------------------------------- */
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .row { grid-template-columns: 2.4rem 1fr; }
+  .row-dist { grid-column: 2; text-align: left; margin-top: 0.3rem; }
+  .facts div { grid-template-columns: 1fr; gap: 0.15rem; }
+  .state-label { font-size: 26px; }
+  .hero { padding: 2.2rem 0 2.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+
+/* --- brand mark -------------------------------------------------------- */
+
+.wordmark {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-style: normal;
+}
+.wordmark .tree {
+  height: 3rem; width: auto; flex: none;
+  filter: drop-shadow(0 0 7px rgba(255, 176, 32, 0.55));
+}
+.wm-text {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800; font-style: italic;
+  text-transform: uppercase;
+  font-size: 1.72rem; line-height: 0.92;
+  letter-spacing: 0.005em;
+  display: flex; flex-direction: column;
+}
+.wm-text em { font-style: italic; color: var(--gold); }
+
+/* --- hero strip -------------------------------------------------------- */
+
+.hero .strip {
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  bottom: 0; width: 100vw; height: 100%;
+  z-index: -1; opacity: 1;
+  mask-image: linear-gradient(to top, #000 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, #000 55%, transparent 100%);
+}
+.hero h1 {
+  text-shadow: 0 3px 28px rgba(0,0,0,0.85);
+  font-size: clamp(2.3rem, 6.4vw, 4.7rem);
+  max-width: 15ch;
+}
+.hero .lede { text-shadow: 0 2px 14px rgba(0,0,0,0.9); }
+
+/* --- angled section tabs ----------------------------------------------- */
+
+.list h2, .section h2 {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  padding: 0.3rem 1.4rem 0.3rem 0.9rem;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 0.8rem) 100%, 0 100%);
+  border-bottom: 0;
+}
+.list h2 { margin-bottom: 0; }
+.list { border-top: 0; }
+.list > h2 + a, .list > h2 + p { border-top: 4px solid var(--blue); }
+.section h2 { background: var(--asphalt); }
+.correction h2, .faq h3 {
+  background: none; color: inherit; padding: 0; clip-path: none; display: block;
+}
+.correction h2 { color: var(--ink); }
+
+.row-name, .event-name { font-style: italic; text-transform: none; }
+.row-num { font-style: italic; }
+
+
+.hero { padding: 4.5rem 0 5.5rem; }
+.mapband { padding: 0 0 2.75rem; }
+.map-frame { margin-top: 0; }
+.map-anchor { color: #6f8091; }
+@media (max-width: 620px) {
+  .hero { padding: 2.6rem 0 3.4rem; }
+  .wm-text { font-size: 1.25rem; }
+  .wordmark .tree { height: 2.4rem; }
+}
+
+/* Scrim over the track art so headline and lede stay readable */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 100vw; transform: translateX(-50%);
+  background: linear-gradient(100deg,
+    rgba(16,20,24,0.95) 0%, rgba(16,20,24,0.88) 34%,
+    rgba(16,20,24,0.30) 56%, rgba(16,20,24,0.0) 76%);
+  z-index: -1;
+  pointer-events: none;
+}
+@media (max-width: 760px) {
+  .hero::after {
+    background: linear-gradient(to bottom,
+      rgba(16,20,24,0.92) 0%, rgba(16,20,24,0.88) 55%,
+      rgba(16,20,24,0.70) 80%, rgba(16,20,24,0.45) 100%);
+  }
+}
+
+/* --- hero tally -------------------------------------------------------- */
+.tally {
+  list-style: none;
+  display: flex; flex-wrap: wrap;
+  gap: 0 2.2rem;
+  margin: 1.9rem 0 0; padding: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.92rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #8ea0ae;
+}
+.tally b {
+  font-size: 1.75rem; font-weight: 800; font-style: italic;
+  color: var(--gold); display: block; line-height: 1;
+  letter-spacing: -0.01em;
+}
+.startline { mix-blend-mode: screen; }
+
+/* --- closed tracks ------------------------------------------------------ */
+.flag-closed { background: #6b7580; }
+.row.is-closed .row-name { color: var(--ink-soft); text-decoration: line-through; text-decoration-thickness: 2px; }
+.row.is-closed:hover .row-name { color: var(--ink-soft); }
+.pin.is-closed circle { fill: #464f58; stroke: #2a3138; }
+.pin.is-closed text { fill: #9aa6b1; }
+.alert-closed { border-left-color: #6b7580; background: #edeae5; }
+.k-closed { background: #464f58; }
+
+/* --- likely-closed ------------------------------------------------------ */
+.flag-likely { background: #9a6216; }
+.pin.is-likely circle { fill: #8a6a2e; stroke: #4a3a19; }
+.alert-likely-closed { border-left-color: #9a6216; background: #f7f0e2; }
+.k-likely { background: #8a6a2e; }
+
+.formerly { color: var(--ink-soft); font-size: 0.85em; }
+.alert-at-risk { border-left-color: #9a6216; background: #f7f0e2; }
+
+/* ===================================================================
+   V2 homepage — Know Before You Tow
+   =================================================================== */
+
+/* --- masthead nav -------------------------------------------------- */
+.masthead { gap: 0.6rem 1.25rem; }
+.topnav {
+  display: flex;
+  gap: 1.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  flex: 1 1 auto;
+}
+.topnav::-webkit-scrollbar { display: none; }
+.topnav a { color: #bdc8d1; white-space: nowrap; text-decoration: none; }
+.topnav a:hover { color: var(--gold); }
+
+/* --- hero: eyebrow / CTAs / proof row -------------------------------- */
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+.hero h1 { margin: 0.6rem 0 0; }
+.lede-sub {
+  max-width: 50ch;
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  color: #9aa8b3;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.9);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.7rem 1.15rem;
+  background: var(--orange);
+  color: #fff;
+  border: 1px solid var(--orange);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.98rem;
+  text-decoration: none;
+}
+.btn:hover { background: var(--gold); border-color: var(--gold); color: var(--asphalt); }
+.btn-ghost { background: transparent; border-color: #6d7f8c; color: #fff; }
+.btn-ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--asphalt); }
+
+/* --- problem strip ---------------------------------------------------- */
+.problem-strip {
+  position: relative;
+  color: #cbd5db;
+  border-top: 1px solid #2c353e;
+  border-bottom: 1px solid #2c353e;
+}
+.problem-strip p { margin: 0; padding: 0.95rem 0; font-size: 0.94rem; max-width: 74ch; }
+.problem-strip strong { color: var(--gold); }
+
+/* --- generic section shell -------------------------------------------- */
+.section { padding: 3.4rem 0; margin: 0; }
+.section.alt { background: var(--paper-2); }
+.section.dark { background: var(--asphalt); color: #fff; }
+.section.dark .section-sub { color: #9aa8b3; }
+.section-head { margin-bottom: 1.6rem; }
+.section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.section.dark h2 { background: var(--gold); color: var(--asphalt); }
+.section-sub { max-width: 62ch; color: var(--ink-soft); margin: 0.6rem 0 0; font-size: 0.96rem; }
+
+/* --- race next: CSS-only tab toggle ------------------------------------ */
+.race-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.race-toggle label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0.5rem 1.4rem 0;
+  border: 1px solid var(--rule);
+  background: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+.race-toggle .panel-drag, .race-toggle .panel-all { display: none; }
+#tab-drag:checked ~ .panel-drag { display: grid; }
+#tab-all:checked ~ .panel-all { display: grid; }
+#tab-drag:checked ~ label[for="tab-drag"],
+#tab-all:checked ~ label[for="tab-all"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.race-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.race-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--blue);
+  padding: 1.15rem 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.race-card:hover { border-top-color: var(--orange); }
+.race-card:hover .race-name { color: var(--blue); }
+.race-date {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--blue-deep);
+  letter-spacing: -0.01em;
+}
+.race-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin: 0.35rem 0 0.15rem;
+}
+.race-when {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.race-track { font-size: 0.92rem; color: var(--ink-soft); margin-top: 0.3rem; }
+.race-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+.chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: var(--paper-2);
+  padding: 0.25rem 0.5rem;
+}
+.chip-major { background: var(--gold); color: var(--asphalt); }
+.race-verified {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  color: #4c7d59;
+}
+.race-cta {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+}
+.race-empty { color: var(--ink-soft); grid-column: 1 / -1; }
+
+/* --- swamp bottom feature ------------------------------------------------ */
+.feature {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  background: var(--asphalt);
+  color: #fff;
+  border: 1px solid #2d353d;
+}
+.feature-copy { padding: 2.1rem; }
+.feature-tag {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 0.3rem 0.55rem;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.feature-copy h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 0.8rem 0 0.2rem;
+}
+.feature-where { color: #9aa8b3; margin: 0 0 0.9rem; font-size: 0.95rem; }
+.feature-copy p { color: #c3ced7; max-width: 56ch; }
+.feature-copy .btn { margin-top: 0.7rem; }
+.feature-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #1c232a;
+}
+.stat {
+  padding: 1.4rem;
+  border-left: 1px solid #333e47;
+  border-bottom: 1px solid #333e47;
+}
+.stat b {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--gold);
+}
+.stat span { font-size: 0.74rem; color: #9caab5; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* --- find a track: filters + card grid ----------------------------------- */
+.track-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.3rem; }
+.filter-btn {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  background: #fff;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+.filter-btn.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.track-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 4px solid var(--blue); }
+.track-card {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  gap: 0 0.9rem;
+  padding: 1rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  align-items: start;
+}
+.track-grid .track-card:nth-child(odd) { border-right: 1px solid var(--rule); }
+.track-card:hover { background: var(--paper-2); }
+.track-card:hover .track-name { color: var(--blue); }
+.track-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--blue);
+  width: 1.85rem; height: 1.85rem;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.track-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.track-meta, .track-next, .track-verified { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.2rem; }
+.track-next { color: var(--blue-deep); }
+.track-verified { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.72rem; color: #4c7d59; }
+.track-dist {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+.track-dist small { display: block; }
+.track-empty { color: var(--ink-soft); margin-top: 1rem; }
+
+.watchlist {
+  margin-top: 1.3rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #9a6216;
+  background: #f7f0e2;
+  font-size: 0.9rem;
+}
+.watchlist ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.watchlist li { margin-bottom: 0.3rem; }
+.archive-pointer { font-size: 0.86rem; color: var(--ink-soft); margin-top: 1rem; }
+
+/* --- racer intel board ----------------------------------------------- */
+.intel-board {
+  max-width: 46rem;
+  background: #0d1114;
+  border: 1px solid #303941;
+  padding: 0.4rem 1rem;
+}
+.intel-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 0.7rem 0.1rem;
+  border-bottom: 1px solid #252d33;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+}
+.intel-row:last-child { border-bottom: 0; }
+.intel-row span { color: #80909c; text-transform: uppercase; letter-spacing: 0.03em; }
+.intel-row b { font-weight: 600; text-align: right; }
+.intel-row b.good { color: #45d66d; }
+.intel-row b.unknown { color: var(--gold); }
+.intel-note { max-width: 46rem; color: #9aa8b3; font-size: 0.86rem; margin-top: 1rem; }
+
+/* --- worth the tow reuses .race-grid / .race-card ---------------------- */
+
+/* --- follow a series --------------------------------------------------- */
+.series-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.series-card {
+  display: block;
+  border: 1px solid var(--rule);
+  background: #fff;
+  padding: 1.1rem 1.2rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.series-card:hover { border-color: var(--blue); }
+.series-name {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.series-region { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.15rem; }
+.series-next { display: block; font-size: 0.82rem; color: var(--blue-deep); margin-top: 0.5rem; }
+
+/* --- accuracy / report an update ---------------------------------------- */
+.correction-lg {
+  padding: 2rem 1.8rem;
+  border-top: 5px solid var(--gold);
+  max-width: none;
+}
+.correction-lg h2 { font-size: 1.7rem; }
+.correction-lg p { max-width: 70ch; font-size: 1rem; }
+
+/* --- track archive -------------------------------------------------- */
+.archive-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 4px solid #6b7580; }
+.archive-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+.archive-grid .archive-row:nth-child(odd) { border-right: 1px solid var(--rule); }
+.archive-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.archive-meta { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.15rem; }
+
+/* --- V2 responsive ------------------------------------------------------ */
+@media (max-width: 820px) {
+  .race-grid, .series-grid { grid-template-columns: 1fr; }
+  .feature, .track-grid, .archive-grid { grid-template-columns: 1fr; }
+  .track-grid .track-card:nth-child(odd), .archive-grid .archive-row:nth-child(odd) { border-right: 0; }
+  .feature-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .section { padding: 2.4rem 0; }
+  .intel-row { grid-template-columns: 1fr; }
+  .intel-row b { text-align: left; }
+  .correction-lg { padding: 1.5rem 1.2rem; }
+}
+</style>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 64'%3E%3Crect width='26' height='64' fill='%2314181c'/%3E%3Ccircle cx='6' cy='7' r='3' fill='%23ffb020'/%3E%3Ccircle cx='20' cy='7' r='3' fill='%23ffb020'/%3E%3Ccircle cx='13' cy='26' r='4.5' fill='%23f26b1d'/%3E%3Ccircle cx='13' cy='40' r='4.5' fill='%23f26b1d'/%3E%3Ccircle cx='13' cy='55' r='4.5' fill='%2322b14c'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#14181c">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportsActivityLocation","@id":"https://gulfsouthdrags.com/tracks/i-22-motorsports-park/#track","name":"I-22 Motorsports Park","url":"https://gulfsouthdrags.com/tracks/i-22-motorsports-park/","description":"I-22 Motorsports Park is an eighth-mile drag strip at 3928 Byler Rd in Eldridge, Alabama. It runs bracket racing in Super Pro, Footbrake and Jr Dragster, with multi-day bracket bashes paying up to $7,500 to win.","address":{"@type":"PostalAddress","streetAddress":"3928 Byler Rd, Eldridge, AL 35554","addressLocality":"Eldridge","addressRegion":"AL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":33.92,"longitude":-87.62},"additionalType":"https://en.wikipedia.org/wiki/Dragstrip","telephone":"205-495-40__ (confirm)","sameAs":["http://i-22motorsports.com","https://www.facebook.com/"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Tracks","item":"https://gulfsouthdrags.com/"},{"@type":"ListItem","position":2,"name":"I-22 Motorsports Park","item":"https://gulfsouthdrags.com/tracks/i-22-motorsports-park/"}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is I-22 Motorsports Park open?","acceptedAnswer":{"@type":"Answer","text":"I-22 Motorsports Park was confirmed operating as of 12 September 2026."}},{"@type":"Question","name":"What days does I-22 Motorsports Park race?","acceptedAnswer":{"@type":"Answer","text":"Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Announcements go out through Facebook."}},{"@type":"Question","name":"Can you camp or park an RV at I-22 Motorsports Park?","acceptedAnswer":{"@type":"Answer","text":"Unconfirmed."}},{"@type":"Question","name":"What does I-22 Motorsports Park pay to win?","acceptedAnswer":{"@type":"Answer","text":"For its Labor Day Weekend Bracket Bash in September 2026, Super Pro paid $7,500 to win on Saturday, $5,000 on Sunday and $2,000 on Friday. Footbrake paid $2,500, $1,500 and $1,000 across the same three days. Purses are posted as based on car counts."}},{"@type":"Question","name":"How much is entry at I-22 Motorsports Park?","acceptedAnswer":{"@type":"Answer","text":"For the 2026 Labor Day Bracket Bash, Super Pro entry was $175 Saturday, $100 Sunday and $50 Friday, with buybacks at $100, $60 and $40. Footbrake entry was $80, $75 and $50 with buybacks at $50, $40 and $30. Weekend passes were $250 single and $380 double for Super Pro."}},{"@type":"Question","name":"Where is I-22 Motorsports Park?","acceptedAnswer":{"@type":"Answer","text":"3928 Byler Rd, Eldridge, AL 35554, in northwest Alabama."}}]}</script>
@@ -37,7 +917,13 @@
 <circle cx="13" cy="48" r="4.7" fill="#ff8b23"/>
 <circle cx="13" cy="59" r="4.9" fill="#3ceb72"/>
 </svg><span class="wm-text">Gulf South<em>Drags</em></span></a>
-<span class="stamp">Last checked <time datetime="2026-09-12">12 September 2026</time></span>
+<nav class="topnav">
+<a href="/#race-next">Race next</a>
+<a href="/#tracks">Tracks</a>
+<a href="/#intel">Racer intel</a>
+<a href="/#series-list">Series</a>
+</nav>
+<span class="stamp">Checked <time datetime="2026-09-12">12 September 2026</time></span>
 </header>
 
 <main class="wrap">

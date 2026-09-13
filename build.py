@@ -12,6 +12,7 @@ without parsing the page.
 import html
 import json
 import os
+import random
 import shutil
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -84,49 +85,143 @@ FAVICON = ("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox
            "%3Ccircle cx='13' cy='40' r='4.5' fill='%23f26b1d'/%3E"
            "%3Ccircle cx='13' cy='55' r='4.5' fill='%2322b14c'/%3E%3C/svg%3E")
 
-TRACK_SVG = """<svg class="strip" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+def _treeline_path(seed, y_base, y_min, y_max, step, jag, width=1200):
+    """Jagged conifer-cluster skyline, closed down to y_base. Deterministic per seed."""
+    rnd = random.Random(seed)
+    pts = []
+    x = -30.0
+    y = rnd.uniform(y_min, y_max)
+    while x <= width + 30:
+        pts.append((round(x, 1), round(y, 1)))
+        x += rnd.uniform(step * 0.55, step * 1.35)
+        y += rnd.uniform(-jag, jag)
+        y = max(y_min, min(y_max, y))
+    pts.append((width + 30, pts[-1][1]))
+    d = f"M-30,{y_base} L" + " L".join(f"{px},{py}" for px, py in pts) + f" L{width+30},{y_base} Z"
+    return d
+
+
+def _pine_tree(x, base_y, height, seed, fill="#0d1712"):
+    """One close conifer silhouette: short trunk + three tapering tiers."""
+    rnd = random.Random(seed)
+    w = height * rnd.uniform(0.46, 0.6)
+    trunk_h = height * 0.12
+    top = base_y - trunk_h
+    tier_h = (height - trunk_h) / 2.6
+    parts = [f'<rect x="{x - 1.5:.1f}" y="{top:.1f}" width="3" height="{trunk_h + 2:.1f}" fill="#0a100c"/>']
+    for i in range(3):
+        tw = w * (1 - i * 0.24)
+        y0 = top - i * tier_h * 0.68
+        y1 = y0 - tier_h
+        parts.append(f'<path d="M{x:.1f},{y1:.1f} L{x - tw / 2:.1f},{y0:.1f} '
+                      f'L{x + tw / 2:.1f},{y0:.1f} Z" fill="{fill}"/>')
+    return "".join(parts)
+
+
+def _near_pines(specs):
+    return "".join(_pine_tree(x, 258, h, seed, fill) for x, h, seed, fill in specs)
+
+
+def _build_track_svg():
+    far = _treeline_path(11, 258, 236, 252, 46, 6)
+    mid = _treeline_path(22, 258, 200, 246, 58, 20)
+
+    # Taller, closer silhouettes clustered toward the edges so the strip and
+    # Christmas tree stay the clear focal point down the middle.
+    near_specs = [
+        (18, 118, 101, "#0a120d"), (55, 84, 102, "#0d1712"), (95, 138, 103, "#0a120d"),
+        (140, 96, 104, "#0d1712"), (610, 70, 105, "#0e1913"), (1080, 92, 106, "#0d1712"),
+        (1122, 130, 107, "#0a120d"), (1160, 100, 108, "#0e1913"), (1195, 150, 109, "#0a120d"),
+    ]
+    near = _near_pines(near_specs)
+
+    return f"""<svg class="strip" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 <defs>
 <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#101a2c"/><stop offset="0.45" stop-color="#3b4a63"/>
-<stop offset="0.78" stop-color="#c97b3a"/><stop offset="1" stop-color="#ffc44d"/>
+<stop offset="0" stop-color="#0a1122"/><stop offset="0.34" stop-color="#233350"/>
+<stop offset="0.58" stop-color="#6a4a58"/><stop offset="0.8" stop-color="#c97b3a"/>
+<stop offset="1" stop-color="#ffc44d"/>
 </linearGradient>
+<radialGradient id="horizonGlow" cx="0.685" cy="1" r="0.62">
+<stop offset="0" stop-color="#ffcf7a" stop-opacity="0.55"/>
+<stop offset="0.5" stop-color="#e08a3d" stop-opacity="0.18"/>
+<stop offset="1" stop-color="#e08a3d" stop-opacity="0"/>
+</radialGradient>
 <linearGradient id="tar" x1="0" y1="0" x2="0" y2="1">
 <stop offset="0" stop-color="#2b3239"/><stop offset="1" stop-color="#0f1316"/>
 </linearGradient>
 <linearGradient id="lane" x1="0" y1="0" x2="0" y2="1">
 <stop offset="0" stop-color="#454e57"/><stop offset="1" stop-color="#1b2126"/>
 </linearGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#fff" stop-opacity="0.09"/>
+<stop offset="0.4" stop-color="#fff" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="treeGlow" cx="0.5" cy="0.5" r="0.5">
+<stop offset="0" stop-color="#ffd76b" stop-opacity="0.85"/>
+<stop offset="1" stop-color="#ffd76b" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="vignette" cx="0.5" cy="0.42" r="0.75">
+<stop offset="0.55" stop-color="#000" stop-opacity="0"/>
+<stop offset="1" stop-color="#000" stop-opacity="0.38"/>
+</radialGradient>
 <filter id="glow" x="-160%" y="-160%" width="420%" height="420%">
 <feGaussianBlur stdDeviation="5" result="b"/>
 <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
 </filter>
+<filter id="softBlur" x="-80%" y="-80%" width="260%" height="260%">
+<feGaussianBlur stdDeviation="10"/>
+</filter>
+<filter id="grain">
+<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+<feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.05 0"/>
+</filter>
 </defs>
-<rect width="1200" height="250" fill="url(#sky)"/>
-<path d="M-40,262 L-37,256 L-39,256 L-36,252 L-37,252 L-32,248 L-28,252 L-29,252 L-26,256 L-28,256 L-25,262 Z M-19,262 L-16,254 L-18,254 L-15,248 L-16,248 L-13,242 L-9,248 L-10,248 L-7,254 L-9,254 L-6,262 Z M5,262 L7,254 L6,254 L8,249 L7,248 L10,243 L13,248 L13,249 L15,254 L13,254 L16,262 Z M34,262 L36,257 L35,256 L37,253 L36,253 L39,249 L42,253 L41,253 L43,256 L42,257 L44,262 Z M57,262 L59,253 L58,252 L60,245 L59,245 L62,238 L65,245 L65,245 L67,252 L65,253 L68,262 Z M74,262 L78,254 L76,253 L79,247 L78,247 L83,241 L88,247 L86,247 L90,253 L88,254 L92,262 Z M102,262 L106,255 L104,254 L107,250 L106,249 L111,244 L116,249 L115,250 L118,254 L116,255 L120,262 Z M121,262 L123,252 L122,252 L124,245 L123,245 L127,238 L131,245 L130,245 L132,252 L131,252 L133,262 Z M145,262 L148,257 L147,256 L149,252 L148,252 L152,248 L155,252 L154,252 L157,256 L155,257 L158,262 Z M177,262 L180,256 L179,256 L181,252 L180,252 L184,247 L189,252 L188,252 L190,256 L189,256 L192,262 Z M198,262 L201,255 L200,255 L202,250 L201,250 L205,245 L209,250 L208,250 L211,255 L209,255 L212,262 Z M215,262 L217,257 L216,256 L218,253 L217,253 L221,249 L224,253 L223,253 L225,256 L224,257 L226,262 Z M246,262 L249,255 L248,254 L250,249 L249,249 L253,244 L256,249 L255,249 L258,254 L256,255 L259,262 Z M268,262 L271,255 L270,254 L272,249 L271,249 L275,244 L278,249 L277,249 L279,254 L278,255 L281,262 Z M295,262 L297,253 L296,253 L298,247 L297,246 L301,240 L304,246 L303,247 L306,253 L304,253 L307,262 Z M313,262 L316,254 L314,254 L317,248 L316,248 L321,243 L326,248 L325,248 L328,254 L326,254 L330,262 Z M338,262 L341,256 L339,255 L343,251 L341,250 L347,246 L352,250 L350,251 L354,255 L352,256 L355,262 Z M353,262 L357,255 L355,254 L358,250 L357,249 L361,244 L366,249 L365,250 L368,254 L366,255 L369,262 Z M380,262 L382,254 L381,254 L383,249 L382,248 L385,243 L388,248 L387,249 L389,254 L388,254 L390,262 Z M408,262 L411,253 L410,252 L413,246 L411,246 L416,239 L420,246 L419,246 L422,252 L420,253 L423,262 Z M434,262 L437,255 L436,255 L439,251 L437,250 L442,246 L446,250 L445,251 L448,255 L446,255 L450,262 Z M454,262 L457,254 L456,253 L458,248 L457,248 L461,242 L465,248 L464,248 L467,253 L465,254 L468,262 Z M481,262 L484,252 L483,251 L485,244 L484,244 L488,237 L492,244 L491,244 L494,251 L492,252 L495,262 Z M501,262 L504,257 L503,256 L506,253 L504,253 L509,249 L513,253 L512,253 L515,256 L513,257 L517,262 Z M524,262 L527,252 L525,251 L529,244 L527,243 L532,236 L537,243 L536,244 L539,251 L537,252 L540,262 Z M543,262 L546,255 L544,255 L547,250 L546,249 L550,245 L555,249 L554,250 L556,255 L555,255 L558,262 Z M564,262 L567,255 L565,254 L568,249 L567,249 L570,244 L573,249 L572,249 L575,254 L573,255 L576,262 Z M587,262 L590,257 L588,256 L591,253 L590,253 L595,249 L599,253 L598,253 L601,256 L599,257 L603,262 Z M612,262 L614,256 L613,255 L615,251 L614,251 L618,247 L622,251 L621,251 L623,255 L622,256 L625,262 Z M645,262 L648,257 L646,256 L649,253 L648,253 L652,249 L656,253 L655,253 L657,256 L656,257 L659,262 Z M662,262 L666,252 L664,252 L667,245 L666,244 L671,238 L675,244 L674,245 L677,252 L675,252 L679,262 Z M692,262 L695,256 L693,255 L696,251 L695,251 L698,246 L702,251 L701,251 L704,255 L702,256 L705,262 Z M706,262 L710,252 L708,252 L711,245 L710,244 L715,238 L720,244 L718,245 L722,252 L720,252 L724,262 Z M729,262 L732,256 L730,256 L733,252 L732,252 L735,248 L739,252 L738,252 L740,256 L739,256 L741,262 Z M752,262 L755,254 L754,254 L757,249 L755,248 L760,243 L764,248 L763,249 L765,254 L764,254 L767,262 Z M777,262 L779,257 L778,257 L781,254 L779,253 L783,250 L787,253 L786,254 L789,257 L787,257 L790,262 Z M799,262 L803,254 L801,253 L804,248 L803,248 L808,242 L813,248 L812,248 L815,253 L813,254 L817,262 Z M829,262 L832,254 L830,254 L833,249 L832,248 L836,243 L840,248 L839,249 L842,254 L840,254 L843,262 Z M851,262 L854,257 L852,257 L856,253 L854,253 L859,249 L864,253 L863,253 L866,257 L864,257 L868,262 Z M876,262 L879,252 L877,252 L880,245 L879,245 L884,238 L889,245 L887,245 L890,252 L889,252 L892,262 Z M896,262 L899,255 L897,254 L900,250 L899,249 L902,244 L905,249 L904,250 L906,254 L905,255 L907,262 Z M923,262 L925,257 L924,256 L926,253 L925,253 L929,249 L932,253 L931,253 L933,256 L932,257 L934,262 Z M940,262 L942,256 L941,256 L943,252 L942,252 L946,248 L950,252 L949,252 L951,256 L950,256 L952,262 Z M961,262 L964,257 L963,257 L965,254 L964,253 L967,250 L970,253 L969,254 L972,257 L970,257 L973,262 Z M986,262 L988,255 L987,255 L989,250 L988,250 L991,245 L994,250 L993,250 L995,255 L994,255 L996,262 Z M1020,262 L1022,254 L1021,253 L1023,248 L1022,247 L1025,241 L1028,247 L1028,248 L1030,253 L1028,254 L1031,262 Z M1033,262 L1036,255 L1035,255 L1037,250 L1036,250 L1040,245 L1044,250 L1043,250 L1045,255 L1044,255 L1046,262 Z M1052,262 L1056,252 L1054,252 L1058,245 L1056,245 L1061,238 L1067,245 L1065,245 L1069,252 L1067,252 L1070,262 Z M1084,262 L1086,254 L1085,254 L1087,249 L1086,248 L1090,243 L1093,248 L1092,249 L1094,254 L1093,254 L1095,262 Z M1102,262 L1104,255 L1103,255 L1105,250 L1104,250 L1108,245 L1111,250 L1110,250 L1113,255 L1111,255 L1114,262 Z M1136,262 L1138,256 L1137,256 L1139,252 L1138,252 L1141,248 L1144,252 L1143,252 L1145,256 L1144,256 L1146,262 Z M1161,262 L1163,254 L1162,254 L1164,248 L1163,248 L1166,243 L1170,248 L1169,248 L1171,254 L1170,254 L1172,262 Z M1177,262 L1180,257 L1178,257 L1181,253 L1180,253 L1184,250 L1188,253 L1187,253 L1190,257 L1188,257 L1191,262 Z M1206,262 L1209,252 L1207,252 L1210,245 L1209,245 L1213,238 L1218,245 L1217,245 L1220,252 L1218,252 L1221,262 Z" fill="#101619"/><path d="M-37,264 L-33,247 L-35,246 L-31,235 L-33,234 L-26,223 L-20,234 L-21,235 L-17,246 L-20,247 L-15,264 Z M-7,264 L-1,251 L-4,250 L1,241 L-1,240 L7,231 L15,240 L13,241 L18,250 L15,251 L21,264 Z M30,264 L34,253 L32,252 L35,245 L34,244 L39,237 L45,244 L43,245 L47,252 L45,253 L49,264 Z M66,264 L70,252 L68,251 L72,242 L70,242 L76,233 L81,242 L80,242 L84,251 L81,252 L85,264 Z M100,264 L104,252 L102,251 L105,242 L104,242 L110,233 L115,242 L114,242 L117,251 L115,252 L119,264 Z M148,264 L152,253 L150,252 L153,244 L152,244 L157,236 L162,244 L160,244 L164,252 L162,253 L165,264 Z M175,264 L180,250 L177,249 L181,239 L180,238 L186,228 L192,238 L190,239 L194,249 L192,250 L196,264 Z M224,264 L229,247 L226,246 L230,235 L229,234 L235,222 L241,234 L239,235 L243,246 L241,247 L245,264 Z M245,264 L250,248 L248,247 L252,236 L250,235 L258,224 L265,235 L263,236 L268,247 L265,248 L270,264 Z M291,264 L296,249 L293,247 L297,237 L296,236 L301,226 L307,236 L305,237 L309,247 L307,249 L311,264 Z M337,264 L342,247 L340,246 L344,234 L342,234 L350,222 L357,234 L355,234 L360,246 L357,247 L363,264 Z M376,264 L381,252 L379,251 L383,244 L381,243 L388,235 L394,243 L392,244 L397,251 L394,252 L399,264 Z M410,264 L414,247 L412,246 L416,235 L414,234 L420,222 L426,234 L424,235 L428,246 L426,247 L430,264 Z M435,264 L439,249 L437,248 L440,238 L439,237 L444,226 L449,237 L447,238 L451,248 L449,249 L452,264 Z M483,264 L487,254 L485,254 L489,247 L487,247 L493,240 L500,247 L498,247 L502,254 L500,254 L504,264 Z M515,264 L519,253 L517,253 L521,245 L519,245 L525,237 L532,245 L530,245 L534,253 L532,253 L536,264 Z M550,264 L555,251 L552,250 L557,242 L555,241 L563,232 L571,241 L569,242 L574,250 L571,251 L576,264 Z M599,264 L603,247 L601,245 L604,233 L603,233 L608,220 L614,233 L612,233 L616,245 L614,247 L618,264 Z M618,264 L621,251 L620,250 L623,241 L621,241 L627,232 L632,241 L630,241 L633,250 L632,251 L635,264 Z M670,264 L674,252 L672,251 L675,243 L674,243 L679,234 L684,243 L682,243 L686,251 L684,252 L687,264 Z M694,264 L699,251 L696,250 L701,241 L699,240 L706,231 L714,240 L712,241 L716,250 L714,251 L719,264 Z M735,264 L740,252 L738,251 L742,243 L740,242 L747,233 L754,242 L752,243 L757,251 L754,252 L759,264 Z M763,264 L768,253 L765,252 L770,244 L768,243 L775,235 L782,243 L780,244 L785,252 L782,253 L787,264 Z M820,264 L823,254 L821,253 L824,246 L823,245 L828,238 L833,245 L831,246 L835,253 L833,254 L836,264 Z M851,264 L855,249 L853,247 L856,237 L855,236 L860,226 L864,236 L863,237 L866,247 L864,249 L868,264 Z M887,264 L890,252 L888,251 L891,243 L890,242 L895,234 L900,242 L899,243 L902,251 L900,252 L904,264 Z M915,264 L920,252 L918,251 L922,243 L920,242 L926,234 L932,242 L931,243 L935,251 L932,252 L937,264 Z M949,264 L954,249 L951,248 L956,238 L954,237 L962,226 L970,237 L968,238 L973,248 L970,249 L975,264 Z M1000,264 L1005,254 L1002,253 L1007,246 L1005,246 L1012,239 L1019,246 L1017,246 L1021,253 L1019,254 L1024,264 Z M1037,264 L1042,254 L1039,254 L1043,247 L1042,247 L1048,240 L1054,247 L1052,247 L1056,254 L1054,254 L1058,264 Z M1072,264 L1077,246 L1074,245 L1079,233 L1077,232 L1085,219 L1093,232 L1091,233 L1096,245 L1093,246 L1099,264 Z M1107,264 L1112,249 L1109,248 L1115,238 L1112,237 L1120,227 L1128,237 L1126,238 L1131,248 L1128,249 L1134,264 Z M1141,264 L1145,250 L1143,249 L1146,239 L1145,239 L1149,229 L1154,239 L1153,239 L1156,249 L1154,250 L1158,264 Z M1190,264 L1194,249 L1192,247 L1195,237 L1194,236 L1199,226 L1204,236 L1203,237 L1206,247 L1204,249 L1208,264 Z" fill="#0a0e11"/><rect y="258" width="1200" height="8" fill="#0a0e11"/>
+<rect width="1200" height="258" fill="url(#sky)"/>
+<rect width="1200" height="258" fill="url(#horizonGlow)"/>
+<path d="{far}" fill="#4a5c6e" opacity="0.5"/>
+<path d="{mid}" fill="#131f19" opacity="0.94"/>
+{near}
+<g fill="#ffb020" opacity="0.8">
+<rect x="700" y="243" width="3" height="16"/><rect x="693" y="240" width="13" height="3"/>
+<circle cx="699.5" cy="240" r="4" opacity="0.5" filter="url(#softBlur)"/>
+<rect x="947" y="243" width="3" height="16"/><rect x="940" y="240" width="13" height="3"/>
+<circle cx="946.5" cy="240" r="4" opacity="0.5" filter="url(#softBlur)"/>
+</g>
+<rect y="256" width="1200" height="3" fill="#0a0e11" opacity="0.6"/>
 <rect y="258" width="1200" height="202" fill="url(#tar)"/>
+<rect y="258" width="1200" height="202" filter="url(#grain)" opacity="0.5"/>
+<path d="M776 258 L764 258 L110 460 L206 460 Z" fill="#38492f" opacity="0.55"/>
+<path d="M864 258 L876 258 L1530 460 L1434 460 Z" fill="#38492f" opacity="0.55"/>
 <path d="M820 258 L868 258 L1434 460 L842 460 Z" fill="url(#lane)"/>
 <path d="M820 258 L772 258 L206 460 L798 460 Z" fill="url(#lane)" opacity="0.82"/>
-<path d="M819 258 L821 258 L842 460 L798 460 Z" fill="#9aa6b1" opacity="0.26"/>
+<path d="M812 258 L800 258 L286 460 L742 460 Z" fill="#0a0e11" opacity="0.24"/>
+<path d="M828 258 L840 258 L1354 460 L898 460 Z" fill="#0a0e11" opacity="0.24"/>
+<path d="M819 258 L821 258 L842 460 L798 460 Z" fill="#9aa6b1" opacity="0.28"/>
 <path d="M772 258 L768 258 L154 460 L206 460 Z" fill="#1668c4"/>
 <path d="M868 258 L872 258 L1486 460 L1434 460 Z" fill="#1668c4"/>
-<g fill="#ffb020" opacity="0.8">
-<rect x="700" y="243" width="3" height="16"/><rect x="693" y="240" width="17" height="3"/>
-<rect x="947" y="243" width="3" height="16"/><rect x="940" y="240" width="17" height="3"/>
-<rect x="1058" y="236" width="3" height="23"/><rect x="1050" y="233" width="19" height="3"/>
-</g>
+<path d="M771.5 258 L768.5 258 L155 458 L205 458" fill="none" stroke="#7fb3ea" stroke-width="1.4" opacity="0.55"/>
+<path d="M868.5 258 L871.5 258 L1485 458 L1435 458" fill="none" stroke="#7fb3ea" stroke-width="1.4" opacity="0.55"/>
+<path d="M820 258 L868 258 L1434 460 L842 460 Z" fill="url(#sheen)"/>
+<ellipse cx="820" cy="330" rx="140" ry="60" fill="#ff9426" opacity="0.1" filter="url(#softBlur)"/>
 <g class="start-tree">
+<ellipse cx="820" cy="215" rx="70" ry="90" fill="url(#treeGlow)" opacity="0.5"/>
 <rect x="813" y="168" width="14" height="96" rx="2" fill="#0a0e11"/>
-<circle cx="820" cy="262" r="26" fill="#3ceb72" opacity="0.14"/>
+<circle cx="820" cy="262" r="30" fill="#3ceb72" opacity="0.16"/>
 <g filter="url(#glow)">
-<circle cx="806" cy="180" r="4.2" fill="#ffd76b"/><circle cx="834" cy="180" r="4.2" fill="#ffd76b"/>
-<circle cx="806" cy="192" r="4.2" fill="#ffd76b"/><circle cx="834" cy="192" r="4.2" fill="#ffd76b"/>
-<circle cx="820" cy="209" r="7.4" fill="#ff9426"/>
-<circle cx="820" cy="227" r="7.4" fill="#ff9426"/>
-<circle cx="820" cy="245" r="7.4" fill="#ff9426"/>
-<circle cx="820" cy="262" r="8.2" fill="#3ceb72"/>
+<circle cx="806" cy="180" r="4.6" fill="#ffe08a"/><circle cx="834" cy="180" r="4.6" fill="#ffe08a"/>
+<circle cx="806" cy="192" r="4.6" fill="#ffe08a"/><circle cx="834" cy="192" r="4.6" fill="#ffe08a"/>
+<circle cx="820" cy="209" r="7.8" fill="#ff9426"/>
+<circle cx="820" cy="227" r="7.8" fill="#ff9426"/>
+<circle cx="820" cy="245" r="7.8" fill="#ff9426"/>
+<circle cx="820" cy="262" r="8.6" fill="#3ceb72"/>
 </g>
 </g>
+<rect width="1200" height="460" fill="url(#vignette)"/>
 </svg>"""
+
+
+TRACK_SVG = _build_track_svg()
 
 STATE_NAME = {"MS": "Mississippi", "LA": "Louisiana", "AL": "Alabama"}
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
@@ -217,7 +312,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<style>{CSS}</style>
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -225,7 +320,13 @@ def head(title, desc, path, schemas, modified):
 <body>
 <header class="masthead wrap">
 <a class="wordmark" href="/">{TREE_SVG}<span class="wm-text">Gulf South<em>Drags</em></span></a>
-<span class="stamp">Last checked <time datetime="{SITE['last_checked']}">{nice_date(SITE['last_checked'])}</time></span>
+<nav class="topnav">
+<a href="/#race-next">Race next</a>
+<a href="/#tracks">Tracks</a>
+<a href="/#intel">Racer intel</a>
+<a href="/#series-list">Series</a>
+</nav>
+<span class="stamp">Checked <time datetime="{SITE['last_checked']}">{nice_date(SITE['last_checked'])}</time></span>
 </header>
 """
 
@@ -277,48 +378,160 @@ def track_schema(t):
     return obj
 
 
+def short_date(iso):
+    y, m, d = iso.split("-")
+    return f"{MONTHS[int(m) - 1][:3].upper()} {int(d)}"
+
+
+def upcoming_events(events, today):
+    """Events on or after today, earliest first."""
+    return sorted((x for x in events if x.get("start_iso", "") >= today),
+                  key=lambda x: x["start_iso"])
+
+
+def length_keys(length):
+    low = (length or "").lower()
+    keys = []
+    if "1/8" in low:
+        keys.append("eighth")
+    if "1/4" in low:
+        keys.append("quarter")
+    return keys
+
+
+def sanction_keys(sanction):
+    up = (sanction or "").upper()
+    keys = [k for k in ("NHRA", "IHRA") if k in up]
+    return [k.lower() for k in keys]
+
+
+def event_card(x, cta="View race intel"):
+    tag = "Road course" if x.get("event_type") == "road-course" else "Drag racing"
+    chips = f'<span class="chip">{e(tag)}</span>'
+    if x.get("major_event"):
+        chips += '<span class="chip chip-major">Major race</span>'
+    return (
+        f'<a class="race-card" href="/events/{x["slug"]}/">'
+        f'<span class="race-date">{short_date(x["start_iso"])}</span>'
+        f'<span class="race-name">{e(x["name"])}</span>'
+        f'<span class="race-when">{e(x["dates"])}</span>'
+        f'<span class="race-track">{e(x["track_name"])} &mdash; {e(x["city"])}, {e(x["state"])}</span>'
+        f'<span class="race-chips">{chips}</span>'
+        f'<span class="race-verified">Verified {nice_date(x["verified"])}</span>'
+        f'<span class="race-cta">{e(cta)} &rarr;</span></a>')
+
+
+def track_card(t, i, next_ev):
+    flag = '<span class="flag flag-new">New</span>' if t["slug"] == "swamp-bottom-dragstrip" else ""
+    sanction_short = t["sanction"].split("—")[0].strip() if t.get("sanction") else ""
+    meta = e(t["length"])
+    if sanction_short and sanction_short.lower() != "unconfirmed":
+        meta += f' &middot; {e(sanction_short)}'
+    next_html = ""
+    if next_ev:
+        next_html = (f'<span class="track-next">Next: {e(next_ev["dates"])} '
+                     f'&mdash; {e(next_ev["name"])}</span>')
+    data_length = " ".join(length_keys(t["length"])) or "na"
+    data_sanction = " ".join(sanction_keys(t.get("sanction"))) or "independent"
+    return (
+        f'<a class="track-card" href="/tracks/{t["slug"]}/" '
+        f'data-state="{e(t["state"])}" data-length="{data_length}" data-sanction="{data_sanction}">'
+        f'<span class="track-num">{i}</span>'
+        f'<span class="track-body">'
+        f'<span class="track-name">{e(t["name"])}{flag}</span>'
+        f'<span class="track-meta">{meta} &middot; {e(t["city"])}, {e(t["state"])}</span>'
+        f'{next_html}'
+        f'<span class="track-verified">Verified {nice_date(t["verified"])}</span>'
+        f'</span>'
+        f'<span class="track-dist">{t["miles"]} mi<small>from Hattiesburg</small></span></a>')
+
+
 def build_index(data):
     tracks, events, s = data["tracks"], data["events"], data["site"]
     base = f'https://{s["domain"]}'
+    today = s["last_checked"]
 
-    rows = []
-    for i, t in enumerate(tracks, 1):
-        flag = ""
-        if t["status"] == "closed":
-            flag = '<span class="flag flag-closed">Closed</span>'
-        elif t["status"] == "likely-closed":
-            flag = '<span class="flag flag-likely">Likely closed</span>'
-        elif t["status"] == "at-risk":
-            flag = '<span class="flag flag-likely">Future uncertain</span>'
-        elif t["status"] == "unconfirmed":
-            flag = '<span class="flag flag-unconfirmed">Unconfirmed</span>'
-        elif t["slug"] == "swamp-bottom-dragstrip":
-            flag = '<span class="flag flag-new">New</span>'
-        meta = f'{e(t["length"])} &middot; {e(t["city"])}, {e(t["state"])}'
-        if t.get("former_names"):
-            meta += f' &middot; formerly {e(t["former_names"][0])}'
-        if t["sanction"] and t["sanction"] != "Unconfirmed":
-            meta += f' &middot; {e(t["sanction"].split("—")[0].strip())}'
-        rows.append(
-            f'<a class="row{" is-closed" if t["status"]=="closed" else ""}" href="/tracks/{t["slug"]}/">'
-            f'<span class="row-num">{i}</span>'
-            f'<span><span class="row-name">{e(t["name"])}{flag}</span>'
-            f'<span class="row-meta">{meta}</span></span>'
-            f'<span class="row-dist">{t["miles"]} mi</span></a>')
+    open_tracks = [t for t in tracks if t["status"] == "open"]
+    archive_tracks = [t for t in tracks if t["status"] == "closed"]
+    watch_tracks = [t for t in tracks if t["status"] in ("at-risk", "likely-closed", "unconfirmed")]
 
-    ev = "".join(
-        f'<a class="event-card" href="/events/{x["slug"]}/">'
-        f'<span class="event-when">{e(x["dates"])}</span>'
-        f'<span class="event-name">{e(x["name"])}</span>'
-        f'<span class="event-where">{e(x["track_name"])} &mdash; {e(x["city"])}, {e(x["state"])}</span></a>'
-        for x in events)
+    all_upcoming = upcoming_events(events, today)
+    drag_upcoming = [x for x in all_upcoming if x.get("event_type", "drag") == "drag"]
+    major_upcoming = [x for x in all_upcoming if x.get("major_event")]
 
-    ser = "".join(
-        f'<a class="event-card" href="/series/{x["slug"]}/">'
-        f'<span class="event-when">{e(x["sanction"])}</span>'
-        f'<span class="event-name">{e(x["name"])}</span>'
-        f'<span class="event-where">{e(x["region"])}</span></a>'
-        for x in data["series"])
+    def next_for(slug):
+        return next((x for x in all_upcoming if x["track_slug"] == slug), None)
+
+    # --- Race next: default drag racing, all-events tab available, zero JS ---
+    drag_cards = "".join(event_card(x) for x in drag_upcoming[:3])
+    if not drag_cards:
+        drag_cards = '<p class="race-empty">No drag-racing events confirmed right now. Check back — we look every week.</p>'
+    all_cards = "".join(event_card(x) for x in all_upcoming[:6])
+    if not all_cards:
+        all_cards = '<p class="race-empty">Nothing confirmed on the calendar right now.</p>'
+
+    # --- Swamp Bottom feature, sourced from its own track record ---
+    swamp = next((t for t in tracks if t["slug"] == "swamp-bottom-dragstrip"), None)
+    swamp_html = ""
+    if swamp:
+        sanction_short = swamp["sanction"].split("—")[0].strip()
+        swamp_html = f"""
+<section class="section alt wrap bleed" id="new-track">
+<div class="feature">
+<div class="feature-copy">
+<span class="feature-tag">New track</span>
+<h2>{e(swamp['name'])}</h2>
+<p class="feature-where">{e(swamp['city'])}, {e(STATE_NAME.get(swamp['state'], swamp['state']))}</p>
+<p>{e(swamp['answer'])}</p>
+<p>Current updates are being posted through the track&rsquo;s Facebook page while its race schedule continues to develop. That page is the current primary source — call ahead too{f', {e(swamp["phone"])},' if swamp.get('phone') else ''} to confirm before you tow.</p>
+<a class="btn" href="/tracks/{swamp['slug']}/">Swamp Bottom racer guide &rarr;</a>
+</div>
+<div class="feature-stats">
+<div class="stat"><b>{e(swamp['length'])}</b><span>{e(swamp['surface'])}</span></div>
+<div class="stat"><b>{e(sanction_short)}</b><span>Division 4</span></div>
+<div class="stat"><b>Open</b><span>Confirmed</span></div>
+<div class="stat"><b>{nice_date(swamp['verified'])}</b><span>Last checked</span></div>
+</div>
+</div>
+</section>
+"""
+
+    # --- Find a track: confirmed-open grid with working state/length/sanction filters ---
+    track_cards = "".join(
+        track_card(t, i, next_for(t["slug"])) for i, t in enumerate(open_tracks, 1))
+    watch_html = ""
+    if watch_tracks:
+        items = "".join(
+            f'<li><a href="/tracks/{t["slug"]}/">{e(t["name"])}</a> — '
+            f'{e(t.get("caveat") or "Future uncertain.")}</li>' for t in watch_tracks)
+        watch_html = (f'<div class="watchlist"><strong>Watch list — future uncertain, '
+                      f'not mixed into the list above:</strong><ul>{items}</ul></div>')
+    archive_note = ""
+    if archive_tracks:
+        links = " &middot; ".join(f'<a href="/tracks/{t["slug"]}/">{e(t["name"])}</a>' for t in archive_tracks)
+        archive_note = f'<p class="archive-pointer">Permanently closed, kept for the record: {links}. Full list in <a href="#archive">Track Archive</a> below.</p>'
+
+    # --- Racer intel: what we already verify vs. what's still unknown, from real counts ---
+    phone_n = sum(1 for t in tracks if t.get("phone"))
+    camp_confirmed_n = sum(1 for t in tracks if (t.get("camping") or {}).get("status") == "confirmed")
+
+    # --- Worth the tow: major-purse / destination races, from the data flag ---
+    worth_html = "".join(event_card(x, cta="Plan this race") for x in major_upcoming)
+    if not worth_html:
+        worth_html = '<p class="race-empty">No major destination races confirmed right now.</p>'
+
+    # --- Follow a series: surface the next race at a host track when we have one ---
+    series_cards = []
+    for x in data["series"]:
+        nxt = next((ev for ev in all_upcoming if ev["track_slug"] in x["tracks"]), None)
+        next_line = (f'Next: {e(nxt["dates"])} &mdash; {e(nxt["track_name"])}'
+                     if nxt else "No confirmed upcoming race yet")
+        series_cards.append(
+            f'<a class="series-card" href="/series/{x["slug"]}/">'
+            f'<span class="series-name">{e(x["name"])}</span>'
+            f'<span class="series-region">{e(x["region"])}</span>'
+            f'<span class="series-next">{next_line}</span></a>')
+    ser = "".join(series_cards)
 
     faq_html, faq_schema = faq_block([tuple(p) for p in data["faq"]])
 
@@ -337,34 +550,76 @@ def build_index(data):
         "description": s["description"], "inLanguage": "en-US",
     }
 
-    open_n = sum(1 for t in tracks if t["status"] == "open")
-    closed_n = sum(1 for t in tracks if t["status"] == "closed")
-    likely_n = sum(1 for t in tracks if t["status"] in ("likely-closed", "at-risk"))
-    unc_n = len(tracks) - open_n - closed_n - likely_n
-    tally_bits = [f'<li><b>{len(tracks)}</b> tracks</li>',
-                  f'<li><b>{open_n}</b> confirmed open</li>']
-    if closed_n:
-        tally_bits.append(f'<li><b>{closed_n}</b> closed</li>')
-    if likely_n:
-        tally_bits.append(f'<li><b>{likely_n}</b> uncertain</li>')
-    if unc_n:
-        tally_bits.append(f'<li><b>{unc_n}</b> still chasing</li>')
-    tally_bits.append(f'<li><b>{len(data["series"])}</b> series</li>')
-    tally = "".join(tally_bits)
+    proof = (f'<li><b>{len(open_tracks)}</b> confirmed open</li>'
+             f'<li><b>{len(data["series"])}</b> regional series</li>'
+             f'<li><b>{len(tracks)}</b> tracks researched</li>'
+             f'<li><b>{nice_date(s["last_checked"])}</b> last checked</li>')
+
+    archive_html = "".join(
+        f'<a class="archive-row" href="/tracks/{t["slug"]}/">'
+        f'<span class="archive-name">{e(t["name"])}</span>'
+        f'<span class="archive-meta">{e(t["city"])}, {e(t["state"])} &middot; Permanently closed'
+        f'{" &middot; formerly " + e(t["former_names"][0]) if t.get("former_names") else ""}</span></a>'
+        for t in archive_tracks)
 
     return head(
-        f'Drag strips in Mississippi, Louisiana and Alabama \u2014 {s["name"]}',
+        f'Drag strips in Mississippi, Louisiana and Alabama — {s["name"]}',
         s["description"], "/", [website, itemlist, faq_schema], s["last_checked"],
     ) + f"""
 <main>
 <section class="hero wrap bleed">
 {TRACK_SVG}
-<h1>Every drag strip within reach of the Pine Belt.</h1>
-<p class="lede"><strong>Race days, addresses and phone numbers for every strip from the Pine Belt to the Gulf Coast.</strong> We check them every week and stamp the date on every page &mdash; so you are not towing two hours on the strength of a Facebook post from March.</p>
-<ul class="tally">{tally}</ul>
+<p class="eyebrow">Mississippi &middot; Louisiana &middot; Alabama</p>
+<h1>Know before you tow.</h1>
+<p class="lede">Verified drag-racing schedules, track status and race-day information across the Gulf South.</p>
+<p class="lede-sub">Built for the racer deciding whether to hook up the trailer.</p>
+<div class="hero-actions">
+<a class="btn" href="#race-next">What&rsquo;s racing next?</a>
+<a class="btn btn-ghost" href="#tracks">Find a track</a>
+</div>
+<ul class="tally">{proof}</ul>
 </section>
 
-<section class="mapband wrap bleed">
+<div class="problem-strip bleed wrap">
+<p><strong>Facebook post from March? Screenshot somebody texted you? Schedule buried three posts deep?</strong> We check the information and tell you when we checked it.</p>
+</div>
+
+<section class="section wrap" id="race-next">
+<div class="section-head">
+<h2>Race next</h2>
+<p class="section-sub">What you can actually race next — drag racing first. Road-course and other facility events are one tap away.</p>
+</div>
+<div class="race-toggle">
+<input type="radio" name="racetab" id="tab-drag" checked>
+<input type="radio" name="racetab" id="tab-all">
+<label for="tab-drag">Drag racing</label>
+<label for="tab-all">All track events</label>
+<div class="race-grid panel-drag">{drag_cards}</div>
+<div class="race-grid panel-all">{all_cards}</div>
+</div>
+</section>
+{swamp_html}
+<section class="section wrap" id="tracks">
+<div class="section-head">
+<h2>Find a track</h2>
+<p class="section-sub">Confirmed operating tracks across the Gulf South. Distances are straight-line from Hattiesburg, Mississippi — not necessarily your own.</p>
+</div>
+<div class="track-filters" data-filters>
+<button type="button" class="filter-btn is-active" data-filter="all">All open</button>
+<button type="button" class="filter-btn" data-state="MS">Mississippi</button>
+<button type="button" class="filter-btn" data-state="LA">Louisiana</button>
+<button type="button" class="filter-btn" data-state="AL">Alabama</button>
+<button type="button" class="filter-btn" data-length="eighth">1/8 mile</button>
+<button type="button" class="filter-btn" data-length="quarter">1/4 mile</button>
+<button type="button" class="filter-btn" data-sanction="nhra">NHRA</button>
+<button type="button" class="filter-btn" data-sanction="ihra">IHRA</button>
+</div>
+<div class="track-grid" data-track-grid>
+{track_cards}
+</div>
+<p class="track-empty" data-track-empty hidden>No open tracks match those filters.</p>
+{watch_html}
+{archive_note}
 <div class="map-frame">{build_map(tracks)}</div>
 <div class="map-key">
 <span><i class="k-open"></i> Confirmed operating</span>
@@ -375,29 +630,98 @@ def build_index(data):
 </div>
 </section>
 
-<section class="list wrap">
-<h2 id="tracks">Tracks</h2>
-{''.join(rows)}
+<section class="section dark wrap bleed" id="intel">
+<div class="section-head">
+<h2>Racer intel</h2>
+<p class="section-sub">The stuff you normally spend an hour hunting through Facebook to find. We are not trying to be a racing news site — we&rsquo;re trying to be the page you check before you leave home.</p>
+</div>
+<div class="intel-board">
+<div class="intel-row"><span>Track status</span><b class="good">{len(open_tracks)} of {len(tracks)} confirmed open</b></div>
+<div class="intel-row"><span>Surface &amp; length</span><b class="good">On every track page</b></div>
+<div class="intel-row"><span>Sanctioning</span><b class="good">On every track page</b></div>
+<div class="intel-row"><span>Track phone</span><b class="good">{phone_n} of {len(tracks)} listed</b></div>
+<div class="intel-row"><span>Last verified</span><b class="good">On every listing</b></div>
+<div class="intel-row"><span>Overnight parking / RV hookups</span><b class="unknown">{camp_confirmed_n} of {len(tracks)} confirmed — rest unconfirmed</b></div>
+<div class="intel-row"><span>Gates, tech time, entry fee</span><b class="unknown">Not yet tracked</b></div>
+<div class="intel-row"><span>Race fuel, air, nearby parts</span><b class="unknown">Not yet tracked</b></div>
+</div>
+<p class="intel-note">Unknown is a feature, not a failure. When we haven&rsquo;t verified something, this site says so instead of guessing.</p>
 </section>
 
-<section class="list wrap">
-<h2 id="events">Coming up</h2>
-{ev}
+<section class="section alt wrap" id="worth-the-tow">
+<div class="section-head">
+<h2>Worth the tow</h2>
+<p class="section-sub">Destination and big-purse races, kept separate from ordinary weekly race nights.</p>
+</div>
+<div class="race-grid">{worth_html}</div>
 </section>
 
-<section class="list wrap">
-<h2 id="series-list">Series</h2>
-<p class="series-note">Series race across several tracks, so their schedules never live in one place. These are the ones running in the region.</p>
-{ser}
+<section class="section wrap" id="series-list">
+<div class="section-head">
+<h2>Follow a series</h2>
+<p class="section-sub">Series race across several tracks, so their schedules never live in one place. Here is when and where each one races next.</p>
+</div>
+<div class="series-grid">{ser}</div>
+</section>
+
+<section class="correction correction-lg wrap">
+<h2>See something wrong?</h2>
+<p>Schedules change. Weather moves events. Facebook posts change or disappear. Promoters revise plans. If you&rsquo;re a racer, track owner or promoter and something here is wrong, tell us — every listing shows when we last checked it.</p>
 </section>
 
 <div class="wrap">{faq_html}</div>
 
-<section class="correction wrap">
-<h2>Something wrong here?</h2>
-<p>If you run one of these tracks, or you race at one, tell us what we got wrong and we will fix it the same week. Accuracy is the only thing this site is for.</p>
+<section class="section wrap" id="archive">
+<div class="section-head">
+<h2>Track archive</h2>
+<p class="section-sub">Permanently closed facilities, kept online for the record — old links, history and search still find them here.</p>
+</div>
+<div class="archive-grid">{archive_html}</div>
 </section>
 </main>
+<script>
+(function(){{
+  var grid = document.querySelector('[data-track-grid]');
+  var empty = document.querySelector('[data-track-empty]');
+  var btns = document.querySelectorAll('.filter-btn');
+  if (!grid || !btns.length) return;
+  var cards = grid.querySelectorAll('.track-card');
+  var active = {{state:null, length:null, sanction:null}};
+  function apply(){{
+    var shown = 0;
+    cards.forEach(function(c){{
+      var ok = (!active.state || c.dataset.state === active.state)
+        && (!active.length || (' ' + c.dataset.length + ' ').indexOf(' ' + active.length + ' ') > -1)
+        && (!active.sanction || (' ' + c.dataset.sanction + ' ').indexOf(' ' + active.sanction + ' ') > -1);
+      c.hidden = !ok;
+      if (ok) shown++;
+    }});
+    if (empty) empty.hidden = shown !== 0;
+  }}
+  btns.forEach(function(b){{
+    b.addEventListener('click', function(){{
+      if (b.dataset.filter === 'all'){{
+        active = {{state:null, length:null, sanction:null}};
+      }} else if (b.dataset.state){{
+        active.state = active.state === b.dataset.state ? null : b.dataset.state;
+      }} else if (b.dataset.length){{
+        active.length = active.length === b.dataset.length ? null : b.dataset.length;
+      }} else if (b.dataset.sanction){{
+        active.sanction = active.sanction === b.dataset.sanction ? null : b.dataset.sanction;
+      }}
+      var anyActive = active.state || active.length || active.sanction;
+      btns.forEach(function(x){{
+        if (x.dataset.filter === 'all') {{ x.classList.toggle('is-active', !anyActive); return; }}
+        var on = (x.dataset.state && x.dataset.state === active.state)
+          || (x.dataset.length && x.dataset.length === active.length)
+          || (x.dataset.sanction && x.dataset.sanction === active.sanction);
+        x.classList.toggle('is-active', !!on);
+      }});
+      apply();
+    }});
+  }});
+}})();
+</script>
 """ + FOOT
 
 
@@ -668,10 +992,11 @@ def write(path, content):
 
 
 def main():
-    global SITE, SERIES
+    global SITE, SERIES, CSS
     data = json.load(open(os.path.join(ROOT, "tracks.json")))
     SITE = data["site"]
     SERIES = data.get("series", [])
+    CSS = open(os.path.join(ROOT, "assets", "style.css"), encoding="utf-8").read()
     base = f'https://{SITE["domain"]}'
 
     if os.path.isdir(OUT):

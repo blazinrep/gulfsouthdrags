@@ -25,6 +25,7 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+[hidden] { display: none !important; }
 
 body {
   margin: 0;
@@ -508,3 +509,372 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
 
 .formerly { color: var(--ink-soft); font-size: 0.85em; }
 .alert-at-risk { border-left-color: #9a6216; background: #f7f0e2; }
+
+/* ===================================================================
+   V2 homepage — Know Before You Tow
+   =================================================================== */
+
+/* --- masthead nav -------------------------------------------------- */
+.masthead { gap: 0.6rem 1.25rem; }
+.topnav {
+  display: flex;
+  gap: 1.35rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  flex: 1 1 auto;
+}
+.topnav::-webkit-scrollbar { display: none; }
+.topnav a { color: #bdc8d1; white-space: nowrap; text-decoration: none; }
+.topnav a:hover { color: var(--gold); }
+
+/* --- hero: eyebrow / CTAs / proof row -------------------------------- */
+.eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0;
+}
+.hero h1 { margin: 0.6rem 0 0; }
+.lede-sub {
+  max-width: 50ch;
+  margin: 0.6rem 0 0;
+  font-size: 1rem;
+  color: #9aa8b3;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.9);
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.6rem; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0.7rem 1.15rem;
+  background: var(--orange);
+  color: #fff;
+  border: 1px solid var(--orange);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.98rem;
+  text-decoration: none;
+}
+.btn:hover { background: var(--gold); border-color: var(--gold); color: var(--asphalt); }
+.btn-ghost { background: transparent; border-color: #6d7f8c; color: #fff; }
+.btn-ghost:hover { background: var(--gold); border-color: var(--gold); color: var(--asphalt); }
+
+/* --- problem strip ---------------------------------------------------- */
+.problem-strip {
+  position: relative;
+  color: #cbd5db;
+  border-top: 1px solid #2c353e;
+  border-bottom: 1px solid #2c353e;
+}
+.problem-strip p { margin: 0; padding: 0.95rem 0; font-size: 0.94rem; max-width: 74ch; }
+.problem-strip strong { color: var(--gold); }
+
+/* --- generic section shell -------------------------------------------- */
+.section { padding: 3.4rem 0; margin: 0; }
+.section.alt { background: var(--paper-2); }
+.section.dark { background: var(--asphalt); color: #fff; }
+.section.dark .section-sub { color: #9aa8b3; }
+.section-head { margin-bottom: 1.6rem; }
+.section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.section.dark h2 { background: var(--gold); color: var(--asphalt); }
+.section-sub { max-width: 62ch; color: var(--ink-soft); margin: 0.6rem 0 0; font-size: 0.96rem; }
+
+/* --- race next: CSS-only tab toggle ------------------------------------ */
+.race-toggle input { position: absolute; opacity: 0; pointer-events: none; }
+.race-toggle label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 0.9rem;
+  margin: 0 0.5rem 1.4rem 0;
+  border: 1px solid var(--rule);
+  background: #fff;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  letter-spacing: 0.03em;
+}
+.race-toggle .panel-drag, .race-toggle .panel-all { display: none; }
+#tab-drag:checked ~ .panel-drag { display: grid; }
+#tab-all:checked ~ .panel-all { display: grid; }
+#tab-drag:checked ~ label[for="tab-drag"],
+#tab-all:checked ~ label[for="tab-all"] { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.race-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.race-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-top: 5px solid var(--blue);
+  padding: 1.15rem 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.race-card:hover { border-top-color: var(--orange); }
+.race-card:hover .race-name { color: var(--blue); }
+.race-date {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--blue-deep);
+  letter-spacing: -0.01em;
+}
+.race-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin: 0.35rem 0 0.15rem;
+}
+.race-when {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.76rem;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.race-track { font-size: 0.92rem; color: var(--ink-soft); margin-top: 0.3rem; }
+.race-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.75rem; }
+.chip {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  background: var(--paper-2);
+  padding: 0.25rem 0.5rem;
+}
+.chip-major { background: var(--gold); color: var(--asphalt); }
+.race-verified {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  color: #4c7d59;
+}
+.race-cta {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+}
+.race-empty { color: var(--ink-soft); grid-column: 1 / -1; }
+
+/* --- swamp bottom feature ------------------------------------------------ */
+.feature {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  background: var(--asphalt);
+  color: #fff;
+  border: 1px solid #2d353d;
+}
+.feature-copy { padding: 2.1rem; }
+.feature-tag {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  padding: 0.3rem 0.55rem;
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.feature-copy h2 {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  margin: 0.8rem 0 0.2rem;
+}
+.feature-where { color: #9aa8b3; margin: 0 0 0.9rem; font-size: 0.95rem; }
+.feature-copy p { color: #c3ced7; max-width: 56ch; }
+.feature-copy .btn { margin-top: 0.7rem; }
+.feature-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: #1c232a;
+}
+.stat {
+  padding: 1.4rem;
+  border-left: 1px solid #333e47;
+  border-bottom: 1px solid #333e47;
+}
+.stat b {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--gold);
+}
+.stat span { font-size: 0.74rem; color: #9caab5; text-transform: uppercase; letter-spacing: 0.05em; }
+
+/* --- find a track: filters + card grid ----------------------------------- */
+.track-filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.3rem; }
+.filter-btn {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  background: #fff;
+  border: 1px solid var(--rule);
+  color: var(--ink-soft);
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+.filter-btn.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+.track-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 4px solid var(--blue); }
+.track-card {
+  display: grid;
+  grid-template-columns: 2.2rem 1fr auto;
+  gap: 0 0.9rem;
+  padding: 1rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  color: var(--ink);
+  align-items: start;
+}
+.track-grid .track-card:nth-child(odd) { border-right: 1px solid var(--rule); }
+.track-card:hover { background: var(--paper-2); }
+.track-card:hover .track-name { color: var(--blue); }
+.track-num {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #fff;
+  background: var(--blue);
+  width: 1.85rem; height: 1.85rem;
+  border-radius: 50%;
+  display: grid; place-items: center;
+}
+.track-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  display: block;
+}
+.track-meta, .track-next, .track-verified { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.2rem; }
+.track-next { color: var(--blue-deep); }
+.track-verified { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.72rem; color: #4c7d59; }
+.track-dist {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+  text-align: right;
+  white-space: nowrap;
+}
+.track-dist small { display: block; }
+.track-empty { color: var(--ink-soft); margin-top: 1rem; }
+
+.watchlist {
+  margin-top: 1.3rem;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid #9a6216;
+  background: #f7f0e2;
+  font-size: 0.9rem;
+}
+.watchlist ul { margin: 0.5rem 0 0; padding-left: 1.1rem; }
+.watchlist li { margin-bottom: 0.3rem; }
+.archive-pointer { font-size: 0.86rem; color: var(--ink-soft); margin-top: 1rem; }
+
+/* --- racer intel board ----------------------------------------------- */
+.intel-board {
+  max-width: 46rem;
+  background: #0d1114;
+  border: 1px solid #303941;
+  padding: 0.4rem 1rem;
+}
+.intel-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  padding: 0.7rem 0.1rem;
+  border-bottom: 1px solid #252d33;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+}
+.intel-row:last-child { border-bottom: 0; }
+.intel-row span { color: #80909c; text-transform: uppercase; letter-spacing: 0.03em; }
+.intel-row b { font-weight: 600; text-align: right; }
+.intel-row b.good { color: #45d66d; }
+.intel-row b.unknown { color: var(--gold); }
+.intel-note { max-width: 46rem; color: #9aa8b3; font-size: 0.86rem; margin-top: 1rem; }
+
+/* --- worth the tow reuses .race-grid / .race-card ---------------------- */
+
+/* --- follow a series --------------------------------------------------- */
+.series-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.series-card {
+  display: block;
+  border: 1px solid var(--rule);
+  background: #fff;
+  padding: 1.1rem 1.2rem;
+  text-decoration: none;
+  color: var(--ink);
+}
+.series-card:hover { border-color: var(--blue); }
+.series-name {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+.series-region { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.15rem; }
+.series-next { display: block; font-size: 0.82rem; color: var(--blue-deep); margin-top: 0.5rem; }
+
+/* --- accuracy / report an update ---------------------------------------- */
+.correction-lg {
+  padding: 2rem 1.8rem;
+  border-top: 5px solid var(--gold);
+  max-width: none;
+}
+.correction-lg h2 { font-size: 1.7rem; }
+.correction-lg p { max-width: 70ch; font-size: 1rem; }
+
+/* --- track archive -------------------------------------------------- */
+.archive-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 4px solid #6b7580; }
+.archive-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.85rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+.archive-grid .archive-row:nth-child(odd) { border-right: 1px solid var(--rule); }
+.archive-name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--ink-soft);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+}
+.archive-meta { font-size: 0.82rem; color: var(--ink-soft); margin-top: 0.15rem; }
+
+/* --- V2 responsive ------------------------------------------------------ */
+@media (max-width: 820px) {
+  .race-grid, .series-grid { grid-template-columns: 1fr; }
+  .feature, .track-grid, .archive-grid { grid-template-columns: 1fr; }
+  .track-grid .track-card:nth-child(odd), .archive-grid .archive-row:nth-child(odd) { border-right: 0; }
+  .feature-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 620px) {
+  .section { padding: 2.4rem 0; }
+  .intel-row { grid-template-columns: 1fr; }
+  .intel-row b { text-align: left; }
+  .correction-lg { padding: 1.5rem 1.2rem; }
+}
