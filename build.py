@@ -13,6 +13,7 @@ import html
 import json
 import os
 import random
+import re
 import shutil
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -232,6 +233,22 @@ def e(s):
     return html.escape(s or "", quote=True)
 
 
+def sentence(s):
+    """Append a period only if the text doesn't already end one — avoids '4:30 PM..'."""
+    s = s.strip()
+    return s if s.endswith((".", "!", "?")) else s + "."
+
+
+def parse_price(text):
+    """A schema.org-safe numeric price, or None when the text isn't a confirmed amount
+    (e.g. 'Contact the track — 555-1234' has no number we should assert as a price)."""
+    t = text.strip()
+    if t.lower() == "free":
+        return "0"
+    m = re.fullmatch(r"\$?\s*(\d[\d,]*(?:\.\d+)?)", t)
+    return m.group(1).replace(",", "") if m else None
+
+
 def nice_date(iso):
     y, m, d = iso.split("-")
     return f"{int(d)} {MONTHS[int(m) - 1]} {y}"
@@ -312,7 +329,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<style>{CSS}</style>
+<link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -476,7 +493,7 @@ def build_index(data):
     if swamp:
         sanction_short = swamp["sanction"].split("—")[0].strip()
         swamp_html = f"""
-<section class="section alt wrap bleed" id="new-track">
+<section class="section home-section alt wrap bleed" id="new-track">
 <div class="feature">
 <div class="feature-copy">
 <span class="feature-tag">New track</span>
@@ -520,10 +537,12 @@ def build_index(data):
     if not worth_html:
         worth_html = '<p class="race-empty">No major destination races confirmed right now.</p>'
 
-    # --- Follow a series: surface the next race at a host track when we have one ---
+    # --- Follow a series: surface the next race, but only an event explicitly
+    # tied to this series via series_slugs — sharing a host track is not enough,
+    # since a track can run plenty of events that have nothing to do with it.
     series_cards = []
     for x in data["series"]:
-        nxt = next((ev for ev in all_upcoming if ev["track_slug"] in x["tracks"]), None)
+        nxt = next((ev for ev in all_upcoming if x["slug"] in ev.get("series_slugs", [])), None)
         next_line = (f'Next: {e(nxt["dates"])} &mdash; {e(nxt["track_name"])}'
                      if nxt else "No confirmed upcoming race yet")
         series_cards.append(
@@ -584,10 +603,10 @@ def build_index(data):
 <p><strong>Facebook post from March? Screenshot somebody texted you? Schedule buried three posts deep?</strong> We check the information and tell you when we checked it.</p>
 </div>
 
-<section class="section wrap" id="race-next">
-<div class="section-head">
+<section class="section home-section wrap" id="race-next">
+<div class="home-section-head">
 <h2>Race next</h2>
-<p class="section-sub">What you can actually race next — drag racing first. Road-course and other facility events are one tap away.</p>
+<p class="home-section-sub">What you can actually race next — drag racing first. Road-course and other facility events are one tap away.</p>
 </div>
 <div class="race-toggle">
 <input type="radio" name="racetab" id="tab-drag" checked>
@@ -599,10 +618,10 @@ def build_index(data):
 </div>
 </section>
 {swamp_html}
-<section class="section wrap" id="tracks">
-<div class="section-head">
+<section class="section home-section wrap" id="tracks">
+<div class="home-section-head">
 <h2>Find a track</h2>
-<p class="section-sub">Confirmed operating tracks across the Gulf South. Distances are straight-line from Hattiesburg, Mississippi — not necessarily your own.</p>
+<p class="home-section-sub">Confirmed operating tracks across the Gulf South. Distances are straight-line from Hattiesburg, Mississippi — not necessarily your own.</p>
 </div>
 <div class="track-filters" data-filters>
 <button type="button" class="filter-btn is-active" data-filter="all">All open</button>
@@ -630,10 +649,10 @@ def build_index(data):
 </div>
 </section>
 
-<section class="section dark wrap bleed" id="intel">
-<div class="section-head">
+<section class="section home-section dark wrap bleed" id="intel">
+<div class="home-section-head">
 <h2>Racer intel</h2>
-<p class="section-sub">The stuff you normally spend an hour hunting through Facebook to find. We are not trying to be a racing news site — we&rsquo;re trying to be the page you check before you leave home.</p>
+<p class="home-section-sub">The stuff you normally spend an hour hunting through Facebook to find. We are not trying to be a racing news site — we&rsquo;re trying to be the page you check before you leave home.</p>
 </div>
 <div class="intel-board">
 <div class="intel-row"><span>Track status</span><b class="good">{len(open_tracks)} of {len(tracks)} confirmed open</b></div>
@@ -648,18 +667,18 @@ def build_index(data):
 <p class="intel-note">Unknown is a feature, not a failure. When we haven&rsquo;t verified something, this site says so instead of guessing.</p>
 </section>
 
-<section class="section alt wrap" id="worth-the-tow">
-<div class="section-head">
+<section class="section home-section alt wrap" id="worth-the-tow">
+<div class="home-section-head">
 <h2>Worth the tow</h2>
-<p class="section-sub">Destination and big-purse races, kept separate from ordinary weekly race nights.</p>
+<p class="home-section-sub">Destination and big-purse races, kept separate from ordinary weekly race nights.</p>
 </div>
 <div class="race-grid">{worth_html}</div>
 </section>
 
-<section class="section wrap" id="series-list">
-<div class="section-head">
+<section class="section home-section wrap" id="series-list">
+<div class="home-section-head">
 <h2>Follow a series</h2>
-<p class="section-sub">Series race across several tracks, so their schedules never live in one place. Here is when and where each one races next.</p>
+<p class="home-section-sub">Series race across several tracks, so their schedules never live in one place. Here is when and where each one races next.</p>
 </div>
 <div class="series-grid">{ser}</div>
 </section>
@@ -671,10 +690,10 @@ def build_index(data):
 
 <div class="wrap">{faq_html}</div>
 
-<section class="section wrap" id="archive">
-<div class="section-head">
+<section class="section home-section wrap" id="archive">
+<div class="home-section-head">
 <h2>Track archive</h2>
-<p class="section-sub">Permanently closed facilities, kept online for the record — old links, history and search still find them here.</p>
+<p class="home-section-sub">Permanently closed facilities, kept online for the record — old links, history and search still find them here.</p>
 </div>
 <div class="archive-grid">{archive_html}</div>
 </section>
@@ -865,13 +884,15 @@ def build_event(x, tracks):
 
     offers = []
     for label, price in x["prices"]:
-        amount = price.replace("$", "").strip()
-        offers.append({
+        offer = {
             "@type": "Offer", "name": label,
-            "price": "0" if amount.lower() == "free" else amount,
-            "priceCurrency": "USD",
             "availability": "https://schema.org/InStock",
-            "url": f'{base}/events/{x["slug"]}/'})
+            "url": f'{base}/events/{x["slug"]}/'}
+        amount = parse_price(price)
+        if amount is not None:
+            offer["price"] = amount
+            offer["priceCurrency"] = "USD"
+        offers.append(offer)
 
     ev_schema = {
         "@context": "https://schema.org", "@type": "SportsEvent",
@@ -896,9 +917,9 @@ def build_event(x, tracks):
     faq_html, faq_schema = faq_block([
         (f'When is the {x["name"]}?',
          f'{x["dates"]} at {x["track_name"]} in {x["city"]}, {x["state"]}. '
-         + " ".join(f"{a}: {b}." for a, b in x["schedule"])),
+         + " ".join(f"{a}: {sentence(b)}" for a, b in x["schedule"])),
         (f'How much does the {x["name"]} cost?',
-         " ".join(f"{a}: {b}." for a, b in x["prices"])),
+         " ".join(f"{a}: {sentence(b)}" for a, b in x["prices"])),
     ])
 
     return head(
@@ -992,11 +1013,10 @@ def write(path, content):
 
 
 def main():
-    global SITE, SERIES, CSS
+    global SITE, SERIES
     data = json.load(open(os.path.join(ROOT, "tracks.json")))
     SITE = data["site"]
     SERIES = data.get("series", [])
-    CSS = open(os.path.join(ROOT, "assets", "style.css"), encoding="utf-8").read()
     base = f'https://{SITE["domain"]}'
 
     if os.path.isdir(OUT):

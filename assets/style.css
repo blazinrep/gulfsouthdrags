@@ -581,15 +581,17 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
 .problem-strip p { margin: 0; padding: 0.95rem 0; font-size: 0.94rem; max-width: 74ch; }
 .problem-strip strong { color: var(--gold); }
 
-/* --- generic section shell -------------------------------------------- */
-.section { padding: 3.4rem 0; margin: 0; }
-.section.alt { background: var(--paper-2); }
-.section.dark { background: var(--asphalt); color: #fff; }
-.section.dark .section-sub { color: #9aa8b3; }
-.section-head { margin-bottom: 1.6rem; }
-.section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
-.section.dark h2 { background: var(--gold); color: var(--asphalt); }
-.section-sub { max-width: 62ch; color: var(--ink-soft); margin: 0.6rem 0 0; font-size: 0.96rem; }
+/* --- homepage-only section shell ---------------------------------------
+   Scoped to .home-section (not bare .section) so this never touches the
+   .section rule used by track/event/series detail pages. -------------- */
+.home-section { padding: 3.4rem 0; margin: 0; }
+.home-section.alt { background: var(--paper-2); }
+.home-section.dark { background: var(--asphalt); color: #fff; }
+.home-section.dark .home-section-sub { color: #9aa8b3; }
+.home-section-head { margin-bottom: 1.6rem; }
+.home-section-head h2 { font-size: clamp(1.7rem, 4vw, 2.4rem); }
+.home-section.dark h2 { background: var(--gold); color: var(--asphalt); }
+.home-section-sub { max-width: 62ch; color: var(--ink-soft); margin: 0.6rem 0 0; font-size: 0.96rem; }
 
 /* --- race next: CSS-only tab toggle ------------------------------------ */
 .race-toggle input { position: absolute; opacity: 0; pointer-events: none; }
@@ -873,7 +875,7 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
   .feature-stats { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 620px) {
-  .section { padding: 2.4rem 0; }
+  .home-section { padding: 2.4rem 0; }
   .intel-row { grid-template-columns: 1fr; }
   .intel-row b { text-align: left; }
   .correction-lg { padding: 1.5rem 1.2rem; }
