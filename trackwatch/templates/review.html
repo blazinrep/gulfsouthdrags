@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>TrackWatch — Review Queue (local only)</title>
+<title>TrackWatch — Control Room (local only)</title>
 <meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root {
     --asphalt: #14181c; --asphalt-2: #1e252c; --blue: #1668c4; --blue-glow: #4a9de8;
     --gold: #ffb020; --green: #22b14c; --paper: #faf8f5; --ink: #12171b; --ink-soft: #5a656e;
-    --rule: #2c353e;
+    --rule: #d8d2c8; --red: #b23b1a;
   }
   * { box-sizing: border-box; }
   body {
@@ -20,17 +21,71 @@
     display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; align-items: baseline; justify-content: space-between;
   }
   header h1 { margin: 0; font-size: 1.3rem; }
-  header .badge { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: #ffb020; text-transform: uppercase; }
+  header .badge { font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; color: var(--gold); text-transform: uppercase; }
   .counts { font-family: ui-monospace, Menlo, monospace; font-size: 0.82rem; color: #9caab5; }
-  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
-  .empty { color: var(--ink-soft); padding: 2rem 0; }
+  main { max-width: 980px; margin: 0 auto; padding: 1.5rem; }
+
+  .eyebrow {
+    font-family: ui-monospace, Menlo, monospace; font-size: 0.72rem; font-weight: 800;
+    letter-spacing: 0.08em; color: var(--blue); margin-bottom: 0.35rem;
+  }
+
+  .sweep-panel {
+    background: #fff; border: 1px solid var(--rule); border-top: 5px solid var(--blue);
+    border-radius: 4px; padding: 1.3rem 1.4rem; margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(20, 24, 28, 0.05);
+  }
+  .sweep-top {
+    display: flex; justify-content: space-between; gap: 1.5rem; align-items: flex-start;
+  }
+  .sweep-status { margin: 0; font-size: 1.55rem; }
+  .sweep-status.clear::before { content: "✓ "; color: var(--green); }
+  .sweep-status.attention::before { content: "! "; color: var(--gold); }
+  .sweep-status.warning::before { content: "⚠ "; color: var(--red); }
+  .sweep-status.neutral::before { content: "○ "; color: var(--ink-soft); }
+  .sweep-subtext { margin: 0.3rem 0 0.3rem; color: var(--ink-soft); max-width: 620px; }
+  .last-run { font-family: ui-monospace, Menlo, monospace; font-size: 0.76rem; color: #78838b; }
+
+  .sweep-form {
+    min-width: 230px; display: flex; flex-direction: column; gap: 0.4rem; align-items: stretch;
+  }
+  button {
+    font-family: inherit; font-size: 0.9rem; font-weight: 700; padding: 0.58rem 1rem;
+    border-radius: 3px; border: 1px solid transparent; cursor: pointer;
+  }
+  button:disabled { opacity: 0.65; cursor: wait; }
+  button.run-sweep {
+    background: var(--blue); color: #fff; padding: 0.72rem 1rem; box-shadow: 0 2px 0 #0d4d96;
+  }
+  button.run-sweep:hover { background: #0f5bae; }
+  .run-note { font-size: 0.72rem; color: var(--ink-soft); text-align: center; }
+
+  .sweep-stats {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.65rem; margin-top: 1.25rem;
+  }
+  .stat {
+    background: #f3f0eb; border-radius: 4px; padding: 0.75rem; text-align: center;
+  }
+  .stat strong { display: block; font-size: 1.35rem; line-height: 1.2; }
+  .stat span { display: block; color: var(--ink-soft); font-size: 0.72rem; margin-top: 0.15rem; }
+
+  .sweep-details { margin-top: 1rem; border-top: 1px solid #e6e1da; padding-top: 0.8rem; }
+  .sweep-details summary { color: var(--blue); cursor: pointer; font-size: 0.84rem; font-weight: 650; }
+  .sweep-details pre {
+    background: var(--asphalt-2); color: #dbe4ea; font-size: 0.76rem; padding: 0.8rem;
+    border-radius: 3px; overflow: auto; white-space: pre-wrap; margin-bottom: 0;
+  }
+
+  .queue-heading { margin-bottom: 1rem; }
+  .queue-heading h2 { margin: 0; font-size: 1.35rem; }
+  .queue-heading p { color: var(--ink-soft); margin: 0.25rem 0 0; }
+
   .card {
-    background: #fff; border: 1px solid #d8d2c8; border-left: 5px solid var(--blue);
+    background: #fff; border: 1px solid var(--rule); border-left: 5px solid var(--blue);
     border-radius: 0 4px 4px 0; padding: 1.2rem 1.4rem; margin-bottom: 1.4rem;
   }
   .card-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.4rem; }
   .track { font-weight: 700; font-size: 1.05rem; text-transform: capitalize; }
-  .track::before { content: none; }
   .source { color: var(--ink-soft); font-size: 0.85rem; margin-left: 0.5rem; }
   .confidence {
     font-family: ui-monospace, Menlo, monospace; font-size: 0.75rem; color: #fff;
@@ -40,7 +95,7 @@
   .change-type { text-transform: uppercase; letter-spacing: 0.03em; font-weight: 700; color: var(--blue); }
   .summary { font-size: 1rem; margin: 0 0 0.8rem; }
   .conflict {
-    background: #fdf0ea; border-left: 4px solid #b23b1a; padding: 0.6rem 0.9rem;
+    background: #fdf0ea; border-left: 4px solid var(--red); padding: 0.6rem 0.9rem;
     margin-bottom: 0.9rem; font-size: 0.88rem; border-radius: 0 3px 3px 0;
   }
   .conflict ul { margin: 0.3rem 0 0; padding-left: 1.1rem; }
@@ -50,7 +105,7 @@
     background: var(--asphalt-2); color: #dbe4ea; font-size: 0.78rem; padding: 0.7rem;
     border-radius: 3px; max-height: 220px; overflow: auto; white-space: pre-wrap; word-break: break-word; margin: 0;
   }
-  .before pre { border-left: 3px solid #b23b1a; }
+  .before pre { border-left: 3px solid var(--red); }
   .after pre { border-left: 3px solid var(--green); }
   .keywords { margin-bottom: 0.9rem; }
   .kw {
@@ -59,25 +114,30 @@
   }
   .actions { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
   .actions form { margin: 0; }
-  button {
-    font-family: inherit; font-size: 0.9rem; font-weight: 700; padding: 0.5rem 1rem;
-    border-radius: 3px; border: 1px solid transparent; cursor: pointer;
-  }
   button.approve { background: var(--green); color: #fff; }
-  button.ignore { background: #fff; color: var(--ink-soft); border-color: #d8d2c8; }
+  button.ignore { background: #fff; color: var(--ink-soft); border-color: var(--rule); }
   .view-source { font-size: 0.85rem; color: var(--blue); margin-left: auto; }
+
+  @media (max-width: 760px) {
+    .sweep-top { flex-direction: column; }
+    .sweep-form { width: 100%; }
+    .sweep-stats { grid-template-columns: repeat(2, 1fr); }
+  }
   @media (max-width: 620px) {
     .diff { grid-template-columns: 1fr; }
     .view-source { margin-left: 0; }
+    main { padding: 1rem; }
   }
 </style>
 </head>
 <body>
 <header>
-  <h1>TrackWatch review queue <span class="badge">private &middot; local only</span></h1>
+  <h1>TrackWatch Control Room <span class="badge">private &middot; local only</span></h1>
   <div class="counts">{{PENDING_COUNT}} pending &middot; {{APPROVED_COUNT}} approved &middot; {{IGNORED_COUNT}} ignored</div>
 </header>
 <main>
+{{SWEEP_PANEL}}
+{{QUEUE_HEADING}}
 {{CARDS}}
 </main>
 </body>
