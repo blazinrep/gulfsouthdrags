@@ -235,6 +235,54 @@ def _build_track_svg():
 
 TRACK_SVG = _build_track_svg()
 
+
+def trackwatch_mark():
+    """The TrackWatch brand mark: a drag-tree watched by a radar-swept eye.
+    Pure inline SVG; all motion lives in CSS (.trackwatch-* classes in
+    style.css) so this markup renders identically animated or static."""
+    return """<svg class="trackwatch-mark" viewBox="0 0 200 200" role="img" aria-label="TrackWatch" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<clipPath id="tw-eye-clip">
+<path d="M8,100 Q100,16 192,100 Q100,184 8,100 Z"/>
+</clipPath>
+<radialGradient id="tw-sweep-grad" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(92)">
+<stop offset="0" stop-color="#8fc4ff" stop-opacity="0.85"/>
+<stop offset="1" stop-color="#8fc4ff" stop-opacity="0"/>
+</radialGradient>
+<filter id="tw-glow" x="-160%" y="-160%" width="420%" height="420%">
+<feGaussianBlur stdDeviation="4" result="b"/>
+<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+</filter>
+</defs>
+<path class="trackwatch-eye-outline" d="M8,100 Q100,16 192,100 Q100,184 8,100 Z" fill="#0a0e11" stroke="#3aa0e8" stroke-width="4"/>
+<g clip-path="url(#tw-eye-clip)">
+<g class="trackwatch-radar">
+<circle cx="100" cy="100" r="30" fill="none" stroke="#4a8ec2" stroke-width="1.3" opacity="0.65"/>
+<circle cx="100" cy="100" r="55" fill="none" stroke="#4a8ec2" stroke-width="1.3" opacity="0.48"/>
+<circle cx="100" cy="100" r="80" fill="none" stroke="#4a8ec2" stroke-width="1.3" opacity="0.34"/>
+<g class="trackwatch-sweep">
+<path d="M100,100 L100,8 A92,92 0 0,1 165,35 Z" fill="url(#tw-sweep-grad)"/>
+</g>
+</g>
+<g class="trackwatch-tree">
+<rect x="96" y="52" width="8" height="92" rx="2" fill="#080b0d"/>
+<g filter="url(#tw-glow)">
+<circle cx="83" cy="61" r="6.2" fill="#ffd76b"/>
+<circle cx="117" cy="61" r="6.2" fill="#ffd76b"/>
+<circle cx="83" cy="76" r="6.2" fill="#ffd76b"/>
+<circle cx="117" cy="76" r="6.2" fill="#ffd76b"/>
+<circle cx="100" cy="95" r="9.6" fill="#ff9426"/>
+<circle cx="100" cy="117" r="9.6" fill="#ff9426"/>
+</g>
+<circle class="trackwatch-pulse-glow" cx="100" cy="137" r="19" fill="#3ceb72" opacity="0.25"/>
+<circle cx="100" cy="137" r="10.6" fill="#3ceb72" filter="url(#tw-glow)"/>
+</g>
+<rect class="trackwatch-lid trackwatch-lid-top" x="0" y="0" width="200" height="100" fill="#0a0e11"/>
+<rect class="trackwatch-lid trackwatch-lid-bottom" x="0" y="100" width="200" height="100" fill="#0a0e11"/>
+</g>
+</svg>"""
+
+
 STATE_NAME = {"MS": "Mississippi", "LA": "Louisiana", "AL": "Alabama"}
 MONTHS = ["January", "February", "March", "April", "May", "June", "July",
           "August", "September", "October", "November", "December"]
@@ -679,6 +727,38 @@ def build_index(data):
 <p class="intel-note">Unknown is a feature, not a failure. When we haven&rsquo;t verified something, this site says so instead of guessing.</p>
 </section>
 
+<section class="section home-section trackwatch-module alt wrap" id="trackwatch">
+<div class="trackwatch-panel">
+<div class="trackwatch-mark-col">
+<div class="trackwatch-mark-wrap">{trackwatch_mark()}</div>
+<p class="trackwatch-caption">Track updates &middot; verified before you tow</p>
+</div>
+<div class="trackwatch-copy">
+<span class="trackwatch-tag">A feature of Gulf South Drags</span>
+<h2 class="trackwatch-title"><span class="tw-word-track">Track</span><span class="tw-word-watch">Watch</span></h2>
+<p class="trackwatch-lede">Track updates, verified before you tow.</p>
+<p>TrackWatch is the intelligence engine behind Gulf South Drags &mdash; watching track sources for new schedules, race-day changes and information racers need before loading the trailer.</p>
+<div class="trackwatch-feed">
+<div class="trackwatch-feed-top">
+<span class="trackwatch-feed-kicker">TrackWatch status</span>
+<span class="trackwatch-feed-live"><i class="trackwatch-feed-dot"></i>Monitoring system &mdash; in development</span>
+</div>
+<p class="trackwatch-feed-caption">Example TrackWatch feed</p>
+<ul class="trackwatch-feed-list">
+<li><span class="trackwatch-feed-name">Swamp Bottom Dragstrip</span><span class="trackwatch-feed-event">Schedule update detected</span></li>
+<li><span class="trackwatch-feed-name">Gulfport Dragway</span><span class="trackwatch-feed-event">Weather / race-day update</span></li>
+<li><span class="trackwatch-feed-name">Holiday Raceway</span><span class="trackwatch-feed-event">Event information changed</span></li>
+</ul>
+<p class="trackwatch-feed-trust">Every detected change is reviewed before it changes Gulf South Drags.</p>
+</div>
+<div class="hero-actions">
+<a class="btn trackwatch-btn-primary" href="#trackwatch">How it works</a>
+<a class="btn btn-ghost" href="#report-update">Track owners</a>
+</div>
+</div>
+</div>
+</section>
+
 <section class="section home-section alt wrap" id="worth-the-tow">
 <div class="home-section-head">
 <h2>Worth the tow</h2>
@@ -695,7 +775,7 @@ def build_index(data):
 <div class="series-grid">{ser}</div>
 </section>
 
-<section class="correction correction-lg wrap">
+<section class="correction correction-lg wrap" id="report-update">
 <h2>See something wrong?</h2>
 <p>Schedules change. Weather moves events. Facebook posts change or disappear. Promoters revise plans. If you&rsquo;re a racer, track owner or promoter and something here is wrong, tell us — every listing shows when we last checked it.</p>
 </section>
