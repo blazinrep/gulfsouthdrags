@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  OPTIONAL macOS LaunchAgent for the TrackWatch review server.
+
+  This file is NOT installed automatically. It starts the review server
+  at login (and keeps it running) if you choose to install it yourself —
+  see "Opening the Control Room" in trackwatch/README.md for the exact
+  install/uninstall commands. It never changes the server's binding
+  (still 127.0.0.1:8765 only, per review_server.py) and never touches
+  the public website.
+
+  IMPORTANT: this file hardcodes an absolute path to this specific
+  checkout of the repo (chadgill's Documents/GitHub/gulfsouthdrags). If
+  you ever move the repo, edit the two WorkingDirectory /
+  ProgramArguments paths below before reinstalling.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.gulfsouthdrags.trackwatch-review</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/python3</string>
+    <string>/Users/chadgill/Documents/GitHub/gulfsouthdrags/trackwatch/review_server.py</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/chadgill/Documents/GitHub/gulfsouthdrags</string>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <false/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/chadgill/Documents/GitHub/gulfsouthdrags/trackwatch/logs/launchagent.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/chadgill/Documents/GitHub/gulfsouthdrags/trackwatch/logs/launchagent.log</string>
+</dict>
+</plist>

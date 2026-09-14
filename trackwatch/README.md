@@ -50,6 +50,10 @@ trackwatch/
   review_queue.py         the pending/approved/ignored detection store
   review_server.py        the private localhost review UI (stdlib http.server)
   trackwatch.py           the CLI entry point — run / pending / status
+  TrackWatch Control Room.command       one-click launcher — see "Opening the Control Room"
+  TrackWatch Control Room.app           app-bundle wrapper around the .command file
+  TrackWatch Control Room.applescript   source for the .app (rebuild with osacompile)
+  com.gulfsouthdrags.trackwatch-review.plist   optional start-at-login LaunchAgent (not installed by default)
   templates/
     review.html           the review UI's HTML template
   tests/
@@ -128,6 +132,63 @@ sweeps — useful for sources you haven't verified are worth polling yet.
 ```bash
 python3 trackwatch/tests/test_trackwatch.py
 ```
+
+## Opening the Control Room
+
+You don't have to run `review_server.py` and open the URL by hand anymore.
+
+**One-click launcher.** Double-click **`trackwatch/TrackWatch Control Room.command`**
+in Finder (or **`trackwatch/TrackWatch Control Room.app`**, a small app wrapper
+around the same script — see below). It will:
+
+1. find the gulfsouthdrags repo from its own location, not your current folder
+2. check whether the review server is already answering on `localhost:8765`
+3. if not, start it in the background and wait (up to ~10 seconds) for it to respond
+4. open **http://localhost:8765/** in your default browser
+5. if something goes wrong, print a clear reason instead of failing silently
+   (missing `review_server.py`, no `python3`, or the server not responding in time)
+
+Running it again while the server is already up just re-opens the browser —
+it will never start a second copy.
+
+**Using the `.app` version from the Dock.** `TrackWatch Control Room.app` is a
+tiny AppleScript app (built with `osacompile`) that just runs the `.command`
+file sitting next to it — same behavior, but it's a real app bundle, so you
+can drag it onto the Dock or into `/Applications` (as an alias, or move the
+whole `trackwatch/` folder's copy — just keep the `.app` and `.command` files
+together, since the app calls the command file by relative location). If you
+ever edit `TrackWatch Control Room.applescript`, rebuild the app with:
+```bash
+cd trackwatch
+osacompile -o "TrackWatch Control Room.app" "TrackWatch Control Room.applescript"
+```
+
+**Starting automatically at login (optional, not installed by default).**
+`trackwatch/com.gulfsouthdrags.trackwatch-review.plist` is a macOS LaunchAgent
+that starts the review server at login and keeps it available in the
+background — nothing installs it for you. To install it yourself:
+```bash
+cp trackwatch/com.gulfsouthdrags.trackwatch-review.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.gulfsouthdrags.trackwatch-review.plist
+```
+To uninstall it:
+```bash
+launchctl unload ~/Library/LaunchAgents/com.gulfsouthdrags.trackwatch-review.plist
+rm ~/Library/LaunchAgents/com.gulfsouthdrags.trackwatch-review.plist
+```
+The plist hardcodes this checkout's path
+(`/Users/chadgill/Documents/GitHub/gulfsouthdrags`) — if you ever move the
+repo, edit the paths in the plist before reinstalling it.
+
+**Stopping or restarting the server.** There's no "Quit" button in the
+browser page itself (it's just a review queue, not a menu-bar app), so:
+```bash
+pkill -f trackwatch/review_server.py     # stop it
+python3 trackwatch/trackwatch.py status   # confirm the queue/registry state any time
+```
+Then relaunch with the Control Room launcher, or `python3 trackwatch/review_server.py`
+directly, whenever you want it running again. If you installed the
+LaunchAgent above, it will also restart the server the next time you log in.
 
 ## First-run behavior (important)
 
