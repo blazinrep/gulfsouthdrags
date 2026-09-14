@@ -1,0 +1,108 @@
+{
+  "_comment": "TrackWatch source registry. Each track maps to a list of publicly accessible sources. type='webpage' is the only fetch adapter implemented in V0.1 — see trackwatch/README.md for the adapter roadmap (rss, facebook, email, promoter_feed, api, track_owner_submission).",
+  "defaults": {
+    "min_interval_minutes": 60,
+    "timeout_seconds": 15,
+    "user_agent": "GulfSouthDrags-TrackWatch/0.1 (+https://gulfsouthdrags.com)"
+  },
+  "tracks": {
+    "gulfport-dragway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "https://gulfportdragway.com/",
+          "enabled": true,
+          "priority": "primary"
+        }
+      ]
+    },
+    "no-problem-raceway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "https://racenpr.com/",
+          "enabled": true,
+          "priority": "primary"
+        }
+      ]
+    },
+    "montgomery-international-dragway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://racemid.com/",
+          "enabled": true,
+          "priority": "primary"
+        }
+      ]
+    },
+    "holiday-raceway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://www.holidayraceway.com/",
+          "enabled": true,
+          "priority": "primary"
+        }
+      ]
+    },
+    "swamp-bottom-dragstrip": {
+      "sources": []
+    },
+    "byram-dragway": {
+      "sources": []
+    },
+    "twin-city-raceway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://twincityraceway.net",
+          "enabled": false,
+          "priority": "primary",
+          "note": "Disabled until confirmed reachable and worth including in the active sweep."
+        }
+      ]
+    },
+    "i-22-motorsports-park": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://i-22motorsports.com",
+          "enabled": false,
+          "priority": "primary",
+          "note": "Disabled until confirmed reachable and worth including in the active sweep."
+        }
+      ]
+    },
+    "alabama-international-dragway": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://alabamainternationaldragway.com",
+          "enabled": false,
+          "priority": "primary",
+          "note": "Disabled until confirmed reachable and worth including in the active sweep."
+        }
+      ]
+    },
+    "baileyton-goodtime-dragstrip": {
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "http://speedwaysonline.com",
+          "enabled": false,
+          "priority": "primary",
+          "note": "Disabled until confirmed reachable and worth including in the active sweep."
+        }
+      ]
+    }
+  }
+}

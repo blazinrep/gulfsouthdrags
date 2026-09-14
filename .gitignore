@@ -1,2 +1,13 @@
 .DS_Store
 __pycache__/
+
+# TrackWatch runtime data — never commit fetched content, run state, logs,
+# or review-queue session files. Code, README, source config and test
+# fixtures under trackwatch/ are NOT covered by these patterns and stay
+# tracked normally.
+trackwatch/state/
+trackwatch/snapshots/
+trackwatch/logs/
+trackwatch/review/pending/*.json
+trackwatch/review/approved/*.json
+trackwatch/review/ignored/*.json
