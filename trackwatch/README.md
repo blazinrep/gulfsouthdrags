@@ -190,6 +190,55 @@ Then relaunch with the Control Room launcher, or `python3 trackwatch/review_serv
 directly, whenever you want it running again. If you installed the
 LaunchAgent above, it will also restart the server the next time you log in.
 
+## Automatic sweeps + macOS notifications
+
+TrackWatch can run without you opening Terminal.
+
+The installed macOS LaunchAgent (`com.gulfsouthdrags.trackwatch-sweep`) runs:
+
+- **every day at 8:00 AM local time**
+- **an extra Friday sweep at 3:00 PM local time** before the race weekend
+
+The scheduled runner is `trackwatch/scheduled_sweep.py`. It uses the exact same
+TrackWatch detection pipeline as the manual **Run TrackWatch Sweep** button.
+
+Notification policy is deliberately quiet:
+
+- meaningful racing change queued -> notify
+- an existing review item is still waiting -> remind on the next scheduled sweep
+- one or more sources failed to check -> notify
+- unchanged source -> stay quiet
+- low-value/cosmetic change automatically filtered -> stay quiet
+
+Nothing is ever published automatically. A notification means **open the
+TrackWatch Control Room and make the human decision**.
+
+Useful commands:
+
+```bash
+# Run the scheduled wrapper manually
+python3 trackwatch/scheduled_sweep.py
+
+# Test Notification Center without sweeping
+python3 trackwatch/scheduled_sweep.py --test-notification
+
+# See whether macOS has the scheduler loaded
+launchctl print gui/$(id -u)/com.gulfsouthdrags.trackwatch-sweep
+
+# Remove the automatic scheduler
+launchctl bootout gui/$(id -u)/com.gulfsouthdrags.trackwatch-sweep
+rm ~/Library/LaunchAgents/com.gulfsouthdrags.trackwatch-sweep.plist
+```
+
+The scheduler writes its own history to `trackwatch/logs/scheduler.log`, while
+each actual sweep still writes the normal `trackwatch/logs/sweep_<timestamp>.log`.
+The Control Room always reads the newest sweep log, so automatic sweeps appear
+there the same way manual sweeps do.
+
+If the Mac is asleep at a scheduled time, macOS `launchd` generally runs a missed
+calendar job after the Mac wakes. If the Mac is fully shut down, TrackWatch
+cannot run until macOS is running again.
+
 ## First-run behavior (important)
 
 The first time TrackWatch sees a source, there is nothing to compare
