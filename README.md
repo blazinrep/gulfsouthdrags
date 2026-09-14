@@ -1,8 +1,16 @@
 # Gulf South Drags
 
-A drag strip directory for Mississippi, Louisiana and Alabama. The point of the
-site is that every listing carries the date it was last checked — the one thing
-the existing directories don't do.
+A regional drag-racing intelligence site for Mississippi, Louisiana and Alabama.
+The operating idea is **Know before you tow**: help racers decide where racing is
+actually happening and what they need to know before hooking up the trailer.
+
+## Product direction — read before major changes
+
+- [`docs/PRODUCT-NORTH-STAR.md`](docs/PRODUCT-NORTH-STAR.md) — what GulfSouthDrags is and is not.
+- [`docs/MONETIZATION.md`](docs/MONETIZATION.md) — sponsor, promoter, racer, newsletter and TrackWatch revenue paths.
+- [`docs/DECISIONS.md`](docs/DECISIONS.md) — deployment, verification, SEO and operating decisions.
+
+**Before making a major product or monetization change, read the North Star.**
 
 ## Files
 
@@ -114,16 +122,22 @@ depends on it.
 
 ## Deploying to Cloudflare Pages
 
-1. Push the repo to GitHub.
-2. Cloudflare dashboard → Workers & Pages → Create → Pages → Connect to Git.
-3. Pick the repo.
-4. Build command: leave empty.
-5. Build output directory: `site`
-6. Deploy, then add `gulfsouthdrags.com` as a custom domain. DNS is automatic
-   since the domain is in the same Cloudflare account.
+GulfSouthDrags currently uses a **Direct Upload / Wrangler** Cloudflare Pages
+project. GitHub is source control, but pushing to GitHub does **not** deploy the
+live site.
 
-Because `site/` is committed, Cloudflare never runs Python. It just serves the
-folder.
+```bash
+cd ~/Documents/GitHub/gulfsouthdrags
+python3 build.py
+# commit and push the intended changes to GitHub
+npx wrangler pages deploy site --project-name gulfsouthdrags --branch main
+```
+
+Because `site/` is committed, Cloudflare does not need to run Python. Wrangler
+uploads the already-generated `site/` directory. Verify both the returned
+`*.gulfsouthdrags.pages.dev` URL and `https://gulfsouthdrags.com/`.
+
+See `docs/DECISIONS.md` before changing the deployment architecture.
 
 ## After it's live
 
