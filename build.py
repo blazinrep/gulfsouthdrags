@@ -682,6 +682,7 @@ def build_index(data):
 <div class="home-section-head">
 <h2>Find a track</h2>
 <p class="home-section-sub">Confirmed operating tracks across the Gulf South. Distances are straight-line from Hattiesburg, Mississippi — not necessarily your own.</p>
+<p><a href="/drag-strips/mississippi/"><strong>Mississippi racer guide:</strong> open tracks, schedules and current status &rarr;</a></p>
 </div>
 <div class="track-filters" data-filters>
 <button type="button" class="filter-btn is-active" data-filter="all">All open</button>
@@ -833,6 +834,201 @@ def build_index(data):
   }});
 }})();
 </script>
+""" + FOOT
+
+
+def build_mississippi_hub(data):
+    tracks = [t for t in data["tracks"] if t["state"] == "MS"]
+    events = data["events"]
+    base = f'https://{SITE["domain"]}'
+    today = SITE["last_checked"]
+
+    open_tracks = [t for t in tracks if t["status"] == "open"]
+    closed_tracks = [t for t in tracks if t["status"] == "closed"]
+    watch_tracks = [t for t in tracks if t["status"] in ("at-risk", "likely-closed", "unconfirmed")]
+
+    track_slugs = {t["slug"] for t in tracks}
+    upcoming = [
+        x for x in upcoming_events(events, today)
+        if x.get("state") == "MS" or x.get("track_slug") in track_slugs
+    ]
+
+    def next_for(slug):
+        return next((x for x in upcoming if x["track_slug"] == slug), None)
+
+    open_cards = "".join(
+        track_card(t, i, next_for(t["slug"]))
+        for i, t in enumerate(open_tracks, 1)
+    ) or '<p>No Mississippi tracks are currently confirmed open in our data.</p>'
+
+    event_cards = "".join(event_card(x) for x in upcoming[:6])
+    if not event_cards:
+        event_cards = (
+            '<p class="race-empty">No upcoming Mississippi events are confirmed in '
+            'the calendar right now. Track schedules move quickly, so check the '
+            'individual track pages for the latest verified information.</p>'
+        )
+
+    watch_html = ""
+    if watch_tracks:
+        items = "".join(
+            f'<li><a href="/tracks/{t["slug"]}/">{e(t["name"])}</a> — '
+            f'{e(t.get("caveat") or "Operating status not yet confirmed.")}</li>'
+            for t in watch_tracks
+        )
+        watch_html = (
+            '<section class="section prose"><h2>Status watch</h2>'
+            '<p>These Mississippi facilities are not counted as confirmed operating '
+            'until we can verify them.</p><ul>' + items + '</ul></section>'
+        )
+
+    closed_html = ""
+    if closed_tracks:
+        rows = "".join(
+            f'<a class="archive-row" href="/tracks/{t["slug"]}/">'
+            f'<span class="archive-name">{e(t["name"])}</span>'
+            f'<span class="archive-meta">{e(t["city"])}, MS &middot; Permanently closed</span>'
+            f'</a>'
+            for t in closed_tracks
+        )
+        closed_html = (
+            '<section class="section"><h2>Closed Mississippi tracks</h2>'
+            '<p class="home-section-sub">Kept here because old websites, social pages '
+            'and directory listings can make a closed drag strip look active.</p>'
+            f'<div class="archive-grid">{rows}</div></section>'
+        )
+
+    nearest = sorted(open_tracks, key=lambda t: t.get("miles", 9999))
+    if nearest:
+        nearest_bits = [
+            f'<a href="/tracks/{t["slug"]}/">{e(t["name"])}</a> in {e(t["city"])}, '
+            f'about {t["miles"]} straight-line miles from Hattiesburg'
+            for t in nearest[:2]
+        ]
+        nearby_answer = "; ".join(nearest_bits) + "."
+    else:
+        nearby_answer = "We do not currently have a Mississippi track confirmed open near Hattiesburg."
+
+    hub_answer = (
+        f'Gulf South Drags currently lists {len(open_tracks)} Mississippi drag strips '
+        f'as confirmed operating, with {len(closed_tracks)} permanently closed '
+        f'facilit{"y" if len(closed_tracks) == 1 else "ies"} kept in the archive. '
+        f'Every listing shows when it was last checked.'
+    )
+
+    if open_tracks:
+        open_names = ", ".join(f'{t["name"]} in {t["city"]}' for t in open_tracks)
+        open_answer = (
+            "The Mississippi tracks currently confirmed operating by Gulf South Drags are "
+            f"{open_names}. The site last completed its current data check on "
+            f'{nice_date(SITE["last_checked"])}.'
+        )
+    else:
+        open_answer = "We do not currently have a Mississippi drag strip confirmed operating."
+
+    if nearest:
+        hattiesburg_answer = (
+            f'{nearest[0]["name"]} in {nearest[0]["city"]} is the closest confirmed '
+            f'operating track in our current directory, about {nearest[0]["miles"]} '
+            f'straight-line miles from Hattiesburg.'
+        )
+    else:
+        hattiesburg_answer = "We do not currently have one confirmed in our directory."
+
+    faq_pairs = [
+        ("What drag strips are open in Mississippi?", open_answer),
+        ("What is the closest operating drag strip to Hattiesburg, Mississippi?", hattiesburg_answer),
+        (
+            "Is Hub City Dragway in Hattiesburg still open?",
+            "No. Hub City Dragway is permanently closed and the land has been sold. "
+            "Its old web presence is still online, which is why stale directories can be misleading."
+        ),
+    ]
+    faq_html, faq_schema = faq_block(faq_pairs)
+
+    itemlist = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Drag strips in Mississippi",
+        "numberOfItems": len(tracks),
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i,
+                "url": f'{base}/tracks/{t["slug"]}/',
+                "name": t["name"],
+            }
+            for i, t in enumerate(tracks, 1)
+        ],
+    }
+    bc = crumbs([
+        ("Tracks", "/"),
+        ("Mississippi drag strips", "/drag-strips/mississippi/"),
+    ])
+
+    desc = (
+        "Mississippi drag strips with current operating status, race schedules, "
+        "track length, locations and last-verified dates. Includes Columbia, "
+        "Gulfport, Byram and the Hattiesburg-area track archive."
+    )
+
+    return head(
+        "Drag Strips in Mississippi — Open Tracks, Schedules & Status",
+        desc,
+        "/drag-strips/mississippi/",
+        [itemlist, bc, faq_schema],
+        SITE["last_checked"],
+    ) + f"""
+<main class="wrap">
+<a class="back" href="/">&larr; Gulf South Drags</a>
+<div class="track-head">
+<h1>Drag strips in Mississippi</h1>
+<p class="track-where">Current track status, schedules and racer information</p>
+</div>
+
+<p class="answer">{e(hub_answer)}</p>
+
+<section class="section prose">
+<h2>Looking for a drag strip in Mississippi?</h2>
+<p>This guide is built around a simple question: <strong>where can you actually race?</strong>
+We separate confirmed operating tracks from uncertain or permanently closed facilities,
+and every track page carries a last-checked date.</p>
+</section>
+
+<section class="section">
+<h2>Open Mississippi drag strips</h2>
+<p class="home-section-sub">Confirmed operating tracks first. Click any track for race days,
+address, sanctioning, phone information and the date we last verified it.</p>
+<div class="track-grid">
+{open_cards}
+</div>
+</section>
+
+<section class="section prose">
+<h2>Drag racing near Hattiesburg</h2>
+<p>Searching for a Hattiesburg drag strip can still lead to Hub City Dragway, but
+Hub City is permanently closed. The land has been sold. For racers around Hattiesburg,
+the closest confirmed operating choices in our current directory are {nearby_answer}</p>
+<p><a href="/tracks/hub-city-dragway/">See the Hub City closure record</a> or
+<a href="/tracks/swamp-bottom-dragstrip/">check Swamp Bottom Dragstrip in Columbia</a>.</p>
+</section>
+
+<section class="section">
+<h2>Upcoming Mississippi drag racing</h2>
+<div class="race-grid">{event_cards}</div>
+</section>
+
+{watch_html}
+{closed_html}
+{faq_html}
+
+<section class="correction">
+<h2>Something changed?</h2>
+<p>Mississippi track schedules can change with weather, resurfacing, ownership and
+promoter decisions. If a listing is wrong, tell us. Gulf South Drags is built around
+showing what we know, what we do not know and when we last checked it.</p>
+</section>
+</main>
 """ + FOOT
 
 
@@ -1117,6 +1313,8 @@ def main():
     shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(OUT, "assets"))
 
     write(os.path.join(OUT, "index.html"), build_index(data))
+    write(os.path.join(OUT, "drag-strips", "mississippi", "index.html"),
+          build_mississippi_hub(data))
     for t in data["tracks"]:
         write(os.path.join(OUT, "tracks", t["slug"], "index.html"),
               build_track(t, data["events"]))
@@ -1128,6 +1326,7 @@ def main():
               build_series(x, data["tracks"]))
 
     urls = [("/", SITE["last_checked"], "1.0")]
+    urls += [("/drag-strips/mississippi/", SITE["last_checked"], "0.9")]
     urls += [(f'/tracks/{t["slug"]}/', t["verified"], "0.8") for t in data["tracks"]]
     urls += [(f'/events/{x["slug"]}/', x["verified"], "0.7") for x in data["events"]]
     urls += [(f'/series/{x["slug"]}/', x["verified"], "0.7") for x in SERIES]
@@ -1198,7 +1397,7 @@ def main():
             '<p class="answer">That link is wrong or the page has moved. '
             '<a href="/">Start from the track list</a>.</p></main>' + FOOT)
 
-    n = 1 + len(data["tracks"]) + len(data["events"]) + len(SERIES)
+    n = 2 + len(data["tracks"]) + len(data["events"]) + len(SERIES)
     print(f"Built {n} pages + sitemap, robots.txt, llms.txt, 404 into site/")
 
 
