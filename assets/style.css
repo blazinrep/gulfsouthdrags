@@ -1066,3 +1066,98 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
   .trackwatch-feed-list li { flex-direction: column; gap: 0.15rem; }
   .trackwatch-copy .hero-actions { justify-content: center; }
 }
+
+
+/* GSD_REVENUE_V1_STYLES — Weekend Tow Report + Founding Partners */
+.sr-only {
+  position: absolute !important; width: 1px !important; height: 1px !important;
+  padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+  clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important;
+}
+.hp-field { position: absolute !important; left: -9999px !important; opacity: 0 !important; pointer-events: none !important; }
+
+.tow-report {
+  background: #11171c;
+  color: #fff;
+  border-top: 5px solid var(--gold);
+  border-bottom: 1px solid #28313a;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.tow-report-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.tow-report-kicker, .partner-kicker {
+  display: block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+.tow-report h2 { color: #fff; margin: 0 0 0.45rem; font-size: clamp(2rem, 5vw, 3rem); }
+.tow-report-copy p { color: #c5d0d8; max-width: 60ch; margin: 0; }
+.tow-report-form-wrap { min-width: 0; }
+.lead-form { display: grid; gap: 0.65rem; }
+.tow-report .lead-form { grid-template-columns: 1fr auto; }
+.lead-form label { font-weight: 700; font-size: 0.85rem; color: var(--ink); }
+.tow-report .lead-form label { color: #dce5eb; }
+.lead-form input, .lead-form textarea {
+  width: 100%; box-sizing: border-box;
+  border: 1px solid #aab5bd; background: #fff; color: #10151a;
+  padding: 0.8rem 0.85rem; font: inherit; border-radius: 2px;
+}
+.lead-form textarea { resize: vertical; }
+.lead-form input:focus, .lead-form textarea:focus { outline: 3px solid rgba(58,160,232,.22); border-color: var(--blue); }
+.lead-note { margin: 0.55rem 0 0; font-size: 0.76rem; color: #81909b; }
+
+.tow-report-compact {
+  margin: 2rem 0;
+  padding: 1.3rem 1.4rem;
+  border: 1px solid #2d3942;
+  border-top: 4px solid var(--gold);
+  border-radius: 3px;
+}
+.tow-report-compact .tow-report-inner { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.tow-report-compact h2 { font-size: 1.65rem; }
+
+.founding-partner {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid #cfd6dc;
+  border-left: 5px solid var(--blue);
+  background: #f7f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+.founding-partner strong { display: block; font-family: "Barlow Condensed", sans-serif; font-style: italic; font-size: 1.25rem; }
+.founding-partner p { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.88rem; }
+.partner-btn { white-space: nowrap; border-color: var(--blue); color: var(--blue-deep); }
+
+.partners-page { padding-bottom: 4rem; }
+.partner-offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+.partner-offer-card { border: 1px solid var(--rule); background: #fff; padding: 1.1rem 1.2rem; }
+.partner-offer-card b { display: block; font-family: "Barlow Condensed", sans-serif; font-style: italic; font-size: 1.2rem; margin-bottom: 0.35rem; }
+.partner-offer-card span { color: var(--ink-soft); font-size: 0.9rem; }
+.partner-interest { background: var(--paper-2); padding: 1.4rem; border-top: 5px solid var(--blue); }
+.partner-interest .lead-form { max-width: 44rem; }
+.partner-interest .lead-form .btn { justify-self: start; }
+.footer-links a { font-weight: 700; }
+.thanks-page { min-height: 55vh; padding-top: 2rem; }
+
+@media (max-width: 820px) {
+  .tow-report-inner, .tow-report-compact .tow-report-inner { grid-template-columns: 1fr; }
+  .partner-offer-grid { grid-template-columns: 1fr; }
+  .founding-partner { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 620px) {
+  .tow-report .lead-form { grid-template-columns: 1fr; }
+  .tow-report .lead-form .btn { width: 100%; justify-content: center; }
+}

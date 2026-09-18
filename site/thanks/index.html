@@ -10,18 +10,18 @@ gtag('js', new Date());
 gtag('config', 'G-0HMR00W28S');
 </script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found</title>
-<meta name="description" content="That page does not exist on Gulf South Drags.">
-<link rel="canonical" href="https://gulfsouthdrags.com/404.html">
+<title>Thanks — Gulf South Drags</title>
+<meta name="description" content="Thanks for connecting with Gulf South Drags.">
+<link rel="canonical" href="https://gulfsouthdrags.com/thanks/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Gulf South Drags">
-<meta property="og:title" content="Page not found">
-<meta property="og:description" content="That page does not exist on Gulf South Drags.">
-<meta property="og:url" content="https://gulfsouthdrags.com/404.html">
+<meta property="og:title" content="Thanks — Gulf South Drags">
+<meta property="og:description" content="Thanks for connecting with Gulf South Drags.">
+<meta property="og:url" content="https://gulfsouthdrags.com/thanks/">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Page not found">
-<meta name="twitter:description" content="That page does not exist on Gulf South Drags.">
+<meta name="twitter:title" content="Thanks — Gulf South Drags">
+<meta name="twitter:description" content="Thanks for connecting with Gulf South Drags.">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <meta name="author" content="Gulf South Drags">
 <meta property="article:modified_time" content="2026-09-12">
@@ -52,7 +52,23 @@ gtag('config', 'G-0HMR00W28S');
 </nav>
 <span class="stamp">Checked <time datetime="2026-09-12">12 September 2026</time></span>
 </header>
-<main class="wrap"><div class="track-head"><h1>No such page.</h1></div><p class="answer">That link is wrong or the page has moved. <a href="/">Start from the track list</a>.</p></main>
+
+<main class="wrap thanks-page">
+<a class="back" href="/">&larr; Gulf South Drags</a>
+<div class="track-head"><h1>You&rsquo;re in.</h1></div>
+<p class="answer" id="thanks-copy">Thanks. We got it.</p>
+<p><a class="btn" href="/#race-next">See what&rsquo;s racing next &rarr;</a></p>
+</main>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var el = document.getElementById('thanks-copy');
+  if (!el) return;
+  if (p.get('kind') === 'tow-report') el.textContent = 'You are on the Weekend Tow Report list. We will keep it focused on the race-weekend information worth opening.';
+  if (p.get('kind') === 'partner') el.textContent = 'Thanks for the interest in a Founding Trackside Partner spot. We got your information and will follow up.';
+})();
+</script>
+
 <footer class="wrap">
 <p>Gulf South Drags lists drag strips in Mississippi, Louisiana and Alabama. Every listing carries the date we last checked it. Schedules change and tracks rain out &mdash; call ahead before you load the trailer.</p>
 <p class="footer-links"><a href="/#tow-report">Weekend Tow Report</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>

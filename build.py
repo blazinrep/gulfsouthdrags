@@ -411,6 +411,7 @@ def head(title, desc, path, schemas, modified):
 FOOT = """
 <footer class="wrap">
 <p>Gulf South Drags lists drag strips in Mississippi, Louisiana and Alabama. Every listing carries the date we last checked it. Schedules change and tracks rain out &mdash; call ahead before you load the trailer.</p>
+<p class="footer-links"><a href="/#tow-report">Weekend Tow Report</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>
 <p>Not affiliated with NHRA, IHRA, WDRA or any track listed here.</p>
 </footer>
 </body>
@@ -522,6 +523,55 @@ def track_card(t, i, next_ev):
         f'</span>'
         f'<span class="track-dist">{t["miles"]} mi<small>from Hattiesburg</small></span></a>')
 
+
+
+# GSD_REVENUE_V1 — Weekend Tow Report + Founding Trackside Partner
+
+def lead_capture_form(kind, source, button_label, fields_html=""):
+    # Small native HTML form posted to the Cloudflare Pages lead endpoint.
+    return f'''<form class="lead-form" method="post" action="/api/lead">
+<input type="hidden" name="kind" value="{e(kind)}">
+<input type="hidden" name="source" value="{e(source)}">
+<input class="hp-field" type="text" name="fax_number" tabindex="-1" autocomplete="off" aria-hidden="true">
+{fields_html}
+<label class="sr-only" for="lead-email-{e(source)}">Email address</label>
+<input id="lead-email-{e(source)}" type="email" name="email" placeholder="you@example.com" autocomplete="email" required maxlength="254">
+<button class="btn" type="submit">{e(button_label)}</button>
+</form>'''
+
+
+def tow_report_signup(source="homepage", compact=False):
+    cls = "tow-report tow-report-compact" if compact else "tow-report wrap bleed"
+    heading = "Get the Weekend Tow Report" if compact else "The Weekend Tow Report"
+    copy = ("Confirmed races, schedule changes and the things worth checking before you hook up the trailer."
+            if compact else
+            "Where racing is actually happening across the Gulf South — confirmed races, schedule changes, major payouts and the things worth checking before you hook up the trailer.")
+    kicker = "Know before you tow" if compact else "Free Gulf South race-weekend briefing"
+    form = lead_capture_form("tow_report", source, "Send me the Tow Report")
+    return f'''<section class="{cls}" id="tow-report">
+<div class="tow-report-inner">
+<div class="tow-report-copy">
+<span class="tow-report-kicker">{e(kicker)}</span>
+<h2>{e(heading)}</h2>
+<p>{e(copy)}</p>
+</div>
+<div class="tow-report-form-wrap">
+{form}
+<p class="lead-note">Free. No generic racing-news blast — just useful Gulf South tow intel. Your email is not sold.</p>
+</div>
+</div>
+</section>'''
+
+
+def founding_partner_slot():
+    return '''<aside class="founding-partner wrap" aria-label="Founding Trackside Partner opportunity">
+<div>
+<span class="partner-kicker">Founding Trackside Partner</span>
+<strong>Reach racers while they are deciding where to tow.</strong>
+<p>Three founding partner positions are opening for Gulf South racing businesses.</p>
+</div>
+<a class="btn btn-ghost partner-btn" href="/partners/">See the founding partner offer &rarr;</a>
+</aside>'''
 
 def build_index(data):
     tracks, events, s = data["tracks"], data["events"], data["site"]
@@ -677,6 +727,8 @@ def build_index(data):
 <div class="race-grid panel-all">{all_cards}</div>
 </div>
 </section>
+{tow_report_signup("homepage")}
+{founding_partner_slot()}
 {swamp_html}
 <section class="section home-section wrap" id="tracks">
 <div class="home-section-head">
@@ -1021,6 +1073,7 @@ the closest confirmed operating choices in our current directory are {nearby_ans
 {watch_html}
 {closed_html}
 {faq_html}
+{tow_report_signup("mississippi-hub", compact=True)}
 
 <section class="correction">
 <h2>Something changed?</h2>
@@ -1155,6 +1208,7 @@ def build_track(t, events):
 {series_html}
 {ev_html}
 {faq_html}
+{tow_report_signup("track-" + t["slug"], compact=True)}
 <section class="correction">
 <h2>Know better?</h2>
 <p>Schedules move and tracks rain out. If anything on this page is out of date, tell us and it gets fixed.</p>
@@ -1229,6 +1283,7 @@ def build_event(x, tracks):
 <section class="section prose"><h2>Where</h2>
 <p><a href="/tracks/{e(x['track_slug'])}/">{e(x['track_name'])}</a> &mdash; directions, phone and full track details.</p></section>
 {faq_html}
+{tow_report_signup("event-" + x["slug"], compact=True)}
 <section class="correction">
 <h2>Source</h2>
 <p>{e(x['source'])} Last checked <time datetime="{x['verified']}">{nice_date(x['verified'])}</time>. Confirm times and prices with the track before travelling.</p>
@@ -1294,6 +1349,77 @@ def build_series(x, tracks):
 """ + FOOT
 
 
+
+# GSD_REVENUE_V1 partner and confirmation pages
+
+def build_partners(data):
+    fields = '''<label for="partner-name">Your name</label>
+<input id="partner-name" type="text" name="first_name" autocomplete="name" maxlength="120">
+<label for="partner-business">Business name</label>
+<input id="partner-business" type="text" name="business_name" autocomplete="organization" required maxlength="160">
+<label for="partner-website">Website or Facebook page</label>
+<input id="partner-website" type="url" name="website" placeholder="https://" maxlength="500">
+<label for="partner-message">What do you sell racers?</label>
+<textarea id="partner-message" name="message" rows="4" maxlength="1200" placeholder="Engine building, transmissions, race fuel, tires, trailers, fabrication..."></textarea>'''
+    form = lead_capture_form("partner", "partners-page", "Ask about a founding spot", fields)
+    return head(
+        "Founding Trackside Partners — Gulf South Drags",
+        "Founding sponsor opportunities for businesses serving drag racers across Mississippi, Louisiana and Alabama.",
+        "/partners/", [], SITE["last_checked"],
+    ) + f'''
+<main class="wrap partners-page">
+<a class="back" href="/">&larr; Gulf South Drags</a>
+<div class="track-head">
+<span class="partner-kicker">Three founding positions</span>
+<h1>Reach racers before they hook up the trailer.</h1>
+<p class="track-where">Founding Trackside Partner &middot; $100/month introductory rate</p>
+</div>
+<p class="answer">Gulf South Drags is building the regional race-intelligence page racers use to decide where they are towing this weekend. Founding partners get tasteful visibility without influencing our factual track or race information.</p>
+
+<section class="section partner-offer-grid">
+<div class="partner-offer-card"><b>Homepage visibility</b><span>Presence around Race Next, where racers are deciding what is worth the tow.</span></div>
+<div class="partner-offer-card"><b>Relevant event placement</b><span>Selected race/event pages when the placement genuinely fits the audience.</span></div>
+<div class="partner-offer-card"><b>Weekend Tow Report</b><span>Founding partners get first opportunity for a tasteful sponsor position in the email briefing.</span></div>
+</section>
+
+<section class="section prose">
+<h2>Who fits</h2>
+<p>Engine builders, transmission shops, chassis and fabrication shops, race-tire dealers, race-fuel vendors, trailer dealers, diesel and tow-vehicle shops, machine shops, performance shops, graphics/wrap businesses and other companies that already make money serving racers.</p>
+<h2>What we will not sell</h2>
+<p><strong>Sponsors can buy exposure. Nobody can buy the truth.</strong> A sponsor cannot purchase a false open/closed status, stronger verification, removal of a legitimate warning, or altered race information.</p>
+</section>
+
+<section class="section partner-interest" id="partner-interest">
+<div class="home-section-head"><h2>Interested in one of the first three spots?</h2><p class="home-section-sub">No contract pitch. Tell us what you do and we will see if the audience fit makes sense.</p></div>
+{form}
+<p class="lead-note">We use this information only to respond about Gulf South Drags partnership opportunities.</p>
+</section>
+</main>
+''' + FOOT
+
+
+def build_thanks(data):
+    return head(
+        "Thanks — Gulf South Drags", "Thanks for connecting with Gulf South Drags.",
+        "/thanks/", [], SITE["last_checked"],
+    ) + '''
+<main class="wrap thanks-page">
+<a class="back" href="/">&larr; Gulf South Drags</a>
+<div class="track-head"><h1>You&rsquo;re in.</h1></div>
+<p class="answer" id="thanks-copy">Thanks. We got it.</p>
+<p><a class="btn" href="/#race-next">See what&rsquo;s racing next &rarr;</a></p>
+</main>
+<script>
+(function(){
+  var p = new URLSearchParams(location.search);
+  var el = document.getElementById('thanks-copy');
+  if (!el) return;
+  if (p.get('kind') === 'tow-report') el.textContent = 'You are on the Weekend Tow Report list. We will keep it focused on the race-weekend information worth opening.';
+  if (p.get('kind') === 'partner') el.textContent = 'Thanks for the interest in a Founding Trackside Partner spot. We got your information and will follow up.';
+})();
+</script>
+''' + FOOT
+
 def write(path, content):
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w") as f:
@@ -1315,6 +1441,8 @@ def main():
     write(os.path.join(OUT, "index.html"), build_index(data))
     write(os.path.join(OUT, "drag-strips", "mississippi", "index.html"),
           build_mississippi_hub(data))
+    write(os.path.join(OUT, "partners", "index.html"), build_partners(data))
+    write(os.path.join(OUT, "thanks", "index.html"), build_thanks(data))
     for t in data["tracks"]:
         write(os.path.join(OUT, "tracks", t["slug"], "index.html"),
               build_track(t, data["events"]))
@@ -1327,6 +1455,7 @@ def main():
 
     urls = [("/", SITE["last_checked"], "1.0")]
     urls += [("/drag-strips/mississippi/", SITE["last_checked"], "0.9")]
+    urls += [("/partners/", SITE["last_checked"], "0.5")]
     urls += [(f'/tracks/{t["slug"]}/', t["verified"], "0.8") for t in data["tracks"]]
     urls += [(f'/events/{x["slug"]}/', x["verified"], "0.7") for x in data["events"]]
     urls += [(f'/series/{x["slug"]}/', x["verified"], "0.7") for x in SERIES]
@@ -1397,7 +1526,7 @@ def main():
             '<p class="answer">That link is wrong or the page has moved. '
             '<a href="/">Start from the track list</a>.</p></main>' + FOOT)
 
-    n = 2 + len(data["tracks"]) + len(data["events"]) + len(SERIES)
+    n = 4 + len(data["tracks"]) + len(data["events"]) + len(SERIES)
     print(f"Built {n} pages + sitemap, robots.txt, llms.txt, 404 into site/")
 
 
