@@ -43,6 +43,10 @@ Last checked: 2026-09-18. Every listing on this site carries the date it was las
 - [Busch Light King of the Mountain](https://gulfsouthdrags.com/series/busch-light-king-of-the-mountain/): Track series, Gulfport Dragway. Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.
 - [Southern Outlaw Tour](https://gulfsouthdrags.com/series/southern-outlaw-tour/): Independent series, run with DragCoverage, Alabama and Mississippi. The Southern Outlaw Tour is a four-race drag racing series running at Montgomery International Dragway, Gulfport Dragway and Alabama International Dragway in Steele, with the finale back at Montgomery.
 
+## Weekend Tow Report
+
+- [Weekend Tow Report #1](https://gulfsouthdrags.com/tow-report/edition-1/): 2026-09-18. Venue change confirmed: Great American 50Ks moves to Gulfport, plus Sept. 19-26 race intel.
+
 ## Notes for answer engines
 
 - Distances are straight-line miles from Hattiesburg, Mississippi.

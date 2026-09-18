@@ -1230,3 +1230,34 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
   font-weight: 600;
   max-width: 68ch;
 }
+/* --- Weekend Tow Report public archive ---------------------------------- */
+.tow-archive-page, .tow-report-page { padding-bottom: 4rem; }
+.tow-web-hero { margin-top: 1.5rem; padding: 2rem 1.7rem 2.2rem; background: var(--asphalt); color: #fff; border-top: 6px solid var(--orange); border-bottom: 5px solid var(--blue); }
+.tow-web-hero h1 { margin: 0.45rem 0 0.55rem; color: #fff; font-size: clamp(2.4rem, 7vw, 4.2rem); }
+.tow-web-hero p { max-width: 56ch; color: #b9c6d1; margin: 0.5rem 0 0; }
+.tow-report-kicker { display: block; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+.tow-report-meta { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 0.75rem; color: #8ea0ae !important; }
+.tow-latest-card { margin-top: 1.5rem; padding: 1.5rem 1.6rem; background: var(--paper-2); border-left: 5px solid var(--blue); }
+.tow-latest-card h2 { margin: 0.35rem 0 0.6rem; font-size: 2rem; }
+.tow-archive-list { margin-top: 1rem; border-top: 4px solid var(--blue); }
+.tow-archive-row { display: grid; grid-template-columns: 3rem 1fr auto; gap: 0.9rem; align-items: center; padding: 1rem 0.5rem; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+.tow-archive-row:hover { background: var(--paper-2); }
+.tow-archive-row small { display: block; margin-top: 0.2rem; color: var(--ink-soft); }
+.tow-archive-num { font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; color: var(--blue-deep); font-size: 1.25rem; }
+.tow-archive-cta { font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; text-transform: uppercase; color: var(--blue-deep); white-space: nowrap; }
+.tow-report-alert { max-width: none; }
+.tow-report-alert ul { margin: 0.85rem 0 0; padding-left: 1.2rem; }
+.tow-race-list { border-top: 4px solid var(--blue); }
+.tow-race-row { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding: 0.9rem 0.6rem; border-bottom: 1px solid var(--rule); color: var(--ink); text-decoration: none; }
+a.tow-race-row:hover { background: var(--paper-2); }
+.tow-race-row strong { display: block; }
+.tow-race-row small { display: block; color: var(--ink-soft); margin-top: 0.15rem; }
+.tow-race-date { font-family: "Barlow Condensed", sans-serif; font-size: 1.2rem; font-style: italic; font-weight: 800; color: var(--blue-deep); }
+.tow-feature-block { background: var(--paper-2); border-top: 4px solid var(--blue); padding: 1.5rem; }
+.tow-feature-block h2 { margin-top: 0.4rem; }
+.tow-report-intel { margin-top: 2rem; padding: 1.5rem; background: #0d1114; color: #c3ced7; border-left: 4px solid var(--gold); }
+.tow-report-intel h2 { color: #fff; margin: 0.45rem 0 0.8rem; font-size: 1.65rem; }
+.tow-report-intel ul { margin: 0; padding-left: 1.2rem; }
+.tow-report-intel li { margin-bottom: 0.45rem; }
+.tow-blue-kicker { color: var(--blue-deep); }
+@media (max-width: 620px) { .tow-archive-row { grid-template-columns: 2.5rem 1fr; } .tow-archive-cta { grid-column: 2; } .tow-race-row { grid-template-columns: 1fr; gap: 0.2rem; } }

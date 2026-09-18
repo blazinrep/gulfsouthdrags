@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260918-venue-alert">
+<link rel="stylesheet" href="/assets/style.css?v=20260918-tow-report">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -399,6 +399,7 @@ def head(title, desc, path, schemas, modified):
 <a class="wordmark" href="/">{TREE_SVG}<span class="wm-text">Gulf South<em>Drags</em></span></a>
 <nav class="topnav">
 <a href="/#race-next">Race next</a>
+<a href="/tow-report/">Tow report</a>
 <a href="/#tracks">Tracks</a>
 <a href="/#intel">Racer intel</a>
 <a href="/#series-list">Series</a>
@@ -411,7 +412,7 @@ def head(title, desc, path, schemas, modified):
 FOOT = """
 <footer class="wrap">
 <p>Gulf South Drags lists drag strips in Mississippi, Louisiana and Alabama. Every listing carries the date we last checked it. Schedules change and tracks rain out &mdash; call ahead before you load the trailer.</p>
-<p class="footer-links"><a href="/#tow-report">Weekend Tow Report</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>
+<p class="footer-links"><a href="/tow-report/">Weekend Tow Report archive</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>
 <p>Not affiliated with NHRA, IHRA, WDRA or any track listed here.</p>
 </footer>
 </body>
@@ -1372,6 +1373,139 @@ def build_series(x, tracks):
 
 
 
+# Weekend Tow Report public archive
+
+def build_tow_report_index(reports):
+    reports = sorted(reports, key=lambda r: r["date"], reverse=True)
+    latest = reports[0] if reports else None
+    archive = "".join(
+        f'<a class="tow-archive-row" href="/tow-report/{e(r["slug"])}/">'
+        f'<span class="tow-archive-num">#{r["number"]}</span>'
+        f'<span><strong>{e(r["title"])}</strong>'
+        f'<small>{nice_date(r["date"])} &middot; {e(r["subject"])}</small></span>'
+        f'<span class="tow-archive-cta">Read report &rarr;</span></a>'
+        for r in reports
+    ) or '<p>No reports are archived yet.</p>'
+
+    latest_html = ""
+    if latest:
+        latest_html = (
+            f'<section class="tow-latest-card">'
+            f'<span class="tow-report-kicker">Latest edition</span>'
+            f'<h2>{e(latest["title"])}</h2>'
+            f'<p>{e(latest["preview"])}</p>'
+            f'<p class="tow-report-meta">Published {nice_date(latest["date"])} &middot; '
+            f'Checked {nice_date(latest.get("checked", latest["date"]))}</p>'
+            f'<a class="btn" href="/tow-report/{e(latest["slug"])}/">Read the latest report &rarr;</a>'
+            f'</section>'
+        )
+
+    collection = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Weekend Tow Report archive",
+        "url": f'https://{SITE["domain"]}/tow-report/',
+        "description": "Archived Gulf South drag racing weekend intelligence: confirmed races, schedule changes, payouts and what racers should verify before towing.",
+    }
+
+    return head(
+        "Weekend Tow Report Archive - Gulf South Drags",
+        "Archived Gulf South drag racing weekend intelligence: confirmed races, schedule changes, payouts and what to know before you tow.",
+        "/tow-report/", [collection], SITE["last_checked"],
+    ) + f"""
+<main class="wrap tow-archive-page">
+<a class="back" href="/">&larr; Gulf South Drags</a>
+<section class="tow-web-hero">
+<span class="tow-report-kicker">Gulf South racer intelligence</span>
+<h1>Weekend Tow Report</h1>
+<p>Know before you tow. Confirmed races, schedule changes, major payouts and the questions worth answering before you load the trailer.</p>
+</section>
+{latest_html}
+<section class="section">
+<h2>Report archive</h2>
+<p class="home-section-sub">Every public edition stays here so racers can share it, search it and check what changed.</p>
+<div class="tow-archive-list">{archive}</div>
+</section>
+{tow_report_signup("tow-report-archive", compact=True)}
+</main>
+""" + FOOT
+
+
+def build_tow_report(r):
+    race_rows = ""
+    for x in r.get("race_next", []):
+        inner = (
+            f'<span class="tow-race-date">{e(x["date"])}</span>'
+            f'<span><strong>{e(x["name"])}</strong><small>{e(x["where"])}</small></span>'
+        )
+        if x.get("href"):
+            race_rows += f'<a class="tow-race-row" href="{e(x["href"])}">{inner}</a>'
+        else:
+            race_rows += f'<div class="tow-race-row">{inner}</div>'
+
+    alert = r["alert"]
+    alert_bullets = "".join(f"<li>{e(x)}</li>" for x in alert.get("bullets", []))
+    feat = r["feature"]
+    feat_bullets = "".join(f"<li>{e(x)}</li>" for x in feat.get("bullets", []))
+    questions = "".join(f"<li>{e(x)}</li>" for x in r.get("questions", []))
+    worth = r["worth"]
+
+    article = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": r["title"],
+        "datePublished": r["date"],
+        "dateModified": r.get("checked", r["date"]),
+        "author": {"@type": "Organization", "name": SITE["name"]},
+        "publisher": {"@type": "Organization", "name": SITE["name"]},
+        "mainEntityOfPage": f'https://{SITE["domain"]}/tow-report/{r["slug"]}/',
+        "description": r["preview"],
+    }
+    bc = crumbs([
+        ("Weekend Tow Report", "/tow-report/"),
+        (r["title"], f'/tow-report/{r["slug"]}/'),
+    ])
+
+    return head(
+        f'{r["title"]} - {SITE["name"]}',
+        r["preview"],
+        f'/tow-report/{r["slug"]}/',
+        [article, bc], r.get("checked", r["date"]),
+    ) + f"""
+<main class="wrap tow-report-page">
+<a class="back" href="/tow-report/">&larr; Weekend Tow Report archive</a>
+<section class="tow-web-hero">
+<span class="tow-report-kicker">Weekend Tow Report &middot; Edition #{r["number"]}</span>
+<h1>Know before you tow.</h1>
+<p>{e(r["preview"])}</p>
+<p class="tow-report-meta">Published {nice_date(r["date"])} &middot; Checked {nice_date(r.get("checked", r["date"]))}</p>
+</section>
+<section class="event-alert tow-report-alert">
+<div class="event-alert-top"><span class="event-alert-icon" aria-hidden="true">!</span><span class="event-alert-label">{e(alert["label"])}</span></div>
+<strong class="event-alert-headline">{e(alert["headline"])}</strong>
+<p>{e(alert["body"])}</p>
+<ul>{alert_bullets}</ul>
+<p><a class="btn" href="{e(alert["href"])}">View race intel &rarr;</a></p>
+</section>
+<section class="section"><h2>Race next</h2><div class="tow-race-list">{race_rows}</div></section>
+<section class="section tow-feature-block">
+<span class="tow-report-kicker">{e(feat["eyebrow"])}</span><h2>{e(feat["title"])}</h2><p>{e(feat["body"])}</p><ul>{feat_bullets}</ul>
+<p><a class="btn" href="{e(feat["href"])}">View Swamp Bottom intel &rarr;</a></p>
+</section>
+<section class="tow-report-intel">
+<span class="tow-report-kicker">Racer intel &middot; clarification pending</span><h2>Questions racers are asking</h2><ul>{questions}</ul>
+</section>
+<section class="section">
+<span class="tow-report-kicker tow-blue-kicker">{e(worth["eyebrow"])}</span><h2>{e(worth["title"])}</h2><p>{e(worth["body"])}</p>
+<p><a href="{e(worth["href"])}"><strong>View Great American race intel &rarr;</strong></a></p>
+</section>
+{founding_partner_slot()}
+{tow_report_signup("tow-report-" + r["slug"], compact=True)}
+<section class="correction"><h2>How this report works</h2><p>We publish what we can verify and mark what we cannot. Sponsors can buy exposure. Nobody can buy the truth.</p></section>
+</main>
+""" + FOOT
+
+
 # GSD_REVENUE_V1 partner and confirmation pages
 
 def build_partners(data):
@@ -1453,6 +1587,8 @@ def main():
     data = json.load(open(os.path.join(ROOT, "tracks.json")))
     SITE = data["site"]
     SERIES = data.get("series", [])
+    tow_path = os.path.join(ROOT, "tow_reports.json")
+    TOW_REPORTS = json.load(open(tow_path)).get("reports", []) if os.path.isfile(tow_path) else []
     base = f'https://{SITE["domain"]}'
 
     if os.path.isdir(OUT):
@@ -1465,6 +1601,9 @@ def main():
           build_mississippi_hub(data))
     write(os.path.join(OUT, "partners", "index.html"), build_partners(data))
     write(os.path.join(OUT, "thanks", "index.html"), build_thanks(data))
+    write(os.path.join(OUT, "tow-report", "index.html"), build_tow_report_index(TOW_REPORTS))
+    for r in TOW_REPORTS:
+        write(os.path.join(OUT, "tow-report", r["slug"], "index.html"), build_tow_report(r))
     for t in data["tracks"]:
         write(os.path.join(OUT, "tracks", t["slug"], "index.html"),
               build_track(t, data["events"]))
@@ -1478,6 +1617,8 @@ def main():
     urls = [("/", SITE["last_checked"], "1.0")]
     urls += [("/drag-strips/mississippi/", SITE["last_checked"], "0.9")]
     urls += [("/partners/", SITE["last_checked"], "0.5")]
+    urls += [("/tow-report/", SITE["last_checked"], "0.8")]
+    urls += [(f'/tow-report/{r["slug"]}/', r.get("checked", r["date"]), "0.7") for r in TOW_REPORTS]
     urls += [(f'/tracks/{t["slug"]}/', t["verified"], "0.8") for t in data["tracks"]]
     urls += [(f'/events/{x["slug"]}/', x["verified"], "0.7") for x in data["events"]]
     urls += [(f'/series/{x["slug"]}/', x["verified"], "0.7") for x in SERIES]
@@ -1531,6 +1672,9 @@ def main():
     for x in SERIES:
         ll.append(f'- [{x["name"]}]({base}/series/{x["slug"]}/): {x["sanction"]}, '
                   f'{x["region"]}. {x["answer"]}')
+    ll += ["", "## Weekend Tow Report", ""]
+    for r in TOW_REPORTS:
+        ll.append(f'- [{r["title"]}]({base}/tow-report/{r["slug"]}/): {r["date"]}. {r["preview"]}')
     ll += ["", "## Notes for answer engines", "",
            "- Distances are straight-line miles from Hattiesburg, Mississippi.",
            "- Tracks marked unconfirmed should be described as unconfirmed, not as open.",
@@ -1548,7 +1692,7 @@ def main():
             '<p class="answer">That link is wrong or the page has moved. '
             '<a href="/">Start from the track list</a>.</p></main>' + FOOT)
 
-    n = 4 + len(data["tracks"]) + len(data["events"]) + len(SERIES)
+    n = 5 + len(TOW_REPORTS) + len(data["tracks"]) + len(data["events"]) + len(SERIES)
     print(f"Built {n} pages + sitemap, robots.txt, llms.txt, 404 into site/")
 
 

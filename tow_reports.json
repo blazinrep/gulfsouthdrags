@@ -1,0 +1,78 @@
+{
+  "reports": [
+    {
+      "number": 1,
+      "slug": "edition-1",
+      "date": "2026-09-18",
+      "checked": "2026-09-18",
+      "title": "Weekend Tow Report #1",
+      "subject": "Gulfport venue change + what's next",
+      "preview": "Venue change confirmed: Great American 50Ks moves to Gulfport, plus Sept. 19-26 race intel.",
+      "alert": {
+        "label": "VENUE CHANGED",
+        "headline": "NOW AT GULFPORT DRAGWAY",
+        "body": "The SDPC Raceshop Great American 50Ks has moved from Montgomery International Dragway to Gulfport Dragway in Gulfport, Mississippi.",
+        "bullets": [
+          "Parking begins Monday, October 12.",
+          "Test & Tune runs Tuesday, October 13, 11 AM-2 PM.",
+          "Four straight $50,000-to-win races run October 14-17.",
+          "Regular gate entry is available without pre-registration."
+        ],
+        "href": "/events/great-american-500k-bracket-race-2026/"
+      },
+      "race_next": [
+        {
+          "date": "SEP 19",
+          "name": "$5,000 to Win Footbrake",
+          "where": "Holiday Raceway - Woodstock, AL"
+        },
+        {
+          "date": "SEP 19",
+          "name": "Super Saturday",
+          "where": "No Problem Raceway Park - Belle Rose, LA"
+        },
+        {
+          "date": "SEP 24-27",
+          "name": "IHRA Bracket Finals",
+          "where": "Montgomery International Dragway - Montgomery, AL"
+        },
+        {
+          "date": "SEP 25-26",
+          "name": "Swamp Bottom Run What You Brung Weekend",
+          "where": "Swamp Bottom Dragstrip - Columbia, MS",
+          "href": "/events/swamp-bottom-run-what-you-brung-sept-25-26-2026/"
+        },
+        {
+          "date": "SEP 26",
+          "name": "King of the Bayou Bracket Race",
+          "where": "No Problem Raceway Park - Belle Rose, LA"
+        }
+      ],
+      "feature": {
+        "eyebrow": "SWAMP BOTTOM - SEPT. 25-26",
+        "title": "Run What You Brung Weekend",
+        "body": "Friday: gates open 5 PM, track hot 6 PM for Test & Tune. Saturday: gates open 3 PM, track hot 5 PM.",
+        "bullets": [
+          "All on 28s Shootout - 7 PM Saturday - $2,500 payout - no shootout entry fee advertised.",
+          "Fastest Street Car Shootout - 6 PM Saturday - $500 payout - free entry advertised.",
+          "Facebook post lists a $20 gate fee."
+        ],
+        "href": "/events/swamp-bottom-run-what-you-brung-sept-25-26-2026/"
+      },
+      "questions": [
+        "Whether 17-inch wheel / 315x50x17 combinations qualify for the 28s class.",
+        "Whether AWD cars are allowed in Street Car.",
+        "The exact Street Car rules.",
+        "Saturday test-session fees.",
+        "Whether \u201cNHRA rules apply\u201d refers specifically to NHRA safety rules.",
+        "Bracket racing has been described as being worked on with NHRA, but no date has been confirmed."
+      ],
+      "worth": {
+        "eyebrow": "WORTH THE TOW",
+        "title": "Great American 50Ks - Gulfport",
+        "body": "Four $50K-to-win days, Wednesday through Saturday, October 14-17. Walk-up/gate entry is $250 per entry, per day. Re-entry is $250, first round only.",
+        "href": "/events/great-american-500k-bracket-race-2026/"
+      }
+    }
+  ]
+}
