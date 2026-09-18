@@ -1161,3 +1161,72 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
   .tow-report .lead-form { grid-template-columns: 1fr; }
   .tow-report .lead-form .btn { width: 100%; justify-content: center; }
 }
+
+
+/* --- urgent event notices ------------------------------------------------ */
+.chip-alert {
+  background: #c62828;
+  color: #fff;
+  border-color: #c62828;
+  font-weight: 800;
+}
+
+.event-alert {
+  margin: 1.15rem 0 1.6rem;
+  padding: 1.05rem 1.2rem 1.15rem;
+  max-width: 52rem;
+  background: #fff2f0;
+  border: 3px solid #c62828;
+  border-left-width: 12px;
+  box-shadow: 0 10px 26px rgba(110, 24, 20, 0.16);
+}
+
+.event-alert-top {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.55rem;
+}
+
+.event-alert-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  flex: none;
+  border-radius: 50%;
+  background: #c62828;
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.event-alert-label {
+  display: inline-block;
+  padding: 0.24rem 0.55rem;
+  background: #c62828;
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+.event-alert-headline {
+  display: block;
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(1.65rem, 3.3vw, 2.25rem);
+  line-height: 1.02;
+  color: #7b1712;
+  text-transform: uppercase;
+}
+
+.event-alert p {
+  margin: 0.65rem 0 0;
+  color: #4b211e;
+  font-weight: 600;
+  max-width: 68ch;
+}

@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/style.css?v=20260918-venue-alert">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -462,9 +462,14 @@ def short_date(iso):
 
 
 def upcoming_events(events, today):
-    """Events on or after today, earliest first."""
-    return sorted((x for x in events if x.get("start_iso", "") >= today),
-                  key=lambda x: x["start_iso"])
+    """Events that have not ended yet, earliest start first."""
+    return sorted(
+        (
+            x for x in events
+            if x.get("end_iso", x.get("start_iso", "")) >= today
+        ),
+        key=lambda x: x["start_iso"],
+    )
 
 
 def length_keys(length):
@@ -488,6 +493,8 @@ def event_card(x, cta="View race intel"):
     chips = f'<span class="chip">{e(tag)}</span>'
     if x.get("major_event"):
         chips += '<span class="chip chip-major">Major race</span>'
+    if x.get("alert"):
+        chips += f'<span class="chip chip-alert">{e(x["alert"].get("label", "ALERT"))}</span>'
     return (
         f'<a class="race-card" href="/events/{x["slug"]}/">'
         f'<span class="race-date">{short_date(x["start_iso"])}</span>'
@@ -590,7 +597,7 @@ def build_index(data):
         return next((x for x in all_upcoming if x["track_slug"] == slug), None)
 
     # --- Race next: default drag racing, all-events tab available, zero JS ---
-    drag_cards = "".join(event_card(x) for x in drag_upcoming[:3])
+    drag_cards = "".join(event_card(x) for x in drag_upcoming[:6])
     if not drag_cards:
         drag_cards = '<p class="race-empty">No drag-racing events confirmed right now. Check back — we look every week.</p>'
     all_cards = "".join(event_card(x) for x in all_upcoming[:6])
@@ -1256,6 +1263,20 @@ def build_event(x, tracks):
     bc = crumbs([("Tracks", "/"), (x["track_name"], f'/tracks/{x["track_slug"]}/'),
                  (x["name"], f'/events/{x["slug"]}/')])
 
+    alert = x.get("alert") or {}
+    event_alert_html = ""
+    if alert:
+        event_alert_html = (
+            '<div class="event-alert" role="alert" aria-label="Important event update">'
+            '<div class="event-alert-top">'
+            '<span class="event-alert-icon" aria-hidden="true">!</span>'
+            f'<span class="event-alert-label">{e(alert.get("label", "IMPORTANT UPDATE"))}</span>'
+            '</div>'
+            f'<strong class="event-alert-headline">{e(alert.get("headline", ""))}</strong>'
+            f'<p>{e(alert.get("detail", ""))}</p>'
+            '</div>'
+        )
+
     faq_html, faq_schema = faq_block([
         (f'When is the {x["name"]}?',
          f'{x["dates"]} at {x["track_name"]} in {x["city"]}, {x["state"]}. '
@@ -1276,6 +1297,7 @@ def build_event(x, tracks):
 <p class="track-where">{e(x['track_name'])} &mdash; {e(x['city'])}, {e(x['state'])}<br>
 <time datetime="{x['start_iso']}">{e(x['dates'])}</time></p>
 </div>
+{event_alert_html}
 <p class="answer">{e(x['summary'])}</p>
 <section class="section"><h2>Schedule</h2><dl class="facts">{sched}</dl></section>
 <section class="section"><h2>At the gate</h2><dl class="pricing">{prices}</dl></section>
