@@ -111,8 +111,8 @@
       "website": "https://gulfportdragway.com/",
       "facebook": "https://www.facebook.com/gulfportdragway/",
       "status": "open",
-      "verified": "2026-09-17",
-      "notes": "The busiest track on the Mississippi Gulf Coast and the anchor of the region. Founded in 1972 as Magnolia Dragway. Runs the Busch Light King of the Mountain series on Wednesdays and an IHRA Track Championship Series on weekends, including the Summer Iron Man Challenge. Hosts the Gulf Coast DragFest and the Southeast Gassers Association Gulf Coast Nationals. Elevation is about 21 feet, the lowest in the region — worth knowing if you are correcting for air density.\n\nOn 17 September 2026, Gulfport Dragway announced that the SDPC Raceshop Great American 50Ks was moving from Montgomery to Gulfport for Oct. 13-17, with parking beginning Oct. 12 and four $50,000-to-win race days.",
+      "verified": "2026-09-18",
+      "notes": "The busiest track on the Mississippi Gulf Coast and the anchor of the region. Founded in 1972 as Magnolia Dragway. Runs the Busch Light King of the Mountain series on Wednesdays and an IHRA Track Championship Series on weekends, including the Summer Iron Man Challenge. Hosts the Gulf Coast DragFest and the Southeast Gassers Association Gulf Coast Nationals. Elevation is about 21 feet, the lowest in the region — worth knowing if you are correcting for air density.\n\nOn 17 September 2026, Gulfport Dragway announced that the SDPC Raceshop Great American 50Ks was moving from Montgomery to Gulfport for Oct. 13-17, with parking beginning Oct. 12 and four $50,000-to-win race days.\n\nOn 18 September 2026, Gulfport announced a late-breaking addition to the 3rd Annual Cruisin' After Dark on Oct. 8: Neil Esposito's Jersey Attitude Jet Dragster. Gates open 5 PM, track hot 6-11 PM, and spectator admission is $10.",
       "caveat": "",
       "directions": "I-10 exit 31, south on Canal Road, cross the railroad tracks about a mile, left onto Racetrack Road.",
       "answer": "Gulfport Dragway is a quarter-mile and eighth-mile asphalt drag strip in Gulfport, Mississippi. It races Wednesday nights and weekends from January through December and is IHRA sanctioned.",
@@ -838,6 +838,51 @@
       "detail": "One of the named events on Holiday Raceway's 2026 calendar, running all three bracket classes.\n\nOpen track and test and tune runs the Thursday before, on 1 October. A $5,000 to win Footbrake race follows the week after, on 10 October.\n\nHoliday Raceway publishes its dates as subject to change. Confirm with the track before travelling.",
       "source": "From Holiday Raceway's published 2026 season schedule.",
       "verified": "2026-09-12"
+    },
+    {
+      "slug": "gulfport-cruisin-after-dark-2026",
+      "name": "3rd Annual Cruisin' After Dark",
+      "track_slug": "gulfport-dragway",
+      "track_name": "Gulfport Dragway",
+      "event_type": "drag",
+      "major_event": true,
+      "series_slugs": [],
+      "city": "Gulfport",
+      "state": "MS",
+      "dates": "Thursday 8 October 2026",
+      "start_iso": "2026-10-08",
+      "schedule": [
+        [
+          "Thursday 8 October",
+          "Gates open 5:00 PM."
+        ],
+        [
+          "Thursday 8 October",
+          "Track hot 6:00 PM to 11:00 PM."
+        ],
+        [
+          "Thursday 8 October",
+          "Jersey Attitude Jet Dragster appearance with Neil Esposito."
+        ],
+        [
+          "Thursday 8 October",
+          "Wheel Standing Contest, Smoke 'Em Till They Pop Contest, quarter-mile drag racing and parade of cars."
+        ]
+      ],
+      "prices": [
+        [
+          "Spectators",
+          "$10"
+        ],
+        [
+          "Racing entry",
+          "Current Gulfcoast Race Week listing says an additional $20; confirm with Gulfport Dragway before travelling."
+        ]
+      ],
+      "summary": "LATE-BREAKING ADDITION: Neil Esposito's Jersey Attitude Jet Dragster has been added to Gulfport Dragway's 3rd Annual Cruisin' After Dark on Thursday, Oct. 8. Gates open at 5 PM, the track is hot 6-11 PM, and spectator admission is $10.",
+      "detail": "Cruisin' After Dark is part of Gulfport Dragway's Cruisin' the Coast week programming. Gulfport announced on Sept. 18 that Neil Esposito and the Jersey Attitude Jet Dragster were a late-breaking addition to the Thursday night show. The program also advertises a Wheel Standing Contest, a Smoke 'Em Till They Pop Contest, quarter-mile drag racing and a parade of cars.\n\nThe late-breaking Gulfport announcement lists spectator admission at $10. A current Gulfcoast Race Week event listing also says racing entry is an additional $20; confirm racer fees and contest participation requirements directly with the track before towing.\n\nThis event leads directly into the Southeast Gassers Association Gulf Coast Nationals at Gulfport on Oct. 9-10.",
+      "source": "Official Gulfport Dragway late-breaking Facebook announcement supplied 18 September 2026; date, gate time, track-hot window and spectator price corroborated by a current Gulfcoast Race Week event listing.",
+      "verified": "2026-09-18"
     },
     {
       "slug": "sega-gulf-coast-nationals-2026",
