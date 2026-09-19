@@ -316,3 +316,15 @@ that copy to claim live source counts, "real-time" status, or actual
 detection numbers until this bot's output is genuinely wired into the
 homepage build — see `build.py`'s TrackWatch section and
 `assets/style.css`'s `.trackwatch-*` rules.
+
+## Manual Facebook intake
+
+The private Control Room includes **Add Facebook Update**. Paste the text of an
+official track or promoter Facebook post, optionally add the post URL, and choose
+the track. TrackWatch creates a normal pending review item with the current site
+snapshot on the left and the pasted Facebook post on the right. It also flags
+obvious new prices, times, and cancellation/postponement language.
+
+This feature does **not** scrape Facebook, does not require a Meta login, and does
+not require the track owner to use GulfSouthDrags. It is a fast human-assisted
+intake path for first-party Facebook announcements.

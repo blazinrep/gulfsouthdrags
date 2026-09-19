@@ -17,6 +17,7 @@ Stdlib only: http.server + subprocess + string templating, no framework.
 """
 
 import html
+import json
 import subprocess
 import sys
 import threading
@@ -24,13 +25,14 @@ import webbrowser
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 TW_DIR = Path(__file__).resolve().parent
 REPO_ROOT = TW_DIR.parent
 sys.path.insert(0, str(TW_DIR))
 
 import review_queue as rq  # noqa: E402
+import facebook_intake as fb  # noqa: E402
 
 TEMPLATE_PATH = TW_DIR / "templates" / "review.html"
 LOG_DIR = TW_DIR / "logs"
@@ -214,6 +216,69 @@ def _render_sweep_panel():
 """
 
 
+
+def _render_facebook_panel():
+    options = []
+    for track in fb.get_track_options():
+        label = f"{track['name']} — {track['state']}" if track.get("state") else track["name"]
+        options.append(
+            f'<option value="{_e(track["slug"])}" data-track-name="{_e(track["name"])}">{_e(label)}</option>'
+        )
+    option_html = "\n".join(options)
+
+    return f"""
+<section class="facebook-panel" id="facebook-update">
+  <div class="facebook-panel-head">
+    <div>
+      <div class="eyebrow">MANUAL FIRST-PARTY INTAKE</div>
+      <h2>Add Facebook Update</h2>
+      <p>Copy the Facebook post, come here, paste from your clipboard, review the detected track, then analyze it.</p>
+    </div>
+    <span class="facebook-badge">No Meta login required</span>
+  </div>
+
+  <form method="post" action="/facebook-intake" class="facebook-form" id="facebook-intake-form">
+    <label>
+      <span>Track</span>
+      <select name="track_slug" id="facebook-track" required>
+        <option value="">Choose a track…</option>
+        {option_html}
+      </select>
+    </label>
+
+    <div class="clipboard-box">
+      <button class="clipboard-btn" type="button" id="paste-facebook">Paste from Clipboard</button>
+      <span id="clipboard-status">Copy a Facebook post first, then click this button.</span>
+    </div>
+
+    <label class="facebook-post">
+      <span>Facebook post text</span>
+      <textarea id="facebook-post-text" name="post_text" required maxlength="30000" rows="10"
+        placeholder="The copied Facebook post will appear here."></textarea>
+    </label>
+
+    <details class="evidence-details">
+      <summary>Evidence details <small>optional</small></summary>
+      <div class="evidence-grid">
+        <label>
+          <span>Facebook post URL</span>
+          <input type="url" name="source_url" placeholder="https://www.facebook.com/...">
+        </label>
+        <label>
+          <span>Source label</span>
+          <input type="text" name="source_label" placeholder="Gulfport Dragway — Official Facebook" maxlength="180">
+        </label>
+      </div>
+    </details>
+
+    <div class="facebook-form-foot">
+      <p>TrackWatch compares this post with current GulfSouthDrags data and creates a review item. Nothing publishes automatically.</p>
+      <button class="facebook-submit" type="submit">Analyze Update</button>
+    </div>
+  </form>
+</section>
+"""
+
 def render_page():
     pending = rq.list_detections("pending")
     counts = rq.counts()
@@ -244,6 +309,7 @@ def render_page():
         .replace("{{APPROVED_COUNT}}", str(counts["approved"]))
         .replace("{{IGNORED_COUNT}}", str(counts["ignored"]))
         .replace("{{SWEEP_PANEL}}", _render_sweep_panel())
+        .replace("{{FACEBOOK_PANEL}}", _render_facebook_panel())
         .replace("{{QUEUE_HEADING}}", queue_heading)
         .replace("{{CARDS}}", cards_html)
     )
@@ -273,6 +339,40 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
+
+        if path == "/clipboard":
+            try:
+                result = subprocess.run(
+                    ["pbpaste"],
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    text=True,
+                    timeout=3,
+                    check=False,
+                )
+                payload = json.dumps({
+                    "ok": result.returncode == 0,
+                    "text": result.stdout if result.returncode == 0 else "",
+                }).encode("utf-8")
+                self.send_response(200)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Cache-Control", "no-store")
+                self.send_header("Content-Length", str(len(payload)))
+                self.end_headers()
+                self.wfile.write(payload)
+            except Exception as exc:
+                payload = json.dumps({
+                    "ok": False,
+                    "text": "",
+                    "error": str(exc),
+                }).encode("utf-8")
+                self.send_response(500)
+                self.send_header("Content-Type", "application/json; charset=utf-8")
+                self.send_header("Content-Length", str(len(payload)))
+                self.end_headers()
+                self.wfile.write(payload)
+            return
+
         if path in ("/", "/index.html"):
             body = render_page().encode("utf-8")
             self.send_response(200)
@@ -286,6 +386,36 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self):
         path = urlparse(self.path).path
+
+
+        if path == "/facebook-intake":
+            try:
+                length = int(self.headers.get("Content-Length", "0") or "0")
+                if length <= 0 or length > 40000:
+                    raise ValueError("Invalid form submission.")
+
+                body = self.rfile.read(length).decode("utf-8", errors="replace")
+                form = parse_qs(body, keep_blank_values=True)
+
+                def field(name):
+                    values = form.get(name) or [""]
+                    return values[0].strip()
+
+                record = fb.queue_facebook_update(
+                    track_slug=field("track_slug"),
+                    post_text=field("post_text"),
+                    source_url=field("source_url"),
+                    source_label=field("source_label"),
+                )
+                location = f"/#{record['id']}"
+            except Exception as exc:
+                sys.stderr.write(f"[review] Facebook intake failed: {exc}\n")
+                location = "/#facebook-update"
+
+            self.send_response(303)
+            self.send_header("Location", location)
+            self.end_headers()
+            return
 
         if path == "/sweep":
             if not SWEEP_LOCK.acquire(blocking=False):

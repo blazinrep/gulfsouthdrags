@@ -76,6 +76,68 @@
     border-radius: 3px; overflow: auto; white-space: pre-wrap; margin-bottom: 0;
   }
 
+
+  .facebook-panel {
+    background: #fff; border: 1px solid var(--rule); border-top: 5px solid #1877f2;
+    border-radius: 4px; padding: 1.3rem 1.4rem; margin-bottom: 2rem;
+    box-shadow: 0 5px 20px rgba(20, 24, 28, 0.05);
+  }
+  .facebook-panel-head {
+    display: flex; justify-content: space-between; gap: 1rem; align-items: flex-start; margin-bottom: 1rem;
+  }
+  .facebook-panel h2 { margin: 0; font-size: 1.45rem; }
+  .facebook-panel-head p { color: var(--ink-soft); margin: 0.3rem 0 0; max-width: 680px; }
+  .facebook-badge {
+    flex: 0 0 auto; font-family: ui-monospace, Menlo, monospace; font-size: 0.7rem;
+    font-weight: 800; background: #eaf3ff; color: #125db7; border: 1px solid #bfd8f7;
+    border-radius: 999px; padding: 0.35rem 0.6rem; white-space: nowrap;
+  }
+  .facebook-form {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem;
+    padding-top: 1rem; border-top: 1px solid #e7e2da;
+  }
+  .facebook-form label { display: grid; gap: 0.3rem; }
+  .facebook-form label > span { font-size: 0.78rem; font-weight: 800; color: #36434c; }
+  .facebook-form small { font-weight: 500; color: var(--ink-soft); }
+  .facebook-form input,
+  .facebook-form select,
+  .facebook-form textarea {
+    width: 100%; font: inherit; color: var(--ink); background: #fff;
+    border: 1px solid #cfc9bf; border-radius: 3px; padding: 0.62rem 0.7rem;
+  }
+  .facebook-form textarea { resize: vertical; min-height: 175px; line-height: 1.45; }
+  .facebook-post { grid-column: 1 / -1; }
+
+  .clipboard-box {
+    display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;
+    align-self: end; min-height: 42px;
+  }
+  button.clipboard-btn {
+    background: #1877f2; color: #fff; box-shadow: 0 2px 0 #0f56b1;
+    padding: 0.62rem 0.85rem;
+  }
+  button.clipboard-btn:hover { background: #1269d3; }
+  #clipboard-status { color: var(--ink-soft); font-size: 0.76rem; }
+  #clipboard-status.ok { color: var(--green); font-weight: 700; }
+  #clipboard-status.warn { color: var(--red); font-weight: 700; }
+  .evidence-details {
+    grid-column: 1 / -1; border-top: 1px solid #e7e2da; padding-top: 0.7rem;
+  }
+  .evidence-details summary {
+    color: var(--blue); cursor: pointer; font-size: 0.82rem; font-weight: 750;
+  }
+  .evidence-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-top: 0.75rem;
+  }
+
+  .facebook-form-foot {
+    grid-column: 1 / -1; display: flex; justify-content: space-between;
+    align-items: center; gap: 1rem; flex-wrap: wrap;
+  }
+  .facebook-form-foot p { color: var(--ink-soft); font-size: 0.78rem; margin: 0; max-width: 650px; }
+  button.facebook-submit { background: #1877f2; color: #fff; box-shadow: 0 2px 0 #0f56b1; }
+  button.facebook-submit:hover { background: #1269d3; }
+
   .queue-heading { margin-bottom: 1rem; }
   .queue-heading h2 { margin: 0; font-size: 1.35rem; }
   .queue-heading p { color: var(--ink-soft); margin: 0.25rem 0 0; }
@@ -120,6 +182,11 @@
 
   @media (max-width: 760px) {
     .sweep-top { flex-direction: column; }
+    .facebook-panel-head { flex-direction: column; }
+    .facebook-form { grid-template-columns: 1fr; }
+    .facebook-post, .facebook-form-foot { grid-column: 1; }
+    .evidence-details { grid-column: 1; }
+    .evidence-grid { grid-template-columns: 1fr; }
     .sweep-form { width: 100%; }
     .sweep-stats { grid-template-columns: repeat(2, 1fr); }
   }
@@ -137,8 +204,83 @@
 </header>
 <main>
 {{SWEEP_PANEL}}
+{{FACEBOOK_PANEL}}
 {{QUEUE_HEADING}}
 {{CARDS}}
 </main>
+
+<script>
+(function () {
+  const button = document.getElementById('paste-facebook');
+  const textarea = document.getElementById('facebook-post-text');
+  const status = document.getElementById('clipboard-status');
+  const select = document.getElementById('facebook-track');
+
+  if (!button || !textarea || !status || !select) return;
+
+  function rememberTrack() {
+    if (select.value) localStorage.setItem('trackwatch:lastFacebookTrack', select.value);
+  }
+
+  function restoreTrack() {
+    const saved = localStorage.getItem('trackwatch:lastFacebookTrack');
+    if (!saved) return;
+    const option = Array.from(select.options).find(o => o.value === saved);
+    if (option) select.value = saved;
+  }
+
+  function detectTrack(text) {
+    const low = (text || '').toLowerCase();
+    let best = null;
+    for (const option of Array.from(select.options)) {
+      if (!option.value) continue;
+      const name = (option.dataset.trackName || option.textContent || '').trim().toLowerCase();
+      if (name && low.includes(name)) {
+        if (!best || name.length > best.name.length) best = { option, name };
+      }
+    }
+    if (best) {
+      select.value = best.option.value;
+      rememberTrack();
+      return best.option.textContent.trim();
+    }
+    return null;
+  }
+
+  restoreTrack();
+  select.addEventListener('change', rememberTrack);
+
+  button.addEventListener('click', async function () {
+    button.disabled = true;
+    status.className = '';
+    status.textContent = 'Reading clipboard…';
+
+    try {
+      const response = await fetch('/clipboard', { cache: 'no-store' });
+      const data = await response.json();
+
+      if (!response.ok || !data.ok || !data.text) {
+        throw new Error('Clipboard is empty or could not be read.');
+      }
+
+      textarea.value = data.text.trim();
+      const detected = detectTrack(textarea.value);
+
+      status.className = 'ok';
+      status.textContent = detected
+        ? `Pasted. Track detected: ${detected}`
+        : 'Pasted. Choose the track, then Analyze Update.';
+      textarea.focus();
+    } catch (error) {
+      status.className = 'warn';
+      status.textContent = 'Could not read the clipboard. Paste into the box manually.';
+      textarea.focus();
+    } finally {
+      button.disabled = false;
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

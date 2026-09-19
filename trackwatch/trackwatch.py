@@ -116,8 +116,38 @@ def run_sweep(track_filter=None, source_filter=None, force=False, reset_baseline
             continue
 
         text = normalizer.html_to_text(result.body)
-        new_hash = detector.content_hash(text)
         previous_text = detector.load_latest_snapshot(key)
+
+        # A successful HTTP response is not automatically a trustworthy
+        # content snapshot. Some sites intermittently return an empty shell,
+        # broken template, or nearly blank page with HTTP 200. Never replace
+        # the last good baseline with that response.
+        current_clean = text.strip()
+        previous_clean = (previous_text or "").strip()
+
+        if not current_clean:
+            log_lines.append(
+                f"ERROR    {track_slug}/{src['id']}: empty normalized response; "
+                "last good baseline retained"
+            )
+            stats["errors"] += 1
+            continue
+
+        if (
+            previous_clean
+            and len(previous_clean) >= 500
+            and len(current_clean) < 80
+            and len(current_clean) < int(len(previous_clean) * 0.05)
+        ):
+            log_lines.append(
+                f"ERROR    {track_slug}/{src['id']}: suspiciously small response "
+                f"({len(current_clean)} chars vs {len(previous_clean)} baseline); "
+                "last good baseline retained"
+            )
+            stats["errors"] += 1
+            continue
+
+        new_hash = detector.content_hash(text)
         is_baseline = state is None or previous_text is None
 
         detector.save_snapshot(key, text)

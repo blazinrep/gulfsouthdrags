@@ -51,7 +51,16 @@
       ]
     },
     "swamp-bottom-dragstrip": {
-      "sources": []
+      "sources": [
+        {
+          "id": "official-site",
+          "type": "webpage",
+          "url": "https://swampbottomdragstrip.com/",
+          "enabled": false,
+          "priority": "primary",
+          "note": "Official website is live, but its robots.txt currently disallows the TrackWatch user agent. Do not bypass. Verify manually in a browser and use first-party Facebook/manual intake when needed."
+        }
+      ]
     },
     "byram-dragway": {
       "sources": []
