@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260918-tow-report">
+<link rel="stylesheet" href="/assets/style.css?v=20260918-brand-banner">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -704,15 +704,24 @@ def build_index(data):
         s["description"], "/", [website, itemlist, faq_schema], s["last_checked"],
     ) + f"""
 <main>
-<section class="hero wrap bleed">
-{TRACK_SVG}
-<p class="eyebrow">Mississippi &middot; Louisiana &middot; Alabama</p>
-<h1>Know before you tow.</h1>
+<section class="hero hero-branded wrap bleed">
+<div class="hero-banner-frame">
+<img class="hero-brand-banner"
+     src="/assets/gulfsouthdrags-homepage-banner.png"
+     width="2032" height="774"
+     alt="Gulf South Drags — Know Before You Tow. Drag racing schedules, track updates, race intel and weekend reports across Mississippi, Louisiana and Alabama."
+     loading="eager" fetchpriority="high" decoding="async">
+</div>
+<h1 class="sr-only">Gulf South drag racing — know before you tow.</h1>
+<div class="hero-brand-support">
+<div>
 <p class="lede">Verified drag-racing schedules, track status and race-day information across the Gulf South.</p>
 <p class="lede-sub">Built for the racer deciding whether to hook up the trailer.</p>
+</div>
 <div class="hero-actions">
 <a class="btn" href="#race-next">What&rsquo;s racing next?</a>
 <a class="btn btn-ghost" href="#tracks">Find a track</a>
+</div>
 </div>
 <ul class="tally">{proof}</ul>
 </section>
