@@ -10,6 +10,8 @@
 const RESEND_API = 'https://api.resend.com';
 const TOW_SEGMENT_NAME = 'GulfSouthDrags — Weekend Tow Report';
 const TOW_TOPIC_NAME = 'Weekend Tow Report';
+const TOW_NOTIFY_TO = 'towreport@gulfsouthdrags.com';
+const TOW_NOTIFY_FROM = 'Gulf South Drags <towreport@gulfsouthdrags.com>';
 
 function clean(v, max = 500) {
   return String(v || '').trim().slice(0, max);
@@ -120,6 +122,54 @@ async function syncTowReportContact(apiKey, email, firstName) {
   throw new Error(`Resend contact create failed (${created.response.status})`);
 }
 
+
+function escapeHtml(v) {
+  return String(v || '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+}
+
+async function sendTowReportSignupNotification(apiKey, email, firstName, source) {
+  const safeEmail = escapeHtml(email);
+  const safeName = escapeHtml(firstName || '');
+  const safeSource = escapeHtml(source || 'unknown');
+  const signedUpAt = new Date().toISOString();
+
+  const response = await resendRequest(apiKey, '/emails', {
+    method: 'POST',
+    body: JSON.stringify({
+      from: TOW_NOTIFY_FROM,
+      to: [TOW_NOTIFY_TO],
+      subject: 'New Weekend Tow Report subscriber',
+      text:
+        `New Weekend Tow Report subscriber\n\n` +
+        `Email: ${email}\n` +
+        (firstName ? `Name: ${firstName}\n` : '') +
+        `Signup source: ${source || 'unknown'}\n` +
+        `Received: ${signedUpAt}\n`,
+      html:
+        '<div style="font-family:Arial,sans-serif;max-width:620px;margin:auto">' +
+        '<h2 style="margin-bottom:8px">New Weekend Tow Report subscriber</h2>' +
+        '<p style="margin-top:0">A new person just joined Gulf South Drags.</p>' +
+        '<table style="border-collapse:collapse;width:100%">' +
+        `<tr><td style="padding:8px 0;font-weight:700">Email</td><td>${safeEmail}</td></tr>` +
+        (safeName ? `<tr><td style="padding:8px 0;font-weight:700">Name</td><td>${safeName}</td></tr>` : '') +
+        `<tr><td style="padding:8px 0;font-weight:700">Signup source</td><td>${safeSource}</td></tr>` +
+        `<tr><td style="padding:8px 0;font-weight:700">Received</td><td>${signedUpAt}</td></tr>` +
+        '</table>' +
+        '<p style="margin-top:18px;color:#555">This alert is only sent for the first Tow Report signup for an email address.</p>' +
+        '</div>',
+    }),
+  });
+
+  if (!response.response.ok) {
+    throw new Error(`Resend signup notification failed (${response.response.status})`);
+  }
+}
+
 export async function onRequestPost(context) {
   const form = await context.request.formData();
   const kind = clean(form.get('kind'), 40);
@@ -154,7 +204,18 @@ export async function onRequestPost(context) {
   const website = clean(form.get('website'), 500);
   const message = clean(form.get('message'), 1200);
 
+  let alreadySubscribed = false;
+
   try {
+    if (kind === 'tow_report') {
+      const existing = await context.env.GSD_LEADS_DB.prepare(
+        'SELECT 1 AS found FROM leads WHERE kind = ? AND email = ? LIMIT 1',
+      )
+        .bind(kind, email)
+        .first();
+      alreadySubscribed = Boolean(existing);
+    }
+
     await context.env.GSD_LEADS_DB.prepare(`
       INSERT INTO leads (kind, email, first_name, business_name, website, message, source)
       VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -187,6 +248,19 @@ export async function onRequestPost(context) {
         );
       } catch (err) {
         console.error('Resend contact sync failed', err);
+      }
+
+      if (!alreadySubscribed) {
+        try {
+          await sendTowReportSignupNotification(
+            context.env.RESEND_API_KEY,
+            email,
+            firstName,
+            source,
+          );
+        } catch (err) {
+          console.error('Tow Report signup notification failed', err);
+        }
       }
     }
   }
