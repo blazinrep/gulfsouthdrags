@@ -1428,3 +1428,63 @@ a.tow-race-row:hover { background: var(--paper-2); }
     font-size: clamp(2rem, 10vw, 2.8rem);
   }
 }
+
+/* --- GSD mobile masthead polish -------------------------------------- */
+@media (max-width: 620px) {
+  .masthead {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.55rem 1rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.7rem;
+  }
+
+  .masthead .wordmark {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .masthead .stamp {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: end;
+    text-align: right;
+    font-size: 0.64rem;
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
+  .masthead .topnav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
+    min-width: 0;
+    overflow: visible;
+    justify-content: space-between;
+    gap: 0.45rem;
+    padding-top: 0.55rem;
+    border-top: 1px solid #2b343c;
+    font-size: 0.79rem;
+    line-height: 1;
+  }
+
+  .masthead .topnav a {
+    flex: 0 0 auto;
+    padding-top: 0.12rem;
+    padding-bottom: 0.12rem;
+  }
+}
+
+@media (max-width: 370px) {
+  .masthead .topnav {
+    gap: 0.28rem;
+    font-size: 0.72rem;
+    letter-spacing: 0;
+  }
+
+  .masthead .stamp {
+    font-size: 0.6rem;
+  }
+}

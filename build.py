@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260918-tow-archive-brand">
+<link rel="stylesheet" href="/assets/style.css?v=20260918-mobile-nav-polish">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
