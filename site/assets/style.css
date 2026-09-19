@@ -1339,3 +1339,92 @@ a.tow-race-row:hover { background: var(--paper-2); }
     object-position: 49% 50%;
   }
 }
+
+/* --- GSD Tow Report unified brand hero ------------------------------- */
+.tow-web-hero {
+  margin-top: 1.5rem;
+  padding: 0;
+  overflow: hidden;
+  background: #0d1114;
+  color: #fff;
+  border-top: 4px solid var(--orange);
+  border-bottom: 4px solid var(--blue);
+  box-shadow: 0 18px 42px rgba(0,0,0,0.22);
+}
+.tow-web-banner-frame {
+  overflow: hidden;
+  background: #080d12;
+}
+.tow-web-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2032 / 774;
+  object-fit: cover;
+  object-position: center;
+}
+.tow-web-hero-copy {
+  padding: 1.45rem 1.7rem 1.65rem;
+}
+.tow-web-hero h1 {
+  margin: 0.42rem 0 0.55rem;
+  color: #fff;
+  font-size: clamp(2.25rem, 6vw, 3.8rem);
+}
+.tow-web-hero p {
+  max-width: 62ch;
+  color: #c4d0da;
+  margin: 0.5rem 0 0;
+}
+.tow-web-subject {
+  font-family: "Barlow Condensed", sans-serif;
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  line-height: 1.1;
+  color: var(--gold) !important;
+}
+.tow-web-trust {
+  margin-top: 1.15rem !important;
+  padding-top: 0.9rem;
+  border-top: 1px solid #2b3740;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.76rem;
+  line-height: 1.45;
+  color: #8ea0ae !important;
+  letter-spacing: 0.02em;
+}
+.tow-web-trust strong { color: #d9e2e8; }
+.tow-latest-card {
+  border-top: 4px solid var(--orange);
+  border-left: 5px solid var(--blue);
+  box-shadow: 0 12px 28px rgba(20,24,28,0.08);
+}
+.tow-archive-list {
+  box-shadow: 0 10px 24px rgba(20,24,28,0.05);
+}
+.tow-archive-row {
+  background: rgba(255,255,255,0.72);
+}
+.tow-archive-row:hover {
+  background: #fff;
+}
+
+@media (max-width: 760px) {
+  .tow-web-hero {
+    margin-top: 1rem;
+    margin-inline: -0.75rem;
+  }
+  .tow-web-banner {
+    height: 205px;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: 49% 50%;
+  }
+  .tow-web-hero-copy {
+    padding: 1.2rem 1.1rem 1.4rem;
+  }
+  .tow-web-hero h1 {
+    font-size: clamp(2rem, 10vw, 2.8rem);
+  }
+}

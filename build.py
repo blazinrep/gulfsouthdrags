@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260918-brand-banner">
+<link rel="stylesheet" href="/assets/style.css?v=20260918-tow-archive-brand">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -1424,10 +1424,17 @@ def build_tow_report_index(reports):
     ) + f"""
 <main class="wrap tow-archive-page">
 <a class="back" href="/">&larr; Gulf South Drags</a>
-<section class="tow-web-hero">
+<section class="tow-web-hero tow-web-hero-archive">
+<div class="tow-web-banner-frame">
+<img class="tow-web-banner" src="/assets/gulfsouthdrags-homepage-banner.png" width="2032" height="774"
+     alt="Gulf South Drags — Know Before You Tow." loading="eager" fetchpriority="high" decoding="async">
+</div>
+<div class="tow-web-hero-copy">
 <span class="tow-report-kicker">Gulf South racer intelligence</span>
-<h1>Weekend Tow Report</h1>
-<p>Know before you tow. Confirmed races, schedule changes, major payouts and the questions worth answering before you load the trailer.</p>
+<h1>Weekend Tow Report Archive</h1>
+<p>Confirmed races, schedule changes, major payouts and the questions worth answering before you load the trailer.</p>
+<p class="tow-web-trust"><strong>Sponsors can buy exposure.</strong> Nobody can buy the truth.</p>
+</div>
 </section>
 {latest_html}
 <section class="section">
@@ -1483,11 +1490,19 @@ def build_tow_report(r):
     ) + f"""
 <main class="wrap tow-report-page">
 <a class="back" href="/tow-report/">&larr; Weekend Tow Report archive</a>
-<section class="tow-web-hero">
+<section class="tow-web-hero tow-web-hero-edition">
+<div class="tow-web-banner-frame">
+<img class="tow-web-banner" src="/assets/gulfsouthdrags-homepage-banner.png" width="2032" height="774"
+     alt="Gulf South Drags — Know Before You Tow." loading="eager" fetchpriority="high" decoding="async">
+</div>
+<div class="tow-web-hero-copy">
 <span class="tow-report-kicker">Weekend Tow Report &middot; Edition #{r["number"]}</span>
-<h1>Know before you tow.</h1>
+<h1>{e(r["title"])}</h1>
+<p class="tow-web-subject">{e(r["subject"])}</p>
 <p>{e(r["preview"])}</p>
 <p class="tow-report-meta">Published {nice_date(r["date"])} &middot; Checked {nice_date(r.get("checked", r["date"]))}</p>
+<p class="tow-web-trust"><strong>Sponsors can buy exposure.</strong> Nobody can buy the truth.</p>
+</div>
 </section>
 <section class="event-alert tow-report-alert">
 <div class="event-alert-top"><span class="event-alert-icon" aria-hidden="true">!</span><span class="event-alert-label">{e(alert["label"])}</span></div>
