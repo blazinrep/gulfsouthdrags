@@ -389,7 +389,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260918-mobile-nav-polish">
+<link rel="stylesheet" href="/assets/style.css?v=20260919-event-verification">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -1295,6 +1295,17 @@ def build_event(x, tracks):
          " ".join(f"{a}: {sentence(b)}" for a, b in x["prices"])),
     ])
 
+    source_display = x.get("source_display", "")
+    verification_html = ""
+    if source_display:
+        verification_html = (
+            '<div class="event-verification" aria-label="Event verification">'
+            '<span class="event-verification-date">Verified '
+            f'<time datetime="{e(x["verified"])}">{nice_date(x["verified"])}</time></span>'
+            f'<span class="event-verification-source"><b>Source:</b> {e(source_display)}</span>'
+            '</div>'
+        )
+
     return head(
         f'{x["name"]} \u2014 {x["dates"]}',
         f'{x["name"]} at {x["track_name"]}, {x["city"]}, {x["state"]}. {x["dates"]}. Schedule and gate prices.',
@@ -1307,6 +1318,7 @@ def build_event(x, tracks):
 <p class="track-where">{e(x['track_name'])} &mdash; {e(x['city'])}, {e(x['state'])}<br>
 <time datetime="{x['start_iso']}">{e(x['dates'])}</time></p>
 </div>
+{verification_html}
 {event_alert_html}
 <p class="answer">{e(x['summary'])}</p>
 <section class="section"><h2>Schedule</h2><dl class="facts">{sched}</dl></section>
