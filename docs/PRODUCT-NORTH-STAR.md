@@ -78,9 +78,11 @@ Core rules:
 - **Silence is a feature.** Unchanged sources and low-value changes should stay out of the review queue. Human attention is reserved for meaningful changes, conflicts, failures, and low-confidence items.
 - **Automate collection, preserve judgment.** Repetitive checking should be automated aggressively; consequential changes such as cancellations, venue changes, major payout changes, or conflicting source data should remain reviewable before publication.
 - **Collect only what serves the core question.** Do not create maintenance burden for data that does not materially help answer: **Where am I racing this weekend, and what do I need to know before I tow?**
-- **Sustainable operations are a product requirement.** New features should be rejected or redesigned if keeping them current would require hours of recurring manual work.
+- **Sustainable operations are a product requirement.** New features should be rejected or redesigned if keeping them current would require hours of low-value recurring manual work.
+- **Manual work must earn its keep.** Recurring hands-on work is acceptable when it can reasonably produce at least **$50 per hour in attributable revenue or clearly measurable business value**. If a workflow cannot clear that bar after a reasonable validation period, automate it, redesign it, reduce it, or pursue a better business avenue.
+- **Automation is a means, not the goal.** Do not automate profitable $50+/hour work merely because it is manual. Automate work that consumes time without creating enough value.
 
-The long-term target is a short daily review workflow measured in minutes, not hours: check the exception queue, verify what matters, approve or reject, and let the system propagate the result.
+The long-term target is economic leverage. Routine collection and duplication should trend toward automation, while high-value human work such as verification, sponsor sales, relationships, judgment, and profitable hands-on operations can remain manual when they justify the time.
 
 ## Important product directions
 
