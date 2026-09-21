@@ -1,6 +1,6 @@
 # GulfSouthDrags Product North Star
 
-_Last updated: 2026-09-14_
+_Last updated: 2026-09-20_
 
 ## The core idea
 
@@ -63,6 +63,25 @@ It is:
 
 That is the wedge.
 
+## Operating sustainability rule
+
+The moat cannot be hours of manual aggregation. GulfSouthDrags must be designed so the system does the repetitive checking and a human spends attention only on meaningful exceptions.
+
+The operating model should move toward:
+
+**TrackWatch collects -> the data layer normalizes -> the Control Room prioritizes exceptions -> a human verifies important changes -> one approval publishes everywhere that depends on the record.**
+
+Core rules:
+
+- **Publish once, render everywhere.** A confirmed schedule, event, gate time, entry fee, status, registration link, or other racer-critical field should live in one structured source of truth and feed every relevant page, calendar, and Tow Report view.
+- **Do not make Chad the integration layer.** Do not design workflows that require visiting many track sites every day, copying the same fact into multiple pages, or remembering which downstream pages need manual edits.
+- **Silence is a feature.** Unchanged sources and low-value changes should stay out of the review queue. Human attention is reserved for meaningful changes, conflicts, failures, and low-confidence items.
+- **Automate collection, preserve judgment.** Repetitive checking should be automated aggressively; consequential changes such as cancellations, venue changes, major payout changes, or conflicting source data should remain reviewable before publication.
+- **Collect only what serves the core question.** Do not create maintenance burden for data that does not materially help answer: **Where am I racing this weekend, and what do I need to know before I tow?**
+- **Sustainable operations are a product requirement.** New features should be rejected or redesigned if keeping them current would require hours of recurring manual work.
+
+The long-term target is a short daily review workflow measured in minutes, not hours: check the exception queue, verify what matters, approve or reject, and let the system propagate the result.
+
 ## Important product directions
 
 ### Racer logistics
@@ -116,7 +135,8 @@ Before adding a major feature, ask:
 1. Does this help a racer decide whether, where, or when to tow?
 2. Does it increase freshness or trustworthiness?
 3. Does it make GulfSouthDrags meaningfully better than a static directory or Facebook search?
-4. Can we maintain it honestly?
-5. Does it strengthen a future revenue path without weakening trust?
+4. Can we maintain it honestly **and sustainably without hours of recurring manual aggregation**?
+5. Can the information be stored once and reused everywhere rather than manually duplicated?
+6. Does it strengthen a future revenue path without weakening trust?
 
 If the answer is mostly no, it is probably a distraction.
