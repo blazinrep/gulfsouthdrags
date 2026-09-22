@@ -1,0 +1,63 @@
+{
+  "_comment": "TrackWatch V0.2 discovery identities. Used to discover relevant racing information outside already-monitored sources. Discovery never publishes automatically.",
+  "defaults": {
+    "enabled": true,
+    "max_results_per_track": 10,
+    "lookback_days": 14
+  },
+  "tracks": {
+    "gulfport-dragway": {
+      "enabled": true,
+      "names": [
+        "Gulfport Dragway",
+        "Gulfport Drag Strip"
+      ],
+      "location_terms": [
+        "Gulfport",
+        "Mississippi"
+      ]
+    },
+    "no-problem-raceway": {
+      "enabled": true,
+      "names": [
+        "No Problem Raceway",
+        "No Problem Raceway Park"
+      ],
+      "location_terms": [
+        "Belle Rose",
+        "Louisiana"
+      ]
+    },
+    "montgomery-international-dragway": {
+      "enabled": true,
+      "names": [
+        "Montgomery International Dragway",
+        "Montgomery International Dragstrip"
+      ],
+      "location_terms": [
+        "Montgomery",
+        "Alabama"
+      ]
+    },
+    "holiday-raceway": {
+      "enabled": true,
+      "names": [
+        "Holiday Raceway"
+      ],
+      "location_terms": [
+        "Woodstock",
+        "Alabama"
+      ]
+    },
+    "swamp-bottom-dragstrip": {
+      "enabled": true,
+      "names": [
+        "Swamp Bottom Dragstrip",
+        "Swamp Bottom Drag Strip"
+      ],
+      "location_terms": [
+        "Mississippi"
+      ]
+    }
+  }
+}

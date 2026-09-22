@@ -28,6 +28,7 @@ import detector             # noqa: E402
 import fetcher               # noqa: E402
 import normalizer            # noqa: E402
 import review_queue as rq    # noqa: E402
+import discovery             # noqa: E402
 
 SOURCES_PATH = TW_DIR / "config" / "sources.json"
 TRACKS_JSON_PATH = REPO_ROOT / "tracks.json"
@@ -246,6 +247,85 @@ def _write_log(stats, log_lines):
     print(f"\nLog written to {path.relative_to(REPO_ROOT)}")
 
 
+def cmd_discover(args):
+    """Search the public web for relevant racing intelligence."""
+    config = discovery.load_config()
+    tracks = config.get("tracks", {})
+    defaults = config.get("defaults", {})
+
+    max_results = defaults.get("max_results_per_track", 10)
+
+    if args.track:
+        if args.track not in tracks:
+            print(f"Unknown discovery track: {args.track}")
+            return 1
+        track_items = [(args.track, tracks[args.track])]
+    else:
+        track_items = list(tracks.items())
+
+    total_searches = 0
+    total_results = 0
+    total_candidates = 0
+    total_queued = 0
+
+    print("TRACKWATCH DISCOVERY")
+    print("--------------------")
+
+    for track_slug, track_cfg in track_items:
+        if not track_cfg.get("enabled", True):
+            print(f"SKIP     {track_slug}: discovery disabled")
+            continue
+
+        names = track_cfg.get("names") or []
+
+        if not names:
+            print(f"SKIP     {track_slug}: no track names configured")
+            continue
+
+        primary_name = names[0]
+        query = f'"{primary_name}" race'
+
+        try:
+            results = discovery.brave_search(
+                query,
+                count=max_results,
+            )
+        except Exception as exc:
+            print(f"ERROR    {track_slug}: {exc}")
+            continue
+
+        total_searches += 1
+        total_results += len(results)
+
+        candidates = discovery.evaluate_results(
+            track_slug,
+            results,
+        )
+
+        total_candidates += len(candidates)
+
+        queued = discovery.queue_candidates(candidates)
+        total_queued += len(queued)
+
+        print(
+            f"OK       {track_slug}: "
+            f"{len(results)} results, "
+            f"{len(candidates)} candidate(s), "
+            f"{len(queued)} queued"
+        )
+
+        for record in queued:
+            print(f"         + {record['summary']}")
+
+    print()
+    print(f"{total_searches} web searches")
+    print(f"{total_results} search results examined")
+    print(f"{total_candidates} qualified discoveries")
+    print(f"{total_queued} new item(s) queued for human review")
+
+    return 0
+
+
 def cmd_pending(_args):
     records = rq.list_detections("pending")
     if not records:
@@ -290,6 +370,15 @@ def main():
     p_run.add_argument("--reset-baseline", action="store_true",
                         help="Deliberately clear the baseline for the matched source(s) first")
 
+    p_discover = sub.add_parser(
+        "discover",
+        help="Search the public web for racing intelligence",
+    )
+    p_discover.add_argument(
+        "--track",
+        help="Limit discovery to one track slug",
+    )
+
     sub.add_parser("pending", help="List pending detections")
     sub.add_parser("status", help="Show registry and queue status")
 
@@ -297,6 +386,8 @@ def main():
     if args.command == "run":
         run_sweep(track_filter=args.track, source_filter=args.source,
                   force=args.force, reset_baseline=args.reset_baseline)
+    elif args.command == "discover":
+        cmd_discover(args)
     elif args.command == "pending":
         cmd_pending(args)
     elif args.command == "status":
