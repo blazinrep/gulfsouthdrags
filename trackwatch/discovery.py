@@ -283,6 +283,13 @@ def known_source_urls(track_slug: str) -> set[str]:
 GENERIC_DISCOVERY_PHRASES = {
     "no race schedule entered",
     "no schedule entered",
+
+    # Generic ticket/resale/venue pages are not racing intelligence.
+    "seating chart",
+    "different seating areas",
+    "front row seats",
+    "mid row seats",
+    "can accommodate up to",
 }
 
 GENERIC_TITLE_PATTERNS = (
@@ -333,7 +340,8 @@ MONTH_DAY_RE = re.compile(
     r"jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|"
     r"jun(?:e)?|jul(?:y)?|aug(?:ust)?|sep(?:t(?:ember)?)?|"
     r"oct(?:ober)?|nov(?:ember)?|dec(?:ember)?"
-    r")\.?\s+(\d{1,2})(?:\s*[-–]\s*(\d{1,2}))?"
+    r")\.?\s+(\d{1,2})(?:st|nd|rd|th)?"
+    r"(?:\s*[-–]\s*(\d{1,2})(?:st|nd|rd|th)?)?"
     r"(?:,?\s+(20\d{2}))?\b",
     re.I,
 )

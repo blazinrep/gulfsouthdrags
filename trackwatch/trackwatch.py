@@ -283,19 +283,46 @@ def cmd_discover(args):
             continue
 
         primary_name = names[0]
-        query = f'"{primary_name}" race'
 
-        try:
-            results = discovery.brave_search(
-                query,
-                count=max_results,
-            )
-        except Exception as exc:
-            print(f"ERROR    {track_slug}: {exc}")
-            continue
+        # V0.4: Search several high-value angles instead of relying on
+        # one broad "race" query. Results are deduplicated by canonical URL
+        # before the V0.3 quality gate evaluates them.
+        queries = [
+            f'"{primary_name}" race',
+            f'"{primary_name}" 2026 schedule event',
+            f'"{primary_name}" canceled postponed rescheduled',
+            f'"{primary_name}" registration purse "to win"',
+        ]
 
-        total_searches += 1
-        total_results += len(results)
+        results_by_url = {}
+        searches_for_track = 0
+        raw_results_for_track = 0
+
+        for query in queries:
+            try:
+                query_results = discovery.brave_search(
+                    query,
+                    count=max_results,
+                )
+            except Exception as exc:
+                print(
+                    f"WARN     {track_slug}: search failed "
+                    f"for {query!r}: {exc}"
+                )
+                continue
+
+            searches_for_track += 1
+            raw_results_for_track += len(query_results)
+
+            for result in query_results:
+                url = discovery.canonical_url(result.url)
+                if url not in results_by_url:
+                    results_by_url[url] = result
+
+        results = list(results_by_url.values())
+
+        total_searches += searches_for_track
+        total_results += raw_results_for_track
 
         candidates = discovery.evaluate_results(
             track_slug,

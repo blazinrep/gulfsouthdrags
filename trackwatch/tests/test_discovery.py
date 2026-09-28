@@ -43,6 +43,21 @@ class DiscoveryQualityGateTests(unittest.TestCase):
         )
         self.assertFalse(ok)
 
+    def test_rejects_generic_ticket_seating_page(self):
+        ok, reason = discovery.passes_current_event_gate(
+            "Gulfport Dragway Tickets | Upcoming Events at Gulfport Dragway",
+            "Most events provide options for different seating areas. "
+            "Ticket prices vary for front row seats or mid row seats."
+        )
+        self.assertFalse(ok)
+
+    def test_rejects_generic_ticket_information_page(self):
+        ok, reason = discovery.passes_current_event_gate(
+            "Gulfport Dragway Tickets - Gulfport Dragway Information - Gulfport Dragway Seating Chart",
+            "Gulfport Dragway can accommodate up to 0 guests."
+        )
+        self.assertFalse(ok)
+
     def test_allows_cancellation(self):
         ok, reason = discovery.passes_current_event_gate(
             "Gulfport Dragway race canceled",
@@ -71,6 +86,31 @@ class DiscoveryQualityGateTests(unittest.TestCase):
             f"Bracket race scheduled for {date}. Gates open at 3 PM."
         )
         self.assertTrue(ok)
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+class DiscoveryOrdinalDateTests(unittest.TestCase):
+    def test_extracts_ordinal_dates(self):
+        dates = discovery.extract_month_day_dates(
+            "Thursday June 4th and Friday June 5th, 2026"
+        )
+        self.assertEqual(len(dates), 2)
+        self.assertEqual(dates[0].month, 6)
+        self.assertEqual(dates[0].day, 4)
+        self.assertEqual(dates[1].month, 6)
+        self.assertEqual(dates[1].day, 5)
+
+    def test_rejects_stale_ordinal_event_dates(self):
+        ok, reason = discovery.passes_current_event_gate(
+            "Upcoming Events – Holiday Raceway",
+            "2026 SCHEDULE OF EVENTS. "
+            "Thursday June 4th: Jake's Dragstrip. "
+            "Friday June 5th: Holiday Raceway."
+        )
+        self.assertFalse(ok)
+        self.assertIn("stale event date", reason)
 
 
 if __name__ == "__main__":
