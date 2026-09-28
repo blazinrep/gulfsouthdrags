@@ -524,15 +524,53 @@ def score_result(track_slug: str, track_cfg: dict, result: SearchResult):
 
     # A track profile is not enough. Require evidence of an actual
     # event, update, result, schedule item, registration, money, or date.
+    # V0.3 quality gate:
+    # A generic racing word, ticket page, dollar amount, or "results"
+    # mention is not enough by itself. Require stronger evidence that this
+    # is fresh, actionable information worth putting in the human queue.
+    strong_current_hits = sorted(
+        term for term in STRONG_CURRENT_TERMS
+        if term in combined
+    )
+
+    event_dates = extract_month_day_dates(combined)
+    now = datetime.now(timezone.utc)
+    fresh_or_future_date = any(
+        event_date >= (now - timedelta(days=7))
+        for event_date in event_dates
+    )
+
+    high_value_change_terms = {
+        "cancelled", "canceled", "postponed", "rescheduled",
+        "registration", "register", "enter here",
+        "entries available", "entry available",
+        "this weekend", "race week", "upcoming",
+        "to win", "purse",
+    }
+
+    high_value_hits = [
+        term for term in high_value_change_terms
+        if term in combined
+    ]
+
+    # Require either:
+    #   1. a strong current/change signal, or
+    #   2. a fresh/future date plus real event/action context.
     actionable = bool(
-        event_hits
-        or action_hits
-        or date_found
-        or money_found
+        high_value_hits
+        or (
+            fresh_or_future_date
+            and (event_hits or action_hits)
+        )
     )
 
     if not actionable:
         return None
+
+    if high_value_hits:
+        reasons.append(
+            "strong signal: " + ", ".join(sorted(high_value_hits)[:4])
+        )
 
     if score < 8:
         return None
