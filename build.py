@@ -15,6 +15,7 @@ import os
 import random
 import re
 import shutil
+from datetime import date
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "site")
@@ -584,7 +585,7 @@ def founding_partner_slot():
 def build_index(data):
     tracks, events, s = data["tracks"], data["events"], data["site"]
     base = f'https://{s["domain"]}'
-    today = s["last_checked"]
+    today = date.today().isoformat()
 
     open_tracks = [t for t in tracks if t["status"] == "open"]
     archive_tracks = [t for t in tracks if t["status"] == "closed"]
@@ -910,7 +911,7 @@ def build_mississippi_hub(data):
     tracks = [t for t in data["tracks"] if t["state"] == "MS"]
     events = data["events"]
     base = f'https://{SITE["domain"]}'
-    today = SITE["last_checked"]
+    today = date.today().isoformat()
 
     open_tracks = [t for t in tracks if t["status"] == "open"]
     closed_tracks = [t for t in tracks if t["status"] == "closed"]
