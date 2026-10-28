@@ -316,11 +316,11 @@ def render_page():
 
 
 def _run_sweep():
-    """Run one TrackWatch sweep as a separate process."""
+    """Run WATCH followed by DISCOVER as one Control Room sweep."""
     if not TRACKWATCH_PY.exists():
         raise FileNotFoundError(f"Could not find {TRACKWATCH_PY}")
 
-    return subprocess.run(
+    watch = subprocess.run(
         [sys.executable, str(TRACKWATCH_PY), "run"],
         cwd=str(REPO_ROOT),
         stdout=subprocess.PIPE,
@@ -329,6 +329,27 @@ def _run_sweep():
         timeout=120,
         check=False,
     )
+
+    if watch.returncode != 0:
+        return watch
+
+    discover = subprocess.run(
+        [sys.executable, str(TRACKWATCH_PY), "discover"],
+        cwd=str(REPO_ROOT),
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        timeout=180,
+        check=False,
+    )
+
+    discover.stdout = (
+        watch.stdout
+        + "\n\nTRACKWATCH WEB DISCOVERY\n"
+        + discover.stdout
+    )
+
+    return discover
 
 
 class Handler(BaseHTTPRequestHandler):
