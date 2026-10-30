@@ -1,34 +1,24 @@
 {
   "site": {
-    "name": "Gulf South Drags",
-    "domain": "gulfsouthdrags.com",
-    "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week.",
     "anchor": "Hattiesburg, MS",
-    "last_checked": "2026-10-28",
-    "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked."
+    "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.",
+    "domain": "gulfsouthdrags.com",
+    "last_checked": "2026-10-30",
+    "name": "Gulf South Drags",
+    "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
   },
   "tracks": [
     {
-      "slug": "hub-city-dragway",
-      "name": "Hub City Dragway",
-      "city": "Hattiesburg",
-      "state": "MS",
-      "lat": 31.29,
-      "lon": -89.36,
-      "miles": 4,
-      "length": "1/4 mile",
-      "surface": "Asphalt",
-      "sanction": "IHRA",
-      "race_days": "None. The track is permanently closed.",
       "address": "331 Eatonville Rd, Hattiesburg, MS 39401",
-      "phone": "601-543-6890",
-      "website": "http://hubcitydragway.com",
-      "facebook": "",
-      "status": "closed",
-      "verified": "2026-09-12",
-      "notes": "Hub City Dragway was a quarter-mile asphalt track in Hattiesburg at about 280 feet elevation, running IHRA ET bracket racing on Saturdays with test and tune on Friday and Sunday.\n\nIt is permanently closed. We confirmed this directly on 12 September 2026, in a reply from one of the numbers published for the track: the track is closed and the land has been sold. Asked when, the reply was “years ago”. That is a permanent closure, not a pause, and it happened long enough back that the listings still showing it as open have been wrong for a considerable time.\n\nThe public record already pointed that way. Google Maps lists the business as permanently closed. Of the four phone numbers published across various listings, two were disconnected, one rang through to voicemail, and the fourth is the one that replied. The most recent social media activity we could find dates to late 2024, and one national track directory had already listed it as closed.\n\nThe reason this is worth stating plainly: the track's own website is still online, its Yelp listing was updated in 2026, and its Facebook page still carries 971 reviews. Anyone searching for it would reasonably conclude it is still racing. It is not, and the land it sat on is no longer in racing use.\n\nIf you are looking for a track near Hattiesburg, Swamp Bottom Dragstrip in Columbia is about 30 miles away and opened in September 2026.",
-      "caveat": "This track is closed and the land has been sold. Its website, Yelp listing and Facebook page are all still up, which is why other directories still list it as operating.",
       "answer": "Hub City Dragway in Hattiesburg, Mississippi is permanently closed. We confirmed this directly with the track in September 2026: the strip has closed and the land has been sold.",
+      "camping": {
+        "detail": "Unconfirmed, as is the track's operating status.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "This track is closed and the land has been sold. Its website, Yelp listing and Facebook page are all still up, which is why other directories still list it as operating.",
+      "city": "Hattiesburg",
+      "facebook": "",
       "faq": [
         [
           "Is Hub City Dragway still open?",
@@ -47,33 +37,33 @@
           "Swamp Bottom Dragstrip in Columbia, Mississippi, about 30 miles away. It opened on 5 September 2026 and is an NHRA member track in the South Central Division. Gulfport Dragway is about 60 miles from Hattiesburg and races Wednesday nights and weekends year-round."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed, as is the track's operating status.",
-        "nearby": []
-      }
+      "lat": 31.29,
+      "length": "1/4 mile",
+      "lon": -89.36,
+      "miles": 4,
+      "name": "Hub City Dragway",
+      "notes": "Hub City Dragway was a quarter-mile asphalt track in Hattiesburg at about 280 feet elevation, running IHRA ET bracket racing on Saturdays with test and tune on Friday and Sunday.\n\nIt is permanently closed. We confirmed this directly on 12 September 2026, in a reply from one of the numbers published for the track: the track is closed and the land has been sold. Asked when, the reply was “years ago”. That is a permanent closure, not a pause, and it happened long enough back that the listings still showing it as open have been wrong for a considerable time.\n\nThe public record already pointed that way. Google Maps lists the business as permanently closed. Of the four phone numbers published across various listings, two were disconnected, one rang through to voicemail, and the fourth is the one that replied. The most recent social media activity we could find dates to late 2024, and one national track directory had already listed it as closed.\n\nThe reason this is worth stating plainly: the track's own website is still online, its Yelp listing was updated in 2026, and its Facebook page still carries 971 reviews. Anyone searching for it would reasonably conclude it is still racing. It is not, and the land it sat on is no longer in racing use.\n\nIf you are looking for a track near Hattiesburg, Swamp Bottom Dragstrip in Columbia is about 30 miles away and opened in September 2026.",
+      "phone": "601-543-6890",
+      "race_days": "None. The track is permanently closed.",
+      "sanction": "IHRA",
+      "slug": "hub-city-dragway",
+      "state": "MS",
+      "status": "closed",
+      "surface": "Asphalt",
+      "verified": "2026-09-12",
+      "website": "http://hubcitydragway.com"
     },
     {
-      "slug": "swamp-bottom-dragstrip",
-      "name": "Swamp Bottom Dragstrip",
-      "city": "Columbia",
-      "state": "MS",
-      "lat": 31.16,
-      "lon": -89.83,
-      "miles": 34,
-      "length": "1/4 mile",
-      "surface": "Concrete",
-      "sanction": "NHRA Member Track — South Central (Division 4)",
-      "race_days": "Schedule forming. Sept. 25-26 Run What You Brung weekend announced; future bracket racing has been discussed but no bracket date is confirmed.",
       "address": "Highway 43, south Marion County, Columbia, MS",
-      "phone": "601-810-6655 / 601-248-3143",
-      "website": "https://swampbottomdragstrip.com/",
-      "facebook": "https://www.facebook.com/p/Swamp-Bottom-Dragstrip-61584225699627/",
-      "status": "open",
-      "verified": "2026-10-28",
-      "notes": "Opened September 5–6, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
-      "caveat": "Official website is now live. The track's schedule is still developing, and several Sept. 25-26 shootout rules still need official clarification — check the official website or Facebook page, or call ahead before you tow.",
       "answer": "Swamp Bottom Dragstrip is a quarter-mile concrete drag strip in Columbia, Mississippi. It opened on 5 September 2026 and is an NHRA member track in the South Central Division.",
+      "camping": {
+        "detail": "Unconfirmed. The facility sits on more than 300 acres and published coverage of the opening lists a concrete track, viewing tower, restrooms, grandstands and parking areas — no camping or RV hookups are mentioned. There are reports of RV pads with electricity but we have not verified them. Call the track and ask.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "Official website is now live. The track's schedule is still developing, and several Sept. 25-26 shootout rules still need official clarification — check the official website or Facebook page, or call ahead before you tow.",
+      "city": "Columbia",
+      "facebook": "https://www.facebook.com/p/Swamp-Bottom-Dragstrip-61584225699627/",
       "faq": [
         [
           "When did Swamp Bottom Dragstrip open?",
@@ -88,34 +78,39 @@
           "Yes. Swamp Bottom joined the NHRA Member Track Network in July 2026 as part of the South Central Division, Division 4. That makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed. The facility sits on more than 300 acres and published coverage of the opening lists a concrete track, viewing tower, restrooms, grandstands and parking areas — no camping or RV hookups are mentioned. There are reports of RV pads with electricity but we have not verified them. Call the track and ask.",
-        "nearby": []
-      }
+      "lat": 31.16,
+      "length": "1/4 mile",
+      "lon": -89.83,
+      "miles": 34,
+      "name": "Swamp Bottom Dragstrip",
+      "notes": "Opened September 5–6, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
+      "phone": "601-810-6655 / 601-248-3143",
+      "race_days": "Schedule forming. Sept. 25-26 Run What You Brung weekend announced; future bracket racing has been discussed but no bracket date is confirmed.",
+      "sanction": "NHRA Member Track — South Central (Division 4)",
+      "slug": "swamp-bottom-dragstrip",
+      "state": "MS",
+      "status": "open",
+      "surface": "Concrete",
+      "verified": "2026-10-28",
+      "website": "https://swampbottomdragstrip.com/"
     },
     {
-      "slug": "gulfport-dragway",
-      "name": "Gulfport Dragway",
-      "city": "Gulfport",
-      "state": "MS",
-      "lat": 30.48,
-      "lon": -89.1,
-      "miles": 60,
-      "length": "1/4 mile and 1/8 mile",
-      "surface": "Asphalt",
-      "sanction": "IHRA",
-      "race_days": "Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.",
       "address": "17085 Racetrack Rd, Gulfport, MS 39503",
-      "phone": "228-863-4408",
-      "website": "https://gulfportdragway.com/",
-      "facebook": "https://www.facebook.com/gulfportdragway/",
-      "status": "open",
-      "verified": "2026-09-18",
-      "notes": "The busiest track on the Mississippi Gulf Coast and the anchor of the region. Founded in 1972 as Magnolia Dragway. Runs the Busch Light King of the Mountain series on Wednesdays and an IHRA Track Championship Series on weekends, including the Summer Iron Man Challenge. Hosts the Gulf Coast DragFest and the Southeast Gassers Association Gulf Coast Nationals. Elevation is about 21 feet, the lowest in the region — worth knowing if you are correcting for air density.\n\nOn 17 September 2026, Gulfport Dragway announced that the SDPC Raceshop Great American 50Ks was moving from Montgomery to Gulfport for Oct. 13-17, with parking beginning Oct. 12 and four $50,000-to-win race days.\n\nOn 18 September 2026, Gulfport announced a late-breaking addition to the 3rd Annual Cruisin' After Dark on Oct. 8: Neil Esposito's Jersey Attitude Jet Dragster. Gates open 5 PM, track hot 6-11 PM, and spectator admission is $10.",
-      "caveat": "",
-      "directions": "I-10 exit 31, south on Canal Road, cross the railroad tracks about a mile, left onto Racetrack Road.",
       "answer": "Gulfport Dragway is a quarter-mile and eighth-mile asphalt drag strip in Gulfport, Mississippi. It races Wednesday nights and weekends from January through December and is IHRA sanctioned.",
+      "camping": {
+        "detail": "Unconfirmed. The track markets itself as a racecation destination with beaches, restaurants and casinos nearby, but we have not confirmed whether overnight pit parking or hookups are available on site.",
+        "nearby": [
+          {
+            "name": "Gulfport Luxury RV Resort",
+            "note": "RV resort in Gulfport. Distance from the track not yet verified."
+          }
+        ],
+        "status": "unconfirmed"
+      },
+      "caveat": "",
+      "city": "Gulfport",
+      "directions": "I-10 exit 31, south on Canal Road, cross the railroad tracks about a mile, left onto Racetrack Road.",
+      "facebook": "https://www.facebook.com/gulfportdragway/",
       "faq": [
         [
           "What time do gates open at Gulfport Dragway?",
@@ -130,38 +125,33 @@
           "About 21 feet above sea level, the lowest of any track in this region. That matters if you are correcting for air density when setting a dial-in."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed. The track markets itself as a racecation destination with beaches, restaurants and casinos nearby, but we have not confirmed whether overnight pit parking or hookups are available on site.",
-        "nearby": [
-          {
-            "name": "Gulfport Luxury RV Resort",
-            "note": "RV resort in Gulfport. Distance from the track not yet verified."
-          }
-        ]
-      }
+      "lat": 30.48,
+      "length": "1/4 mile and 1/8 mile",
+      "lon": -89.1,
+      "miles": 60,
+      "name": "Gulfport Dragway",
+      "notes": "The busiest track on the Mississippi Gulf Coast and the anchor of the region. Founded in 1972 as Magnolia Dragway. Runs the Busch Light King of the Mountain series on Wednesdays and an IHRA Track Championship Series on weekends, including the Summer Iron Man Challenge. Hosts the Gulf Coast DragFest and the Southeast Gassers Association Gulf Coast Nationals. Elevation is about 21 feet, the lowest in the region — worth knowing if you are correcting for air density.\n\nOn 17 September 2026, Gulfport Dragway announced that the SDPC Raceshop Great American 50Ks was moving from Montgomery to Gulfport for Oct. 13-17, with parking beginning Oct. 12 and four $50,000-to-win race days.\n\nOn 18 September 2026, Gulfport announced a late-breaking addition to the 3rd Annual Cruisin' After Dark on Oct. 8: Neil Esposito's Jersey Attitude Jet Dragster. Gates open 5 PM, track hot 6-11 PM, and spectator admission is $10.\n\nOn 29 October 2026 Gulfport Dragway cancelled BTE KOC Series Event 6 (30 October-1 November) because of the adverse weather forecast for 31 October-1 November. The event will not be rescheduled; the Jr Dragster 5ft Trophy Nationals move to KOC Event 7, 4-6 December.",
+      "phone": "228-863-4408",
+      "race_days": "Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.",
+      "sanction": "IHRA",
+      "slug": "gulfport-dragway",
+      "state": "MS",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-30",
+      "website": "https://gulfportdragway.com/"
     },
     {
-      "slug": "byram-dragway",
-      "name": "Byram Dragway",
-      "city": "Byram",
-      "state": "MS",
-      "lat": 32.24,
-      "lon": -90.27,
-      "miles": 85,
-      "length": "1/4 mile",
-      "surface": "Asphalt",
-      "sanction": "Independent",
-      "race_days": "Tuesday Night Midnight Madness — test and tune plus grudge racing. Check the track’s Facebook page for other events.",
       "address": "7557 S Siwell Rd, Byram, MS 39272",
-      "phone": "",
-      "website": "",
-      "facebook": "https://www.facebook.com/",
-      "status": "open",
-      "verified": "2026-09-12",
-      "notes": "A quarter-mile asphalt track on Siwell Road in Byram, immediately south of Jackson, and the closest strip to the Jackson metro.\n\nIt was formerly known as Jackson Dragway and now operates as Byram Dragway. The change is why the track is easy to write off as dead: directory listings under the old name still carry a phone number that is disconnected, Google Maps reviews under the old name stop around 2024, and no current schedule appears under either name outside Facebook. The track itself is running weekly.\n\nThe regular programme is Tuesday Night Midnight Madness, billed as test and tune with grudge racing. Gate prices as advertised in September 2026 are $25 for racers and $15 for spectators. The track describes itself as the little track with all the action.\n\nSchedule and event announcements go out through the Facebook page rather than a website, so check there before travelling.",
-      "caveat": "This track was previously called Jackson Dragway. Old listings under that name carry a disconnected phone number and stale hours — use the Facebook page for current information.",
       "answer": "Byram Dragway, formerly Jackson Dragway, is a quarter-mile asphalt drag strip at 7557 S Siwell Rd in Byram, Mississippi, just south of Jackson. It runs Tuesday Night Midnight Madness — test and tune and grudge racing — at $25 for racers and $15 for spectators.",
+      "camping": {
+        "detail": "Unconfirmed.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "This track was previously called Jackson Dragway. Old listings under that name carry a disconnected phone number and stale hours — use the Facebook page for current information.",
+      "city": "Byram",
+      "facebook": "https://www.facebook.com/byram.dragway/",
       "faq": [
         [
           "Is Jackson Dragway still open?",
@@ -176,17 +166,27 @@
           "7557 S Siwell Rd, Byram, MS 39272, just south of Jackson and about 85 miles from Hattiesburg."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      },
       "former_names": [
         "Jackson Dragway"
       ],
       "former_slugs": [
         "jackson-dragway"
-      ]
+      ],
+      "lat": 32.24,
+      "length": "1/4 mile",
+      "lon": -90.27,
+      "miles": 85,
+      "name": "Byram Dragway",
+      "notes": "A quarter-mile asphalt track on Siwell Road in Byram, immediately south of Jackson, and the closest strip to the Jackson metro.\n\nIt was formerly known as Jackson Dragway and now operates as Byram Dragway. The change is why the track is easy to write off as dead: directory listings under the old name still carry a phone number that is disconnected, Google Maps reviews under the old name stop around 2024, and no current schedule appears under either name outside Facebook. The track itself is running weekly.\n\nThe regular programme is Tuesday Night Midnight Madness, billed as test and tune with grudge racing. Gate prices as advertised in September 2026 are $25 for racers and $15 for spectators. The track describes itself as the little track with all the action.\n\nSchedule and event announcements go out through the Facebook page rather than a website, so check there before travelling.",
+      "phone": "",
+      "race_days": "Tuesday Night Midnight Madness — test and tune plus grudge racing. Check the track’s Facebook page for other events.",
+      "sanction": "Independent",
+      "slug": "byram-dragway",
+      "state": "MS",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-29",
+      "website": ""
     },
     {
       "slug": "atmore-dragstrip",
@@ -236,16 +236,16 @@
       "length": "1/4 mile",
       "surface": "Asphalt",
       "sanction": "Independent",
-      "race_days": "Uncertain. The track announced a lease problem in April 2026 and has not posted a schedule since.",
+      "race_days": "Closed for the 2026 season.",
       "address": "11436 US-190, Port Allen, LA 70767",
       "phone": "225-627-4574",
       "website": "http://thestatecapitolraceway.com",
       "facebook": "",
-      "status": "at-risk",
-      "verified": "2026-09-12",
-      "notes": "A quarter-mile track on Highway 190 in Port Allen, just across the river from Baton Rouge, and historically one of the significant strips in Louisiana. Racers in the comments recall top fuel running here in the Cajun Nationals era.\n\nOn 24 April 2026 the track posted an update saying it had been unable to reach an agreement with the owners of the portion of the property it leased, that efforts to find a path forward had not been successful, and that it was actively exploring alternative options to keep racing alive. The post drew over 1,100 reactions, 165 comments and 127 shares.\n\nAs of 12 September 2026 there has been no public update since. Google still lists the business normally with a 4.5 rating from 400 reviews and has not marked it closed, but the listing is unclaimed, so Google has no current information from the operator either.\n\nWe are not calling this closed. We are saying its future is unresolved and you should not plan a weekend around it without confirming. If you know the current position, tell us.",
-      "caveat": "Confirm before travelling. The track has not announced a schedule since April 2026 and its future is unresolved.",
-      "answer": "State Capitol Raceway in Port Allen, Louisiana has an uncertain future. In April 2026 the track announced it had been unable to reach an agreement with the owners of leased property and was exploring alternatives to keep racing alive. It has not posted publicly since.",
+      "status": "closed",
+      "verified": "2026-10-27",
+      "notes": "A quarter-mile track on Highway 190 in Port Allen, just across the river from Baton Rouge, and historically one of the significant strips in Louisiana. Racers in the comments recall top fuel running here in the Cajun Nationals era.\n\nOn 24 April 2026 the track posted an update saying it had been unable to reach an agreement with the owners of the portion of the property it leased, that efforts to find a path forward had not been successful, and that it was actively exploring alternative options to keep racing alive. The post drew over 1,100 reactions, 165 comments and 127 shares.\n\nAs of 12 September 2026 there has been no public update since. Google still lists the business normally with a 4.5 rating from 400 reviews and has not marked it closed, but the listing is unclaimed, so Google has no current information from the operator either.\n\nWe are not calling this closed. We are saying its future is unresolved and you should not plan a weekend around it without confirming. If you know the current position, tell us.\n\nOn the evidence of the January 2026 banquet announcement and contemporaneous reporting, State Capitol Raceway is closed for the 2026 season after losing the lease on the top end of the strip. This supersedes the earlier at-risk listing, which rested on the April 2026 lease post and the absence of a schedule.",
+      "caveat": "Closed for the 2026 season. The track lost the lease on the top end of the strip and announced the closure at its January 2026 banquet. Do not plan a visit.",
+      "answer": "State Capitol Raceway in Port Allen, Louisiana is closed for the 2026 season. The track announced at its January 2026 banquet that it had lost the lease on the top end of the strip.",
       "faq": [
         [
           "Is State Capitol Raceway still open?",
@@ -284,7 +284,7 @@
       "address": "6470 LA-996, Belle Rose, LA 70341",
       "phone": "225-445-3498 / 985-369-3692",
       "website": "https://racenpr.com",
-      "facebook": "https://www.facebook.com/",
+      "facebook": "https://www.facebook.com/noproblemraceway/",
       "status": "open",
       "verified": "2026-10-28",
       "answer": "No Problem Raceway Park is an NHRA-sanctioned quarter-mile drag strip at 6470 LA-996 in Belle Rose, Louisiana. The site also carries a 1.8-mile asphalt road course and over 200 acres used for concerts, car shows and festivals.",
@@ -333,7 +333,7 @@
       "address": "3695 Prairie Rd, Monroe, LA 71202",
       "phone": "318-557-3284 / 318-266-7441",
       "website": "http://twincityraceway.net",
-      "facebook": "https://www.facebook.com/",
+      "facebook": "https://www.facebook.com/twincityraceway/",
       "status": "open",
       "verified": "2026-10-28",
       "notes": "An IHRA member track in Monroe, north Louisiana, running under the House of Hook banner. Confirmed active on 12 September 2026.\n\nThe bracket programme runs four classes. As advertised for the September 2026 race, Super Pro pays $5,000 to win with a $125 entry, No Box pays $2,000 with a $90 entry, Street pays $500 with a $40 entry, and Jr Dragster pays $500 with a $40 entry. Runner-up, semi-final and quarter-final money is posted for each class, and buybacks are available. Car counts are capped by class.\n\nGates typically open at noon with time trials from 1pm. Spectators $15, children $10. TNT sessions run $50 with a diaper required and a TNT stop after the third round of eliminations.\n\nThe track also hosts a Gasser Revival. Google lists this track as Twin City Motorsports Park at 3695 Prairie Rd with the number 318-557-3284, while the track's own Facebook page uses Twin City Raceway, gives the address as 3695 Hwy 841 and the number 318-266-7441. Prairie Rd and Highway 841 meet at the property, so both are correct. Use either name when searching.\n\nSchedule announcements go out through Facebook rather than a website, so check there before travelling.",
@@ -367,26 +367,16 @@
       ]
     },
     {
-      "slug": "holiday-raceway",
-      "name": "Holiday Raceway",
-      "city": "Woodstock",
-      "state": "AL",
-      "lat": 33.2,
-      "lon": -87.15,
-      "miles": 179,
-      "length": "1/8 mile",
-      "surface": "Asphalt",
-      "sanction": "IHRA points races plus independent events",
-      "race_days": "Open track and test and tune most Thursdays. Bracket racing on scheduled Saturdays, March through November.",
       "address": "20105 Hwy 11, Woodstock, AL 35188",
-      "phone": "205-938-2123",
-      "website": "http://www.holidayraceway.com",
-      "facebook": "",
-      "status": "open",
-      "verified": "2026-10-28",
-      "notes": "A drag strip on Highway 11 in Woodstock, between Birmingham and Tuscaloosa, and one of the few tracks in this directory that publishes a full season schedule rather than announcing races week to week.\n\nThe regular pattern is open track and test and tune on Thursdays, with bracket racing on scheduled Saturdays running Pro, Footbrake and Junior Dragster. Several Saturdays carry raised purses: $5,000 to win in Pro or Footbrake, and $1,000 in Junior Dragster. A number of those count towards IHRA points.\n\nThe season runs late March through November and mixes bracket racing with bigger draws. The 2026 calendar included the Southeast Gassers Association over two days in May, a Streetcar Challenge in June, Street Outlaws small tire shootouts with Ryan Martin and Murder Nova across two days in August, King of the Beach in October, a 17th annual cruise-in with car, bike and truck shows in April, the Woodstock Music Festival in May, and a Thanksgiving Throwdown sound and audio competition in November.\n\nThe track closes for Memorial Day, Independence Day and Labor Day weekends. All dates are published as subject to change, so confirm before travelling.",
-      "caveat": "",
       "answer": "Holiday Raceway is a drag strip at 20105 Hwy 11 in Woodstock, Alabama, between Birmingham and Tuscaloosa. It runs open track and test and tune most Thursdays and bracket racing on scheduled Saturdays from March through November, with $5,000 purses in Pro and Footbrake and $1,000 in Junior Dragster.",
+      "camping": {
+        "detail": "Unconfirmed.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "",
+      "city": "Woodstock",
+      "facebook": "https://www.facebook.com/HOLIDAYRACEWAY/",
       "faq": [
         [
           "What days does Holiday Raceway race?",
@@ -405,33 +395,33 @@
           "20105 Hwy 11, Woodstock, AL 35188, between Birmingham and Tuscaloosa."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      }
+      "lat": 33.2,
+      "length": "1/8 mile",
+      "lon": -87.15,
+      "miles": 179,
+      "name": "Holiday Raceway",
+      "notes": "A drag strip on Highway 11 in Woodstock, between Birmingham and Tuscaloosa, and one of the few tracks in this directory that publishes a full season schedule rather than announcing races week to week.\n\nThe regular pattern is open track and test and tune on Thursdays, with bracket racing on scheduled Saturdays running Pro, Footbrake and Junior Dragster. Several Saturdays carry raised purses: $5,000 to win in Pro or Footbrake, and $1,000 in Junior Dragster. A number of those count towards IHRA points.\n\nThe season runs late March through November and mixes bracket racing with bigger draws. The 2026 calendar included the Southeast Gassers Association over two days in May, a Streetcar Challenge in June, Street Outlaws small tire shootouts with Ryan Martin and Murder Nova across two days in August, King of the Beach in October, a 17th annual cruise-in with car, bike and truck shows in April, the Woodstock Music Festival in May, and a Thanksgiving Throwdown sound and audio competition in November.\n\nThe track closes for Memorial Day, Independence Day and Labor Day weekends. All dates are published as subject to change, so confirm before travelling.",
+      "phone": "205-938-2123",
+      "race_days": "Open track and test and tune most Thursdays. Bracket racing on scheduled Saturdays, March through November.",
+      "sanction": "IHRA points races plus independent events",
+      "slug": "holiday-raceway",
+      "state": "AL",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-28",
+      "website": "http://www.holidayraceway.com"
     },
     {
-      "slug": "montgomery-international-dragway",
-      "name": "Montgomery International Dragway",
-      "city": "Montgomery",
-      "state": "AL",
-      "lat": 32.24,
-      "lon": -86.38,
-      "miles": 182,
-      "length": "1/4 mile",
-      "surface": "Asphalt",
-      "sanction": "IHRA",
-      "race_days": "Test and tune, bracket racing and big-money events across a published season. The 2026 calendar was released in January and revised in June.",
       "address": "2600 N Belt Dr, Montgomery, AL 36110",
-      "phone": "706-741-1305",
-      "website": "http://racemid.com",
-      "facebook": "https://www.facebook.com/MontgomeryInternationalDragway/",
-      "status": "open",
-      "verified": "2026-10-28",
-      "notes": "An IHRA member track in Montgomery that publishes a full season calendar and revises it in writing, which makes it one of the easier tracks in this directory to plan around. The 2026 schedule was released in January and revised on 22 June.\n\nIt runs some of the biggest bracket money in the Southeast. The autumn calendar alone includes the Cap City $50K Bracket Race, the IHRA Bracket Finals, a $5,000 and $10,000 Footbrake Race with a double $2,000 Junior Dragster, the Gobble Wobble Thanksgiving Bracket and the World Footbrake Challenge.\n\nThe track also runs a heads-up index programme of six races, with 5.30, 6.00 and 7.00 index classes plus Mike Hill's 4.84 Series. Index rules as published allow a delay box and any tire size, on a .400 pro tree, with no throttle stop and no deep staging.\n\nOther regular features are the Super 7 Series bracket races, Friday night slick-prepped test and tune sessions paired with a Top Eliminator bracket race, radial-prepped test and tune, and the Southern Outlaw Tour, which finishes its season here.\n\nAll dates are published as subject to change and the track has revised its calendar mid-season before, so confirm before travelling.\n\nVenue update: the Great American event originally listed on Montgomery's 2026 calendar for Oct. 13-18 was officially moved to Gulfport Dragway on 17 September 2026. Gulf South Drags no longer lists that October event at Montgomery.\n\nOctober 28 update: Montgomery's official Facebook page reported on October 27 that the Halloween Havoc Jr. race will not take place this weekend and that a schedule update is coming. The captured Facebook post was truncated, so Gulf South Drags is treating the cancellation notice as time-sensitive but is waiting for the full replacement schedule before publishing additional event details.",
-      "caveat": "Schedule change in progress: Montgomery reported October 27 that the Halloween Havoc Jr. race will not take place this weekend and said an updated schedule is coming. Check the official track page before towing.",
       "answer": "Montgomery International Dragway is an IHRA-sanctioned quarter-mile drag strip at 2600 N Belt Drive in Montgomery, Alabama. It publishes a full season schedule and hosts major bracket events including the Cap City $50K, IHRA Bracket Finals and World Footbrake Challenge.",
+      "camping": {
+        "detail": "Unconfirmed.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "Schedule change in progress: Montgomery reported October 27 that the Halloween Havoc Jr. race will not take place this weekend and said an updated schedule is coming. Check the official track page before towing.",
+      "city": "Montgomery",
+      "facebook": "https://www.facebook.com/MontgomeryInternationalDragway/",
       "faq": [
         [
           "What are the biggest races at Montgomery International Dragway?",
@@ -446,33 +436,33 @@
           "2600 N Belt Drive, Montgomery, AL 36110."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      }
+      "lat": 32.24,
+      "length": "1/4 mile",
+      "lon": -86.38,
+      "miles": 182,
+      "name": "Montgomery International Dragway",
+      "notes": "An IHRA member track in Montgomery that publishes a full season calendar and revises it in writing, which makes it one of the easier tracks in this directory to plan around. The 2026 schedule was released in January and revised on 22 June.\n\nIt runs some of the biggest bracket money in the Southeast. The autumn calendar alone includes the Cap City $50K Bracket Race, the IHRA Bracket Finals, a $5,000 and $10,000 Footbrake Race with a double $2,000 Junior Dragster, the Gobble Wobble Thanksgiving Bracket and the World Footbrake Challenge.\n\nThe track also runs a heads-up index programme of six races, with 5.30, 6.00 and 7.00 index classes plus Mike Hill's 4.84 Series. Index rules as published allow a delay box and any tire size, on a .400 pro tree, with no throttle stop and no deep staging.\n\nOther regular features are the Super 7 Series bracket races, Friday night slick-prepped test and tune sessions paired with a Top Eliminator bracket race, radial-prepped test and tune, and the Southern Outlaw Tour, which finishes its season here.\n\nAll dates are published as subject to change and the track has revised its calendar mid-season before, so confirm before travelling.\n\nVenue update: the Great American event originally listed on Montgomery's 2026 calendar for Oct. 13-18 was officially moved to Gulfport Dragway on 17 September 2026. Gulf South Drags no longer lists that October event at Montgomery.\n\nOctober 28 update: Montgomery's official Facebook page reported on October 27 that the Halloween Havoc Jr. race will not take place this weekend and that a schedule update is coming. The captured Facebook post was truncated, so Gulf South Drags is treating the cancellation notice as time-sensitive but is waiting for the full replacement schedule before publishing additional event details.",
+      "phone": "706-741-1305",
+      "race_days": "Test and tune, bracket racing and big-money events across a published season. The 2026 calendar was released in January and revised in June.",
+      "sanction": "IHRA",
+      "slug": "montgomery-international-dragway",
+      "state": "AL",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-28",
+      "website": "http://racemid.com"
     },
     {
-      "slug": "i-22-motorsports-park",
-      "name": "I-22 Motorsports Park",
-      "city": "Eldridge",
-      "state": "AL",
-      "lat": 33.92,
-      "lon": -87.62,
-      "miles": 203,
-      "length": "1/8 mile",
-      "surface": "Asphalt",
-      "sanction": "Independent",
-      "race_days": "Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Announcements go out through Facebook.",
       "address": "3928 Byler Rd, Eldridge, AL 35554",
-      "phone": "205-495-40__ (confirm)",
-      "website": "http://i-22motorsports.com",
-      "facebook": "https://www.facebook.com/",
-      "status": "open",
-      "verified": "2026-10-28",
-      "notes": "An eighth-mile track in Eldridge, northwest Alabama. Confirmed active on 12 September 2026, with a 98 percent recommendation rate on its social page.\n\nThe track runs Super Pro, Footbrake and Jr Dragster, and puts up serious money for a track its size. Its Labor Day Weekend Bracket Bash in September 2026 paid $7,500 to win in Super Pro on the Saturday, $5,000 on the Sunday and $2,000 on the Friday, with entries of $175, $100 and $50 respectively and buybacks available. Footbrake paid $2,500, $1,500 and $1,000 across the same three days on entries of $80, $75 and $50. Payouts are posted as based on car counts — 75 cars for the Saturday Super Pro purse, 50 for the Sunday.\n\nWeekend passes were offered at $250 single and $380 double for Super Pro, and $140 single and $250 double for Footbrake. Friday gates opened at 3pm with open time runs from 5pm to 7pm and racing to follow.\n\nThe track also runs invitational shootouts. Schedule announcements go out through Facebook rather than a website, so check there before travelling.",
-      "caveat": "",
       "answer": "I-22 Motorsports Park is an eighth-mile drag strip at 3928 Byler Rd in Eldridge, Alabama. It runs bracket racing in Super Pro, Footbrake and Jr Dragster, with multi-day bracket bashes paying up to $7,500 to win.",
+      "camping": {
+        "detail": "Unconfirmed.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
+      "caveat": "",
+      "city": "Eldridge",
+      "facebook": "https://www.facebook.com/I-22-Motorsports-Park-126184944080887/",
       "faq": [
         [
           "What does I-22 Motorsports Park pay to win?",
@@ -487,33 +477,33 @@
           "3928 Byler Rd, Eldridge, AL 35554, in northwest Alabama."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      }
+      "lat": 33.92,
+      "length": "1/8 mile",
+      "lon": -87.62,
+      "miles": 203,
+      "name": "I-22 Motorsports Park",
+      "notes": "An eighth-mile track in Eldridge, northwest Alabama. Confirmed active on 12 September 2026, with a 98 percent recommendation rate on its social page.\n\nThe track runs Super Pro, Footbrake and Jr Dragster, and puts up serious money for a track its size. Its Labor Day Weekend Bracket Bash in September 2026 paid $7,500 to win in Super Pro on the Saturday, $5,000 on the Sunday and $2,000 on the Friday, with entries of $175, $100 and $50 respectively and buybacks available. Footbrake paid $2,500, $1,500 and $1,000 across the same three days on entries of $80, $75 and $50. Payouts are posted as based on car counts — 75 cars for the Saturday Super Pro purse, 50 for the Sunday.\n\nWeekend passes were offered at $250 single and $380 double for Super Pro, and $140 single and $250 double for Footbrake. Friday gates opened at 3pm with open time runs from 5pm to 7pm and racing to follow.\n\nThe track also runs invitational shootouts. Schedule announcements go out through Facebook rather than a website, so check there before travelling.",
+      "phone": "205-495-40__ (confirm)",
+      "race_days": "Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Announcements go out through Facebook.",
+      "sanction": "Independent",
+      "slug": "i-22-motorsports-park",
+      "state": "AL",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-28",
+      "website": "http://i-22motorsports.com"
     },
     {
-      "slug": "alabama-international-dragway",
-      "name": "Alabama International Dragway",
-      "city": "Steele",
-      "state": "AL",
-      "lat": 33.94,
-      "lon": -86.2,
-      "miles": 245,
-      "length": "1/4 mile",
-      "surface": "Asphalt",
-      "sanction": "Independent",
-      "race_days": "Moonlight Madness every Friday night, 9pm to 1am. Additional events announced through the track’s Facebook page.",
       "address": "1245 Crump Road, Steele, AL 35987",
-      "phone": "256-538-RACE (256-538-7223)",
-      "website": "http://alabamainternationaldragway.com",
-      "facebook": "https://www.facebook.com/",
-      "status": "open",
-      "verified": "2026-09-12",
       "answer": "Alabama International Dragway is a quarter-mile drag strip at 1245 Crump Road in Steele, Alabama, just off I-59 at exit 174. It runs Moonlight Madness every Friday night from 9pm to 1am.",
+      "camping": {
+        "detail": "Unconfirmed. Worth asking, given the late Friday finish.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
       "caveat": "",
-      "notes": "A quarter-mile track in Steele, in northeast Alabama off Interstate 59 at exit 174. It opened in 1994.\n\nBy social following it is the largest track in this directory, with around 49,000 followers and an 88 percent recommendation rate across more than 1,700 reviews. It posts regularly and was confirmed active on 12 September 2026.\n\nThe signature programme is Moonlight Madness, run every Friday night from 9pm to 1am. That late slot is unusual and worth planning around if you are travelling.\n\nThis is the farthest track currently listed here, roughly 245 miles from Hattiesburg. It is included because it draws from a wide area and because racers from north Mississippi make the trip.",
+      "city": "Steele",
+      "facebook": "https://www.facebook.com/Alabama.International.Dragway/",
       "faq": [
         [
           "What is Moonlight Madness at Alabama International Dragway?",
@@ -524,36 +514,33 @@
           "1245 Crump Road, Steele, AL 35987, just off Interstate 59 at exit 174."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed. Worth asking, given the late Friday finish.",
-        "nearby": []
-      }
+      "lat": 33.94,
+      "length": "1/4 mile",
+      "lon": -86.2,
+      "miles": 245,
+      "name": "Alabama International Dragway",
+      "notes": "A quarter-mile track in Steele, in northeast Alabama off Interstate 59 at exit 174. It opened in 1994.\n\nBy social following it is the largest track in this directory, with around 49,000 followers and an 88 percent recommendation rate across more than 1,700 reviews. It posts regularly and was confirmed active on 12 September 2026.\n\nThe signature programme is Moonlight Madness, run every Friday night from 9pm to 1am. That late slot is unusual and worth planning around if you are travelling.\n\nThis is the farthest track currently listed here, roughly 245 miles from Hattiesburg. It is included because it draws from a wide area and because racers from north Mississippi make the trip.",
+      "phone": "256-538-RACE (256-538-7223)",
+      "race_days": "Moonlight Madness every Friday night, 9pm to 1am. Additional events announced through the track’s Facebook page.",
+      "sanction": "Independent",
+      "slug": "alabama-international-dragway",
+      "state": "AL",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-09-12",
+      "website": "http://alabamainternationaldragway.com"
     },
     {
-      "slug": "baileyton-goodtime-dragstrip",
-      "name": "Baileyton Goodtime Dragstrip",
-      "former_names": [
-        "Baileyton Drag Strip"
-      ],
-      "city": "Baileyton",
-      "state": "AL",
-      "lat": 34.27,
-      "lon": -86.61,
-      "miles": 268,
-      "length": "1/8 mile",
-      "surface": "Asphalt",
-      "sanction": "Independent",
-      "race_days": "Saturday bracket racing. Gates 4pm, time runs 6pm. Announcements go out through the track’s Facebook page.",
       "address": "1582 Summit Rd, Baileyton, AL 35019",
-      "phone": "256-717-7587",
-      "website": "http://speedwaysonline.com",
-      "facebook": "https://www.facebook.com/",
-      "status": "open",
-      "verified": "2026-09-12",
       "answer": "Baileyton Goodtime Dragstrip is an eighth-mile track at 1582 Summit Rd in Baileyton, Alabama. It runs Saturday bracket racing with Footbrake paying $5,000 to win, Pro $1,000 and Jr Dragster $300 — guaranteed regardless of car count.",
+      "camping": {
+        "detail": "Unconfirmed.",
+        "nearby": [],
+        "status": "unconfirmed"
+      },
       "caveat": "",
-      "notes": "An eighth-mile track in Baileyton, north Alabama, known locally as the Goodtime. Confirmed active on 12 September 2026, with a 96 percent recommendation rate across 381 reviews.\n\nThe thing that sets Baileyton apart is that it guarantees its purses regardless of car count. Most tracks post payouts as based on a minimum number of entries, so a thin turnout means a smaller cheque. Baileyton pays what it advertises either way, in both classes.\n\nAs advertised for the September 2026 Saturday programme, Footbrake paid $5,000 to win with $500 to the runner-up, $100 to the semis and $50 to the quarter-finals, on a $100 single or $160 double entry with a $50 buyback. Pro paid $1,000 to win with $300 runner-up on a $60 entry and $40 buyback. Jr Dragster paid $300 to win with $50 runner-up on a $40 entry and $20 buyback.\n\nGates open at 4pm with time runs from 6pm. Spectators $10, children 12 and under free.\n\nThe track is listed on the WDRA member track list as Baileyton Drag Strip. Schedule announcements go out through Facebook.",
+      "city": "Baileyton",
+      "facebook": "https://www.facebook.com/baileyton/",
       "faq": [
         [
           "Does Baileyton Goodtime Dragstrip guarantee its purses?",
@@ -572,192 +559,182 @@
           "1582 Summit Rd, Baileyton, AL 35019, in north Alabama."
         ]
       ],
-      "camping": {
-        "status": "unconfirmed",
-        "detail": "Unconfirmed.",
-        "nearby": []
-      }
+      "former_names": [
+        "Baileyton Drag Strip"
+      ],
+      "lat": 34.27,
+      "length": "1/8 mile",
+      "lon": -86.61,
+      "miles": 268,
+      "name": "Baileyton Goodtime Dragstrip",
+      "notes": "An eighth-mile track in Baileyton, north Alabama, known locally as the Goodtime. Confirmed active on 12 September 2026, with a 96 percent recommendation rate across 381 reviews.\n\nThe thing that sets Baileyton apart is that it guarantees its purses regardless of car count. Most tracks post payouts as based on a minimum number of entries, so a thin turnout means a smaller cheque. Baileyton pays what it advertises either way, in both classes.\n\nAs advertised for the September 2026 Saturday programme, Footbrake paid $5,000 to win with $500 to the runner-up, $100 to the semis and $50 to the quarter-finals, on a $100 single or $160 double entry with a $50 buyback. Pro paid $1,000 to win with $300 runner-up on a $60 entry and $40 buyback. Jr Dragster paid $300 to win with $50 runner-up on a $40 entry and $20 buyback.\n\nGates open at 4pm with time runs from 6pm. Spectators $10, children 12 and under free.\n\nThe track is listed on the WDRA member track list as Baileyton Drag Strip. Schedule announcements go out through Facebook.",
+      "phone": "256-717-7587",
+      "race_days": "Saturday bracket racing. Gates 4pm, time runs 6pm. Announcements go out through the track’s Facebook page.",
+      "sanction": "Independent",
+      "slug": "baileyton-goodtime-dragstrip",
+      "state": "AL",
+      "status": "open",
+      "surface": "Asphalt",
+      "verified": "2026-10-29",
+      "website": "http://speedwaysonline.com"
     }
   ],
   "events": [
     {
-      "slug": "npr-road-course-sept-13-2026",
-      "name": "Road Course Event — No Problem Raceway",
-      "track_slug": "no-problem-raceway",
-      "track_name": "No Problem Raceway Park",
+      "city": "Belle Rose",
+      "dates": "Sunday 13 September 2026",
+      "detail": "No Problem Raceway carries a 1.8-mile asphalt road course alongside its quarter-mile drag strip — one of the few facilities in this region that runs both.\n\nGates open at 8:00 AM. Confirm format and entry with the track before travelling.",
       "event_type": "road-course",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Belle Rose",
-      "state": "LA",
-      "dates": "Sunday 13 September 2026",
-      "start_iso": "2026-09-13",
+      "name": "Road Course Event — No Problem Raceway",
+      "prices": [
+        [
+          "Entry and gate",
+          "Contact the track — 225-445-3498"
+        ]
+      ],
       "schedule": [
         [
           "Sunday 13 September",
           "Road course event. Gates open 8:00 AM."
         ]
       ],
-      "prices": [
-        [
-          "Entry and gate",
-          "Contact the track — 225-445-3498"
-        ]
-      ],
-      "summary": "No Problem Raceway Park runs a road course event on Sunday 13 September 2026, with gates opening at 8:00 AM.",
-      "detail": "No Problem Raceway carries a 1.8-mile asphalt road course alongside its quarter-mile drag strip — one of the few facilities in this region that runs both.\n\nGates open at 8:00 AM. Confirm format and entry with the track before travelling.",
+      "series_slugs": [],
+      "slug": "npr-road-course-sept-13-2026",
       "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
+      "start_iso": "2026-09-13",
+      "state": "LA",
+      "summary": "No Problem Raceway Park runs a road course event on Sunday 13 September 2026, with gates opening at 8:00 AM.",
+      "track_name": "No Problem Raceway Park",
+      "track_slug": "no-problem-raceway",
       "verified": "2026-09-12"
     },
     {
-      "slug": "cap-city-50k-bracket-race-2026",
-      "name": "Cap City $50K Bracket Race",
-      "track_slug": "montgomery-international-dragway",
-      "track_name": "Montgomery International Dragway",
+      "city": "Montgomery",
+      "dates": "17 to 20 September 2026",
+      "detail": "One of the larger bracket purses on the Southeast calendar, run across four days.\n\nMontgomery follows it the next week with the IHRA Bracket Finals, so racers travelling any distance often plan the two together.\n\nDates are published as subject to change.",
+      "end_iso": "2026-09-20",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [],
-      "city": "Montgomery",
-      "state": "AL",
-      "dates": "17 to 20 September 2026",
-      "start_iso": "2026-09-17",
+      "name": "Cap City $50K Bracket Race",
+      "prices": [
+        [
+          "Entry and gate",
+          "Contact the track — racemid.com"
+        ]
+      ],
       "schedule": [
         [
           "Thursday 17 to Sunday 20 September",
           "Cap City $50K Bracket Race"
         ]
       ],
-      "prices": [
-        [
-          "Entry and gate",
-          "Contact the track — racemid.com"
-        ]
-      ],
-      "summary": "The Cap City $50K Bracket Race runs over four days at Montgomery International Dragway, 17 to 20 September 2026.",
-      "detail": "One of the larger bracket purses on the Southeast calendar, run across four days.\n\nMontgomery follows it the next week with the IHRA Bracket Finals, so racers travelling any distance often plan the two together.\n\nDates are published as subject to change.",
+      "series_slugs": [],
+      "slug": "cap-city-50k-bracket-race-2026",
       "source": "From Montgomery International Dragway's 2026 season schedule, revised 22 June 2026.",
-      "verified": "2026-09-12",
-      "end_iso": "2026-09-20"
+      "start_iso": "2026-09-17",
+      "state": "AL",
+      "summary": "The Cap City $50K Bracket Race runs over four days at Montgomery International Dragway, 17 to 20 September 2026.",
+      "track_name": "Montgomery International Dragway",
+      "track_slug": "montgomery-international-dragway",
+      "verified": "2026-09-12"
     },
     {
-      "slug": "holiday-raceway-5k-footbrake-sept-19-2026",
-      "name": "$5,000 to Win Footbrake — Holiday Raceway",
-      "track_slug": "holiday-raceway",
-      "track_name": "Holiday Raceway",
+      "city": "Woodstock",
+      "dates": "Saturday 19 September 2026",
+      "detail": "Footbrake classes are for cars without transbrakes or delay boxes — the driver launches off the footbrake, which puts more of the round on the driver and less on the electronics. A $5,000 purse is a significant draw for a Saturday bracket race.\n\nPro and Junior Dragster run the same day on a regular purse. Open track and test and tune runs the Thursday before, on 17 September.\n\nHoliday Raceway publishes its dates as subject to change. Confirm with the track before travelling.",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Woodstock",
-      "state": "AL",
-      "dates": "Saturday 19 September 2026",
-      "start_iso": "2026-09-19",
-      "schedule": [
-        [
-          "Saturday 19 September",
-          "$5,000 to win in Footbrake, plus Pro and Junior Dragster"
-        ]
-      ],
+      "name": "$5,000 to Win Footbrake — Holiday Raceway",
       "prices": [
         [
           "Gate and entry",
           "Contact the track — 205-938-2123"
         ]
       ],
-      "summary": "Holiday Raceway runs $5,000 to win in Footbrake on Saturday 19 September 2026, with Pro and Junior Dragster also racing.",
-      "detail": "Footbrake classes are for cars without transbrakes or delay boxes — the driver launches off the footbrake, which puts more of the round on the driver and less on the electronics. A $5,000 purse is a significant draw for a Saturday bracket race.\n\nPro and Junior Dragster run the same day on a regular purse. Open track and test and tune runs the Thursday before, on 17 September.\n\nHoliday Raceway publishes its dates as subject to change. Confirm with the track before travelling.",
-      "source": "From Holiday Raceway's published 2026 season schedule.",
-      "verified": "2026-09-12"
-    },
-    {
-      "slug": "npr-super-saturday-sept-19-2026",
-      "name": "Super Saturday — No Problem Raceway",
-      "track_slug": "no-problem-raceway",
-      "track_name": "No Problem Raceway Park",
-      "event_type": "drag",
-      "major_event": false,
-      "series_slugs": [],
-      "city": "Belle Rose",
-      "state": "LA",
-      "dates": "Saturday 19 September 2026",
-      "start_iso": "2026-09-19",
       "schedule": [
         [
           "Saturday 19 September",
-          "Super Saturday, presented by Flip Flop Promotions"
+          "$5,000 to win in Footbrake, plus Pro and Junior Dragster"
         ]
       ],
+      "series_slugs": [],
+      "slug": "holiday-raceway-5k-footbrake-sept-19-2026",
+      "source": "From Holiday Raceway's published 2026 season schedule.",
+      "start_iso": "2026-09-19",
+      "state": "AL",
+      "summary": "Holiday Raceway runs $5,000 to win in Footbrake on Saturday 19 September 2026, with Pro and Junior Dragster also racing.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
+      "verified": "2026-09-12"
+    },
+    {
+      "city": "Belle Rose",
+      "dates": "Saturday 19 September 2026",
+      "detail": "One of the named events on No Problem Raceway's September calendar, run with Flip Flop Promotions.\n\nA TNT Test ’n Tune runs the Friday before, on 25 September, and King of the Bayou follows on 26 September.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Super Saturday — No Problem Raceway",
       "prices": [
         [
           "Entry and gate",
           "Contact the track — 225-445-3498"
         ]
       ],
-      "summary": "Super Saturday runs at No Problem Raceway Park on 19 September 2026, presented by Flip Flop Promotions.",
-      "detail": "One of the named events on No Problem Raceway's September calendar, run with Flip Flop Promotions.\n\nA TNT Test ’n Tune runs the Friday before, on 25 September, and King of the Bayou follows on 26 September.",
+      "schedule": [
+        [
+          "Saturday 19 September",
+          "Super Saturday, presented by Flip Flop Promotions"
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "npr-super-saturday-sept-19-2026",
       "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
+      "start_iso": "2026-09-19",
+      "state": "LA",
+      "summary": "Super Saturday runs at No Problem Raceway Park on 19 September 2026, presented by Flip Flop Promotions.",
+      "track_name": "No Problem Raceway Park",
+      "track_slug": "no-problem-raceway",
       "verified": "2026-09-12"
     },
     {
-      "slug": "ihra-bracket-finals-montgomery-2026",
-      "name": "IHRA Bracket Finals",
-      "track_slug": "montgomery-international-dragway",
-      "track_name": "Montgomery International Dragway",
+      "city": "Montgomery",
+      "dates": "24 to 27 September 2026",
+      "detail": "The season-ending bracket event for IHRA competitors, run over four days.\n\nIt follows the Cap City $50K Bracket Race the week before at the same track.\n\nDates are published as subject to change.",
+      "end_iso": "2026-09-27",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [],
-      "city": "Montgomery",
-      "state": "AL",
-      "dates": "24 to 27 September 2026",
-      "start_iso": "2026-09-24",
-      "schedule": [
-        [
-          "Thursday 24 to Sunday 27 September",
-          "IHRA Bracket Finals"
-        ]
-      ],
+      "name": "IHRA Bracket Finals",
       "prices": [
         [
           "Entry and gate",
           "Contact the track — racemid.com"
         ]
       ],
-      "summary": "The IHRA Bracket Finals run at Montgomery International Dragway from 24 to 27 September 2026.",
-      "detail": "The season-ending bracket event for IHRA competitors, run over four days.\n\nIt follows the Cap City $50K Bracket Race the week before at the same track.\n\nDates are published as subject to change.",
-      "source": "From Montgomery International Dragway's 2026 season schedule, revised 22 June 2026.",
-      "verified": "2026-09-12",
-      "end_iso": "2026-09-27"
-    },
-    {
-      "slug": "swamp-bottom-run-what-you-brung-sept-25-26-2026",
-      "name": "Swamp Bottom Run What You Brung Weekend",
-      "track_slug": "swamp-bottom-dragstrip",
-      "track_name": "Swamp Bottom Dragstrip",
-      "event_type": "drag",
-      "major_event": false,
-      "series_slugs": [],
-      "city": "Columbia",
-      "state": "MS",
-      "dates": "Friday 25 and Saturday 26 September 2026",
-      "start_iso": "2026-09-25",
-      "end_iso": "2026-09-26",
       "schedule": [
         [
-          "Friday 25 September",
-          "Test & Tune — gates open 5:00 PM, track hot 6:00 PM. The flyer advertises no separate test-and-tune fee."
-        ],
-        [
-          "Saturday 26 September",
-          "Run What You Brung — gates open 3:00 PM, track hot 5:00 PM."
-        ],
-        [
-          "Saturday 26 September — 6:00 PM",
-          "Fastest Street Car Shootout — free shootout entry, $500 payout."
-        ],
-        [
-          "Saturday 26 September — 7:00 PM",
-          "All on 28s Shootout — no shootout entry fee, $2,500 payout."
+          "Thursday 24 to Sunday 27 September",
+          "IHRA Bracket Finals"
         ]
       ],
+      "series_slugs": [],
+      "slug": "ihra-bracket-finals-montgomery-2026",
+      "source": "From Montgomery International Dragway's 2026 season schedule, revised 22 June 2026.",
+      "start_iso": "2026-09-24",
+      "state": "AL",
+      "summary": "The IHRA Bracket Finals run at Montgomery International Dragway from 24 to 27 September 2026.",
+      "track_name": "Montgomery International Dragway",
+      "track_slug": "montgomery-international-dragway",
+      "verified": "2026-09-12"
+    },
+    {
+      "city": "Columbia",
+      "dates": "Friday 25 and Saturday 26 September 2026",
+      "detail": "The track flyer says NHRA rules apply and promotes a Friday test-and-tune session followed by Saturday Run What You Brung racing.\n\nQuestions racers are already asking remain unresolved in the material reviewed: whether a 315/50R17 qualifies for the “All on 28s” rule on newer cars that cannot use a 15-inch wheel; whether AWD cars are allowed in the Fastest Street Car Shootout; what exactly qualifies as a street car; and whether Saturday has any separate testing/racer fee beyond the posted $20 gate fee.\n\nGulf South Drags is leaving those items unconfirmed rather than guessing. Check with Swamp Bottom for the official class rules before making the tow.",
+      "end_iso": "2026-09-26",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Swamp Bottom Run What You Brung Weekend",
       "prices": [
         [
           "Gate fee",
@@ -776,81 +753,109 @@
           "Free shootout entry advertised."
         ]
       ],
-      "summary": "Swamp Bottom Dragstrip's Sept. 25-26 Run What You Brung weekend combines Friday test and tune with Saturday heads-up shootouts, including $2,500 for the All on 28s Shootout and $500 for Fastest Street Car.",
-      "detail": "The track flyer says NHRA rules apply and promotes a Friday test-and-tune session followed by Saturday Run What You Brung racing.\n\nQuestions racers are already asking remain unresolved in the material reviewed: whether a 315/50R17 qualifies for the “All on 28s” rule on newer cars that cannot use a 15-inch wheel; whether AWD cars are allowed in the Fastest Street Car Shootout; what exactly qualifies as a street car; and whether Saturday has any separate testing/racer fee beyond the posted $20 gate fee.\n\nGulf South Drags is leaving those items unconfirmed rather than guessing. Check with Swamp Bottom for the official class rules before making the tow.",
+      "schedule": [
+        [
+          "Friday 25 September",
+          "Test & Tune — gates open 5:00 PM, track hot 6:00 PM. The flyer advertises no separate test-and-tune fee."
+        ],
+        [
+          "Saturday 26 September",
+          "Run What You Brung — gates open 3:00 PM, track hot 5:00 PM."
+        ],
+        [
+          "Saturday 26 September — 6:00 PM",
+          "Fastest Street Car Shootout — free shootout entry, $500 payout."
+        ],
+        [
+          "Saturday 26 September — 7:00 PM",
+          "All on 28s Shootout — no shootout entry fee, $2,500 payout."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "swamp-bottom-run-what-you-brung-sept-25-26-2026",
       "source": "Swamp Bottom Dragstrip Facebook flyer/post for Sept. 25-26, reviewed 17 September 2026; unresolved-rule notes reflect racer questions in the public thread.",
+      "start_iso": "2026-09-25",
+      "state": "MS",
+      "summary": "Swamp Bottom Dragstrip's Sept. 25-26 Run What You Brung weekend combines Friday test and tune with Saturday heads-up shootouts, including $2,500 for the All on 28s Shootout and $500 for Fastest Street Car.",
+      "track_name": "Swamp Bottom Dragstrip",
+      "track_slug": "swamp-bottom-dragstrip",
       "verified": "2026-09-17"
     },
     {
-      "slug": "king-of-the-bayou-2026",
-      "name": "King of the Bayou Bracket Race",
-      "track_slug": "no-problem-raceway",
-      "track_name": "No Problem Raceway Park",
+      "city": "Belle Rose",
+      "dates": "Saturday 26 September 2026",
+      "detail": "The headline race on No Problem Raceway's September calendar, run as part of NHRA's 75th anniversary. Both a King of the Track Wally and a Jr Dragster Wally are awarded, so junior racers compete for the same trophy as everyone else — the track's calendar bills it as “everyone Jr too”.\n\nA Wally is NHRA's winner's trophy, named for founder Wally Parks, and a bracket race that puts one up is a meaningfully bigger deal than a regular Saturday night.\n\nGates open at 4:30 PM. Confirm entry fees and class structure with the track before travelling.",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Belle Rose",
-      "state": "LA",
-      "dates": "Saturday 26 September 2026",
-      "start_iso": "2026-09-26",
-      "schedule": [
-        [
-          "Saturday 26 September",
-          "King of the Bayou bracket race. Gates open 4:30 PM."
-        ]
-      ],
+      "name": "King of the Bayou Bracket Race",
       "prices": [
         [
           "Entry and gate",
           "Contact the track — 225-445-3498"
         ]
       ],
-      "summary": "King of the Bayou runs at No Problem Raceway Park on Saturday 26 September 2026 — a 75th Anniversary Wally race with a King of the Track Wally and a Jr Dragster Wally on the line. Gates open 4:30 PM.",
-      "detail": "The headline race on No Problem Raceway's September calendar, run as part of NHRA's 75th anniversary. Both a King of the Track Wally and a Jr Dragster Wally are awarded, so junior racers compete for the same trophy as everyone else — the track's calendar bills it as “everyone Jr too”.\n\nA Wally is NHRA's winner's trophy, named for founder Wally Parks, and a bracket race that puts one up is a meaningfully bigger deal than a regular Saturday night.\n\nGates open at 4:30 PM. Confirm entry fees and class structure with the track before travelling.",
+      "schedule": [
+        [
+          "Saturday 26 September",
+          "King of the Bayou bracket race. Gates open 4:30 PM."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "king-of-the-bayou-2026",
       "source": "From No Problem Raceway's September 2026 calendar of events, posted 11 September 2026.",
+      "start_iso": "2026-09-26",
+      "state": "LA",
+      "summary": "King of the Bayou runs at No Problem Raceway Park on Saturday 26 September 2026 — a 75th Anniversary Wally race with a King of the Track Wally and a Jr Dragster Wally on the line. Gates open 4:30 PM.",
+      "track_name": "No Problem Raceway Park",
+      "track_slug": "no-problem-raceway",
       "verified": "2026-09-12"
     },
     {
-      "slug": "holiday-raceway-king-of-the-beach-2026",
-      "name": "King of the Beach — Holiday Raceway",
-      "track_slug": "holiday-raceway",
-      "track_name": "Holiday Raceway",
+      "city": "Woodstock",
+      "dates": "Saturday 3 October 2026",
+      "detail": "One of the named events on Holiday Raceway's 2026 calendar, running all three bracket classes.\n\nOpen track and test and tune runs the Thursday before, on 1 October. A $5,000 to win Footbrake race follows the week after, on 10 October.\n\nHoliday Raceway publishes its dates as subject to change. Confirm with the track before travelling.",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Woodstock",
-      "state": "AL",
-      "dates": "Saturday 3 October 2026",
-      "start_iso": "2026-10-03",
-      "schedule": [
-        [
-          "Saturday 3 October",
-          "King of the Beach — Pro, Footbrake and Junior Dragster"
-        ]
-      ],
+      "name": "King of the Beach — Holiday Raceway",
       "prices": [
         [
           "Gate and entry",
           "Contact the track — 205-938-2123"
         ]
       ],
-      "summary": "King of the Beach runs at Holiday Raceway on Saturday 3 October 2026, with Pro, Footbrake and Junior Dragster racing.",
-      "detail": "One of the named events on Holiday Raceway's 2026 calendar, running all three bracket classes.\n\nOpen track and test and tune runs the Thursday before, on 1 October. A $5,000 to win Footbrake race follows the week after, on 10 October.\n\nHoliday Raceway publishes its dates as subject to change. Confirm with the track before travelling.",
+      "schedule": [
+        [
+          "Saturday 3 October",
+          "King of the Beach — Pro, Footbrake and Junior Dragster"
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "holiday-raceway-king-of-the-beach-2026",
       "source": "From Holiday Raceway's published 2026 season schedule.",
+      "start_iso": "2026-10-03",
+      "state": "AL",
+      "summary": "King of the Beach runs at Holiday Raceway on Saturday 3 October 2026, with Pro, Footbrake and Junior Dragster racing.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
       "verified": "2026-09-12"
     },
     {
-      "slug": "gulfport-cruisin-after-dark-2026",
-      "name": "3rd Annual Cruisin' After Dark",
-      "track_slug": "gulfport-dragway",
-      "track_name": "Gulfport Dragway",
+      "city": "Gulfport",
+      "dates": "Thursday 8 October 2026",
+      "detail": "Cruisin' After Dark is part of Gulfport Dragway's Cruisin' the Coast week programming. Gulfport confirmed on Sept. 19 through its official Facebook account that Neil Esposito and the Jersey Attitude Jet Dragster are a late-breaking addition to the Thursday night show. The program also advertises a Wheel Standing Contest, a Smoke 'Em Till They Pop Contest, quarter-mile drag racing and a parade of cars.\n\nThe official Gulfport Dragway announcement lists spectator admission at $10. A current Gulfcoast Race Week event listing also says racing entry is an additional $20; confirm racer fees and contest participation requirements directly with the track before towing.\n\nThis event leads directly into the Southeast Gassers Association Gulf Coast Nationals at Gulfport on Oct. 9-10.",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [],
-      "city": "Gulfport",
-      "state": "MS",
-      "dates": "Thursday 8 October 2026",
-      "start_iso": "2026-10-08",
+      "name": "3rd Annual Cruisin' After Dark",
+      "prices": [
+        [
+          "Spectators",
+          "$10"
+        ],
+        [
+          "Racing entry",
+          "Current Gulfcoast Race Week listing says an additional $20; confirm with Gulfport Dragway before travelling."
+        ]
+      ],
       "schedule": [
         [
           "Thursday 8 October",
@@ -869,46 +874,25 @@
           "Wheel Standing Contest, Smoke 'Em Till They Pop Contest, quarter-mile drag racing and parade of cars."
         ]
       ],
-      "prices": [
-        [
-          "Spectators",
-          "$10"
-        ],
-        [
-          "Racing entry",
-          "Current Gulfcoast Race Week listing says an additional $20; confirm with Gulfport Dragway before travelling."
-        ]
-      ],
-      "summary": "LATE-BREAKING ADDITION: Neil Esposito's Jersey Attitude Jet Dragster has been added to Gulfport Dragway's 3rd Annual Cruisin' After Dark on Thursday, Oct. 8. Gates open at 5 PM, the track is hot 6-11 PM, and spectator admission is $10.",
-      "detail": "Cruisin' After Dark is part of Gulfport Dragway's Cruisin' the Coast week programming. Gulfport confirmed on Sept. 19 through its official Facebook account that Neil Esposito and the Jersey Attitude Jet Dragster are a late-breaking addition to the Thursday night show. The program also advertises a Wheel Standing Contest, a Smoke 'Em Till They Pop Contest, quarter-mile drag racing and a parade of cars.\n\nThe official Gulfport Dragway announcement lists spectator admission at $10. A current Gulfcoast Race Week event listing also says racing entry is an additional $20; confirm racer fees and contest participation requirements directly with the track before towing.\n\nThis event leads directly into the Southeast Gassers Association Gulf Coast Nationals at Gulfport on Oct. 9-10.",
+      "series_slugs": [],
+      "slug": "gulfport-cruisin-after-dark-2026",
       "source": "Confirmed 19 September 2026 from Gulfport Dragway's official Facebook account: Jersey Attitude Jet Dragster with Neil Esposito, Wheel Standing Contest, Smoke 'Em Till They Pop Contest, quarter-mile drag racing, parade of cars, $10 spectator admission, gates at 5 PM and track hot 6-11 PM. The separate racer-entry amount remains from the current Gulfcoast Race Week listing and should be confirmed with the track before towing.",
-      "verified": "2026-09-19",
-      "source_display": "Gulfport Dragway — Official Facebook"
+      "source_display": "Gulfport Dragway — Official Facebook",
+      "start_iso": "2026-10-08",
+      "state": "MS",
+      "summary": "LATE-BREAKING ADDITION: Neil Esposito's Jersey Attitude Jet Dragster has been added to Gulfport Dragway's 3rd Annual Cruisin' After Dark on Thursday, Oct. 8. Gates open at 5 PM, the track is hot 6-11 PM, and spectator admission is $10.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-09-19"
     },
     {
-      "slug": "sega-gulf-coast-nationals-2026",
-      "name": "Southeast Gassers Association Gulf Coast Nationals",
-      "track_slug": "gulfport-dragway",
-      "track_name": "Gulfport Dragway",
+      "city": "Gulfport",
+      "dates": "Friday 9 and Saturday 10 October 2026",
+      "detail": "Gassers are front-engine, straight-axle cars run to a period rulebook: no electronics, no delay boxes, flag starts. The class is a deliberate throwback to 1960s stock-car-and-street drag racing, and it draws crowds that do not otherwise turn out for bracket nights.\n\nThis weekend counts toward the 2026 championship, which changes the tone from the series' usual Friday format. SEGA normally runs a relaxed test and tune on Friday evening; here both days are full competition. Qualifying starts at 4:00 PM Central both days, three hours later than the series' typical start, with eliminations running into the evening.",
+      "end_iso": "2026-10-10",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [
-        "southeast-gassers-association"
-      ],
-      "city": "Gulfport",
-      "state": "MS",
-      "dates": "Friday 9 and Saturday 10 October 2026",
-      "start_iso": "2026-10-09",
-      "schedule": [
-        [
-          "Friday 9 October",
-          "Qualifying begins 4:00 PM, then eliminations"
-        ],
-        [
-          "Saturday 10 October",
-          "Qualifying begins 4:00 PM, then eliminations"
-        ]
-      ],
+      "name": "Southeast Gassers Association Gulf Coast Nationals",
       "prices": [
         [
           "Adults, one day",
@@ -923,24 +907,59 @@
           "Free"
         ]
       ],
-      "summary": "The Southeast Gassers Association brings its Gulf Coast Nationals to Gulfport Dragway for a two-day double feature — the fourth running of the event, and a first for the series, which normally runs a single race per weekend.",
-      "detail": "Gassers are front-engine, straight-axle cars run to a period rulebook: no electronics, no delay boxes, flag starts. The class is a deliberate throwback to 1960s stock-car-and-street drag racing, and it draws crowds that do not otherwise turn out for bracket nights.\n\nThis weekend counts toward the 2026 championship, which changes the tone from the series' usual Friday format. SEGA normally runs a relaxed test and tune on Friday evening; here both days are full competition. Qualifying starts at 4:00 PM Central both days, three hours later than the series' typical start, with eliminations running into the evening.",
+      "schedule": [
+        [
+          "Friday 9 October",
+          "Qualifying begins 4:00 PM, then eliminations"
+        ],
+        [
+          "Saturday 10 October",
+          "Qualifying begins 4:00 PM, then eliminations"
+        ]
+      ],
+      "series_slugs": [
+        "southeast-gassers-association"
+      ],
+      "slug": "sega-gulf-coast-nationals-2026",
       "source": "Announced by Gulfport Dragway, 27 August 2026.",
-      "verified": "2026-09-11",
-      "end_iso": "2026-10-10"
+      "start_iso": "2026-10-09",
+      "state": "MS",
+      "summary": "The Southeast Gassers Association brings its Gulf Coast Nationals to Gulfport Dragway for a two-day double feature — the fourth running of the event, and a first for the series, which normally runs a single race per weekend.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-09-11"
     },
     {
-      "slug": "great-american-500k-bracket-race-2026",
-      "name": "SDPC Raceshop Great American 50Ks",
-      "track_slug": "gulfport-dragway",
-      "track_name": "Gulfport Dragway",
+      "alert": {
+        "detail": "Originally scheduled for Montgomery International Dragway. Gulfport Dragway officially announced the move on September 17, 2026.",
+        "headline": "NOW AT GULFPORT DRAGWAY — GULFPORT, MISSISSIPPI",
+        "label": "VENUE CHANGED"
+      },
+      "city": "Gulfport",
+      "dates": "Tuesday 13 to Saturday 17 October 2026",
+      "detail": "Gulfport Dragway announced the venue move on 17 September 2026. Racers who already pre-registered and cannot make the trip to Gulfport are eligible for a 100% refund according to the official announcement.\n\nPre-registration is not required. The event announcement says single-day and single-entry gate entries are welcome. The $200 pre-registration deposit is required to take advantage of the buy-one-entry/get-one-entry-free offer and to qualify for the Weekend Points Fund; the remaining $1,400 is due at the gate.\n\nThe official flyer lists $50,000 to win Wednesday through Saturday, with $10,000 runner-up, $3,000 semifinal, $1,500 Round 8 winner, $1,250 Round 7 winner, $1,000 Round 6 winner, $750 Round 5 winner, $500 Round 4 winner and $250 Round 3 winner payouts. Confirm all race procedures and payout conditions with the promoter before travelling.\n\nEvent contact: Britt Cummings, 985-969-4901.",
+      "end_iso": "2026-10-17",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [],
-      "city": "Gulfport",
-      "state": "MS",
-      "dates": "Tuesday 13 to Saturday 17 October 2026",
-      "start_iso": "2026-10-13",
+      "name": "SDPC Raceshop Great American 50Ks",
+      "prices": [
+        [
+          "Gate entry",
+          "$250 per entry, per day — single-day/single-entry gate entries are welcome."
+        ],
+        [
+          "Pre-registration deposit",
+          "$200."
+        ],
+        [
+          "Pre-registration balance",
+          "$1,400 due at the gate."
+        ],
+        [
+          "Re-entry",
+          "$250, first round only."
+        ]
+      ],
       "schedule": [
         [
           "Monday 12 October",
@@ -967,38 +986,19 @@
           "$50,000 to win bracket race."
         ]
       ],
-      "prices": [
-        [
-          "Gate entry",
-          "$250 per entry, per day — single-day/single-entry gate entries are welcome."
-        ],
-        [
-          "Pre-registration deposit",
-          "$200."
-        ],
-        [
-          "Pre-registration balance",
-          "$1,400 due at the gate."
-        ],
-        [
-          "Re-entry",
-          "$250, first round only."
-        ]
-      ],
-      "summary": "VENUE CHANGE CONFIRMED: the SDPC Raceshop Great American 50Ks has moved from Montgomery International Dragway to Gulfport Dragway. Parking begins Oct. 12, Test & Tune runs Oct. 13, and four straight $50,000-to-win races run Oct. 14-17.",
-      "detail": "Gulfport Dragway announced the venue move on 17 September 2026. Racers who already pre-registered and cannot make the trip to Gulfport are eligible for a 100% refund according to the official announcement.\n\nPre-registration is not required. The event announcement says single-day and single-entry gate entries are welcome. The $200 pre-registration deposit is required to take advantage of the buy-one-entry/get-one-entry-free offer and to qualify for the Weekend Points Fund; the remaining $1,400 is due at the gate.\n\nThe official flyer lists $50,000 to win Wednesday through Saturday, with $10,000 runner-up, $3,000 semifinal, $1,500 Round 8 winner, $1,250 Round 7 winner, $1,000 Round 6 winner, $750 Round 5 winner, $500 Round 4 winner and $250 Round 3 winner payouts. Confirm all race procedures and payout conditions with the promoter before travelling.\n\nEvent contact: Britt Cummings, 985-969-4901.",
+      "series_slugs": [],
+      "slug": "great-american-500k-bracket-race-2026",
       "source": "Official Gulfport Dragway announcement and event flyer published 17 September 2026.",
-      "verified": "2026-09-17",
-      "end_iso": "2026-10-17",
-      "alert": {
-        "label": "VENUE CHANGED",
-        "headline": "NOW AT GULFPORT DRAGWAY — GULFPORT, MISSISSIPPI",
-        "detail": "Originally scheduled for Montgomery International Dragway. Gulfport Dragway officially announced the move on September 17, 2026."
-      }
+      "start_iso": "2026-10-13",
+      "state": "MS",
+      "summary": "VENUE CHANGE CONFIRMED: the SDPC Raceshop Great American 50Ks has moved from Montgomery International Dragway to Gulfport Dragway. Parking begins Oct. 12, Test & Tune runs Oct. 13, and four straight $50,000-to-win races run Oct. 14-17.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-09-17"
     },
     {
-      "slug": "world-footbrake-challenge-2026",
-      "name": "World Footbrake Challenge",
+      "slug": "montgomery-thanksgiving-footbrake-challenge-2026",
+      "name": "2nd Annual BTE Thanksgiving Footbrake Challenge",
       "track_slug": "montgomery-international-dragway",
       "track_name": "Montgomery International Dragway",
       "event_type": "drag",
@@ -1006,44 +1006,45 @@
       "series_slugs": [],
       "city": "Montgomery",
       "state": "AL",
-      "dates": "27 and 28 November 2026",
+      "dates": "Friday 27 and Saturday 28 November 2026",
       "start_iso": "2026-11-27",
+      "end_iso": "2026-11-28",
       "schedule": [
         [
           "Friday 27 and Saturday 28 November",
-          "World Footbrake Challenge"
+          "Twin $20,000-to-win main events ($5,000 runner-up, $1,000 semi-finalists; round money from second-round winners). Gamblers races both days ($100 entry, $3,000 to win)."
         ]
       ],
       "prices": [
         [
-          "Entry and gate",
-          "Contact the track — racemid.com"
+          "Weekend pre-entry (by 13 November)",
+          "$400 for twin $20K races"
+        ],
+        [
+          "Gate entry",
+          "$500 for twin $20K races"
+        ],
+        [
+          "1-day entry",
+          "$250"
+        ],
+        [
+          "Gamblers race",
+          "$100 entry, $3,000 to win"
         ]
       ],
-      "summary": "The World Footbrake Challenge closes Montgomery International Dragway's 2026 season on 27 and 28 November.",
-      "detail": "Footbrake classes are for cars without transbrakes or delay boxes, launching off the footbrake, which puts more of the round on the driver.\n\nIt is the last event on Montgomery's published 2026 calendar, following the Gobble Wobble Thanksgiving Bracket from 20 to 22 November.\n\nDates are published as subject to change.",
-      "source": "From Montgomery International Dragway's 2026 season schedule, revised 22 June 2026.",
-      "verified": "2026-09-12",
-      "end_iso": "2026-11-28"
+      "summary": "The 2nd Annual BTE Thanksgiving Footbrake Challenge runs November 27-28 at Montgomery International Dragway with twin $20,000-to-win races and over $45,000 in winner's purses.",
+      "detail": "Footbrake-only event from Coalburg Racing Promotions / World Footbrake Challenge. All-run format, no E.T. break, deep staging honored; door cars and left-hand-steer roadsters only, no dragsters or electric vehicles. Pre-enter by November 13 for the $400 rate; the double-entry policy lets a racer pre-enter one entry and buy the second at the gate for the same price. Streamed on MotorManiaTV. This record replaces the June-calendar World Footbrake Challenge listing for the same track and dates, which carried no purses and cited superseded Gobble Wobble dates.\n\nDeadline (pre-entry, 2026-11-13): Pre-entry $400 by November 13 ($100 savings); $500 at the gate for twin $20K races.",
+      "source": "DragChamp, 13 October 2026, and the World Footbrake Challenge entry page.",
+      "verified": "2026-10-27"
     },
     {
-      "slug": "holiday-raceway-test-tune-oct-29-2026",
-      "name": "Thursday Test & Tune — Holiday Raceway",
-      "track_slug": "holiday-raceway",
-      "track_name": "Holiday Raceway",
+      "city": "Woodstock",
+      "dates": "Thursday 29 October 2026",
+      "detail": "A Thursday evening Test & Tune ahead of Halloween weekend. Gates open at 4:45 PM and the track is scheduled to be hot from 5:00 to 9:00 PM.",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Woodstock",
-      "state": "AL",
-      "dates": "Thursday 29 October 2026",
-      "start_iso": "2026-10-29",
-      "schedule": [
-        [
-          "Thursday 29 October",
-          "Gates open 4:45 PM. Track hot 5:00–9:00 PM."
-        ]
-      ],
+      "name": "Thursday Test & Tune — Holiday Raceway",
       "prices": [
         [
           "Spectator admission",
@@ -1054,24 +1055,36 @@
           "$20"
         ]
       ],
-      "summary": "Holiday Raceway hosts Thursday Test & Tune on October 29, with gates opening at 4:45 PM and the track hot from 5:00 to 9:00 PM.",
-      "detail": "A Thursday evening Test & Tune ahead of Halloween weekend. Gates open at 4:45 PM and the track is scheduled to be hot from 5:00 to 9:00 PM.",
+      "schedule": [
+        [
+          "Thursday 29 October",
+          "Gates open 4:45 PM. Track hot 5:00–9:00 PM."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "holiday-raceway-test-tune-oct-29-2026",
       "source": "From Holiday Raceway's official Facebook update, checked 28 October 2026.",
+      "start_iso": "2026-10-29",
+      "state": "AL",
+      "summary": "Holiday Raceway hosts Thursday Test & Tune on October 29, with gates opening at 4:45 PM and the track hot from 5:00 to 9:00 PM.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
       "verified": "2026-10-28"
     },
     {
-      "slug": "twin-city-halloween-weekend-2026",
-      "name": "Twin City 2026 Finale & Halloween Weekend",
-      "track_slug": "twin-city-raceway",
-      "track_name": "Twin City Raceway",
+      "city": "Monroe",
+      "dates": "Friday 30 and Saturday 31 October 2026",
+      "detail": "Twin City Raceway has identified October 30–31 as its final race weekend of the 2026 season. Friday features Test & Tune. Saturday includes bracket racing, mini bikes and trick-or-treat activities.\n\nCancelled due to rain (announced 29 October 2026). This was to have been the track's final race weekend of the 2026 season.",
+      "end_iso": "2026-10-31",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Monroe",
-      "state": "LA",
-      "dates": "Friday 30 and Saturday 31 October 2026",
-      "start_iso": "2026-10-30",
-      "end_iso": "2026-10-31",
+      "name": "Twin City 2026 Finale & Halloween Weekend",
+      "prices": [
+        [
+          "Entry and gate",
+          "Confirm with Twin City Raceway"
+        ]
+      ],
       "schedule": [
         [
           "Friday 30 October",
@@ -1082,30 +1095,42 @@
           "Bracket racing, mini bikes and trick-or-treat activities."
         ]
       ],
+      "series_slugs": [],
+      "slug": "twin-city-halloween-weekend-2026",
+      "source": "From Twin City Raceway's official Facebook update, checked 28 October 2026.",
+      "start_iso": "2026-10-30",
+      "state": "LA",
+      "summary": "Twin City Raceway closes its 2026 racing season October 30–31 with Friday Test & Tune and Saturday bracket racing, mini bikes and Halloween activities.",
+      "track_name": "Twin City Raceway",
+      "track_slug": "twin-city-raceway",
+      "verified": "2026-10-30",
+      "alert": {
+        "label": "CANCELLED",
+        "text": "CANCELLED: Twin City's Halloween race weekend (30-31 October 2026) was cancelled due to rain."
+      }
+    },
+    {
+      "city": "Eldridge",
+      "dates": "Friday 30 and Saturday 31 October 2026",
+      "detail": "Friday features $3,200-to-win Footbrake/Pro racing. Saturday steps up to $5,000 to win in Footbrake/Pro, with Jr Dragster payouts advertised at $500 and $250 plus trunk-or-treat activities.",
+      "end_iso": "2026-10-31",
+      "event_type": "drag",
+      "major_event": true,
+      "name": "I-22 Halloween Weekend",
       "prices": [
         [
           "Entry and gate",
-          "Confirm with Twin City Raceway"
+          "Confirm with I-22 Motorsports Park"
+        ],
+        [
+          "Spectator admission",
+          "$10 per day"
+        ],
+        [
+          "Children",
+          "12 and under free"
         ]
       ],
-      "summary": "Twin City Raceway closes its 2026 racing season October 30–31 with Friday Test & Tune and Saturday bracket racing, mini bikes and Halloween activities.",
-      "detail": "Twin City Raceway has identified October 30–31 as its final race weekend of the 2026 season. Friday features Test & Tune. Saturday includes bracket racing, mini bikes and trick-or-treat activities.",
-      "source": "From Twin City Raceway's official Facebook update, checked 28 October 2026.",
-      "verified": "2026-10-28"
-    },
-    {
-      "slug": "i22-halloween-weekend-2026",
-      "name": "I-22 Halloween Weekend",
-      "track_slug": "i-22-motorsports-park",
-      "track_name": "I-22 Motorsports Park",
-      "event_type": "drag",
-      "major_event": true,
-      "series_slugs": [],
-      "city": "Eldridge",
-      "state": "AL",
-      "dates": "Friday 30 and Saturday 31 October 2026",
-      "start_iso": "2026-10-30",
-      "end_iso": "2026-10-31",
       "schedule": [
         [
           "Friday 30 October",
@@ -1116,88 +1141,88 @@
           "$5,000-to-win Footbrake/Pro racing, Jr Dragster payouts and trunk-or-treat."
         ]
       ],
-      "prices": [
-        [
-          "Entry and gate",
-          "Confirm with I-22 Motorsports Park"
-        ]
-      ],
-      "summary": "I-22 Motorsports Park runs a two-day Halloween weekend October 30–31, highlighted by $3,200-to-win racing Friday and $5,000-to-win racing Saturday.",
-      "detail": "Friday features $3,200-to-win Footbrake/Pro racing. Saturday steps up to $5,000 to win in Footbrake/Pro, with Jr Dragster payouts advertised at $500 and $250 plus trunk-or-treat activities.",
+      "series_slugs": [],
+      "slug": "i22-halloween-weekend-2026",
       "source": "From I-22 Motorsports Park's official Facebook update, checked 28 October 2026.",
-      "verified": "2026-10-28"
+      "start_iso": "2026-10-30",
+      "state": "AL",
+      "summary": "I-22 Motorsports Park runs a two-day Halloween weekend October 30–31, highlighted by $3,200-to-win racing Friday and $5,000-to-win racing Saturday.",
+      "track_name": "I-22 Motorsports Park",
+      "track_slug": "i-22-motorsports-park",
+      "verified": "2026-10-29"
     },
     {
-      "slug": "swamp-bottom-halloween-fest-2026",
-      "name": "Halloween Fest — Swamp Bottom Dragstrip",
-      "track_slug": "swamp-bottom-dragstrip",
-      "track_name": "Swamp Bottom Dragstrip",
+      "city": "Columbia",
+      "dates": "Saturday 31 October 2026",
+      "detail": "Halloween Fest includes a kids bike race for ages 3–12 at 3:00 PM along with costume, trick-or-treat and prize activities. Confirm any additional racing schedule directly with the track before travelling.",
       "event_type": "drag",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Columbia",
-      "state": "MS",
-      "dates": "Saturday 31 October 2026",
-      "start_iso": "2026-10-31",
-      "schedule": [
-        [
-          "Saturday 31 October",
-          "Kids bike race for ages 3–12 at 3:00 PM, plus costume, trick-or-treat and prize activities."
-        ]
-      ],
+      "name": "Halloween Fest — Swamp Bottom Dragstrip",
       "prices": [
         [
           "Entry and gate",
           "Confirm with Swamp Bottom Dragstrip"
         ]
       ],
-      "summary": "Swamp Bottom Dragstrip hosts Halloween Fest on October 31, including a 3 PM kids bike race for ages 3–12 and Halloween activities.",
-      "detail": "Halloween Fest includes a kids bike race for ages 3–12 at 3:00 PM along with costume, trick-or-treat and prize activities. Confirm any additional racing schedule directly with the track before travelling.",
-      "source": "From Swamp Bottom Dragstrip's official Facebook update, checked 28 October 2026.",
-      "verified": "2026-10-28"
-    },
-    {
-      "slug": "cajun-gasser-nationals-no-problem-2026",
-      "name": "Cajun Gasser Nationals — No Problem Raceway",
-      "track_slug": "no-problem-raceway",
-      "track_name": "No Problem Raceway Park",
-      "event_type": "drag",
-      "major_event": false,
-      "series_slugs": [],
-      "city": "Belle Rose",
-      "state": "LA",
-      "dates": "Saturday 31 October 2026 weekend",
-      "start_iso": "2026-10-31",
       "schedule": [
         [
           "Saturday 31 October",
-          "Cajun Gasser Nationals weekend; NHRA chassis certifications are also scheduled Saturday."
+          "Kids bike race for ages 3–12 at 3:00 PM, plus costume, trick-or-treat and prize activities."
         ]
       ],
+      "series_slugs": [],
+      "slug": "swamp-bottom-halloween-fest-2026",
+      "source": "From Swamp Bottom Dragstrip's official Facebook update, checked 28 October 2026.",
+      "start_iso": "2026-10-31",
+      "state": "MS",
+      "summary": "Swamp Bottom Dragstrip hosts Halloween Fest on October 31, including a 3 PM kids bike race for ages 3–12 and Halloween activities.",
+      "track_name": "Swamp Bottom Dragstrip",
+      "track_slug": "swamp-bottom-dragstrip",
+      "verified": "2026-10-28"
+    },
+    {
+      "city": "Belle Rose",
+      "dates": "Saturday 31 October 2026 weekend",
+      "detail": "The official Facebook update confirms the Cajun Gasser Nationals for Halloween weekend and NHRA chassis certifications on Saturday. The captured source was incomplete, so Gulf South Drags is not publishing additional schedule or purse details until confirmed.\n\nNo Problem confirmed on 30 October that the Halloween weekend is on in good weather, with State Champion Wally racing plus cackle cars, gassers, motorcycles and bracket cars. This confirms the Wally races previously held as an unverified lead.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Cajun Gasser Nationals — No Problem Raceway",
       "prices": [
         [
           "Entry and gate",
           "Confirm with No Problem Raceway Park"
         ]
       ],
-      "summary": "No Problem Raceway's Halloween weekend includes the Cajun Gasser Nationals and NHRA chassis certifications on Saturday, October 31.",
-      "detail": "The official Facebook update confirms the Cajun Gasser Nationals for Halloween weekend and NHRA chassis certifications on Saturday. The captured source was incomplete, so Gulf South Drags is not publishing additional schedule or purse details until confirmed.",
+      "schedule": [
+        [
+          "Saturday 31 October",
+          "Cajun Gasser Nationals weekend; NHRA chassis certifications are also scheduled Saturday."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "cajun-gasser-nationals-no-problem-2026",
       "source": "From No Problem Raceway Park's official Facebook update, checked 28 October 2026. Source capture was incomplete; confirm details with the track.",
-      "verified": "2026-10-28"
+      "start_iso": "2026-10-31",
+      "state": "LA",
+      "summary": "No Problem Raceway's Halloween weekend includes the Cajun Gasser Nationals and NHRA chassis certifications on Saturday, October 31.",
+      "track_name": "No Problem Raceway Park",
+      "track_slug": "no-problem-raceway",
+      "verified": "2026-10-30"
     },
     {
-      "slug": "montgomery-gobble-wobble-2026",
-      "name": "Gobble Wobble",
-      "track_slug": "montgomery-international-dragway",
-      "track_name": "Montgomery International Dragway",
+      "city": "Montgomery",
+      "dates": "Thursday 19 to Sunday 22 November 2026",
+      "detail": "Montgomery's October 27 update advertises three $15,000-to-win races for $375 during the Gobble Wobble weekend. Friday uses an ACE format. The track also advertised a No Box gamble with transfer into Box competition for the $15,000 purse. This newer announcement supersedes the older June calendar dates previously referenced by Gulf South Drags.\n\nMontgomery's 29 October update adds a $100 voucher giveaway to the Gobble Wobble weekend.",
+      "end_iso": "2026-11-22",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [],
-      "city": "Montgomery",
-      "state": "AL",
-      "dates": "Thursday 19 to Sunday 22 November 2026",
-      "start_iso": "2026-11-19",
-      "end_iso": "2026-11-22",
+      "name": "Gobble Wobble",
+      "prices": [
+        [
+          "Three-race package",
+          "$375 for three $15,000-to-win races"
+        ]
+      ],
       "schedule": [
         [
           "Thursday 19 to Sunday 22 November",
@@ -1208,141 +1233,141 @@
           "ACE format advertised."
         ]
       ],
-      "prices": [
-        [
-          "Three-race package",
-          "$375 for three $15,000-to-win races"
-        ]
-      ],
-      "summary": "Montgomery International Dragway's Gobble Wobble runs November 19–22 with three $15,000-to-win races advertised for $375.",
-      "detail": "Montgomery's October 27 update advertises three $15,000-to-win races for $375 during the Gobble Wobble weekend. Friday uses an ACE format. The track also advertised a No Box gamble with transfer into Box competition for the $15,000 purse. This newer announcement supersedes the older June calendar dates previously referenced by Gulf South Drags.",
+      "series_slugs": [],
+      "slug": "montgomery-gobble-wobble-2026",
       "source": "From Montgomery International Dragway's official Facebook update dated 27 October 2026. The captured Facebook source was truncated; confirm final schedule details with the track before travelling.",
-      "verified": "2026-10-28"
+      "start_iso": "2026-11-19",
+      "state": "AL",
+      "summary": "Montgomery International Dragway's Gobble Wobble runs November 19–22 with three $15,000-to-win races advertised for $375.",
+      "track_name": "Montgomery International Dragway",
+      "track_slug": "montgomery-international-dragway",
+      "verified": "2026-10-29"
     },
     {
-      "slug": "holiday-thanksgiving-throwdown-2026",
-      "name": "Thanksgiving Throwdown — Holiday Raceway",
-      "track_slug": "holiday-raceway",
-      "track_name": "Holiday Raceway",
+      "city": "Woodstock",
+      "dates": "Saturday 21 November 2026",
+      "detail": "Holiday Raceway's October update confirms the Thanksgiving Throwdown for November 21. Existing track information identifies this as a sound and audio competition rather than a confirmed drag-racing event. Additional event details remain pending.",
       "event_type": "other",
       "major_event": false,
-      "series_slugs": [],
-      "city": "Woodstock",
-      "state": "AL",
-      "dates": "Saturday 21 November 2026",
-      "start_iso": "2026-11-21",
-      "schedule": [
-        [
-          "Saturday 21 November",
-          "Thanksgiving Throwdown. Additional schedule details pending."
-        ]
-      ],
+      "name": "Thanksgiving Throwdown — Holiday Raceway",
       "prices": [
         [
           "Entry and gate",
           "Confirm with Holiday Raceway"
         ]
       ],
-      "summary": "Holiday Raceway has confirmed its Thanksgiving Throwdown sound and audio competition for Saturday, November 21.",
-      "detail": "Holiday Raceway's October update confirms the Thanksgiving Throwdown for November 21. Existing track information identifies this as a sound and audio competition rather than a confirmed drag-racing event. Additional event details remain pending.",
+      "schedule": [
+        [
+          "Saturday 21 November",
+          "Thanksgiving Throwdown. Additional schedule details pending."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "holiday-thanksgiving-throwdown-2026",
       "source": "From Holiday Raceway's official Facebook update, checked 28 October 2026.",
+      "start_iso": "2026-11-21",
+      "state": "AL",
+      "summary": "Holiday Raceway has confirmed its Thanksgiving Throwdown sound and audio competition for Saturday, November 21.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
       "verified": "2026-10-28"
     },
     {
-      "slug": "bte-koc-event-6-gulfport-2026",
-      "name": "BTE King of the Coast — Event #6",
-      "track_slug": "gulfport-dragway",
-      "track_name": "Gulfport Dragway",
+      "city": "Gulfport",
+      "dates": "Friday 30 October to Sunday 1 November 2026",
+      "detail": "Event #6 of the BTE King of the Coast Bracket Racing Series is scheduled for Halloween weekend at Gulfport Dragway. TrackWatch independently discovered the October 30–November 1 dates, while Muse also detected current Event #6 announcements from Gulfport. Purse, class, gate and detailed schedule information have not yet been confirmed by Gulf South Drags.\n\nCancelled 29 October 2026 because of the adverse weather forecast for 31 October-1 November. The event will not be rescheduled. The Jr Dragster 5ft Trophy Nationals move to KOC Event 7, 4-6 December at Gulfport Dragway (see separate record 2026-10-30-025).",
+      "end_iso": "2026-11-01",
       "event_type": "drag",
       "major_event": true,
-      "series_slugs": [
-        "bte-king-of-the-coast"
-      ],
-      "city": "Gulfport",
-      "state": "MS",
-      "dates": "Friday 30 October to Sunday 1 November 2026",
-      "start_iso": "2026-10-30",
-      "end_iso": "2026-11-01",
-      "schedule": [
-        [
-          "30 October–1 November",
-          "22nd Annual BTE King of the Coast Bracket Racing Series Event #6."
-        ]
-      ],
+      "name": "BTE King of the Coast — Event #6",
       "prices": [
         [
           "Entry and gate",
           "Confirm with event promoter or Gulfport Dragway"
         ]
       ],
-      "summary": "The 22nd Annual BTE King of the Coast Bracket Racing Series returns to Gulfport Dragway for Event #6, October 30 through November 1.",
-      "detail": "Event #6 of the BTE King of the Coast Bracket Racing Series is scheduled for Halloween weekend at Gulfport Dragway. TrackWatch independently discovered the October 30–November 1 dates, while Muse also detected current Event #6 announcements from Gulfport. Purse, class, gate and detailed schedule information have not yet been confirmed by Gulf South Drags.",
-      "source": "Event and dates corroborated by a TrackWatch discovery from DragChamp and a current Gulfport Dragway Facebook signal, checked 28 October 2026.",
-      "verified": "2026-10-28"
-    },
-    {
-      "slug": "turkey-beach-bash-2026",
-      "name": "8th Annual Turkey Beach Bash",
-      "track_slug": "gulfport-dragway",
-      "track_name": "Gulfport Dragway",
-      "event_type": "drag",
-      "major_event": true,
+      "schedule": [
+        [
+          "30 October–1 November",
+          "22nd Annual BTE King of the Coast Bracket Racing Series Event #6."
+        ]
+      ],
       "series_slugs": [
         "bte-king-of-the-coast"
       ],
-      "city": "Gulfport",
+      "slug": "bte-koc-event-6-gulfport-2026",
+      "source": "Event and dates corroborated by a TrackWatch discovery from DragChamp and a current Gulfport Dragway Facebook signal, checked 28 October 2026.",
+      "start_iso": "2026-10-30",
       "state": "MS",
-      "dates": "Friday 27 through Sunday 29 November 2026",
-      "start_iso": "2026-11-27",
-      "end_iso": "2026-11-29",
-      "schedule": [
-        [
-          "27–29 November",
-          "Thanksgiving weekend bracket racing."
-        ]
-      ],
-      "prices": [
-        [
-          "Entry and gate",
-          "Confirm with event organizer or Gulfport Dragway"
-        ]
-      ],
-      "summary": "The 8th Annual Turkey Beach Bash returns to Gulfport Dragway November 27–29 for Thanksgiving weekend bracket racing.",
-      "detail": "Turkey Beach Bash returns for its eighth running in 2026 at Gulfport Dragway. Registration opened October 6. Additional race-format, entry, payout and gate details should be confirmed with the event organizer before travelling.",
-      "source": "Event dates and registration timing verified from King of the Coast Bracket Racing information. Originally checked 28 September 2026.",
-      "verified": "2026-09-28"
+      "summary": "The 22nd Annual BTE King of the Coast Bracket Racing Series returns to Gulfport Dragway for Event #6, October 30 through November 1.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-10-30",
+      "alert": {
+        "label": "CANCELLED",
+        "text": "CANCELLED: BTE KOC Series Event 6 (30 October-1 November 2026) was cancelled on 29 October 2026 because of the adverse weather forecast for 31 October-1 November. The event will not be rescheduled."
+      }
     },
     {
-      "slug": "swamp-bottom-october-2-3-2026",
-      "name": "Swamp Bottom October Race Weekend",
-      "track_slug": "swamp-bottom-dragstrip",
-      "track_name": "Swamp Bottom Dragstrip",
+      "city": "Gulfport",
+      "dates": "Friday 27 through Sunday 29 November 2026",
+      "detail": "Thanksgiving weekend bracket racing at Gulfport Dragway. BOGO pre-registration ($350 for two entries into all three $10K races) closes November 3; the first 50 registrants enter a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race. Registration: kocbracketseries.com.\n\nDeadline (BOGO pre-registration, 2026-11-03): BOGO pre-registration closes November 3: $350 for two entries into all three $10K races ($50 deposit, $300 at the gate). First 50 registrants enter a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race.",
+      "end_iso": "2026-11-29",
       "event_type": "drag",
-      "major_event": false,
-      "series_slugs": [],
-      "city": "Columbia",
-      "state": "MS",
-      "dates": "Friday 2 and Saturday 3 October 2026",
-      "start_iso": "2026-10-02",
-      "end_iso": "2026-10-03",
-      "schedule": [
+      "major_event": true,
+      "name": "8th Annual Turkey Beach Bash",
+      "prices": [
         [
-          "Friday 2 October",
-          "TNT / Grudge — gates open 5:00 PM, racing starts 6:00 PM."
+          "BOGO pre-registration",
+          "$350 for two entries into all three $10K races ($50 deposit, $300 at the gate; two racers may split)"
         ],
         [
-          "Saturday 3 October",
-          "Gates open 3:00 PM."
+          "Buybacks",
+          "$120"
         ],
         [
-          "Saturday — 6:00 PM",
-          "Street Cars — $1,000 payout."
+          "Motorcycle",
+          "$300 weekend BOGO; $40 buybacks"
         ],
         [
-          "Saturday — 7:00 PM",
-          "All on 28s — $2,500 payout."
+          "Spectator",
+          "$15 per day or $40 for three days; kids 8 and under free"
+        ],
+        [
+          "Gate (no pre-registration)",
+          "$80 single-day gate; no pre-registration required just to race"
         ]
       ],
+      "schedule": [
+        [
+          "27-29 November",
+          "Three $10,000-to-win bracket races. Runner-up $2,000; $15,000 to win if first-round entries exceed 200."
+        ],
+        [
+          "Motorcycle",
+          "$1,000-to-win each day, all three days."
+        ]
+      ],
+      "series_slugs": [
+        "bte-king-of-the-coast"
+      ],
+      "slug": "turkey-beach-bash-2026",
+      "source": "BOGO terms, purses and gate details from DragChamp, October 2026.",
+      "start_iso": "2026-11-27",
+      "state": "MS",
+      "summary": "The 8th Annual Turkey Beach Bash returns to Gulfport Dragway November 27-29 with three $10,000-to-win races.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-10-29"
+    },
+    {
+      "city": "Columbia",
+      "dates": "Friday 2 and Saturday 3 October 2026",
+      "detail": "Friday was advertised as a TNT / Grudge night. Saturday featured Street Cars with a $1,000 payout and All on 28s with a $2,500 payout. The track flyer advertised a free tech card sponsored by T.L. Wallace Construction. Complete class rules and spectator pricing were not published in the source reviewed by Gulf South Drags.",
+      "end_iso": "2026-10-03",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Swamp Bottom October Race Weekend",
       "prices": [
         [
           "Tech card",
@@ -1361,10 +1386,241 @@
           "Free tech card sponsored by T.L. Wallace Construction."
         ]
       ],
-      "summary": "Swamp Bottom Dragstrip ran two nights of racing October 2–3, with Friday TNT / Grudge and Saturday Street Cars and All on 28s competition.",
-      "detail": "Friday was advertised as a TNT / Grudge night. Saturday featured Street Cars with a $1,000 payout and All on 28s with a $2,500 payout. The track flyer advertised a free tech card sponsored by T.L. Wallace Construction. Complete class rules and spectator pricing were not published in the source reviewed by Gulf South Drags.",
+      "schedule": [
+        [
+          "Friday 2 October",
+          "TNT / Grudge — gates open 5:00 PM, racing starts 6:00 PM."
+        ],
+        [
+          "Saturday 3 October",
+          "Gates open 3:00 PM."
+        ],
+        [
+          "Saturday — 6:00 PM",
+          "Street Cars — $1,000 payout."
+        ],
+        [
+          "Saturday — 7:00 PM",
+          "All on 28s — $2,500 payout."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "swamp-bottom-october-2-3-2026",
       "source": "Swamp Bottom Dragstrip Facebook flyer for the October 2–3 race weekend, reviewed 28 September 2026.",
+      "start_iso": "2026-10-02",
+      "state": "MS",
+      "summary": "Swamp Bottom Dragstrip ran two nights of racing October 2–3, with Friday TNT / Grudge and Saturday Street Cars and All on 28s competition.",
+      "track_name": "Swamp Bottom Dragstrip",
+      "track_slug": "swamp-bottom-dragstrip",
       "verified": "2026-09-28"
+    },
+    {
+      "slug": "forever-footbrake-150-gulfport-2026",
+      "name": "3rd Annual Forever Footbrake 150",
+      "track_slug": "gulfport-dragway",
+      "track_name": "Gulfport Dragway",
+      "event_type": "drag",
+      "major_event": true,
+      "series_slugs": [],
+      "city": "Gulfport",
+      "state": "MS",
+      "dates": "Friday 13 to Sunday 15 November 2026",
+      "start_iso": "2026-11-13",
+      "end_iso": "2026-11-15",
+      "schedule": [
+        [
+          "Friday 13 November",
+          "$3,000-to-win Gamblers Race and $8,000-to-win No Guts, No Glory race."
+        ],
+        [
+          "Saturday 14 - Sunday 15 November",
+          "Twin $25,000-to-win main events ($2,000 runner-up, $750 semi-finalists; round money from round 4 winners)."
+        ]
+      ],
+      "prices": [
+        [
+          "Gate entry",
+          "$150 per day if the event is not sold out (BOGO and refund cutoff passed 29 October; confirm sellout status with the promoter)"
+        ],
+        [
+          "Registration",
+          "kocbracketseries.com"
+        ]
+      ],
+      "summary": "The 3rd Annual Forever Footbrake 150 runs November 13-15 at Gulfport Dragway with twin $25,000-to-win races.",
+      "detail": "Twin $25,000-to-win main events with $2,000 runner-up and $750 semi-finalist money. Friday adds a $3,000 Gamblers Race and an $8,000 No Guts, No Glory race. The BOGO pre-registration offer and the refund cutoff both expired 29 October 2026; post-cutoff terms are $150-per-day gate entries if the event is not sold out. Sellout status is unverified: do not claim the event is sold out. Confirm current entry terms with the promoter before travelling.",
+      "source": "DragChamp and BVM Sports, October 2026.",
+      "verified": "2026-10-27"
+    },
+    {
+      "slug": "baileyton-halloween-double-trouble-2026",
+      "name": "Halloween Double Trouble $2K Weekend",
+      "track_slug": "baileyton-goodtime-dragstrip",
+      "track_name": "Baileyton Goodtime Dragstrip",
+      "event_type": "drag",
+      "major_event": false,
+      "series_slugs": [],
+      "city": "Baileyton",
+      "state": "AL",
+      "dates": "Friday 30 and Saturday 31 October 2026",
+      "start_iso": "2026-10-30",
+      "end_iso": "2026-10-31",
+      "schedule": [
+        [
+          "Friday 30 October",
+          "Gates 4 PM, trials 6 PM. $2,000 guaranteed in Pro and Footbrake."
+        ],
+        [
+          "Saturday 31 October",
+          "Gates 8 AM, trials 10 AM. $2,000 guaranteed in Pro and Footbrake."
+        ]
+      ],
+      "prices": [
+        [
+          "Purses",
+          "$8,000 guaranteed payouts across the weekend"
+        ]
+      ],
+      "summary": "Baileyton Goodtime Dragstrip runs a Halloween Double Trouble $2K weekend October 30-31 with $2,000 guaranteed in Pro and Footbrake each day.",
+      "detail": "$2,000 guaranteed in Pro and Footbrake each day; $8,000 guaranteed payouts across the weekend. Friday gates 4 PM, trials 6 PM; Saturday gates 8 AM, trials 10 AM.",
+      "source": "Baileyton Goodtime Dragstrip official Facebook update, 29 October 2026.",
+      "verified": "2026-10-29"
+    },
+    {
+      "slug": "baileyton-b-town-takeover-2026",
+      "name": "B-Town Takeover",
+      "track_slug": "baileyton-goodtime-dragstrip",
+      "track_name": "Baileyton Goodtime Dragstrip",
+      "event_type": "other",
+      "major_event": false,
+      "series_slugs": [],
+      "city": "Baileyton",
+      "state": "AL",
+      "dates": "Saturday 28 November 2026",
+      "start_iso": "2026-11-28",
+      "schedule": [
+        [
+          "Saturday 28 November",
+          "Show 11 AM-5 PM, 75+ awards. No prep, cash only."
+        ]
+      ],
+      "prices": [
+        [
+          "Spectator",
+          "$10"
+        ],
+        [
+          "Showing",
+          "$50"
+        ],
+        [
+          "VIP",
+          "$80"
+        ],
+        [
+          "Vendor",
+          "$100"
+        ]
+      ],
+      "summary": "Baileyton hosts the B-Town Takeover show on November 28 with 75+ awards.",
+      "detail": "Car show, 11 AM-5 PM, 75+ awards. Spectator $10, showing $50, VIP $80, vendor $100. No prep; cash only.",
+      "source": "Baileyton Goodtime Dragstrip official Facebook update, 29 October 2026.",
+      "verified": "2026-10-29"
+    },
+    {
+      "slug": "gulfport-swap-meet-2027",
+      "name": "1st Annual Swap Meet Auto & Antique Mania + Car Corral",
+      "track_slug": "gulfport-dragway",
+      "track_name": "Gulfport Dragway",
+      "event_type": "other",
+      "major_event": false,
+      "series_slugs": [],
+      "city": "Gulfport",
+      "state": "MS",
+      "dates": "Friday 12 to Saturday 13 February 2027",
+      "start_iso": "2027-02-12",
+      "end_iso": "2027-02-13",
+      "schedule": [
+        [
+          "12-13 February 2027",
+          "Swap meet and car corral; over 100 acres of vendor space. The event has its own Facebook page."
+        ]
+      ],
+      "prices": [
+        [
+          "Vendor / car corral spaces",
+          "$20"
+        ],
+        [
+          "Public admission",
+          "Free"
+        ]
+      ],
+      "summary": "Gulfport Dragway hosts the 1st Annual Swap Meet Auto & Antique Mania + Car Corral on February 12-13, 2027.",
+      "detail": "Over 100 acres of vendor space; $20 vendor and car corral spaces; free public admission.",
+      "source": "Gulfport Dragway official Facebook update, 27 October 2026.",
+      "verified": "2026-10-28"
+    },
+    {
+      "slug": "byram-tuesday-shootout-nov-3-2026",
+      "name": "Tuesday Shootout",
+      "track_slug": "byram-dragway",
+      "track_name": "Byram Dragway",
+      "event_type": "drag",
+      "major_event": false,
+      "series_slugs": [],
+      "city": "Byram",
+      "state": "MS",
+      "dates": "Tuesday 3 November 2026",
+      "start_iso": "2026-11-03",
+      "schedule": [
+        [
+          "Tuesday 3 November",
+          "Gates 6 PM, shootout 8 PM."
+        ]
+      ],
+      "prices": [
+        [
+          "Entry and gate",
+          "Confirm with Byram Dragway"
+        ]
+      ],
+      "summary": "Byram Dragway runs a Tuesday shootout on November 3, gates 6 PM, shootout 8 PM.",
+      "detail": "Tuesday shootout announced by the track. Class and purse details were not in the announcement; confirm with the track before travelling.",
+      "source": "Byram Dragway official Facebook update, 29 October 2026.",
+      "verified": "2026-10-29"
+    },
+    {
+      "slug": "jr-dragster-5ft-trophy-nationals-2026",
+      "name": "Jr Dragster 5ft Trophy Nationals",
+      "track_slug": "gulfport-dragway",
+      "track_name": "Gulfport Dragway",
+      "event_type": "drag",
+      "major_event": true,
+      "series_slugs": [
+        "bte-king-of-the-coast"
+      ],
+      "city": "Gulfport",
+      "state": "MS",
+      "dates": "Friday 4 to Sunday 6 December 2026",
+      "start_iso": "2026-12-04",
+      "end_iso": "2026-12-06",
+      "schedule": [
+        [
+          "4-6 December",
+          "Jr Dragster 5ft Trophy Nationals, contested at BTE King of the Coast Event 7. Full schedule, classes and purse details pending."
+        ]
+      ],
+      "prices": [
+        [
+          "Entry and gate",
+          "Confirm with event promoter or Gulfport Dragway"
+        ]
+      ],
+      "summary": "The Jr Dragster 5ft Trophy Nationals move to KOC Event 7 at Gulfport Dragway, December 4-6.",
+      "detail": "Moved from the cancelled KOC Event 6 (30 October-1 November). The Nationals will instead be contested at KOC Event 7, December 4-6 at Gulfport Dragway. Schedule, class and purse details have not been announced; confirm with the promoter before travelling.",
+      "source": "Gulfport Dragway official Facebook update, 29 October 2026 (full text confirmed 30 October 2026).",
+      "verified": "2026-10-30"
     }
   ],
   "faq": [
@@ -1403,96 +1659,96 @@
   ],
   "series": [
     {
-      "slug": "bte-king-of-the-coast",
-      "name": "BTE King of the Coast Bracket Racing Series",
-      "short": "King of the Coast",
-      "sanction": "Independent bracket series",
-      "region": "Mississippi Gulf Coast",
-      "tracks": [
-        "gulfport-dragway"
-      ],
-      "facebook": "https://www.facebook.com/",
       "answer": "BTE King of the Coast is an independent bracket racing series running on the Mississippi Gulf Coast. It has around 7,300 followers on Facebook and is followed by Gulfport Dragway.",
+      "facebook": "https://www.facebook.com/",
+      "name": "BTE King of the Coast Bracket Racing Series",
       "notes": "A multi-race bracket series rather than a single track's weekly program. Series like this are the hardest thing to follow in regional drag racing: the schedule lives across several tracks' Facebook pages and is rarely published in one place.\n\nWe have not yet confirmed the full 2026 schedule or the complete list of host tracks. If you run or race this series, send us the schedule and we will publish it.",
+      "region": "Mississippi Gulf Coast",
+      "sanction": "Independent bracket series",
+      "short": "King of the Coast",
+      "slug": "bte-king-of-the-coast",
       "status": "unconfirmed",
-      "verified": "2026-09-11"
-    },
-    {
-      "slug": "southeast-gassers-association",
-      "name": "Southeast Gassers Association",
-      "short": "SEGA",
-      "sanction": "Independent period-rules series",
-      "region": "Southeastern United States",
       "tracks": [
         "gulfport-dragway"
       ],
-      "facebook": "https://www.facebook.com/",
-      "answer": "The Southeast Gassers Association runs front-engine, straight-axle gassers to a 1960s period rulebook — no electronics, no delay boxes, flag starts. It races at tracks across the Southeast and holds its Gulf Coast Nationals at Gulfport Dragway.",
-      "notes": "SEGA is a throwback series and one of the bigger crowd draws at any track it visits. Cars run to a period rulebook, which rules out the electronics that dominate modern bracket racing.\n\nThe series normally runs one race per weekend, with a relaxed test and tune on Friday evening. The 2026 Gulf Coast Nationals at Gulfport is a double feature, with full competition both Friday and Saturday.",
-      "status": "open",
       "verified": "2026-09-11"
     },
     {
-      "slug": "ihra-sportsman-series",
+      "answer": "The Southeast Gassers Association runs front-engine, straight-axle gassers to a 1960s period rulebook — no electronics, no delay boxes, flag starts. It races at tracks across the Southeast and holds its Gulf Coast Nationals at Gulfport Dragway.",
+      "facebook": "https://www.facebook.com/",
+      "name": "Southeast Gassers Association",
+      "notes": "SEGA is a throwback series and one of the bigger crowd draws at any track it visits. Cars run to a period rulebook, which rules out the electronics that dominate modern bracket racing.\n\nThe series normally runs one race per weekend, with a relaxed test and tune on Friday evening. The 2026 Gulf Coast Nationals at Gulfport is a double feature, with full competition both Friday and Saturday.",
+      "region": "Southeastern United States",
+      "sanction": "Independent period-rules series",
+      "short": "SEGA",
+      "slug": "southeast-gassers-association",
+      "status": "open",
+      "tracks": [
+        "gulfport-dragway"
+      ],
+      "verified": "2026-09-11"
+    },
+    {
+      "answer": "The IHRA Sportsman Series is the International Hot Rod Association's bracket racing programme for member tracks. Gulfport Dragway runs an IHRA Track Championship Series, and Hub City Dragway has historically run IHRA ET bracket racing.",
+      "facebook": "",
       "name": "IHRA Sportsman Series",
-      "short": "IHRA Sportsman",
-      "sanction": "IHRA",
+      "notes": "IHRA member tracks run their own points programmes under the series banner, with track champions advancing to larger events. Gulfport's version includes the Summer Iron Man Challenge.\n\nCheck with the individual track for the current points schedule — these change from season to season and are not published centrally.",
       "region": "National, with Gulf Coast member tracks",
+      "sanction": "IHRA",
+      "short": "IHRA Sportsman",
+      "slug": "ihra-sportsman-series",
+      "status": "open",
       "tracks": [
         "gulfport-dragway",
         "hub-city-dragway"
       ],
-      "facebook": "",
-      "answer": "The IHRA Sportsman Series is the International Hot Rod Association's bracket racing programme for member tracks. Gulfport Dragway runs an IHRA Track Championship Series, and Hub City Dragway has historically run IHRA ET bracket racing.",
-      "notes": "IHRA member tracks run their own points programmes under the series banner, with track champions advancing to larger events. Gulfport's version includes the Summer Iron Man Challenge.\n\nCheck with the individual track for the current points schedule — these change from season to season and are not published centrally.",
-      "status": "open",
       "verified": "2026-09-11"
     },
     {
-      "slug": "nhra-summit-racing-et-series",
+      "answer": "The NHRA Summit Racing Equipment E.T. Series presented by Hoosier is NHRA's bracket racing programme for member tracks. Swamp Bottom Dragstrip is eligible to run it as a new South Central Division member track.",
+      "facebook": "",
       "name": "NHRA Summit Racing Equipment E.T. Series",
-      "short": "NHRA Summit E.T. Series",
-      "sanction": "NHRA",
+      "notes": "Member tracks run weekly and points events under the series banner, with champions advancing to divisional and national competition. NHRA's South Central Division covers Mississippi, Louisiana, Arkansas, Oklahoma and Texas.\n\nSwamp Bottom joined the Member Track Network in July 2026, which also makes it eligible for the Summit Jr. Drag Racing League, NHRA Street Legal, Jr. Street and specialty events such as Summit King of the Track. Its first season schedule has not been published yet.",
       "region": "National, South Central Division 4 locally",
+      "sanction": "NHRA",
+      "short": "NHRA Summit E.T. Series",
+      "slug": "nhra-summit-racing-et-series",
+      "status": "unconfirmed",
       "tracks": [
         "swamp-bottom-dragstrip"
       ],
-      "facebook": "",
-      "answer": "The NHRA Summit Racing Equipment E.T. Series presented by Hoosier is NHRA's bracket racing programme for member tracks. Swamp Bottom Dragstrip is eligible to run it as a new South Central Division member track.",
-      "notes": "Member tracks run weekly and points events under the series banner, with champions advancing to divisional and national competition. NHRA's South Central Division covers Mississippi, Louisiana, Arkansas, Oklahoma and Texas.\n\nSwamp Bottom joined the Member Track Network in July 2026, which also makes it eligible for the Summit Jr. Drag Racing League, NHRA Street Legal, Jr. Street and specialty events such as Summit King of the Track. Its first season schedule has not been published yet.",
-      "status": "unconfirmed",
       "verified": "2026-09-11"
     },
     {
-      "slug": "busch-light-king-of-the-mountain",
+      "answer": "Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.",
+      "facebook": "",
       "name": "Busch Light King of the Mountain",
-      "short": "King of the Mountain",
-      "sanction": "Track series",
+      "notes": "Gulfport publishes results from each Wednesday night on its own website. Gates open at 6pm, weather permitting, and the programme runs from roughly February through December.",
       "region": "Gulfport Dragway",
+      "sanction": "Track series",
+      "short": "King of the Mountain",
+      "slug": "busch-light-king-of-the-mountain",
+      "status": "open",
       "tracks": [
         "gulfport-dragway"
       ],
-      "facebook": "",
-      "answer": "Busch Light King of the Mountain is Gulfport Dragway's weekly Wednesday night programme, running alongside grudge racing and test and tune.",
-      "notes": "Gulfport publishes results from each Wednesday night on its own website. Gates open at 6pm, weather permitting, and the programme runs from roughly February through December.",
-      "status": "open",
       "verified": "2026-09-11"
     },
     {
-      "slug": "southern-outlaw-tour",
+      "answer": "The Southern Outlaw Tour is a four-race drag racing series running at Montgomery International Dragway, Gulfport Dragway and Alabama International Dragway in Steele, with the finale back at Montgomery.",
+      "facebook": "",
       "name": "Southern Outlaw Tour",
-      "short": "Southern Outlaw Tour",
-      "sanction": "Independent series, run with DragCoverage",
+      "notes": "A four-race series announced for 2026, run in partnership between Montgomery International Dragway and DragCoverage. Montgomery's schedule names TJ Pruitt and DragCoverage as partners on the tour.\n\nThe rounds run at Montgomery International Dragway, Gulfport Dragway, Alabama International Dragway in Steele for its Night of Fire, and the finale back at Montgomery. Montgomery's published calendar shows finale qualifying with ProMods and 5.30, 6.00 and 7.00 index classes plus a $5,000 bracket race, with any tire size allowed, followed by the main event the next day.\n\nSeries like this are the hardest thing to follow in regional drag racing. The schedule lives across three tracks' Facebook pages and nowhere else. If you have the full round-by-round calendar, send it over and we will publish it.",
       "region": "Alabama and Mississippi",
+      "sanction": "Independent series, run with DragCoverage",
+      "short": "Southern Outlaw Tour",
+      "slug": "southern-outlaw-tour",
+      "status": "open",
       "tracks": [
         "montgomery-international-dragway",
         "gulfport-dragway",
         "alabama-international-dragway"
       ],
-      "facebook": "",
-      "answer": "The Southern Outlaw Tour is a four-race drag racing series running at Montgomery International Dragway, Gulfport Dragway and Alabama International Dragway in Steele, with the finale back at Montgomery.",
-      "notes": "A four-race series announced for 2026, run in partnership between Montgomery International Dragway and DragCoverage. Montgomery's schedule names TJ Pruitt and DragCoverage as partners on the tour.\n\nThe rounds run at Montgomery International Dragway, Gulfport Dragway, Alabama International Dragway in Steele for its Night of Fire, and the finale back at Montgomery. Montgomery's published calendar shows finale qualifying with ProMods and 5.30, 6.00 and 7.00 index classes plus a $5,000 bracket race, with any tire size allowed, followed by the main event the next day.\n\nSeries like this are the hardest thing to follow in regional drag racing. The schedule lives across three tracks' Facebook pages and nowhere else. If you have the full round-by-round calendar, send it over and we will publish it.",
-      "status": "open",
       "verified": "2026-09-12"
     }
   ]
