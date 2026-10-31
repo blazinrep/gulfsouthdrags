@@ -1125,6 +1125,17 @@ footer p { margin: 0 0 0.5rem; max-width: var(--measure); }
 .tow-report-compact .tow-report-inner { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
 .tow-report-compact h2 { font-size: 1.65rem; }
 
+/* --- homepage hero signup: stronger Tow Report block above Race Next --- */
+.tow-report-hero {
+  border-bottom: 5px solid var(--gold);
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+}
+.tow-report-hero h2 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); }
+.tow-report-points { margin: 1rem 0 0; padding: 0; list-style: none; display: grid; gap: 0.4rem; }
+.tow-report-points li { color: #c5d0d8; padding-left: 1.4rem; position: relative; }
+.tow-report-points li::before { content: "\2713"; position: absolute; left: 0; color: var(--gold); font-weight: 700; }
+
 .founding-partner {
   margin-top: 1rem;
   margin-bottom: 1rem;

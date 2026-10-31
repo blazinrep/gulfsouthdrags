@@ -390,7 +390,7 @@ def head(title, desc, path, schemas, modified):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/style.css?v=20260919-event-verification">
+<link rel="stylesheet" href="/assets/style.css?v=20261030-tow-signup-hero">
 <link rel="icon" href="{FAVICON}">
 <meta name="theme-color" content="#14181c">
 {blocks}
@@ -572,6 +572,32 @@ def tow_report_signup(source="homepage", compact=False):
 </section>'''
 
 
+# Homepage hero signup, placed above Race Next. Deadline copy is TIME-SENSITIVE:
+# the Turkey Beach Bash BOGO deadline (3 November 2026) is stated here because
+# it is the current verified deadline in tracks.json. Revisit or retire this
+# block once the deadline passes — stale deadline copy is worse than no copy.
+def tow_report_signup_hero():
+    form = lead_capture_form("tow_report", "homepage-hero", "Send me the Tow Report")
+    return f'''<section class="tow-report tow-report-hero wrap bleed" id="tow-report-top">
+<div class="tow-report-inner">
+<div class="tow-report-copy">
+<span class="tow-report-kicker">Know before you tow</span>
+<h2>BOGO entries close Tuesday, November 3.</h2>
+<p>$350 gets two entries into all three $10K races at the Turkey Beach Bash (November 27&ndash;29, Gulfport) &mdash; but only if you pre-register by November 3. The Weekend Tow Report catches deadlines, cancellations, and schedule changes like this before they pass.</p>
+<ul class="tow-report-points">
+<li>Entry deadlines before they pass</li>
+<li>Cancellations before you tow</li>
+<li>Purses worth the trip</li>
+</ul>
+</div>
+<div class="tow-report-form-wrap">
+{form}
+<p class="lead-note">Free. Unsubscribe anytime. Your email is not sold.</p>
+</div>
+</div>
+</section>'''
+
+
 def founding_partner_slot():
     return '''<aside class="founding-partner wrap" aria-label="Founding Trackside Partner opportunity">
 <div>
@@ -731,6 +757,7 @@ def build_index(data):
 <p><strong>Facebook post from March? Screenshot somebody texted you? Schedule buried three posts deep?</strong> We check the information and tell you when we checked it.</p>
 </div>
 
+{tow_report_signup_hero()}
 <section class="section home-section wrap" id="race-next">
 <div class="home-section-head">
 <h2>Race next</h2>
