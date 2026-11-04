@@ -463,12 +463,26 @@ def short_date(iso):
     return f"{MONTHS[int(m) - 1][:3].upper()} {int(d)}"
 
 
+def _is_cancelled(x):
+    """True when an event carries a CANCELLED alert (includes rained-out
+    events, which use the CANCELLED label with a rained-out headline)."""
+    alert = x.get("alert")
+    if not isinstance(alert, dict):
+        return False
+    return str(alert.get("label", "")).strip().upper() == "CANCELLED"
+
+
 def upcoming_events(events, today):
-    """Events that have not ended yet, earliest start first."""
+    """Events that have not ended yet and are not cancelled, earliest first.
+
+    Cancelled events keep their detail pages and stay in the data, but they
+    must never surface as upcoming races or as a track's next event.
+    """
     return sorted(
         (
             x for x in events
             if x.get("end_iso", x.get("start_iso", "")) >= today
+            and not _is_cancelled(x)
         ),
         key=lambda x: x["start_iso"],
     )
@@ -572,18 +586,18 @@ def tow_report_signup(source="homepage", compact=False):
 </section>'''
 
 
-# Homepage hero signup, placed above Race Next. Deadline copy is TIME-SENSITIVE:
-# the Turkey Beach Bash BOGO deadline (3 November 2026) is stated here because
-# it is the current verified deadline in tracks.json. Revisit or retire this
-# block once the deadline passes — stale deadline copy is worse than no copy.
+# Homepage hero signup, placed above Race Next. Copy is deliberately
+# EVERGREEN: no deadlines, dates, or purses are stated here — deadline-driven
+# copy lives in the Tow Report editions, not the signup block, so this block
+# can never go stale.
 def tow_report_signup_hero():
     form = lead_capture_form("tow_report", "homepage-hero", "Send me the Tow Report")
     return f'''<section class="tow-report tow-report-hero wrap bleed" id="tow-report-top">
 <div class="tow-report-inner">
 <div class="tow-report-copy">
 <span class="tow-report-kicker">Know before you tow</span>
-<h2>BOGO entries close Tuesday, November 3.</h2>
-<p>$350 gets two entries into all three $10K races at the Turkey Beach Bash (November 27&ndash;29, Gulfport) &mdash; but only if you pre-register by November 3. The Weekend Tow Report catches deadlines, cancellations, and schedule changes like this before they pass.</p>
+<h2>The Weekend Tow Report is free.</h2>
+<p>Confirmed races, schedule changes, cancellations, and purses worth the trip &mdash; verified before you tow, and in your inbox before the weekend. The Weekend Tow Report catches deadlines, cancellations, and schedule changes before they pass.</p>
 <ul class="tow-report-points">
 <li>Entry deadlines before they pass</li>
 <li>Cancellations before you tow</li>
