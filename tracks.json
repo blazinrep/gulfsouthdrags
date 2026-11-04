@@ -3,7 +3,7 @@
     "anchor": "Hattiesburg, MS",
     "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.",
     "domain": "gulfsouthdrags.com",
-    "last_checked": "2026-10-30",
+    "last_checked": "2026-11-04",
     "name": "Gulf South Drags",
     "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
   },
@@ -1105,8 +1105,9 @@
       "track_slug": "twin-city-raceway",
       "verified": "2026-10-30",
       "alert": {
-        "label": "CANCELLED",
-        "text": "CANCELLED: Twin City's Halloween race weekend (30-31 October 2026) was cancelled due to rain."
+        "detail": "Twin City's Halloween race weekend (October 30–31, 2026) was cancelled due to rain, announced October 29, 2026. This was to have been the track's final race weekend of the 2026 season.",
+        "headline": "Cancelled due to rain",
+        "label": "CANCELLED"
       }
     },
     {
@@ -1304,8 +1305,9 @@
       "track_slug": "gulfport-dragway",
       "verified": "2026-10-30",
       "alert": {
-        "label": "CANCELLED",
-        "text": "CANCELLED: BTE KOC Series Event 6 (30 October-1 November 2026) was cancelled on 29 October 2026 because of the adverse weather forecast for 31 October-1 November. The event will not be rescheduled."
+        "detail": "BTE KOC Series Event 6 (October 30–November 1, 2026) was cancelled on October 29, 2026 because of the adverse weather forecast for October 31–November 1. The Jr Dragster 5ft Trophy Nationals move to KOC Event 7, December 4–6 at Gulfport Dragway.",
+        "headline": "Cancelled — will not be rescheduled",
+        "label": "CANCELLED"
       }
     },
     {
@@ -1586,9 +1588,14 @@
         ]
       ],
       "summary": "Byram Dragway runs a Tuesday shootout on November 3, gates 6 PM, shootout 8 PM.",
-      "detail": "Tuesday shootout announced by the track. Class and purse details were not in the announcement; confirm with the track before travelling.",
+      "detail": "Tuesday shootout announced by the track. Class and purse details were not in the announcement; confirm with the track before travelling.\n\nRained out 3 November 2026: RWYB on 28s, door cars only, $100 buy-in, $2,000 on top, 16-car minimum; the event did not run.",
       "source": "Byram Dragway official Facebook update, 29 October 2026.",
-      "verified": "2026-10-29"
+      "verified": "2026-11-04",
+      "alert": {
+        "detail": "Byram Dragway's November 3 RWYB on 28s event (door cars only, $100 buy-in, $2,000 on top, 16-car minimum) was rained out and did not run, announced November 3, 2026.",
+        "headline": "Rained out — did not run",
+        "label": "CANCELLED"
+      }
     },
     {
       "slug": "jr-dragster-5ft-trophy-nationals-2026",
@@ -1621,6 +1628,65 @@
       "detail": "Moved from the cancelled KOC Event 6 (30 October-1 November). The Nationals will instead be contested at KOC Event 7, December 4-6 at Gulfport Dragway. Schedule, class and purse details have not been announced; confirm with the promoter before travelling.",
       "source": "Gulfport Dragway official Facebook update, 29 October 2026 (full text confirmed 30 October 2026).",
       "verified": "2026-10-30"
+    },
+    {
+      "city": "Gulfport",
+      "dates": "Tuesday 3 to Saturday 7 November 2026",
+      "detail": "Five $40,000-to-win main events, one per day Tuesday through Saturday, field capped at 200. Payouts per main event (per the MotorManiaTV listing): winner $40,000, runner-up $5,000, semi-finalists $2,500, quarter-finalists $1,000, eighth-finalists $500, sixteenth-finalists $250. Round 1 at 10:00 AM CT daily. Tuesday $40K main event: winner Bailey Ferraro defeated Tyler Bohannon in the final (Ferraro .002, 4.765 on a 4.76 dial; Bohannon .008, 4.505 on a 4.51 dial); semi-finalist Matthew Chavers. Action continued Wednesday with the second $40K main event. Livestream: MotorManiaTV on YouTube. Results reporting is third-party (DragRacingNews), not a track-official announcement.",
+      "end_iso": "2026-11-07",
+      "event_type": "drag",
+      "major_event": true,
+      "name": "FTD Customs 5-Day Bracket Race",
+      "prices": [
+        [
+          "Entry and gate",
+          "Confirm with Gulfport Dragway"
+        ]
+      ],
+      "schedule": [
+        [
+          "Tuesday 3 - Saturday 7 November",
+          "$40,000-to-win main events Tuesday through Saturday; Round 1 at 10:00 AM CT daily; livestream on MotorManiaTV."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "ftd-customs-5-day-bracket-race-2026",
+      "source": "DragRacingNews results page and MotorManiaTV listing, checked 4 November 2026.",
+      "start_iso": "2026-11-03",
+      "state": "MS",
+      "summary": "FTD Customs 5-day bracket race at Gulfport Dragway, November 3-7, with $40,000-to-win main events Tuesday through Saturday. Tuesday's $40K main event was won by Bailey Ferraro.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-11-04"
+    },
+    {
+      "city": "Columbia",
+      "dates": "Saturday 7 November 2026",
+      "detail": "Races rained out October 31 were moved to November 7 (not November 8: an earlier image headline read November 8, but the fuller flyer read on November 4 says November 7). Gates open 2 PM, track hot 3 PM. Flyer: All on 28's Shootout $2,500, Fastest Street Car Shootout $500, TNT/Grudge, Motorcycle and Four Wheeler Shoot Out $500 payout.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Big Bucks Bracket Race",
+      "prices": [
+        [
+          "Entry and gate",
+          "Confirm with Swamp Bottom Dragstrip"
+        ]
+      ],
+      "schedule": [
+        [
+          "Saturday 7 November",
+          "Gates open 2 PM, track hot 3 PM. All on 28's Shootout ($2,500), Fastest Street Car Shootout ($500), TNT/Grudge, Motorcycle and Four Wheeler Shoot Out ($500 payout)."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "swamp-bottom-big-bucks-bracket-race-2026",
+      "source": "Swamp Bottom Dragstrip official Facebook flyer, read 4 November 2026; TrackWatch inbox correction record, 4 November 2026.",
+      "start_iso": "2026-11-07",
+      "state": "MS",
+      "summary": "Swamp Bottom's races rained out October 31 moved to Saturday, November 7: gates 2 PM, track hot 3 PM, $2,500 All on 28's Shootout plus $500 shootouts.",
+      "track_name": "Swamp Bottom Dragstrip",
+      "track_slug": "swamp-bottom-dragstrip",
+      "verified": "2026-11-04"
     }
   ],
   "faq": [
