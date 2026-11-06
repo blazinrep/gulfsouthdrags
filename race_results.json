@@ -1,0 +1,33 @@
+{
+  "updated": "2026-11-06",
+  "events": [
+    {
+      "slug": "ftd-gulfport-2026",
+      "name": "FTD at Gulfport Dragway",
+      "track": "Gulfport Dragway",
+      "advertised_winner_prize": 40000,
+      "results": [
+        {
+          "date": "2026-11-03",
+          "winner": "Bailey Ferraro",
+          "runner_up": "Tyler Bohannon"
+        },
+        {
+          "date": "2026-11-04",
+          "winner": "Johnson Raynor",
+          "runner_up": "Trevor Deeks"
+        },
+        {
+          "date": "2026-11-05",
+          "winner": "Jason Lynch",
+          "runner_up": "Steven Barnett"
+        }
+      ],
+      "pending": [
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "source_note": "Results reported by DragRacingNews, per Jarvis research. Individual source URLs pending verification. Prize is advertised, not a verified payment."
+    }
+  ]
+}
