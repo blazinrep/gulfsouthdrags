@@ -4,6 +4,8 @@ on:
     branches: [main, feature/winners-circle]
     paths-ignore:
       - 'site/**'
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: write
