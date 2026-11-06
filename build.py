@@ -1690,7 +1690,7 @@ def build_winners_circle(results):
             + "".join(rows) + '</main>')
     return head("Winner's Circle — Race Results & Advertised Purses",
                 "Reported drag race winners and advertised prize amounts from Gulf South events.",
-                "/winners-circle/") + body + FOOT
+                "/winners-circle/", [], results.get("updated", SITE["last_checked"])) + body + FOOT
 
 
 def main():
