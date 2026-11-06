@@ -27,7 +27,17 @@
         "2026-11-06",
         "2026-11-07"
       ],
-      "source_note": "Results reported by DragRacingNews, per Jarvis research. Individual source URLs pending verification. Prize is advertised, not a verified payment."
+      "source_note": "Tuesday–Thursday final results reported by DragRacingNews. Advertised purse confirmed by event flyers; actual payments not independently verified.",
+      "source_url": "https://dragracing.news/gulfport-ftd-customs-5-day-bracket-race-results/",
+      "class": "Big Money Bracket",
+      "advertised_purse": {
+        "winner": 40000,
+        "runner_up": 5000,
+        "semifinalist": 2500,
+        "quarterfinalist": 1000,
+        "eighth_finalist": 500,
+        "sixteenth_finalist": 250
+      }
     }
   ]
 }
