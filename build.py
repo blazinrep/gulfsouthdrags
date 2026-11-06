@@ -401,6 +401,7 @@ def head(title, desc, path, schemas, modified):
 <nav class="topnav">
 <a href="/#race-next">Race next</a>
 <a href="/tow-report/">Tow report</a>
+<a href="/winners-circle/">Winners</a>
 <a href="/#tracks">Tracks</a>
 <a href="/#intel">Racer intel</a>
 <a href="/#series-list">Series</a>
@@ -413,7 +414,7 @@ def head(title, desc, path, schemas, modified):
 FOOT = """
 <footer class="wrap">
 <p>Gulf South Drags lists drag strips in Mississippi, Louisiana and Alabama. Every listing carries the date we last checked it. Schedules change and tracks rain out &mdash; call ahead before you load the trailer.</p>
-<p class="footer-links"><a href="/tow-report/">Weekend Tow Report archive</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>
+<p class="footer-links"><a href="/winners-circle/">Winner&rsquo;s Circle</a> &middot; <a href="/tow-report/">Weekend Tow Report archive</a> &middot; <a href="/partners/">Founding Trackside Partners</a></p>
 <p>Not affiliated with NHRA, IHRA, WDRA or any track listed here.</p>
 </footer>
 </body>
@@ -870,6 +871,8 @@ def build_index(data):
 </div>
 </div>
 </section>
+
+<section class="section home-section wrap" id="winners-circle"><div class="home-section-head"><h2>🏆 Winner&rsquo;s Circle</h2><p class="home-section-sub">FTD at Gulfport: Bailey Ferraro, Johnson Raynor and Jason Lynch are the reported Tuesday–Thursday winners. The $40,000 main-event winner prize is advertised, not verified as paid.</p></div><p><a class="btn" href="/winners-circle/">See race results &rarr;</a></p></section>
 
 <section class="section home-section alt wrap" id="worth-the-tow">
 <div class="home-section-head">
@@ -1660,6 +1663,40 @@ def write(path, content):
         f.write(content)
 
 
+
+def build_winners_circle(results):
+    rows = []
+    for event in results.get("events", []):
+        items = "".join(
+            f'<tr><td>{e(nice_date(r["date"]))}</td><td><strong>{e(r["winner"])}</strong></td>'
+            f'<td>{e(r["runner_up"])}</td></tr>'
+            for r in event.get("results", [])
+        )
+        pending = ", ".join(nice_date(d) for d in event.get("pending", []))
+        source = event.get("source_url", "")
+        source_html = (f'<a href="{e(source)}" rel="noopener noreferrer">DragRacingNews race results</a>' if source else "Source link pending")
+        race_class = e(event.get("class", "Bracket racing"))
+        rows.append(f"""
+<section class="section wrap">
+<h2>{e(event["name"])}</h2>
+<p>Class: {race_class}</p>
+<p><strong>Advertised main-event winner prize: ${event["advertised_winner_prize"]:,}</strong></p>
+<p>That amount is the advertised prize, not a verified payment. No actual payouts have been independently confirmed.</p>
+<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left">
+<thead><tr><th style="padding:12px">Race date</th><th style="padding:12px">Reported winner</th><th style="padding:12px">Runner-up</th></tr></thead>
+<tbody>{items}</tbody></table></div>
+<p>Reported results source: {source_html}. Advertised purse based on event flyers; not confirmed payments.</p>
+<p>Still awaiting results: {e(pending)}.</p>
+</section>""")
+    body = ('<main><section class="section wrap"><h1>Winner&rsquo;s Circle</h1>'
+            '<p>Race results and advertised purses from across the Gulf South. '
+            'Reported winners are not proof of actual prize payments.</p></section>'
+            + "".join(rows) + '</main>')
+    return head("Winner's Circle — Race Results & Advertised Purses",
+                "Reported drag race winners and advertised prize amounts from Gulf South events.",
+                "/winners-circle/", [], results.get("updated", SITE["last_checked"])) + body + FOOT
+
+
 def main():
     global SITE, SERIES
     data = json.load(open(os.path.join(ROOT, "tracks.json")))
@@ -1668,6 +1705,8 @@ def main():
     tow_path = os.path.join(ROOT, "tow_reports.json")
     TOW_REPORTS = json.load(open(tow_path)).get("reports", []) if os.path.isfile(tow_path) else []
     base = f'https://{SITE["domain"]}'
+    results_path = os.path.join(ROOT, "race_results.json")
+    RACE_RESULTS = json.load(open(results_path)) if os.path.isfile(results_path) else {"events": []}
 
     if os.path.isdir(OUT):
         shutil.rmtree(OUT)
@@ -1675,6 +1714,7 @@ def main():
     shutil.copytree(os.path.join(ROOT, "assets"), os.path.join(OUT, "assets"))
 
     write(os.path.join(OUT, "index.html"), build_index(data))
+    write(os.path.join(OUT, "winners-circle", "index.html"), build_winners_circle(RACE_RESULTS))
     write(os.path.join(OUT, "drag-strips", "mississippi", "index.html"),
           build_mississippi_hub(data))
     write(os.path.join(OUT, "partners", "index.html"), build_partners(data))
@@ -1696,6 +1736,7 @@ def main():
     urls += [("/drag-strips/mississippi/", SITE["last_checked"], "0.9")]
     urls += [("/partners/", SITE["last_checked"], "0.5")]
     urls += [("/tow-report/", SITE["last_checked"], "0.8")]
+    urls += [("/winners-circle/", SITE["last_checked"], "0.8")]
     urls += [(f'/tow-report/{r["slug"]}/', r.get("checked", r["date"]), "0.7") for r in TOW_REPORTS]
     urls += [(f'/tracks/{t["slug"]}/', t["verified"], "0.8") for t in data["tracks"]]
     urls += [(f'/events/{x["slug"]}/', x["verified"], "0.7") for x in data["events"]]
