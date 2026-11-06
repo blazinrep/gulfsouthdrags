@@ -1673,15 +1673,19 @@ def build_winners_circle(results):
             for r in event.get("results", [])
         )
         pending = ", ".join(nice_date(d) for d in event.get("pending", []))
+        source = event.get("source_url", "")
+        source_html = (f'<a href="{e(source)}" rel="noopener noreferrer">DragRacingNews race results</a>' if source else "Source link pending")
+        race_class = e(event.get("class", "Bracket racing"))
         rows.append(f"""
 <section class="section wrap">
 <h2>{e(event["name"])}</h2>
+<p>Class: {race_class}</p>
 <p><strong>Advertised main-event winner prize: ${event["advertised_winner_prize"]:,}</strong></p>
 <p>That amount is the advertised prize, not a verified payment. No actual payouts have been independently confirmed.</p>
 <div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left">
 <thead><tr><th style="padding:12px">Race date</th><th style="padding:12px">Reported winner</th><th style="padding:12px">Runner-up</th></tr></thead>
 <tbody>{items}</tbody></table></div>
-<p>Source: DragRacingNews results as reported by Jarvis. Direct article links are pending confirmation.</p>
+<p>Reported results source: {source_html}. Advertised purse based on event flyers; not confirmed payments.</p>
 <p>Still awaiting results: {e(pending)}.</p>
 </section>""")
     body = ('<main><section class="section wrap"><h1>Winner&rsquo;s Circle</h1>'
