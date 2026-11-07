@@ -1688,7 +1688,7 @@ def build_winners_circle(results):
 <p>Reported results source: {source_html}. Advertised purse based on event flyers; not confirmed payments.</p>
 <p>Still awaiting results: {e(pending)}.</p>
 </section>""")
-    body = ('<main><section class="section wrap"><h1>Winner&rsquo;s Circle</h1>'
+    body = ('<main class="winners-circle"><section class="section wrap"><h1>Winner&rsquo;s Circle</h1>'
             '<p>Race results and advertised purses from across the Gulf South. '
             'Reported winners are not proof of actual prize payments.</p></section>'
             + "".join(rows) + '</main>')
