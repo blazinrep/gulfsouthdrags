@@ -1542,44 +1542,44 @@ a.tow-race-row:hover { background: var(--paper-2); }
 
 
 /* --- Winner's Circle: keep the source-generated results page centered --- */
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main > .section.wrap {
+main.winners-circle > .section.wrap {
   margin-left: auto;
   margin-right: auto;
 }
 /* Scoped to Winner's Circle so track and event layouts stay unchanged. */
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main > .section.wrap:first-child {
+main.winners-circle > .section.wrap:first-child {
   padding-top: 1.4rem;
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main > .section.wrap:nth-child(n+2) {
+main.winners-circle > .section.wrap:nth-child(n+2) {
   background: #fff;
   border-top: 4px solid var(--orange);
   padding: 1.5rem clamp(1rem, 3vw, 2rem);
   box-shadow: 0 8px 24px rgba(20,24,28,.07);
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main > .section.wrap:nth-child(n+2) h2 {
+main.winners-circle > .section.wrap:nth-child(n+2) h2 {
   margin-top: 0;
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main table {
+main.winners-circle table {
   min-width: 540px;
   margin: 1.25rem 0;
   font-size: .95rem;
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main table th {
+main.winners-circle table th {
   background: var(--asphalt);
   color: #fff;
   font-size: .83rem;
   text-transform: uppercase;
   letter-spacing: .03em;
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main table td {
+main.winners-circle table td {
   padding: .8rem .75rem;
   border-bottom: 1px solid var(--rule);
 }
-body:has(link[rel="canonical"][href$="/winners-circle/"]) main table tbody tr:nth-child(even) {
+main.winners-circle table tbody tr:nth-child(even) {
   background: var(--paper-2);
 }
 @media (max-width: 620px) {
-  body:has(link[rel="canonical"][href$="/winners-circle/"]) main > .section.wrap:nth-child(n+2) {
+  main.winners-circle > .section.wrap:nth-child(n+2) {
     padding: 1.1rem .85rem;
   }
 }
