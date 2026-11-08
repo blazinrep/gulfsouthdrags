@@ -16,6 +16,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: true
+          # On pull_request events checkout defaults to the merge commit in
+          # detached HEAD, where `git push` fails ("not currently on a
+          # branch"). Check out the PR branch head instead so the commit
+          # step below can push back to the branch. Empty on push events,
+          # where checkout defaults to the pushed ref.
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
