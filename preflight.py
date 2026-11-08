@@ -242,10 +242,10 @@ class LinkParser(html.parser.HTMLParser):
 def check_output(root, data, rep):
     """Checks against the generated site/ directory."""
     out = os.path.join(root, "site")
-    n_expected = (5 + len(data["reports"]) + len(data["tracks"])
-                  + len(data["events"]) + len(data["series"]))
+    n_expected = (6 + len(data["reports"]) + len(data["tracks"])
+                  + len(data["events"]) + len(data["series"]))  # 6 base pages: /, winners-circle, mississippi hub, partners, thanks, tow-report index
     expected_urls = {"/", "/drag-strips/mississippi/", "/partners/",
-                     "/tow-report/"}
+                     "/tow-report/", "/winners-circle/"}
     expected_urls |= {f"/tow-report/{r['slug']}/" for r in data["reports"]}
     expected_urls |= {f"/tracks/{t['slug']}/" for t in data["tracks"]}
     expected_urls |= {f"/events/{x['slug']}/" for x in data["events"]}
@@ -258,7 +258,7 @@ def check_output(root, data, rep):
                 pages.append(os.path.join(dirpath, fn))
     if len(pages) != n_expected:
         rep.err(f"page count {len(pages)} != expected {n_expected} "
-                "(5 + reports + tracks + events + series)")
+                "(6 + reports + tracks + events + series)")
 
     for rel in ("index.html", "sitemap.xml", "robots.txt", "llms.txt", "404.html"):
         if not os.path.isfile(os.path.join(out, rel)):
