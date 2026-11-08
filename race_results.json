@@ -1,43 +1,90 @@
 {
-  "updated": "2026-11-06",
-  "events": [
+ "updated": "2026-11-08",
+ "events": [
+  {
+   "slug": "ftd-gulfport-2026",
+   "name": "FTD at Gulfport Dragway",
+   "track": "Gulfport Dragway",
+   "advertised_winner_prize": 40000,
+   "results": [
     {
-      "slug": "ftd-gulfport-2026",
-      "name": "FTD at Gulfport Dragway",
-      "track": "Gulfport Dragway",
-      "advertised_winner_prize": 40000,
-      "results": [
-        {
-          "date": "2026-11-03",
-          "winner": "Bailey Ferraro",
-          "runner_up": "Tyler Bohannon"
-        },
-        {
-          "date": "2026-11-04",
-          "winner": "Johnson Raynor",
-          "runner_up": "Trevor Deeks"
-        },
-        {
-          "date": "2026-11-05",
-          "winner": "Jason Lynch",
-          "runner_up": "Steven Barnett"
-        }
-      ],
-      "pending": [
-        "2026-11-06",
-        "2026-11-07"
-      ],
-      "source_note": "Tuesday–Thursday final results reported by DragRacingNews. Advertised purse confirmed by event flyers; actual payments not independently verified.",
-      "source_url": "https://dragracing.news/gulfport-ftd-customs-5-day-bracket-race-results/",
-      "class": "Big Money Bracket",
-      "advertised_purse": {
-        "winner": 40000,
-        "runner_up": 5000,
-        "semifinalist": 2500,
-        "quarterfinalist": 1000,
-        "eighth_finalist": 500,
-        "sixteenth_finalist": 250
-      }
+     "date": "2026-11-03",
+     "winner": "Bailey Ferraro",
+     "runner_up": "Tyler Bohannon"
+    },
+    {
+     "date": "2026-11-04",
+     "winner": "Johnson Raynor",
+     "runner_up": "Trevor Deeks"
+    },
+    {
+     "date": "2026-11-05",
+     "winner": "Jason Lynch",
+     "runner_up": "Steven Barnett"
+    },
+    {
+     "date": "2026-11-06",
+     "runner_up": "Brad Clarke",
+     "winner": "Talon Farmer"
+    },
+    {
+     "date": "2026-11-07",
+     "runner_up": "Tracy Sons",
+     "winner": "David Hammons"
     }
-  ]
+   ],
+   "pending": [],
+   "source_note": "All five $40K main-event finals reported by DragRacingNews; Friday and Saturday corroborated by Gulfport Dragway's official Facebook posts. Thursday also ran a 16-car shootout (Landyn Wright, Dragster; Kenny Underwood, Door Car) and a 32-car shootout (Jason Lynch over Bryan Boose). Advertised purse confirmed by event flyers; actual payments not independently verified.",
+   "source_url": "https://dragracing.news/gulfport-ftd-customs-5-day-bracket-race-results/",
+   "class": "Big Money Bracket",
+   "advertised_purse": {
+    "winner": 40000,
+    "runner_up": 5000,
+    "semifinalist": 2500,
+    "quarterfinalist": 1000,
+    "eighth_finalist": 500,
+    "sixteenth_finalist": 250
+   }
+  },
+  {
+   "slug": "great-american-50ks-gulfport-2026",
+   "name": "Great American USA $50K's",
+   "track": "Gulfport Dragway",
+   "advertised_winner_prize": 50000,
+   "results": [
+    {
+     "date": "2026-10-14",
+     "runner_up": "Nathan Martin",
+     "winner": "Matt Richard"
+    },
+    {
+     "date": "2026-10-15",
+     "runner_up": "Taylor Bowling",
+     "winner": "Kyle Rumley"
+    },
+    {
+     "date": "2026-10-16",
+     "runner_up": "Kyle Rumley",
+     "winner": "Brad Clarke"
+    },
+    {
+     "date": "2026-10-17",
+     "runner_up": "Josh McDaniel",
+     "winner": "Gary Williams"
+    }
+   ],
+   "pending": [],
+   "source_note": "Four $50K main events, October 14-17, 2026. No Box winners: Kyle Rumley (Wed, Thu, Fri) and Dylan Spicer (Sat). Kyle Rumley won the weekend points championship. Tuesday Oct 13 warm-up won by Kasey Tankersly; runner-up not published. Advertised purse confirmed by the official event flyer; actual payments not independently verified.",
+   "source_url": "https://dragracing.news/gulfport-great-american-usa-50ks-race-results/",
+   "class": "Big Money Bracket",
+   "advertised_purse": {
+    "eighth_finalist": null,
+    "quarterfinalist": null,
+    "runner_up": 10000,
+    "semifinalist": 3000,
+    "sixteenth_finalist": null,
+    "winner": 50000
+   }
+  }
+ ]
 }
