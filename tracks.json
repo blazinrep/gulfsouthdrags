@@ -3,7 +3,7 @@
   "anchor": "Hattiesburg, MS",
   "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.",
   "domain": "gulfsouthdrags.com",
-  "last_checked": "2026-11-08",
+  "last_checked": "2026-11-09",
   "name": "Gulf South Drags",
   "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
  },
@@ -85,13 +85,13 @@
    "name": "Swamp Bottom Dragstrip",
    "notes": "Opened September 5\u20136, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
    "phone": "601-810-6655 / 601-248-3143",
-   "race_days": "Most recent race: Big Bucks Bracket Race, Saturday 7 November 2026 \u2014 the final points race of the season. Halloween Fest ran 31 October. No future race date is confirmed as of 8 November 2026.",
+   "race_days": "Most recent race: Big Bucks Bracket Race, Saturday 7 November 2026 \u2014 the final points race of the season. Halloween Fest ran 31 October. Next race: TNT/Grudge Racing, Saturday 14 November 2026 \u2014 gates open 2 PM.",
    "sanction": "NHRA Member Track \u2014 South Central (Division 4)",
    "slug": "swamp-bottom-dragstrip",
    "state": "MS",
    "status": "open",
    "surface": "Concrete",
-   "verified": "2026-11-08",
+   "verified": "2026-11-09",
    "website": "https://swampbottomdragstrip.com/",
    "meta_title": "Swamp Bottom Dragstrip \u2014 Schedule & Results | Columbia, MS",
    "meta_description": "Swamp Bottom Dragstrip in Columbia, MS \u2014 NHRA quarter-mile concrete track. Schedule, race days and results; most recent race Nov 7, 2026."
@@ -414,7 +414,7 @@
    "state": "AL",
    "status": "open",
    "surface": "Asphalt",
-   "verified": "2026-10-28",
+   "verified": "2026-11-09",
    "website": "http://www.holidayraceway.com"
   },
   {
@@ -535,7 +535,7 @@
    "state": "AL",
    "status": "open",
    "surface": "Asphalt",
-   "verified": "2026-09-12",
+   "verified": "2026-11-09",
    "website": "http://alabamainternationaldragway.com"
   },
   {
@@ -1809,6 +1809,106 @@
    "track_name": "No Problem Raceway Park",
    "track_slug": "no-problem-raceway",
    "verified": "2026-11-08"
+  },
+  {
+   "city": "Columbia",
+   "dates": "Saturday 14 November 2026",
+   "detail": "Swamp Bottom Dragstrip announced TNT/Grudge Racing for Saturday, November 14. Gates open 2 PM. The captured post was truncated; further schedule details were not visible \u2014 confirm with the track before travelling.",
+   "event_type": "drag",
+   "major_event": false,
+   "name": "TNT/Grudge Racing",
+   "prices": [
+    [
+     "Entry and gate",
+     "Confirm with Swamp Bottom Dragstrip"
+    ]
+   ],
+   "schedule": [
+    [
+     "Saturday 14 November",
+     "TNT/Grudge Racing. Gates open 2:00 PM. Additional details pending."
+    ]
+   ],
+   "series_slugs": [],
+   "slug": "swamp-bottom-tnt-grudge-nov-14-2026",
+   "source": "Swamp Bottom Dragstrip official Facebook post, 9 November 2026 (truncated preview; gates-open time visible).",
+   "start_iso": "2026-11-14",
+   "state": "MS",
+   "summary": "Swamp Bottom Dragstrip runs TNT/Grudge Racing on Saturday, November 14: gates open 2 PM.",
+   "track_name": "Swamp Bottom Dragstrip",
+   "track_slug": "swamp-bottom-dragstrip",
+   "verified": "2026-11-09"
+  },
+  {
+   "city": "Steele",
+   "dates": "Friday 20 and Saturday 21 November 2026",
+   "detail": "Alabama International Dragway's Turkey Trot runs November 20-21. Saturday bracket racing: Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up). Friday schedule and gate details were not in the captured source; confirm with the track before travelling.",
+   "end_iso": "2026-11-21",
+   "event_type": "drag",
+   "major_event": false,
+   "name": "Turkey Trot",
+   "prices": [
+    [
+     "Footbrake (Saturday)",
+     "$5,000 to win; $1,000 runner-up"
+    ],
+    [
+     "Pro (Saturday)",
+     "$10,000 to win; $2,000 runner-up"
+    ],
+    [
+     "Entry and gate",
+     "Confirm with Alabama International Dragway"
+    ]
+   ],
+   "schedule": [
+    [
+     "Friday 20 November",
+     "Turkey Trot. Friday schedule not confirmed in the captured source."
+    ],
+    [
+     "Saturday 21 November",
+     "Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up)."
+    ]
+   ],
+   "series_slugs": [],
+   "slug": "alabama-international-turkey-trot-2026",
+   "source": "Alabama International Dragway official Facebook post, 9 November 2026 (reshare of 20 October 2026 Turkey Trot flyer; purse details from the flyer).",
+   "start_iso": "2026-11-20",
+   "state": "AL",
+   "summary": "Alabama International Dragway runs its Turkey Trot November 20-21, with Saturday Footbrake $5,000 to win and Pro $10,000 to win.",
+   "track_name": "Alabama International Dragway",
+   "track_slug": "alabama-international-dragway",
+   "verified": "2026-11-09"
+  },
+  {
+   "city": "Woodstock",
+   "dates": "Thursday 12 November 2026",
+   "detail": "Holiday Raceway's Thursday Test & Tune runs November 12; the track is running a comment-and-share giveaway for a family 4-pack to the event. Gates, times and prices were not visible in the captured post \u2014 confirm with the track before travelling.",
+   "event_type": "drag",
+   "major_event": false,
+   "name": "Thursday Test & Tune \u2014 Holiday Raceway",
+   "prices": [
+    [
+     "Entry and gate",
+     "Confirm with Holiday Raceway"
+    ]
+   ],
+   "schedule": [
+    [
+     "Thursday 12 November",
+     "Open Track Test and Tune. Gates and times not confirmed in the captured source."
+    ]
+   ],
+   "series_slugs": [],
+   "slug": "holiday-raceway-test-tune-nov-12-2026",
+   "source": "Holiday Raceway official Facebook post, 8 November 2026 (truncated preview; event image reads 'OPEN TRACK TEST AND TUNE').",
+   "start_iso": "2026-11-12",
+   "state": "AL",
+   "summary": "Holiday Raceway hosts Thursday Test & Tune on November 12.",
+   "track_name": "Holiday Raceway",
+   "track_slug": "holiday-raceway",
+   "verified": "2026-11-09"
   }
  ],
  "faq": [
