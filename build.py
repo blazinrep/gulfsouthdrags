@@ -1014,13 +1014,13 @@ def build_mississippi_hub(data):
     ])
 
     desc = (
-        "Mississippi drag strips with current operating status, race schedules, "
-        "track length, locations and last-verified dates. Includes Columbia, "
-        "Gulfport, Byram and the Hattiesburg-area track archive."
+        "Mississippi drag strips: open tracks, schedules, results and "
+        "last-verified dates for Columbia, Gulfport and Byram, plus the "
+        "closed-track archive."
     )
 
     return head(
-        "Drag Strips in Mississippi — Open Tracks, Schedules & Status",
+        "Mississippi Drag Strips — Schedules, Results & Track Status",
         desc,
         "/drag-strips/mississippi/",
         [itemlist, bc, faq_schema],
@@ -1118,14 +1118,30 @@ def build_track(t, events):
         directions = (f'<section class="section prose"><h2>Getting there</h2>'
                       f'<p>{e(t["directions"])}</p></section>')
 
+    today = date.today().isoformat()
     mine = [x for x in events if x["track_slug"] == t["slug"]]
+    upcoming = upcoming_events(mine, today)
+    up_slugs = {x["slug"] for x in upcoming}
+    past = sorted((x for x in mine if x["slug"] not in up_slugs),
+                  key=lambda x: x["start_iso"], reverse=True)
     ev_html = ""
-    if mine:
+    if upcoming:
         cards = "".join(
             f'<a class="event-card" href="/events/{x["slug"]}/">'
             f'<span class="event-when">{e(x["dates"])}</span>'
-            f'<span class="event-name">{e(x["name"])}</span></a>' for x in mine)
+            f'<span class="event-name">{e(x["name"])}</span></a>' for x in upcoming)
         ev_html = f'<section class="section"><h2>Coming up here</h2>{cards}</section>'
+    past_html = ""
+    if past:
+        cards = "".join(
+            f'<a class="event-card" href="/events/{x["slug"]}/">'
+            f'<span class="event-when">{e(x["dates"])}</span>'
+            f'<span class="event-name">{e(x["name"])}'
+            f'{" — Cancelled" if _is_cancelled(x) else ""}</span></a>' for x in past)
+        past_html = (
+            f'<section class="section"><h2>Past events at this track</h2>{cards}'
+            '<p>Race results from across the Gulf South live in '
+            '<a href="/winners-circle/">Winner&rsquo;s Circle</a>.</p></section>')
 
     notes = "".join(f"<p>{e(p)}</p>" for p in t["notes"].split("\n\n") if p.strip())
 
@@ -1184,8 +1200,8 @@ def build_track(t, events):
     bc = crumbs([("Tracks", "/"), (t["name"], f'/tracks/{t["slug"]}/')])
 
     return head(
-        f'{t["name"]} \u2014 {t["city"]}, {t["state"]} drag strip',
-        answer[:155], f'/tracks/{t["slug"]}/',
+        t.get("meta_title") or f'{t["name"]} — {t["city"]}, {t["state"]} drag strip',
+        t.get("meta_description") or answer[:155], f'/tracks/{t["slug"]}/',
         [track_schema(t), bc, faq_schema], t["verified"],
     ) + f"""
 <main class="wrap">
@@ -1202,6 +1218,7 @@ def build_track(t, events):
 {camping_html}
 {series_html}
 {ev_html}
+{past_html}
 {faq_html}
 {tow_report_signup("track-" + t["slug"], compact=True)}
 <section class="correction">
@@ -1212,7 +1229,7 @@ def build_track(t, events):
 """ + FOOT
 
 
-def build_event(x, tracks):
+def build_event(x, tracks, results=None):
     base = f'https://{SITE["domain"]}'
     track = next(t for t in tracks if t["slug"] == x["track_slug"])
     sched = "".join(f'<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>' for a, b in x["schedule"])
@@ -1231,11 +1248,21 @@ def build_event(x, tracks):
             offer["priceCurrency"] = "USD"
         offers.append(offer)
 
+    # Schema.org has no EventCompleted. Completed events omit eventStatus
+    # (never EventScheduled); only genuinely cancelled events get
+    # EventCancelled. Status is judged at build time.
+    if _is_cancelled(x):
+        event_status = "https://schema.org/EventCancelled"
+    elif x.get("end_iso", x.get("start_iso", "")) < date.today().isoformat():
+        event_status = None
+    else:
+        event_status = "https://schema.org/EventScheduled"
+
     ev_schema = {
         "@context": "https://schema.org", "@type": "SportsEvent",
         "name": x["name"],
         "startDate": x["start_iso"], "endDate": x.get("end_iso", x["start_iso"]),
-        "eventStatus": "https://schema.org/EventScheduled",
+        **({"eventStatus": event_status} if event_status else {}),
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "description": x["summary"],
         "url": f'{base}/events/{x["slug"]}/',
@@ -1284,9 +1311,41 @@ def build_event(x, tracks):
             '</div>'
         )
 
+    # Results, when the event record points at a verified race_results entry.
+    # race_results.json stays the single source of truth for winners.
+    results_html = ""
+    res = None
+    if x.get("results_slug") and results:
+        res = next((r for r in results.get("events", [])
+                    if r["slug"] == x["results_slug"]), None)
+    if res:
+        items = "".join(
+            f'<tr><td>{e(nice_date(r["date"]))}</td><td><strong>{e(r["winner"])}</strong></td>'
+            f'<td>{e(r["runner_up"])}</td></tr>'
+            for r in res.get("results", []))
+        prize = res.get("advertised_winner_prize")
+        prize_html = (f'<p><strong>Advertised main-event winner prize: ${prize:,}</strong> '
+                      '— advertised, not verified as paid.</p>' if prize else "")
+        src = res.get("source_url", "")
+        if "dragracing.news" in src:
+            src_html = f'<a href="{e(src)}" rel="noopener noreferrer">DragRacingNews race results</a>'
+        elif src:
+            src_html = f'<a href="{e(src)}" rel="noopener noreferrer">Results source</a>'
+        else:
+            src_html = "Source link pending"
+        results_html = (
+            '<section class="section"><h2>Results</h2>'
+            f'{prize_html}'
+            '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;text-align:left">'
+            '<thead><tr><th style="padding:12px">Race date</th><th style="padding:12px">Reported winner</th><th style="padding:12px">Runner-up</th></tr></thead>'
+            f'<tbody>{items}</tbody></table></div>'
+            f'<p>Reported results source: {src_html}. See all results in '
+            '<a href="/winners-circle/">Winner&rsquo;s Circle</a>.</p>'
+            '</section>')
+
     return head(
-        f'{x["name"]} \u2014 {x["dates"]}',
-        f'{x["name"]} at {x["track_name"]}, {x["city"]}, {x["state"]}. {x["dates"]}. Schedule and gate prices.',
+        x.get("meta_title") or f'{x["name"]} \u2014 {x["dates"]}',
+        x.get("meta_description") or f'{x["name"]} at {x["track_name"]}, {x["city"]}, {x["state"]}. {x["dates"]}. Schedule and gate prices.',
         f'/events/{x["slug"]}/', [ev_schema, bc, faq_schema], x["verified"],
     ) + f"""
 <main class="wrap">
@@ -1298,7 +1357,7 @@ def build_event(x, tracks):
 </div>
 {verification_html}
 {event_alert_html}
-<p class="answer">{e(x['summary'])}</p>
+<p class="answer">{e(x['summary'])}</p>{results_html}
 <section class="section"><h2>Schedule</h2><dl class="facts">{sched}</dl></section>
 <section class="section"><h2>At the gate</h2><dl class="pricing">{prices}</dl></section>
 <section class="section prose"><h2>What to expect</h2>{detail}</section>
@@ -1627,7 +1686,7 @@ def build_winners_circle(results):
             'Reported winners are not proof of actual prize payments.</p></section>'
             + "".join(rows) + '</main>')
     return head("Winner's Circle — Race Results & Advertised Purses",
-                "Reported drag race winners and advertised prize amounts from Gulf South events.",
+                "Drag race results from the Gulf South: FTD $40K winners and Great American $50K winners, with advertised purses.",
                 "/winners-circle/", [], results.get("updated", SITE["last_checked"])) + body + FOOT
 
 
@@ -1661,7 +1720,7 @@ def main():
               build_track(t, data["events"]))
     for x in data["events"]:
         write(os.path.join(OUT, "events", x["slug"], "index.html"),
-              build_event(x, data["tracks"]))
+              build_event(x, data["tracks"], RACE_RESULTS))
     for x in SERIES:
         write(os.path.join(OUT, "series", x["slug"], "index.html"),
               build_series(x, data["tracks"]))
