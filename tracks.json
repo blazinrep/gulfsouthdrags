@@ -85,14 +85,16 @@
    "name": "Swamp Bottom Dragstrip",
    "notes": "Opened September 5\u20136, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
    "phone": "601-810-6655 / 601-248-3143",
-   "race_days": "Schedule forming. Sept. 25-26 Run What You Brung weekend announced; future bracket racing has been discussed but no bracket date is confirmed.",
+   "race_days": "Most recent race: Big Bucks Bracket Race, Saturday 7 November 2026 \u2014 the final points race of the season. Halloween Fest ran 31 October. No future race date is confirmed as of 8 November 2026.",
    "sanction": "NHRA Member Track \u2014 South Central (Division 4)",
    "slug": "swamp-bottom-dragstrip",
    "state": "MS",
    "status": "open",
    "surface": "Concrete",
-   "verified": "2026-10-28",
-   "website": "https://swampbottomdragstrip.com/"
+   "verified": "2026-11-08",
+   "website": "https://swampbottomdragstrip.com/",
+   "meta_title": "Swamp Bottom Dragstrip \u2014 Schedule & Results | Columbia, MS",
+   "meta_description": "Swamp Bottom Dragstrip in Columbia, MS \u2014 NHRA quarter-mile concrete track. Schedule, race days and results; most recent race Nov 7, 2026."
   },
   {
    "address": "17085 Racetrack Rd, Gulfport, MS 39503",
@@ -138,8 +140,10 @@
    "state": "MS",
    "status": "open",
    "surface": "Asphalt",
-   "verified": "2026-10-30",
-   "website": "https://gulfportdragway.com/"
+   "verified": "2026-11-08",
+   "website": "https://gulfportdragway.com/",
+   "meta_title": "Gulfport Dragway \u2014 Schedule & Results | Gulfport, MS",
+   "meta_description": "Gulfport Dragway in Gulfport, MS \u2014 IHRA quarter- and eighth-mile track racing Wednesdays and weekends. Schedules, results and big-money winners."
   },
   {
    "address": "7557 S Siwell Rd, Byram, MS 39272",
@@ -316,7 +320,9 @@
     "status": "unconfirmed",
     "detail": "Unconfirmed. Worth asking given the size of the site and the festival use.",
     "nearby": []
-   }
+   },
+   "meta_title": "No Problem Raceway Park \u2014 Schedule & Results",
+   "meta_description": "No Problem Raceway Park in Belle Rose, LA \u2014 NHRA quarter-mile drag strip plus a 1.8-mile road course. Schedule, race days and results."
   },
   {
    "slug": "twin-city-raceway",
@@ -413,7 +419,7 @@
   },
   {
    "address": "2600 N Belt Dr, Montgomery, AL 36110",
-   "answer": "Montgomery International Dragway is an IHRA-sanctioned quarter-mile drag strip at 2600 N Belt Drive in Montgomery, Alabama. It publishes a full season schedule and hosts major bracket events including the Cap City $50K, IHRA Bracket Finals and World Footbrake Challenge.",
+   "answer": "Montgomery International Dragway is an IHRA-sanctioned quarter-mile drag strip at 2600 N Belt Drive in Montgomery, Alabama. It publishes a full season schedule and hosts major bracket events including the Gobble Wobble and the Thanksgiving Footbrake Challenge.",
    "camping": {
     "detail": "Unconfirmed.",
     "nearby": [],
@@ -425,7 +431,7 @@
    "faq": [
     [
      "What are the biggest races at Montgomery International Dragway?",
-     "The Cap City $50K Bracket Race, IHRA Bracket Finals and World Footbrake Challenge are among the largest remaining events on the 2026 calendar. The Great American event originally scheduled at Montgomery in October was moved to Gulfport Dragway on 17 September 2026."
+     "The Cap City $50K Bracket Race (17\u201320 September) and IHRA Bracket Finals (24\u201327 September) have already run in 2026. The largest remaining events on the 2026 calendar are the Gobble Wobble (19\u201322 November) and the Thanksgiving Footbrake Challenge (27\u201328 November). The Great American event originally scheduled at Montgomery in October was moved to Gulfport Dragway on 17 September 2026."
     ],
     [
      "Does Montgomery International Dragway run index racing?",
@@ -441,7 +447,7 @@
    "lon": -86.38,
    "miles": 182,
    "name": "Montgomery International Dragway",
-   "notes": "An IHRA member track in Montgomery that publishes a full season calendar and revises it in writing, which makes it one of the easier tracks in this directory to plan around. The 2026 schedule was released in January and revised on 22 June.\n\nIt runs some of the biggest bracket money in the Southeast. The autumn calendar alone includes the Cap City $50K Bracket Race, the IHRA Bracket Finals, a $5,000 and $10,000 Footbrake Race with a double $2,000 Junior Dragster, the Gobble Wobble Thanksgiving Bracket and the World Footbrake Challenge.\n\nThe track also runs a heads-up index programme of six races, with 5.30, 6.00 and 7.00 index classes plus Mike Hill's 4.84 Series. Index rules as published allow a delay box and any tire size, on a .400 pro tree, with no throttle stop and no deep staging.\n\nOther regular features are the Super 7 Series bracket races, Friday night slick-prepped test and tune sessions paired with a Top Eliminator bracket race, radial-prepped test and tune, and the Southern Outlaw Tour, which finishes its season here.\n\nAll dates are published as subject to change and the track has revised its calendar mid-season before, so confirm before travelling.\n\nVenue update: the Great American event originally listed on Montgomery's 2026 calendar for Oct. 13-18 was officially moved to Gulfport Dragway on 17 September 2026. Gulf South Drags no longer lists that October event at Montgomery.\n\nOctober 28 update: Montgomery's official Facebook page reported on October 27 that the Halloween Havoc Jr. race will not take place this weekend and that a schedule update is coming. The captured Facebook post was truncated, so Gulf South Drags is treating the cancellation notice as time-sensitive but is waiting for the full replacement schedule before publishing additional event details.",
+   "notes": "An IHRA member track in Montgomery that publishes a full season calendar and revises it in writing, which makes it one of the easier tracks in this directory to plan around. The 2026 schedule was released in January and revised on 22 June.\n\nIt runs some of the biggest bracket money in the Southeast. The autumn calendar included the Cap City $50K Bracket Race, the IHRA Bracket Finals, a $5,000 and $10,000 Footbrake Race with a double $2,000 Junior Dragster, the Gobble Wobble Thanksgiving Bracket and the Thanksgiving Footbrake Challenge.\n\nThe track also runs a heads-up index programme of six races, with 5.30, 6.00 and 7.00 index classes plus Mike Hill's 4.84 Series. Index rules as published allow a delay box and any tire size, on a .400 pro tree, with no throttle stop and no deep staging.\n\nOther regular features are the Super 7 Series bracket races, Friday night slick-prepped test and tune sessions paired with a Top Eliminator bracket race, radial-prepped test and tune, and the Southern Outlaw Tour, which finishes its season here.\n\nAll dates are published as subject to change and the track has revised its calendar mid-season before, so confirm before travelling.\n\nVenue update: the Great American event originally listed on Montgomery's 2026 calendar for Oct. 13-18 was officially moved to Gulfport Dragway on 17 September 2026. Gulf South Drags no longer lists that October event at Montgomery.\n\nOctober 28 update: Montgomery's official Facebook page reported on October 27 that the Halloween Havoc Jr. race will not take place this weekend and that a schedule update is coming. The captured Facebook post was truncated, so Gulf South Drags is treating the cancellation notice as time-sensitive but is waiting for the full replacement schedule before publishing additional event details.",
    "phone": "706-741-1305",
    "race_days": "Test and tune, bracket racing and big-money events across a published season. The 2026 calendar was released in January and revised in June.",
    "sanction": "IHRA",
@@ -450,7 +456,9 @@
    "status": "open",
    "surface": "Asphalt",
    "verified": "2026-10-28",
-   "website": "http://racemid.com"
+   "website": "http://racemid.com",
+   "meta_title": "Montgomery International Dragway \u2014 Schedule & Results",
+   "meta_description": "Montgomery International Dragway in Montgomery, AL \u2014 IHRA quarter-mile track with a full season schedule. Race days, results and big-money bracket events."
   },
   {
    "address": "3928 Byler Rd, Eldridge, AL 35554",
@@ -991,10 +999,13 @@
    "source": "Official Gulfport Dragway announcement and event flyer published 17 September 2026.",
    "start_iso": "2026-10-13",
    "state": "MS",
-   "summary": "VENUE CHANGE CONFIRMED: the SDPC Raceshop Great American 50Ks has moved from Montgomery International Dragway to Gulfport Dragway. Parking begins Oct. 12, Test & Tune runs Oct. 13, and four straight $50,000-to-win races run Oct. 14-17.",
+   "summary": "The SDPC Raceshop Great American 50Ks moved from Montgomery International Dragway to Gulfport Dragway and ran 13\u201317 October 2026. Four $50,000-to-win mains ran 14\u201317 October, won by Matt Richard, Kyle Rumley, Brad Clarke and Gary Williams. Advertised prizes are not verified as paid.",
    "track_name": "Gulfport Dragway",
    "track_slug": "gulfport-dragway",
-   "verified": "2026-09-17"
+   "verified": "2026-11-08",
+   "results_slug": "great-american-50ks-gulfport-2026",
+   "meta_title": "Great American 50Ks results \u2014 Gulfport, Oct 13\u201317 2026",
+   "meta_description": "Great American 50Ks results, Gulfport Dragway, Oct 14\u201317 2026: Matt Richard, Kyle Rumley, Brad Clarke and Gary Williams won the $50,000 mains."
   },
   {
    "slug": "montgomery-thanksgiving-footbrake-challenge-2026",
@@ -1661,7 +1672,10 @@
    "summary": "FTD Customs 5-day bracket race at Gulfport Dragway, November 3-7, with $40,000-to-win main events Tuesday through Saturday. Winners: Bailey Ferraro (Tue), Johnson Raynor (Wed), Jason Lynch (Thu), Talon Farmer (Fri), David Hammons (Sat).",
    "track_name": "Gulfport Dragway",
    "track_slug": "gulfport-dragway",
-   "verified": "2026-11-08"
+   "verified": "2026-11-08",
+   "results_slug": "ftd-gulfport-2026",
+   "meta_title": "FTD Customs 5-Day Bracket Race results \u2014 Gulfport, Nov 3\u20137 2026",
+   "meta_description": "FTD Customs 5-Day Bracket Race results, Nov 3\u20137 2026: Bailey Ferraro, Johnson Raynor, Jason Lynch, Talon Farmer and David Hammons won the $40K mains."
   },
   {
    "city": "Columbia",
