@@ -78,14 +78,14 @@
       "number": 2,
       "slug": "edition-2",
       "date": "2026-11-13",
-      "checked": "2026-11-13",
+      "checked": "2026-11-14",
       "title": "Weekend Tow Report #2",
       "subject": "Footbrake 150 is on \u2014 Saturday is stacked",
-      "preview": "Gulfport's $25K weekend is underway. I-22, Swamp Bottom and No Problem all run Saturday. One Friday cancellation, one deadline today.",
+      "preview": "Gulfport's $25K weekend is underway. I-22, Swamp Bottom and No Problem all run Saturday. One Friday cancellation \u2014 Saturday is the day.",
       "alert": {
         "label": "FOOTBRAKE 150",
         "headline": "TWIN $25K MAINS AT GULFPORT, NOV 13\u201315",
-        "body": "The 3rd Annual Forever Footbrake 150 is underway at Gulfport Dragway. Twin $25,000-to-win main events run Saturday and Sunday. Friday adds Test n Tune ($25), a $3,000-to-win Gamblers Race, and an $8,000-to-win No Guts, No Glory race. Gate entry $150 per day. Spectators $15 per day, $40 weekend pass, kids 8 and under free. Pre-registration has closed. Sellout status is unverified.",
+        "body": "The 3rd Annual Forever Footbrake 150 is underway at Gulfport Dragway. Twin $25,000-to-win main events run Saturday and Sunday. Friday opened with Test n Tune ($25), a $3,000-to-win Gamblers Race, and an $8,000-to-win No Guts, No Glory race. Gate entry $150 per day. Spectators $15 per day, $40 weekend pass, kids 8 and under free. Pre-registration has closed. Sellout status is unverified.",
         "bullets": [
           "Twin $25,000-to-win mains Saturday and Sunday ($2,000 runner-up, $750 semi-finalists, round money from round 4).",
           "Friday: Test n Tune $25; $3,000 Gamblers Race; $8,000 No Guts, No Glory race.",
@@ -114,18 +114,19 @@
         },
         {
           "date": "NOV 14",
-          "name": "TNT Test and Tune \u2014 gates 3 PM, track hot 4 PM, tech $45, spectators $15, kids 10 and under free",
+          "name": "TNT Test and Tune \u2014 gates 11 AM, track hot 1 PM, tech $45, spectators $15, kids 10 and under free",
           "where": "No Problem Raceway Park - Belle Rose, LA"
         }
       ],
       "feature": {
         "eyebrow": "SATURDAY IS THE DAY",
         "title": "The cold moved the weekend to Saturday",
-        "body": "Friday night racing at I-22 is off \u2014 temperatures dropping into the low 30s. Swamp Bottom moved its Saturday start earlier for the cold: gates 11 AM, track hot noon (was gates 2 PM). Saturday is the day: I-22 gates open 9 AM, Swamp Bottom 11 AM, No Problem 3 PM. At I-22 the forecast is mid-50s and sunny.",
+        "body": "Friday night racing at I-22 is off \u2014 temperatures dropping into the low 30s. Swamp Bottom moved its Saturday start earlier for the cold: gates 11 AM, track hot noon (was gates 2 PM). No Problem moved its start earlier too: gates 11 AM, track hot 1 PM (was gates 3 PM, track hot 4 PM). Saturday is the day: I-22 gates open 9 AM, Swamp Bottom 11 AM, No Problem 11 AM. At I-22 the forecast is mid-50s and sunny.",
         "bullets": [
           "I-22 Friday Nov 13 cancelled for cold. Saturday only.",
           "Swamp Bottom Saturday start moved earlier: gates 11 AM, track hot noon.",
-          "Three tracks run Saturday: I-22 (9 AM), Swamp Bottom (11 AM), No Problem (3 PM)."
+          "No Problem Saturday start moved earlier: gates 11 AM, track hot 1 PM.",
+          "Three tracks run Saturday: I-22 (9 AM), Swamp Bottom (11 AM), No Problem (11 AM)."
         ],
         "href": "/events/i22-bracket-racing-nov-14-2026/"
       },
@@ -139,7 +140,7 @@
       "worth": {
         "eyebrow": "WORTH THE TOW",
         "title": "Coming up: Gobble Wobble, Turkey Trot, Throwdown",
-        "body": "Montgomery Gobble Wobble Nov 19\u201322 (Thursday gates 8 AM, Test and Tune noon\u20138 PM, $50). Alabama Turkey Trot Nov 20\u201321 (Footbrake Saturday $5,000 to win; Pro Saturday $10,000 to win). Holiday Thanksgiving Throwdown Nov 21. Turkey Beach Bash Nov 27\u201329 at Gulfport \u2014 no pre-registration required just to race. Montgomery Thanksgiving Footbrake Challenge Nov 27\u201328 ($400 pre-entry cutoff, Nov 13 \u2014 $100 savings vs $500 at the gate). Last time out: Gulfport Nov 11, Michael Lewis won King of the Mountain (49 entries, $1,000 purse; 2026 series paid $23,960 total). Baileyton pit bikes Nov 11: Erek Hallmark won, Bailey Benda runner-up. Do not tow: Byram closed its 2026 season Nov 10; Twin City's season is over.",
+        "body": "Montgomery Gobble Wobble Nov 19\u201322 (Thursday gates 8 AM, Test and Tune noon\u20138 PM, $50). Alabama Turkey Trot Nov 20\u201321 (Footbrake Saturday $5,000 to win; Pro Saturday $10,000 to win). Holiday Thanksgiving Throwdown Nov 21. Turkey Beach Bash Nov 27\u201329 at Gulfport \u2014 no pre-registration required just to race. Montgomery Thanksgiving Footbrake Challenge Nov 27\u201328 ($400 pre-entry rate ended Nov 13; now $500 at the gate ($250 single-day)). Last time out: Gulfport Nov 11, Michael Lewis won King of the Mountain (49 entries, $1,000 purse; 2026 series paid $23,960 total). Baileyton pit bikes Nov 11: Erek Hallmark won, Bailey Benda runner-up. Do not tow: Byram closed its 2026 season Nov 10; Twin City's season is over.",
         "href": "/events/montgomery-gobble-wobble-2026/"
       }
     }
