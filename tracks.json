@@ -3,7 +3,7 @@
   "anchor": "Hattiesburg, MS",
   "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.",
   "domain": "gulfsouthdrags.com",
-  "last_checked": "2026-11-12",
+  "last_checked": "2026-11-14",
   "name": "Gulf South Drags",
   "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
  },
@@ -290,7 +290,7 @@
    "website": "https://racenpr.com",
    "facebook": "https://www.facebook.com/noproblemraceway/",
    "status": "open",
-   "verified": "2026-10-28",
+   "verified": "2026-11-14",
    "answer": "No Problem Raceway Park is an NHRA-sanctioned quarter-mile drag strip at 6470 LA-996 in Belle Rose, Louisiana. The site also carries a 1.8-mile asphalt road course and over 200 acres used for concerts, car shows and festivals.",
    "caveat": "",
    "notes": "A multi-discipline motorsports facility in Belle Rose, in the Louisiana river parishes between Baton Rouge and Houma. Confirmed active on 12 September 2026. The track is running its 25th anniversary season, having opened in 2001.\n\nThe drag strip is a quarter-mile sanctioned by NHRA. Alongside it sits a 1.8-mile asphalt road course and more than 200 acres used for concerts, car shows and festivals. That mix is unusual in this region \u2014 most tracks listed here do one thing.\n\nThe regular programme runs TNT Test \u2019n Tune on selected Friday nights and Bracket Masters on selected Saturdays, with road course events, Super Saturdays run with Flip Flop Promotions, and private pro test sessions bookable by phone. The track publishes a calendar of events each month on its Facebook page.\n\nIt also hosts the Pure Speed Drag Racing Experience, a ride-and-drive programme for people who want to run a race car without owning one, booked separately from the racing calendar.\n\nTwo phone numbers are in use: 225-445-3498 and 985-369-3692. The number printed on the track's own website has an extra digit and cannot be dialled as written.",
@@ -1780,7 +1780,7 @@
   {
    "city": "Belle Rose",
    "dates": "Saturday 14 November 2026",
-   "detail": "TNT Test and Tune. Gates open 3:00 PM, track hot 4:00 PM. Tech cards $45.00, spectators $15.00, kids 10 and under free. Track prep by TL1 Traction Compound.",
+   "detail": "TNT Test and Tune. Gates open 11:00 AM, track hot 1:00 PM. Tech cards $45.00, spectators $15.00, kids 10 and under free. Track prep by TL1 Traction Compound. Times moved earlier than the original 3:00 PM gates-open / 4:00 PM track hot (track time-change flyer, 13 November 2026).",
    "event_type": "drag",
    "major_event": false,
    "name": "TNT Test and Tune",
@@ -1797,18 +1797,18 @@
    "schedule": [
     [
      "Saturday 14 November",
-     "Gates open 3:00 PM, track hot 4:00 PM. Tech cards $45.00, spectators $15.00, kids 10 and under free. Track prep by TL1 Traction Compound."
+     "Gates open 11:00 AM, track hot 1:00 PM. Tech cards $45.00, spectators $15.00, kids 10 and under free. Track prep by TL1 Traction Compound."
     ]
    ],
    "series_slugs": [],
    "slug": "no-problem-tnt-test-tune-nov-14-2026",
-   "source": "No Problem Raceway official Facebook flyer, posted 8 November 2026.",
+   "source": "No Problem Raceway Park official Facebook flyer, posted 13 November 2026 (time-change announcement; supersedes the 8 November 2026 flyer).",
    "start_iso": "2026-11-14",
    "state": "LA",
-   "summary": "No Problem Raceway Park runs a TNT Test and Tune on Saturday, November 14: gates 3 PM, track hot 4 PM.",
+   "summary": "No Problem Raceway Park runs a TNT Test and Tune on Saturday, November 14: gates 11 AM, track hot 1 PM.",
    "track_name": "No Problem Raceway Park",
    "track_slug": "no-problem-raceway",
-   "verified": "2026-11-08"
+   "verified": "2026-11-14"
   },
   {
    "city": "Columbia",
