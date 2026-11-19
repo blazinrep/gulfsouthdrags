@@ -157,6 +157,22 @@ def check_data(root, rep):
             rep.err(f"event {slug}: schedule must be a list of [label, text] pairs")
         if not is_pair_list(x.get("prices", [])):
             rep.err(f"event {slug}: prices must be a list of [label, text] pairs")
+        deadlines = x.get("offer_deadlines")
+        if deadlines is not None:
+            price_labels = {label for label, _ in x.get("prices", [])}
+            if not isinstance(deadlines, list):
+                rep.err(f"event {slug}: offer_deadlines must be a list")
+            else:
+                for d in deadlines:
+                    if not isinstance(d, dict):
+                        rep.err(f"event {slug}: offer_deadlines entries must be objects")
+                        continue
+                    if not isinstance(d.get("label"), str) or not d["label"].strip():
+                        rep.err(f"event {slug}: offer_deadlines entry missing label")
+                    elif d["label"] not in price_labels:
+                        rep.err(f"event {slug}: offer_deadlines label {d['label']!r} has no matching price row")
+                    if not is_iso_date(d.get("deadline", "")):
+                        rep.err(f"event {slug}: offer_deadlines deadline not ISO date: {d.get('deadline')!r}")
         alert = x.get("alert")
         if alert is not None:
             if not isinstance(alert, dict):
@@ -242,9 +258,10 @@ class LinkParser(html.parser.HTMLParser):
 def check_output(root, data, rep):
     """Checks against the generated site/ directory."""
     out = os.path.join(root, "site")
-    n_expected = (6 + len(data["reports"]) + len(data["tracks"])
-                  + len(data["events"]) + len(data["series"]))  # 6 base pages: /, winners-circle, mississippi hub, partners, thanks, tow-report index
-    expected_urls = {"/", "/drag-strips/mississippi/", "/partners/",
+    n_expected = (8 + len(data["reports"]) + len(data["tracks"])
+                  + len(data["events"]) + len(data["series"]))  # 8 base pages: /, winners-circle, mississippi/alabama/louisiana hubs, partners, thanks, tow-report index
+    expected_urls = {"/", "/drag-strips/mississippi/", "/drag-strips/alabama/",
+                     "/drag-strips/louisiana/", "/partners/",
                      "/tow-report/", "/winners-circle/"}
     expected_urls |= {f"/tow-report/{r['slug']}/" for r in data["reports"]}
     expected_urls |= {f"/tracks/{t['slug']}/" for t in data["tracks"]}
@@ -258,7 +275,7 @@ def check_output(root, data, rep):
                 pages.append(os.path.join(dirpath, fn))
     if len(pages) != n_expected:
         rep.err(f"page count {len(pages)} != expected {n_expected} "
-                "(6 + reports + tracks + events + series)")
+                "(8 + reports + tracks + events + series)")
 
     for rel in ("index.html", "sitemap.xml", "robots.txt", "llms.txt", "404.html"):
         if not os.path.isfile(os.path.join(out, rel)):
