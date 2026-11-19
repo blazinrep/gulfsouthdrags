@@ -1620,6 +1620,15 @@ def build_tow_report(r):
     questions = "".join(f"<li>{e(x)}</li>" for x in r.get("questions", []))
     worth = r["worth"]
 
+    # Archived-edition correction note (optional; rendered only when present).
+    correction = r.get("correction")
+    correction_html = ""
+    if isinstance(correction, dict) and correction.get("text"):
+        correction_html = (
+            f'<section class="correction"><h2>Correction — {e(nice_date(correction.get("date", r["date"])))}</h2>'
+            f'<p>{e(correction["text"])}</p></section>\n'
+        )
+
     article = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -1658,7 +1667,7 @@ def build_tow_report(r):
 <p class="tow-web-trust"><strong>Sponsors can buy exposure.</strong> Nobody can buy the truth.</p>
 </div>
 </section>
-<section class="event-alert tow-report-alert">
+{correction_html}<section class="event-alert tow-report-alert">
 <div class="event-alert-top"><span class="event-alert-icon" aria-hidden="true">!</span><span class="event-alert-label">{e(alert["label"])}</span></div>
 <strong class="event-alert-headline">{e(alert["headline"])}</strong>
 <p>{e(alert["body"])}</p>
