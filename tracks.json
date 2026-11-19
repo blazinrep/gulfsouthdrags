@@ -2011,7 +2011,7 @@
   {
    "city": "Belle Rose",
    "dates": "Friday 20 to Sunday 22 November 2026",
-   "detail": "No Problem Raceway Park wraps November with a Gamblers Race and a Saturday Bracket Race, November 21-22, 2026 — the last bracket race of the year. Friday Night TNT runs November 20. Entry $60 for Box, No Box and Bikes; payouts $1,200 advertised on the flyer. Track prep by TL1 Traction Compound. Gate times were not in the captured source; confirm with the track before travelling.\n\nNo Problem's 19 November update (two flyers) confirms Friday gates 5:30 PM with the track hot at 6:30 PM and the Gamblers Race at ~8:30 PM, and Saturday gates 8:00 AM with the track hot at 9:00 AM (Juniors first, big cars at noon), with per-class Saturday purses listed in the schedule.",
+   "detail": "No Problem Raceway Park wraps November with a Gamblers Race and a Saturday Bracket Race on November 21, 2026 — the last bracket race of the year. Friday Night TNT runs November 20. Entry $60 for Box, No Box and Bikes; payouts $1,200 advertised on the flyer. Track prep by TL1 Traction Compound. Sunday November 22 appears on the event flyer, but no Sunday schedule, times, or payouts have been confirmed — details pending; confirm with the track before travelling.\n\nNo Problem's 19 November update (two flyers) confirms Friday gates 5:30 PM with the track hot at 6:30 PM and the Gamblers Race at ~8:30 PM, and Saturday gates 8:00 AM with the track hot at 9:00 AM (Juniors first, big cars at noon), with per-class Saturday purses listed in the schedule.",
    "end_iso": "2026-11-22",
    "event_type": "drag",
    "major_event": false,
@@ -2060,8 +2060,12 @@
      "Friday Night TNT."
     ],
     [
-     "Saturday 21 - Sunday 22 November",
+     "Saturday 21 November",
      "Gamblers Race and Saturday Bracket Race. The Saturday bracket race is the last bracket race of the year."
+    ],
+    [
+     "Sunday 22 November",
+     "Listed on the event flyer. No Sunday schedule, times, or payouts confirmed — details pending. Confirm with the track before travelling."
     ],
     [
      "Friday 20 November",
@@ -2077,7 +2081,7 @@
    "source": "No Problem Raceway Park official Facebook posts, 15 and 16 November 2026 (Nov 15 last-bracket-race announcement; Nov 16 'See yall this weekend!!' with flyer, Box/No Box/Bikes $60, payouts $1200; photos show 'NOV 21 & 22 2026' and 'FRIDAY NIGHT TNT NOV 20TH' flyers). Flyer text partially readable.; gate times and Saturday class purses from No Problem Raceway Park official Facebook post, 19 November 2026, 6:54 AM (two flyers, full text).",
    "start_iso": "2026-11-20",
    "state": "LA",
-   "summary": "No Problem Raceway Park wraps November with a Friday Night TNT, then a Gamblers Race and Saturday Bracket Race November 21-22 — the last bracket race of the year.",
+   "summary": "No Problem Raceway Park wraps November with a Friday Night TNT, then a Gamblers Race and Saturday Bracket Race on November 21 — the last bracket race of the year. Sunday November 22 is listed on the flyer; details unconfirmed.",
    "track_name": "No Problem Raceway Park",
    "track_slug": "no-problem-raceway",
    "verified": "2026-11-19"
