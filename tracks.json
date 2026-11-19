@@ -1,7 +1,7 @@
 {
  "site": {
   "anchor": "Hattiesburg, MS",
-  "description": "Drag strips in Mississippi, Louisiana and Alabama, with race days, addresses, phone numbers and the date each listing was last checked.",
+  "description": "Drag races near you in Mississippi, Louisiana and Alabama \u2014 this weekend's races, drag strips, schedules and the date each listing was last checked.",
   "domain": "gulfsouthdrags.com",
   "last_checked": "2026-11-18",
   "name": "Gulf South Drags",
@@ -492,14 +492,19 @@
    "name": "I-22 Motorsports Park",
    "notes": "An eighth-mile track in Eldridge, northwest Alabama. Confirmed active on 12 September 2026, with a 98 percent recommendation rate on its social page.\n\nThe track runs Super Pro, Footbrake and Jr Dragster, and puts up serious money for a track its size. Its Labor Day Weekend Bracket Bash in September 2026 paid $7,500 to win in Super Pro on the Saturday, $5,000 on the Sunday and $2,000 on the Friday, with entries of $175, $100 and $50 respectively and buybacks available. Footbrake paid $2,500, $1,500 and $1,000 across the same three days on entries of $80, $75 and $50. Payouts are posted as based on car counts \u2014 75 cars for the Saturday Super Pro purse, 50 for the Sunday.\n\nWeekend passes were offered at $250 single and $380 double for Super Pro, and $140 single and $250 double for Footbrake. Friday gates opened at 3pm with open time runs from 5pm to 7pm and racing to follow.\n\nThe track also runs invitational shootouts. Schedule announcements go out through Facebook rather than a website, so check there before travelling.",
    "phone": "205-495-40__ (confirm)",
-   "race_days": "Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Next race: bracket racing Saturday 14 November 2026 \u2014 gates 9 AM, time trials 11 AM; no Friday night race November 13. Announcements go out through Facebook.",
+   "race_days": "Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Most recent race: bracket racing, Saturday 14 November 2026. Next race: not yet announced \u2014 announcements go out through Facebook.",
    "sanction": "Independent",
    "slug": "i-22-motorsports-park",
    "state": "AL",
    "status": "open",
    "surface": "Asphalt",
    "verified": "2026-11-12",
-   "website": "http://i-22motorsports.com"
+   "website": "http://i-22motorsports.com",
+   "former_names": [
+    "I-22 Dragway"
+   ],
+   "meta_description": "I-22 Motorsports Park in Eldridge, Alabama \u2014 formerly I-22 Dragway. Eighth-mile drag strip running Super Pro, Footbrake and Jr Dragster bracket racing.",
+   "meta_title": "I-22 Motorsports Park (formerly I-22 Dragway) \u2014 Eldridge, AL drag strip"
   },
   {
    "address": "1245 Crump Road, Steele, AL 35987",
@@ -1028,8 +1033,8 @@
    ],
    "prices": [
     [
-     "Weekend pre-entry (by 13 November)",
-     "$400 for twin $20K races"
+     "Weekend pre-entry (closed 13 November)",
+     "$400 rate closed \u2014 gate entry $500 for twin $20K races"
     ],
     [
      "Gate entry",
@@ -1044,8 +1049,14 @@
      "$100 entry, $3,000 to win"
     ]
    ],
+   "offer_deadlines": [
+    {
+     "label": "Weekend pre-entry (closed 13 November)",
+     "deadline": "2026-11-13"
+    }
+   ],
    "summary": "The 2nd Annual BTE Thanksgiving Footbrake Challenge runs November 27-28 at Montgomery International Dragway with twin $20,000-to-win races and over $45,000 in winner's purses.",
-   "detail": "Footbrake-only event from Coalburg Racing Promotions / World Footbrake Challenge. All-run format, no E.T. break, deep staging honored; door cars and left-hand-steer roadsters only, no dragsters or electric vehicles. Pre-enter by November 13 for the $400 rate; the double-entry policy lets a racer pre-enter one entry and buy the second at the gate for the same price. Streamed on MotorManiaTV. This record replaces the June-calendar World Footbrake Challenge listing for the same track and dates, which carried no purses and cited superseded Gobble Wobble dates.\n\nDeadline (pre-entry, 2026-11-13): Pre-entry $400 by November 13 ($100 savings); $500 at the gate for twin $20K races.",
+   "detail": "Footbrake-only event from Coalburg Racing Promotions / World Footbrake Challenge. All-run format, no E.T. break, deep staging honored; door cars and left-hand-steer roadsters only, no dragsters or electric vehicles. Pre-entry at the $400 rate closed November 13; the double-entry policy lets a racer pre-enter one entry and buy the second at the gate for the same price. Streamed on MotorManiaTV. This record replaces the June-calendar World Footbrake Challenge listing for the same track and dates, which carried no purses and cited superseded Gobble Wobble dates.\n\nDeadline (pre-entry, 2026-11-13): Pre-entry $400 closed November 13 ($100 savings); $500 at the gate for twin $20K races.",
    "source": "DragChamp, 13 October 2026, and the World Footbrake Challenge entry page.",
    "verified": "2026-10-27"
   },
@@ -1328,15 +1339,15 @@
   {
    "city": "Gulfport",
    "dates": "Friday 27 through Sunday 29 November 2026",
-   "detail": "Thanksgiving weekend bracket racing at Gulfport Dragway. BOGO pre-registration ($350 for two entries into all three $10K races) closes November 3; the first 50 registrants enter a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race. Registration: kocbracketseries.com.\n\nDeadline (BOGO pre-registration, 2026-11-03): BOGO pre-registration closes November 3: $350 for two entries into all three $10K races ($50 deposit, $300 at the gate). First 50 registrants enter a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race.",
+   "detail": "Thanksgiving weekend bracket racing at Gulfport Dragway. BOGO pre-registration ($350 for two entries into all three $10K races) closed November 3; the first 50 registrants entered a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race. Registration: kocbracketseries.com.\n\nDeadline (BOGO pre-registration, 2026-11-03): BOGO pre-registration closed November 3: $350 for two entries into all three $10K races ($50 deposit, $300 at the gate). First 50 registrants entered a drawing for a free weekend entry plus buybacks. No pre-registration is required just to race.",
    "end_iso": "2026-11-29",
    "event_type": "drag",
    "major_event": true,
    "name": "8th Annual Turkey Beach Bash",
    "prices": [
     [
-     "BOGO pre-registration",
-     "$350 for two entries into all three $10K races ($50 deposit, $300 at the gate; two racers may split)"
+     "BOGO pre-registration (closed 3 November)",
+     "$350 rate closed \u2014 gate entry $80 single-day; no pre-registration required just to race"
     ],
     [
      "Buybacks",
@@ -1354,6 +1365,12 @@
      "Gate (no pre-registration)",
      "$80 single-day gate; no pre-registration required just to race"
     ]
+   ],
+   "offer_deadlines": [
+    {
+     "label": "BOGO pre-registration (closed 3 November)",
+     "deadline": "2026-11-03"
+    }
    ],
    "schedule": [
     [

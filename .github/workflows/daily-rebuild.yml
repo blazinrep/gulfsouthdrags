@@ -1,0 +1,53 @@
+name: Daily site rebuild
+
+# Rebuilds and redeploys the generated site once a day so expired events
+# drop out of the upcoming sections (Race Next, track "next event", hub
+# "Upcoming", homepage cards) without any data change. build.py filters
+# upcoming by the current date, so a fresh build on a new day is enough.
+#
+# What this workflow does:
+#   - Checks out main, runs preflight (which runs the build with the
+#     current date), then deploys the regenerated site/ to Cloudflare
+#     Pages, exactly like the deploy workflow.
+# What it does NOT do:
+#   - It never writes to tracks.json, site.last_checked, or any verified
+#     date. The rebuild only regenerates site/ from the existing sources,
+#     so a listing's verification date still describes when it was
+#     actually checked, never the rebuild date. It never merges, deletes,
+#     or edits content.
+#   - It makes no git commits. Direct pushes to main are blocked by the
+#     branch ruleset (PR required), and a scheduled job must not bypass
+#     review; the deployed output is the deliverable, not a repo commit.
+# Scheduled workflows only run on the default branch, so this fires on
+# main only (never on PR branches). Manual runs via workflow_dispatch.
+
+on:
+  schedule:
+    - cron: "0 13 * * *" # 13:00 UTC = 07:00 Central
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run preflight
+        run: python3 preflight.py
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site --project-name=gulfsouthdrags --branch=main
