@@ -95,12 +95,14 @@
     {
      "date": "2026-11-20",
      "winner": "Jared Pennington",
-     "runner_up": null
+     "runner_up": null,
+     "class": "Box"
     },
     {
      "date": "2026-11-20",
      "winner": "Nick Hastings",
-     "runner_up": null
+     "runner_up": null,
+     "class": "No Box"
     }
    ],
    "pending": [
@@ -117,7 +119,8 @@
     "quarterfinalist": 150,
     "eighth_finalist": null,
     "sixteenth_finalist": null
-   }
+   },
+   "source_label": "Montgomery International Dragway official results"
   }
  ]
 }
