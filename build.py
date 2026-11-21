@@ -246,6 +246,39 @@ def e(s):
     return html.escape(s or "", quote=True)
 
 
+def result_row(r):
+    """One Winner's Circle / event-page results row.
+
+    A row may carry an optional per-row "class" (e.g. "Box", "No Box").
+    Rows without it render exactly as before, so previously published
+    results are byte-identical.
+    """
+    winner = f'<strong>{e(r["winner"])}</strong>'
+    if r.get("class"):
+        winner += f' ({e(r["class"])})'
+    return (f'<tr><td>{e(nice_date(r["date"]))}</td><td>{winner}</td>'
+            f'<td>{e(r["runner_up"])}</td></tr>')
+
+
+def results_source_html(res):
+    """Shared source-link label for a race_results entry.
+
+    An entry may carry an explicit "source_label" (used when the source
+    is not DragRacingNews); otherwise the label follows the source URL,
+    exactly as the event page did before.
+    """
+    label = res.get("source_label")
+    src = res.get("source_url", "")
+    if label and src:
+        return f'<a href="{e(src)}" rel="noopener noreferrer">{e(label)}</a>'
+    if "dragracing.news" in src:
+        return (f'<a href="{e(src)}" rel="noopener noreferrer">'
+                'DragRacingNews race results</a>')
+    if src:
+        return f'<a href="{e(src)}" rel="noopener noreferrer">Results source</a>'
+    return "Source link pending"
+
+
 def sentence(s):
     """Append a period only if the text doesn't already end one — avoids '4:30 PM..'."""
     s = s.strip()
@@ -1424,20 +1457,11 @@ def build_event(x, tracks, results=None):
         res = next((r for r in results.get("events", [])
                     if r["slug"] == x["results_slug"]), None)
     if res:
-        items = "".join(
-            f'<tr><td>{e(nice_date(r["date"]))}</td><td><strong>{e(r["winner"])}</strong></td>'
-            f'<td>{e(r["runner_up"])}</td></tr>'
-            for r in res.get("results", []))
+        items = "".join(result_row(r) for r in res.get("results", []))
         prize = res.get("advertised_winner_prize")
         prize_html = (f'<p><strong>Advertised main-event winner prize: ${prize:,}</strong> '
                       '— advertised, not verified as paid.</p>' if prize else "")
-        src = res.get("source_url", "")
-        if "dragracing.news" in src:
-            src_html = f'<a href="{e(src)}" rel="noopener noreferrer">DragRacingNews race results</a>'
-        elif src:
-            src_html = f'<a href="{e(src)}" rel="noopener noreferrer">Results source</a>'
-        else:
-            src_html = "Source link pending"
+        src_html = results_source_html(res)
         results_html = (
             '<section class="section"><h2>Results</h2>'
             f'{prize_html}'
@@ -1773,15 +1797,10 @@ def write(path, content):
 def build_winners_circle(results):
     rows = []
     for event in results.get("events", []):
-        items = "".join(
-            f'<tr><td>{e(nice_date(r["date"]))}</td><td><strong>{e(r["winner"])}</strong></td>'
-            f'<td>{e(r["runner_up"])}</td></tr>'
-            for r in event.get("results", [])
-        )
+        items = "".join(result_row(r) for r in event.get("results", []))
         pending = ", ".join(nice_date(d) for d in event.get("pending", []))
         pending_html = f"<p>Still awaiting results: {e(pending)}.</p>" if pending else ""
-        source = event.get("source_url", "")
-        source_html = (f'<a href="{e(source)}" rel="noopener noreferrer">DragRacingNews race results</a>' if source else "Source link pending")
+        source_html = results_source_html(event)
         race_class = e(event.get("class", "Bracket racing"))
         rows.append(f"""
 <section class="section wrap">
