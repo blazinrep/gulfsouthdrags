@@ -3,7 +3,7 @@
   "anchor": "Hattiesburg, MS",
   "description": "Drag races near you in Mississippi, Louisiana and Alabama — this weekend's races, drag strips, schedules and the date each listing was last checked.",
   "domain": "gulfsouthdrags.com",
-  "last_checked": "2026-11-19",
+  "last_checked": "2026-11-21",
   "name": "Gulf South Drags",
   "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
  },
@@ -1304,7 +1304,8 @@
    "summary": "Montgomery International Dragway's Gobble Wobble runs November 19–22 with three $15,000-to-win races advertised for $375.",
    "track_name": "Montgomery International Dragway",
    "track_slug": "montgomery-international-dragway",
-   "verified": "2026-11-19"
+   "verified": "2026-11-19",
+   "results_slug": "montgomery-gobble-wobble-2026"
   },
   {
    "city": "Woodstock",
@@ -1907,7 +1908,7 @@
   {
    "city": "Steele",
    "dates": "Friday 20 and Saturday 21 November 2026",
-   "detail": "Alabama International Dragway's Turkey Trot runs November 20-21. Saturday bracket racing: Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up). Friday schedule and gate details were not in the captured source; confirm with the track before travelling.",
+   "detail": "Alabama International Dragway's Turkey Trot runs November 20-21. Saturday bracket racing: Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up). Friday schedule and gate details were not in the captured source; confirm with the track before travelling.\n\nAlabama International's 20 November update: Saturday time runs at 10:30 AM, Juniors first followed by footbrake. Saturday also runs a pre-race shootout: Footbrake 32-car shootout, $25 entry.",
    "end_iso": "2026-11-21",
    "event_type": "drag",
    "major_event": false,
@@ -1924,6 +1925,10 @@
     [
      "Entry and gate",
      "Confirm with Alabama International Dragway"
+    ],
+    [
+     "Saturday pre-race shootout (Footbrake)",
+     "$25 entry; 32-car field"
     ]
    ],
    "schedule": [
@@ -1933,18 +1938,18 @@
     ],
     [
      "Saturday 21 November",
-     "Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up)."
+     "Footbrake $5,000 to win ($1,000 runner-up); Pro $10,000 to win ($2,000 runner-up). Time runs 10:30 AM (Juniors first, then footbrake). Pre-race shootout: Footbrake 32-car, $25 entry."
     ]
    ],
    "series_slugs": [],
    "slug": "alabama-international-turkey-trot-2026",
-   "source": "Alabama International Dragway official Facebook post, 9 November 2026 (reshare of 20 October 2026 Turkey Trot flyer; purse details from the flyer).",
+   "source": "Alabama International Dragway official Facebook post, 9 November 2026 (reshare of 20 October 2026 Turkey Trot flyer; purse details from the flyer). Saturday detail from Alabama International Dragway official Facebook post, 20 November 2026, 11:17 PM (time runs 10:30 AM, Juniors first then footbrake; pre-race shootout flyer).",
    "start_iso": "2026-11-20",
    "state": "AL",
    "summary": "Alabama International Dragway runs its Turkey Trot November 20-21, with Saturday Footbrake $5,000 to win and Pro $10,000 to win.",
    "track_name": "Alabama International Dragway",
    "track_slug": "alabama-international-dragway",
-   "verified": "2026-11-09"
+   "verified": "2026-11-21"
   },
   {
    "city": "Woodstock",
@@ -2111,7 +2116,7 @@
   {
    "city": "Gulfport",
    "dates": "Friday 20 and Saturday 21 November 2026",
-   "detail": "SDPC Raceshop Guaranteed $20,000 Small Tire Shootout, Friday 20 and Saturday 21 November 2026. The track's tentative run order lists Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index and Hot Street. The run order is tentative and final times, entry fees and gate prices were not in the captured source; confirm with the track before travelling.",
+   "detail": "SDPC Raceshop Guaranteed $20,000 Small Tire Shootout, Friday 20 and Saturday 21 November 2026. The track's tentative run order lists Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index and Hot Street. The run order is tentative and final times, entry fees and gate prices were not in the captured source; confirm with the track before travelling.\n\nGulfport's 21 November update gives Saturday's official schedule: gates open 2:00 PM; True Street cruise 3:00 PM (mandatory for all True Street racers); chip draw 4:00 PM (Outlaw Small Tire, Blue Collar Small Tire, True Street, Hot Street); time runs 4:00 PM (6.50 Index, 7.00 Index, Open Bracket, Jr Dragster — two time runs each); Round 1 of eliminations 6:00 PM. Final run order: Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index, Hot Street, Jr Dragster.",
    "end_iso": "2026-11-21",
    "event_type": "drag",
    "major_event": true,
@@ -2124,19 +2129,23 @@
    ],
    "schedule": [
     [
-     "Friday 20 - Saturday 21 November",
-     "SDPC Raceshop Guaranteed $20,000 Small Tire Shootout. Tentative run order: Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index, Hot Street."
+     "Friday 20 November",
+     "SDPC Raceshop Guaranteed $20,000 Small Tire Shootout. Tentative run order: Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index and Hot Street."
+    ],
+    [
+     "Saturday 21 November",
+     "Official schedule: gates open 2:00 PM; True Street cruise 3:00 PM (mandatory for all True Street racers); chip draw 4:00 PM; time runs 4:00 PM (6.50 Index, 7.00 Index, Open Bracket, Jr Dragster — two time runs each); Round 1 of eliminations 6:00 PM. Run order: Outlaw Small Tire, 6.50 Index, True Street, Open Bracket, Blue Collar Small Tire, 7.00 Index, Hot Street, Jr Dragster."
     ]
    ],
    "series_slugs": [],
    "slug": "gulfport-sdpc-small-tire-shootout-2026",
-   "source": "Gulfport Dragway official Facebook post, Tue 17 November 2026, 6:40 PM ('Time Schedule / Run Order for SDPC Raceshop Guaranteed $20,000.00 Small Tire Shootout'); class list and dates from the attached run-order images, marked tentative.",
+   "source": "Gulfport Dragway official Facebook post, Tue 17 November 2026, 6:40 PM ('Time Schedule / Run Order for SDPC Raceshop Guaranteed $20,000.00 Small Tire Shootout'); class list and dates from the attached run-order images, marked tentative. Saturday schedule from Gulfport Dragway official Facebook post, 21 November 2026 (race-day schedule, full text captured).",
    "start_iso": "2026-11-20",
    "state": "MS",
-   "summary": "Gulfport Dragway hosts the SDPC Raceshop Guaranteed $20,000 Small Tire Shootout, November 20-21, with a tentative run order across seven classes.",
+   "summary": "Gulfport Dragway hosts the SDPC Raceshop Guaranteed $20,000 Small Tire Shootout, November 20-21. Saturday's official schedule is confirmed: gates 2 PM, True Street cruise 3 PM, time runs 4 PM, eliminations from 6 PM.",
    "track_name": "Gulfport Dragway",
    "track_slug": "gulfport-dragway",
-   "verified": "2026-11-18"
+   "verified": "2026-11-21"
   }
  ],
  "faq": [
