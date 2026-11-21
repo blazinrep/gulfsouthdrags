@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-21",
  "events": [
   {
    "slug": "ftd-gulfport-2026",
@@ -84,6 +84,39 @@
     "semifinalist": 3000,
     "sixteenth_finalist": null,
     "winner": 50000
+   }
+  },
+  {
+   "slug": "montgomery-gobble-wobble-2026",
+   "name": "Gobble Wobble",
+   "track": "Montgomery International Dragway",
+   "advertised_winner_prize": 15000,
+   "results": [
+    {
+     "date": "2026-11-20",
+     "winner": "Jared Pennington",
+     "runner_up": null
+    },
+    {
+     "date": "2026-11-20",
+     "winner": "Nick Hastings",
+     "runner_up": null
+    }
+   ],
+   "pending": [
+    "2026-11-21",
+    "2026-11-22"
+   ],
+   "source_note": "Friday 20 November: Jared Pennington won Box and Nick Hastings won No Box, reported by Montgomery International Dragway's official Facebook post, 21 November 2026. Runner-ups were not published. Saturday and Sunday winners still pending.",
+   "source_url": "https://www.facebook.com/MontgomeryInternationalDragway/",
+   "class": "Bracket",
+   "advertised_purse": {
+    "winner": 15000,
+    "runner_up": 2500,
+    "semifinalist": 750,
+    "quarterfinalist": 150,
+    "eighth_finalist": null,
+    "sixteenth_finalist": null
    }
   }
  ]
