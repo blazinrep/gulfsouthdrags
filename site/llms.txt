@@ -7,8 +7,8 @@ Last checked: 2026-11-23. Every listing on this site carries the date it was las
 ## Tracks
 
 - [Hub City Dragway](https://gulfsouthdrags.com/tracks/hub-city-dragway/): 1/4 mile asphalt, Hattiesburg, Mississippi. Permanently closed, last checked 2026-09-12. Race days: None. The track is permanently closed.
-- [Swamp Bottom Dragstrip](https://gulfsouthdrags.com/tracks/swamp-bottom-dragstrip/): 1/4 mile concrete, Columbia, Mississippi. Confirmed operating, last checked 2026-11-18. Race days: Most recent race: TNT/Grudge Racing, Saturday 14 November 2026 — gates open 11 AM, track hot 12 PM; the track closed at 7 PM that night. Next race: TNT/Grudge Racing, Saturday 21 November 2026 — gates open 11 AM, track hot 12 PM, staging lanes close 7 PM.
-- [Gulfport Dragway](https://gulfsouthdrags.com/tracks/gulfport-dragway/): 1/4 mile and 1/8 mile asphalt, Gulfport, Mississippi. Confirmed operating, last checked 2026-11-18. Race days: Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.
+- [Swamp Bottom Dragstrip](https://gulfsouthdrags.com/tracks/swamp-bottom-dragstrip/): 1/4 mile concrete, Columbia, Mississippi. Confirmed operating, last checked 2026-11-23. Race days: Most recent race: TNT/Grudge Racing, Saturday 21 November 2026 — gates open 11 AM, track hot 12 PM, staging lanes close 7 PM. Closed through Friday 11 December 2026; back open Saturday 12 December 2026. Schedule for that weekend to be posted.
+- [Gulfport Dragway](https://gulfsouthdrags.com/tracks/gulfport-dragway/): 1/4 mile and 1/8 mile asphalt, Gulfport, Mississippi. Confirmed operating, last checked 2026-11-23. Race days: Wednesday nights plus weekends, January through December. Gates 6pm Wednesdays, weather permitting.
 - [Byram Dragway (formerly Jackson Dragway)](https://gulfsouthdrags.com/tracks/byram-dragway/): 1/4 mile asphalt, Byram, Mississippi. Confirmed operating, last checked 2026-10-29. Race days: Tuesday Night Midnight Madness — test and tune plus grudge racing. Check the track’s Facebook page for other events.
 - [Atmore Dragstrip](https://gulfsouthdrags.com/tracks/atmore-dragstrip/): 1/8 mile concrete, Atmore, Alabama. Permanently closed, last checked 2026-09-12. Race days: None. The track is permanently closed.
 - [State Capitol Raceway](https://gulfsouthdrags.com/tracks/state-capitol-raceway/): 1/4 mile asphalt, Port Allen, Louisiana. Permanently closed, last checked 2026-10-27. Race days: Closed for the 2026 season.
@@ -18,7 +18,7 @@ Last checked: 2026-11-23. Every listing on this site carries the date it was las
 - [Montgomery International Dragway](https://gulfsouthdrags.com/tracks/montgomery-international-dragway/): 1/4 mile asphalt, Montgomery, Alabama. Confirmed operating, last checked 2026-11-19. Race days: Test and tune, bracket racing and big-money events across a published season. The 2026 calendar was released in January and revised in June.
 - [I-22 Motorsports Park (formerly I-22 Dragway)](https://gulfsouthdrags.com/tracks/i-22-motorsports-park/): 1/8 mile asphalt, Eldridge, Alabama. Confirmed operating, last checked 2026-11-12. Race days: Bracket racing weekends plus invitational shootouts and multi-day bracket bashes. Most recent race: bracket racing, Saturday 14 November 2026. Next race: not yet announced — announcements go out through Facebook.
 - [Alabama International Dragway](https://gulfsouthdrags.com/tracks/alabama-international-dragway/): 1/4 mile asphalt, Steele, Alabama. Confirmed operating, last checked 2026-11-09. Race days: Moonlight Madness every Friday night, 9pm to 1am. Additional events announced through the track’s Facebook page.
-- [Baileyton Goodtime Dragstrip (formerly Baileyton Drag Strip)](https://gulfsouthdrags.com/tracks/baileyton-goodtime-dragstrip/): 1/8 mile asphalt, Baileyton, Alabama. Confirmed operating, last checked 2026-10-29. Race days: Saturday bracket racing. Gates 4pm, time runs 6pm. Announcements go out through the track’s Facebook page.
+- [Baileyton Goodtime Dragstrip (formerly Baileyton Drag Strip)](https://gulfsouthdrags.com/tracks/baileyton-goodtime-dragstrip/): 1/8 mile asphalt, Baileyton, Alabama. Confirmed operating, last checked 2026-11-23. Race days: Saturday bracket racing. Gates 4pm, time runs 6pm. Announcements go out through the track’s Facebook page.
 
 ## State directories
 
@@ -70,6 +70,8 @@ Last checked: 2026-11-23. Every listing on this site carries the date it was las
 - [SDPC Raceshop Guaranteed $20,000 Small Tire Shootout](https://gulfsouthdrags.com/events/gulfport-sdpc-small-tire-shootout-2026/): Friday 20 and Saturday 21 November 2026, Gulfport Dragway, Gulfport, MS.
 - [Wreck the Halls — Holiday Raceway](https://gulfsouthdrags.com/events/holiday-wreck-the-halls-2026/): Saturday 5 December 2026, Holiday Raceway, Woodstock, AL.
 - [Thursday Test & Tune — Holiday Raceway](https://gulfsouthdrags.com/events/holiday-raceway-test-tune-nov-19-2026/): Thursday 19 November 2026, Holiday Raceway, Woodstock, AL.
+- [2026 Mega Fest Season Finale](https://gulfsouthdrags.com/events/baileyton-mega-fest-2026/): Saturday 21 November 2026, Baileyton Goodtime Dragstrip, Baileyton, AL.
+- [Import Face Off — Gulfport Dragway](https://gulfsouthdrags.com/events/gulfport-import-face-off-2027/): Sunday 10 January 2027, Gulfport Dragway, Gulfport, MS.
 
 ## Series
 
