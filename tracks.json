@@ -85,13 +85,13 @@
       "name": "Swamp Bottom Dragstrip",
       "notes": "Opened September 5–6, 2026. Built on more than 300 acres of former timber land by owners Bradley and Tawan Reid, after about two years of work. Facility includes a quarter-mile concrete surface, viewing tower, grandstands, restrooms and parking. Joined the NHRA Member Track Network in July 2026, which makes it eligible to run the NHRA Summit Racing E.T. Series presented by Hoosier, the Summit Jr. Drag Racing League, NHRA Street Legal and Jr. Street. Opening weekend was deliberately test and tune plus grudge racing, to lay rubber on fresh concrete before points racing begins.",
       "phone": "601-810-6655 / 601-248-3143",
-      "race_days": "Most recent race: TNT/Grudge Racing, Saturday 14 November 2026 — gates open 11 AM, track hot 12 PM; the track closed at 7 PM that night. Next race: TNT/Grudge Racing, Saturday 21 November 2026 — gates open 11 AM, track hot 12 PM, staging lanes close 7 PM.",
+      "race_days": "Most recent race: TNT/Grudge Racing, Saturday 21 November 2026 — gates open 11 AM, track hot 12 PM, staging lanes close 7 PM. Closed through Friday 11 December 2026; back open Saturday 12 December 2026. Schedule for that weekend to be posted.",
       "sanction": "NHRA Member Track — South Central (Division 4)",
       "slug": "swamp-bottom-dragstrip",
       "state": "MS",
       "status": "open",
       "surface": "Concrete",
-      "verified": "2026-11-18",
+      "verified": "2026-11-23",
       "website": "https://swampbottomdragstrip.com/",
       "meta_title": "Swamp Bottom Dragstrip — Schedule & Results | Columbia, MS",
       "meta_description": "Swamp Bottom Dragstrip in Columbia, MS — NHRA quarter-mile concrete track. Schedule, race days and results; most recent race Nov 7, 2026."
@@ -140,7 +140,7 @@
       "state": "MS",
       "status": "open",
       "surface": "Asphalt",
-      "verified": "2026-11-18",
+      "verified": "2026-11-23",
       "website": "https://gulfportdragway.com/",
       "meta_title": "Gulfport Dragway — Schedule & Results | Gulfport, MS",
       "meta_description": "Gulfport Dragway in Gulfport, MS — IHRA quarter- and eighth-mile track racing Wednesdays and weekends. Schedules, results and big-money winners."
@@ -374,7 +374,7 @@
     },
     {
       "address": "20105 Hwy 11, Woodstock, AL 35188",
-      "answer": "Holiday Raceway is a drag strip at 20105 Hwy 11 in Woodstock, Alabama, between Birmingham and Tuscaloosa. It runs open track and test and tune most Thursdays and bracket racing on scheduled Saturdays from March through November, with $5,000 purses in Pro and Footbrake and $1,000 in Junior Dragster.",
+      "answer": "Holiday Raceway is a drag strip at 20105 Hwy 11 in Woodstock, Alabama, between Birmingham and Tuscaloosa. It runs open track and test and tune most Thursdays and bracket racing on scheduled Saturdays from March through November, with $5,000 purses in Pro and Footbrake and $1,000 in Junior Dragster. The 2026 season closes Dec 5 with Wreck the Halls, a demolition drag plus swap meet and yard sale.",
       "camping": {
         "detail": "Unconfirmed.",
         "nearby": [],
@@ -386,7 +386,7 @@
       "faq": [
         [
           "What days does Holiday Raceway race?",
-          "Open track and test and tune run most Thursdays. Bracket racing is on scheduled Saturdays, running Pro, Footbrake and Junior Dragster. The season runs late March through November."
+          "Open track and test and tune run most Thursdays. Bracket racing is on scheduled Saturdays, running Pro, Footbrake and Junior Dragster. The regular season runs late March through November; the 2026 season closes Dec 5 with the Wreck the Halls demolition drag and swap meet."
         ],
         [
           "How much can you win at Holiday Raceway?",
@@ -406,15 +406,15 @@
       "lon": -87.15,
       "miles": 179,
       "name": "Holiday Raceway",
-      "notes": "A drag strip on Highway 11 in Woodstock, between Birmingham and Tuscaloosa, and one of the few tracks in this directory that publishes a full season schedule rather than announcing races week to week.\n\nThe regular pattern is open track and test and tune on Thursdays, with bracket racing on scheduled Saturdays running Pro, Footbrake and Junior Dragster. Several Saturdays carry raised purses: $5,000 to win in Pro or Footbrake, and $1,000 in Junior Dragster. A number of those count towards IHRA points.\n\nThe season runs late March through November and mixes bracket racing with bigger draws. The 2026 calendar included the Southeast Gassers Association over two days in May, a Streetcar Challenge in June, Street Outlaws small tire shootouts with Ryan Martin and Murder Nova across two days in August, King of the Beach in October, a 17th annual cruise-in with car, bike and truck shows in April, the Woodstock Music Festival in May, and a Thanksgiving Throwdown sound and audio competition in November.\n\nThe track closes for Memorial Day, Independence Day and Labor Day weekends. All dates are published as subject to change, so confirm before travelling.",
+      "notes": "A drag strip on Highway 11 in Woodstock, between Birmingham and Tuscaloosa, and one of the few tracks in this directory that publishes a full season schedule rather than announcing races week to week.\n\nThe regular pattern is open track and test and tune on Thursdays, with bracket racing on scheduled Saturdays running Pro, Footbrake and Junior Dragster. Several Saturdays carry raised purses: $5,000 to win in Pro or Footbrake, and $1,000 in Junior Dragster. A number of those count towards IHRA points.\n\nThe regular season runs late March through November and mixes bracket racing with bigger draws. The 2026 season closes Dec 5 with Wreck the Halls, a demolition drag plus swap meet and yard sale. The 2026 calendar included the Southeast Gassers Association over two days in May, a Streetcar Challenge in June, Street Outlaws small tire shootouts with Ryan Martin and Murder Nova across two days in August, King of the Beach in October, a 17th annual cruise-in with car, bike and truck shows in April, the Woodstock Music Festival in May, and a Thanksgiving Throwdown sound and audio competition in November.\n\nThe track closes for Memorial Day, Independence Day and Labor Day weekends. All dates are published as subject to change, so confirm before travelling.",
       "phone": "205-938-2123",
-      "race_days": "Open track and test and tune most Thursdays. Bracket racing on scheduled Saturdays, March through November.",
+      "race_days": "Open track and test and tune most Thursdays. Bracket racing on scheduled Saturdays, March through November. The 2026 season closes Dec 5 with the Wreck the Halls demolition drag and swap meet.",
       "sanction": "IHRA points races plus independent events",
       "slug": "holiday-raceway",
       "state": "AL",
       "status": "open",
       "surface": "Asphalt",
-      "verified": "2026-11-19",
+      "verified": "2026-11-23",
       "website": "http://www.holidayraceway.com"
     },
     {
@@ -588,7 +588,7 @@
       "state": "AL",
       "status": "open",
       "surface": "Asphalt",
-      "verified": "2026-10-29",
+      "verified": "2026-11-23",
       "website": "http://speedwaysonline.com"
     }
   ],
@@ -1421,6 +1421,10 @@
         [
           "Motorcycle",
           "$1,000-to-win each day, all three days."
+        ],
+        [
+          "Thanksgiving Day, 26 November",
+          "Parking and registration open."
         ]
       ],
       "series_slugs": [
@@ -1433,7 +1437,7 @@
       "summary": "The 8th Annual Turkey Beach Bash returns to Gulfport Dragway November 27-29 with three $10,000-to-win races.",
       "track_name": "Gulfport Dragway",
       "track_slug": "gulfport-dragway",
-      "verified": "2026-10-29"
+      "verified": "2026-11-23"
     },
     {
       "city": "Columbia",
@@ -2145,7 +2149,136 @@
       "summary": "Gulfport Dragway hosts the SDPC Raceshop Guaranteed $20,000 Small Tire Shootout, November 20-21. Saturday's official schedule is confirmed: gates 2 PM, True Street cruise 3 PM, time runs 4 PM, eliminations from 6 PM.",
       "track_name": "Gulfport Dragway",
       "track_slug": "gulfport-dragway",
-      "verified": "2026-11-21"
+      "verified": "2026-11-23",
+      "results_slug": "gulfport-sdpc-small-tire-shootout-2026"
+    },
+    {
+      "city": "Woodstock",
+      "dates": "Saturday 5 December 2026",
+      "detail": "Holiday Raceway closes out 2026 with Wreck the Halls on Saturday, December 5: a demolition drag plus swap meet and yard sale. Race begins 12:00 PM; gates open 8:00 AM for sale setup, spectator gates 10:00 AM. Winner takes all $500. General admission $15; race fee free; sell items $20. Demolition drag rules: drivers must make intentional contact with their opponent at least once between the 60' and 330' marks; driver-side-door T-bone hits are banned (instant DQ); stripped interior (all glass, airbags, headlights removed); no full-size trucks, SUVs or vans; no reinforced bumpers or grill guards; drivers 18+ with a valid license.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Wreck the Halls — Holiday Raceway",
+      "prices": [
+        [
+          "General admission",
+          "$15"
+        ],
+        [
+          "Race fee",
+          "FREE"
+        ],
+        [
+          "Sell items",
+          "$20"
+        ]
+      ],
+      "schedule": [
+        [
+          "Saturday 5 December",
+          "Wreck the Halls demolition drag plus swap meet and yard sale. Gates open 8:00 AM for sale setup, spectator gates 10:00 AM, race begins 12:00 PM. Winner takes all $500."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "holiday-wreck-the-halls-2026",
+      "source": "Holiday Raceway official Facebook post, 5 November 2026 (date, name, format); track Wreck the Halls flyer (12 PM start, $500 winner takes all); track website event page (gates 8 AM setup / 10 AM spectators, admission $15, race fee free, sell items $20).",
+      "start_iso": "2026-12-05",
+      "state": "AL",
+      "summary": "Holiday Raceway closes out 2026 with Wreck the Halls on Saturday, December 5: demolition drag plus swap meet and yard sale, race begins 12 PM, winner takes all $500, admission $15.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
+      "verified": "2026-11-23"
+    },
+    {
+      "city": "Woodstock",
+      "dates": "Thursday 19 November 2026",
+      "detail": "Holiday Raceway's final Thursday Test & Tune of the season ran November 19. Gates opened 4:45 PM, track hot 5:00-9:00 PM. Admission $10 per person; race fee $20 (car & driver).",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "Thursday Test & Tune — Holiday Raceway",
+      "prices": [
+        [
+          "Spectator admission",
+          "$10"
+        ],
+        [
+          "Race fee",
+          "$20 (car & driver)"
+        ]
+      ],
+      "schedule": [
+        [
+          "Thursday 19 November",
+          "Open Track Test and Tune. Gates open 4:45 PM. Track hot 5:00-9:00 PM. Final Thursday night race of the season."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "holiday-raceway-test-tune-nov-19-2026",
+      "source": "Holiday Raceway official Facebook post, 19 November 2026 (final Thursday night race of the season; gates 4:45 PM, track hot 5-9 PM, admission $10, race fee $20); corroborated by the track's events calendar (Nov 19, 5:00-9:00 PM).",
+      "start_iso": "2026-11-19",
+      "state": "AL",
+      "summary": "Holiday Raceway's final Thursday Test & Tune of the season ran November 19.",
+      "track_name": "Holiday Raceway",
+      "track_slug": "holiday-raceway",
+      "verified": "2026-11-23"
+    },
+    {
+      "city": "Baileyton",
+      "dates": "Saturday 21 November 2026",
+      "detail": "Baileyton Goodtime Dragstrip closed its 2026 season with the Mega Fest Season Finale on Saturday, November 21: motorcycle racing with $10,000 up for grabs. Classes included Street Kingz, R.W.Y.B (Run What You Brung), Street Gorillaz and Battle of the Ages. Winners, per the track's November 22 results post: Street Kingz — Tyree Givens (“Peezy”; runner-up “Two Face”); R.W.Y.B — Cody Spires (“bad company”); Street Gorillaz — “DoughBoy”. The Battle of the Ages winner's surname was not legible in the posted results and is not recorded here.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "2026 Mega Fest Season Finale",
+      "prices": [
+        [
+          "Purse",
+          "$10,000 up for grabs (across classes)"
+        ]
+      ],
+      "schedule": [
+        [
+          "Saturday 21 November",
+          "Mega Fest Season Finale. Motorcycle racing; $10,000 up for grabs. Classes: Street Kingz, R.W.Y.B, Street Gorillaz, Battle of the Ages."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "baileyton-mega-fest-2026",
+      "source": "Baileyton Goodtime Dragstrip official Facebook post, 17 November 2026 (date, name, $10,000 purse, motorcycle RWYB — text truncated); winners from the track's official Facebook post, 22 November 2026 (thank-you share of Amari Gee's results post; winner images).",
+      "start_iso": "2026-11-21",
+      "state": "AL",
+      "summary": "Baileyton Goodtime Dragstrip closed its 2026 season with the Mega Fest Season Finale on November 21, with $10,000 up for grabs.",
+      "track_name": "Baileyton Goodtime Dragstrip",
+      "track_slug": "baileyton-goodtime-dragstrip",
+      "verified": "2026-11-23"
+    },
+    {
+      "city": "Gulfport",
+      "dates": "Sunday 10 January 2027",
+      "detail": "Import Face Off comes to Gulfport Dragway on Sunday, January 10, 2027, 9:00 AM-5:00 PM. Ticket registration is open through the link in the track's post.",
+      "event_type": "other",
+      "major_event": false,
+      "name": "Import Face Off — Gulfport Dragway",
+      "prices": [
+        [
+          "Entry / admission",
+          "Ticket registration via the track's post; prices not published in the captured text"
+        ]
+      ],
+      "schedule": [
+        [
+          "Sunday 10 January 2027",
+          "Import Face Off at Gulfport Dragway, 9:00 AM-5:00 PM."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "gulfport-import-face-off-2027",
+      "source": "Gulfport Dragway official Facebook post, 21 November 2026 (flyer: Import Face Off, Gulfport Dragway, 1/10/27, 9 AM-5 PM; ticket registration link in post).",
+      "start_iso": "2027-01-10",
+      "state": "MS",
+      "summary": "Import Face Off comes to Gulfport Dragway on Sunday, January 10, 2027, 9 AM-5 PM.",
+      "track_name": "Gulfport Dragway",
+      "track_slug": "gulfport-dragway",
+      "verified": "2026-11-23"
     },
     {
       "city": "Belle Rose",
