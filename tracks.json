@@ -3,7 +3,7 @@
     "anchor": "Hattiesburg, MS",
     "description": "Drag races near you in Mississippi, Louisiana and Alabama — this weekend's races, drag strips, schedules and the date each listing was last checked.",
     "domain": "gulfsouthdrags.com",
-    "last_checked": "2026-11-23",
+    "last_checked": "2026-11-24",
     "name": "Gulf South Drags",
     "tagline": "Every drag strip in Mississippi, Louisiana and Alabama. Checked every week."
   },
@@ -290,7 +290,7 @@
       "website": "https://racenpr.com",
       "facebook": "https://www.facebook.com/noproblemraceway/",
       "status": "open",
-      "verified": "2026-11-19",
+      "verified": "2026-11-24",
       "answer": "No Problem Raceway Park is an NHRA-sanctioned quarter-mile drag strip at 6470 LA-996 in Belle Rose, Louisiana. The site also carries a 1.8-mile asphalt road course and over 200 acres used for concerts, car shows and festivals.",
       "caveat": "",
       "notes": "A multi-discipline motorsports facility in Belle Rose, in the Louisiana river parishes between Baton Rouge and Houma. Confirmed active on 12 September 2026. The track is running its 25th anniversary season, having opened in 2001.\n\nThe drag strip is a quarter-mile sanctioned by NHRA. Alongside it sits a 1.8-mile asphalt road course and more than 200 acres used for concerts, car shows and festivals. That mix is unusual in this region — most tracks listed here do one thing.\n\nThe regular programme runs TNT Test ’n Tune on selected Friday nights and Bracket Masters on selected Saturdays, with road course events, Super Saturdays run with Flip Flop Promotions, and private pro test sessions bookable by phone. The track publishes a calendar of events each month on its Facebook page.\n\nIt also hosts the Pure Speed Drag Racing Experience, a ride-and-drive programme for people who want to run a race car without owning one, booked separately from the racing calendar.\n\nTwo phone numbers are in use: 225-445-3498 and 985-369-3692. The number printed on the track's own website has an extra digit and cannot be dialled as written.",
@@ -2279,6 +2279,63 @@
       "track_name": "Gulfport Dragway",
       "track_slug": "gulfport-dragway",
       "verified": "2026-11-23"
+    },
+    {
+      "city": "Belle Rose",
+      "dates": "Saturday 5 December 2026",
+      "detail": "No Problem Raceway Park hosts “No Disrespect — Line Up” on Saturday, December 5, 2026. Gates open 10:00 AM, track hot at 12:00 noon, drivers meeting at 2:00 PM, one shakedown per class. Spectators $20, car and driver $60, cash only. Classes: Pops Peavy Full Size Truck Shootout ($150 buy-in, 70/30 split, track adds $500); Anything on 28s, $5,000 to win ($300 entry); Outlaw Street, $4,000 ($200 entry); 5.30 Index, $3,000 ($150 entry); Daily Driver, $3,000 ($150 entry).\n\nPre-event: Friday, December 4, a Happy Hour Practice Tree Race in the bar at 7:30 PM ($5 to enter, 400 pro tree). Adam Simoneaux will be selling nitrous bottles on property December 4th and 5th.",
+      "event_type": "drag",
+      "major_event": false,
+      "name": "No Disrespect — Line Up",
+      "prices": [
+        [
+          "Spectators",
+          "$20"
+        ],
+        [
+          "Car and driver",
+          "$60 (cash only)"
+        ],
+        [
+          "Pops Peavy Full Size Truck Shootout",
+          "$150 buy-in, 70/30 split, track adds $500"
+        ],
+        [
+          "Anything on 28s",
+          "$300 entry, $5,000 to win"
+        ],
+        [
+          "Outlaw Street",
+          "$200 entry, $4,000"
+        ],
+        [
+          "5.30 Index",
+          "$150 entry, $3,000"
+        ],
+        [
+          "Daily Driver",
+          "$150 entry, $3,000"
+        ]
+      ],
+      "schedule": [
+        [
+          "Saturday 5 December",
+          "No Disrespect — Line Up. Gates open 10:00 AM, track hot 12:00 noon, drivers meeting 2:00 PM, one shakedown per class."
+        ],
+        [
+          "Friday 4 December",
+          "Happy Hour Practice Tree Race in the bar, 7:30 PM, $5 to enter, 400 pro tree. Adam Simoneaux selling nitrous bottles on property December 4th and 5th."
+        ]
+      ],
+      "series_slugs": [],
+      "slug": "no-problem-no-disrespect-dec-5-2026",
+      "source": "No Problem Raceway Park official Facebook post, 23 November 2026, 1:04 PM (image-only flyers, read in full via photo viewer).",
+      "start_iso": "2026-12-05",
+      "state": "LA",
+      "summary": "No Problem Raceway Park hosts “No Disrespect — Line Up” on Saturday, December 5, 2026: $5,000-to-win Anything on 28s, Outlaw Street $4,000, 5.30 Index and Daily Driver $3,000 each.",
+      "track_name": "No Problem Raceway Park",
+      "track_slug": "no-problem-raceway",
+      "verified": "2026-11-24"
     }
   ],
   "faq": [
